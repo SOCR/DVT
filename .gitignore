@@ -1,0 +1,5 @@
+$ cat .gitignore
+js/lib/node_modules/*
+
+#Ignore Mac system file
+*.DS_Store
