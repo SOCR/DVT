@@ -7,21 +7,21 @@ var gulp = require('gulp');
 // Include Our Plugins
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
-var concat = require('gulp-closure');
+var concat = require('gulp-closure-compiler');
 var rename = require('gulp-rename');
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('js/*.js')
+    return gulp.src(['../**/*.js', '!./node_modules/**'])
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
 // Compile Our Sass
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src(['../../css/**/*.scss', '!./node_modules/**'])
         .pipe(sass())
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('../../css'));
 });
 
 // Concatenate & Minify JS
