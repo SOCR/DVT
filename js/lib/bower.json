@@ -1,0 +1,27 @@
+{
+  "name": "DVT",
+  "version": "0.0.0",
+  "description": "Dynamic Visualizer Toolkit",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "dynamic",
+    "brain",
+    "toolkit",
+    "4D"
+  ],
+  "authors": [
+    "Syed Husain"
+  ],
+  "license": "MIT",
+  "homepage": "www.socr.umich.edu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
