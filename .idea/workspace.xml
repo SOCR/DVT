@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="fix compiler, initialize loader">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/conf.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/gulpfile.js" afterPath="$PROJECT_DIR$/js/lib/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loader.js" afterPath="$PROJECT_DIR$/js/io/loader/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/package.json" afterPath="$PROJECT_DIR$/js/lib/package.json" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -481,7 +476,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435841044757</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="initialize load helper&#10;">
+      <created>1435847360772</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1435847360772</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -560,7 +561,8 @@
     <MESSAGE value="implement closure compiler&#10;" />
     <MESSAGE value="implement DTV Base" />
     <MESSAGE value="fix compiler, initialize loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix compiler, initialize loader" />
+    <MESSAGE value="initialize load helper&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize load helper&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
