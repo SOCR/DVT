@@ -1,5 +1,6 @@
 $ cat .gitignore
 js/lib/node_modules/*
+js/lib/bower_components/*
 
 #Ignore Mac system file
 *.DS_Store
