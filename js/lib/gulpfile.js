@@ -1,6 +1,7 @@
 /**
  * Created by shusa_000 on 6/30/2015.
  */
+
 "use strict";
 
 // Include gulp
@@ -32,7 +33,7 @@ gulp.task('closure', function() {
             compilerPath: 'bower_components/closure-compiler/lib/vendor/compiler.jar',
             fileName: 'DVT.js',
             compilerFlags: {
-                closure_entry_point: ['DVT.renderer3D', 'DVT.renderer2D'],
+                closure_entry_point: ['DVT.loader', 'DVT.renderer2D'],
                 compilation_level: 'ADVANCED_OPTIMIZATIONS',
                 only_closure_dependencies: true,
                 warning_level: 'VERBOSE'
