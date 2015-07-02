@@ -2,473 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="fix compiler, initialize loader">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/200.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/201.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/202.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/203.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/204.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/205.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/206.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2BC.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2BD.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2BE.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2BF.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2C9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CA.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CB.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CC.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CD.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CE.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2CF.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2D9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DA.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DB.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DC.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DD.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DE.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2DF.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2E9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2EA.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2EB.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2EC.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2ED.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2EE.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2EF.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F4.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F6.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F8.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2F9.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FA.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FB.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FC.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FD.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FE.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/2FF.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/none.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/sprite2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/emoji/unknown.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/advancedcoordinates.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/advancedcoordinates2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/advancedtooltip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/aes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/aes_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/aes_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/alpha.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/alpha_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/alpha_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/animationdelay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/animationdelay_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/animationdelay_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/animationqueue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/arc4.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/arc4_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/arc4_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/array/array_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/asserts/asserts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/asserts/asserts_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/asserts/asserts_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/autocomplete-basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/autocomplete.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/autocompleteremote.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/autocompleteremotedata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/autocompleterichremote.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/autocompleterichremotedata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/base64.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/base64_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/base64_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/base_module_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/base_module_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/base_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/base_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/basen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/basen_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/basen_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/basicelements.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/bidiinput.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/blobhasher.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/blobhasher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/blobhasher_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/blobhasher_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/blockcipher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/bubble.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/editor/bubble.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/bubble.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/bytestring_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/bytestring_perf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/cbc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/cbc_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/cbc_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/charcounter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/charpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/charpicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/checkbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/checkbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/color-contrast.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/color.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/color_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/color_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/colormenubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/colormenubutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/colorpalette.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/colorpicker-simplegrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/colorpicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/combobox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/conditionaldelay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/conditionaldelay_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/conditionaldelay_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/console.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/console_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/console_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/container.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/control.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/crypt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/crypt_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/crypt_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/crypt_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/css3button.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/css3button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/css3menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/css3menubutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom_test_import_1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom_test_import_2.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/cssom_test_link_1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/cssspriteanimation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/cursor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/custombutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/datamanager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/datasource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/datasource_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/datasource_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/date.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/date_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/date_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/datelike.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/datepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/datepicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/daterange.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/daterange_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/daterange_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/db.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/db_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/db_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/debug.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debug_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debug_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debugwindow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debugwindow_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/debugwindow_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/defineclass_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/defineclass_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/delay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/delay_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/delay_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/css/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/deps.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/depsgraph.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/devcss/devcss.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/devcss/devcss_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/devcss/devcss_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/devcss/devcssrunner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/editor/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/dimensionpicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dimensionpicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dimensionpicker_rtl.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/divconsole.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dom_selection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/drag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dragdrop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/dragdropdetector.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dragdropdetector.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dragdropdetector_target.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dragger.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/draglistgroup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/dragscrollsupport.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/drilldownrow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/duration.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/duration_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/duration_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/editortoolbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/effects.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/css/emojipicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/css/emojisprite.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/enhanceerror_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/enhanceerror_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/entrypointregistry.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/entrypointregistry_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/entrypointregistry_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/editor/equationeditor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/error.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/error.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/error_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/error_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandler_async_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandler_async_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandler_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandler_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorhandlerweakdep.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorreporter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorreporter_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/errorreporter_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/event-propagation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/events.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/events.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/eventtarget.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/expr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/expr_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/expr_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/fancywindow.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/fastdatanode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/fastdatanode_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/fastdatanode_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/field_basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/filedrophandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/filteredmenu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/filteredmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/filterobservingmenuitem.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/flatbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/flatmenubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/focushandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/formatter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/formatter_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/formatter_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/fpsdisplay.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/fpsdisplay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/fpsdisplay_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/fpsdisplay_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/freelist.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/freelist_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/gauge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/gcdiagnostics.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hash32.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hash32_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hash32_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hashtester.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworld.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworld.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworld_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworlddialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworlddialog_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworlddialogplugin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/helloworlddialogplugin_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/history1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/history2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/history3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/history3js.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/history_blank.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hmac.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hmac_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/hmac_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/hovercard.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/hovercard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/hsvapalette.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/hsvapalette.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/hsvpalette.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/hsvpalette.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/html5history.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/imagelessbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/imagelessbutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/imagelessmenubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/imagelessmenubutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/index_nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/index_splash.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/indexeddb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/inline_block_quirks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/inline_block_standards.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/inputdatepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/inputdatepicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/inputhandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/jsdatasource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/jsondatasource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/jsonprettyprinter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/jsxmlhttpdatasource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/jsxmlhttpdatasource_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/jsxmlhttpdatasource_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/keyboardshortcuts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/keyhandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/keyrange.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/labelinput.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/editor/linkdialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logbuffer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logbuffer_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logbuffer_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logger.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logger_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logger_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logrecord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logrecordserializer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logrecordserializer_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/logrecordserializer_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/md5_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/md5_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/md5_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/menu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/menubar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/menubar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/menubutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/menubutton_frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/menuitem.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/menuitem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/menuseparator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/modifyelements.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/mousewheelhandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/multitestrunner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/color/names.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/nexttick.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/nexttick_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/nexttick_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/bootstrap/nodejs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/objectstore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/onlinehandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/palette.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/palette.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/pastehandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/pbkdf2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/pbkdf2_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/pbkdf2_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/pixeldensitymonitor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/plaintextspellchecker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/popup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/popupcolorpicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/popupdatepicker.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/popupdatepicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/popupemojipicker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/popupmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/progressbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/prompt.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/quadtree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/ratings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relative.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relative_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relative_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/relativetimeprovider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relativewithplurals.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relativewithplurals_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/relativewithplurals_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/richtextspellchecker.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/roundedpanel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/roundedpanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/roundedtab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/run.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/run_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/samplecomponent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/samplecomponent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/scrollfloater.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/seamlessfield.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/select.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/selectionmenubutton.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/serverchart.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha1_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha1_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha1_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha224.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha224_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha224_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha224_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha256.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha256_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha256_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha256_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha2_64bit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha2_64bit_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha2_64bit_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha384.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha512.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha512_256.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/crypt/sha512_perf.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/slider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/splitbehavior.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/splitpane.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/stopevent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/iframe/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/iframe/style_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/iframe/style_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/cssom/iframe/style_test_import.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/submenu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/submenus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/submenus2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/subpixel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tab.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tabbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/tabbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/editor/tableeditor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tablesorter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/throttle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/throttle_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/throttle_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/tiger.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/graphics/tigerdata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/toolbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/tracer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/tracer_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/debug/tracer_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/db/transaction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/demos/fx/css3/transition.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/css/tristatemenuitem.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/utcdatetime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/utcdatetime_test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/date/utcdatetime_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/bootstrap/webworkers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/workqueue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/async/workqueue_test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/closure-library/closure/goog/datasource/xmldatasource.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/conf.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/gulpfile.js" afterPath="$PROJECT_DIR$/js/lib/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loader.js" afterPath="$PROJECT_DIR$/js/io/loader/loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/package.json" afterPath="$PROJECT_DIR$/js/lib/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -490,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DVT.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/DVT.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -510,14 +38,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loadHelper.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36">
+              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lib/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77272725">
-              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+            <state vertical-scroll-proportion="-7.206897">
+              <caret line="58" column="91" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lib/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.9615386">
+              <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lib/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -568,18 +138,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="renderer3D.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -610,8 +168,10 @@
         <option value="$PROJECT_DIR$/js/io/loader/loaderCore.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer2D.js" />
         <option value="$PROJECT_DIR$/dist/DVT.js" />
-        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
+        <option value="$PROJECT_DIR$/js/lib/conf.json" />
         <option value="$PROJECT_DIR$/js/lib/gulpfile.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
       </list>
     </option>
   </component>
@@ -735,28 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="closure-library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -957,7 +495,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -967,7 +505,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3288889" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1669107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1669107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1114,6 +652,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,6 +660,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,24 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.038462">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/bower_components/threejs/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.2982456">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12781955">
-          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1296,26 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/listeners.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1323,14 +829,6 @@
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/DVT.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,20 +850,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/DVT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.9615386">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.085213035">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/deps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77272725">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+        <state vertical-scroll-proportion="-7.206897">
+          <caret line="58" column="91" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/listeners.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>

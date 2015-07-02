@@ -8,7 +8,7 @@
 goog.provide('DVT.loader');
 
 goog.require('DVT');
-
+goog.require('DVT.loadHelper');
 
 DVT.getLoader = (
     function () {

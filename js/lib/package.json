@@ -27,6 +27,8 @@
     "gulp-jshint": "^1.11.1",
     "gulp-sass": "^2.0.3",
     "gulp-git": "^1.2.4",
-    "gulp-closure-deps": "^0.4.0"
+    "gulp-closure-deps": "^0.4.0",
+    "gulp-shell": "^0.4.2",
+    "jsdoc": "^3.3.2"
   }
 }

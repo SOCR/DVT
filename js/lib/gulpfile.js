@@ -12,6 +12,8 @@ var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var closure = require('gulp-closure-compiler');
 var rename = require('gulp-rename');
+var depsWriter = require('gulp-closure-deps');
+var shell = require('gulp-shell');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -42,8 +44,23 @@ gulp.task('closure', function() {
         .pipe(gulp.dest('../../dist'));
 });
 
+gulp.task('deps', function() {
+    gulp.src(['../**/*.js', '!./node_modules/**', '!./bower_components/**', '!./closure-library/**'])
+        .pipe(depsWriter({
+            fileName: 'deps.js',
+            //prefix: '../../../..',
+            baseDir: '../../dist'
+        }))
+        .pipe(gulp.dest('../../dist'));
+});
+
+//generate documentation
+gulp.task( 'doc', shell.task( [
+'node ./node_modules/jsdoc/jsdoc ../../js -r -c ./conf.json -a all -d ../../doc --package ./package.json'
+] ) );
+
 // Watch Files For Changes
 gulp.task('watch', function() {
-    gulp.watch(['../**/*.js', '!./node_modules/**'], ['lint', 'closure']);
+    gulp.watch(['../**/*.js', '!./node_modules/**'], ['lint', 'closure', 'deps']);
     gulp.watch(['../../css/**/*.css', '!./node_modules/**'], ['sass']);
 });
