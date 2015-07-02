@@ -6,7 +6,18 @@ goog.provide('DVT.loadHelper');
 
 goog.require('DVT');
 
-DVT.loadHelper=function(index)
+/**
+ * @constructor
+ * @param index
+ * @param filepath
+ */
+DVT.loadHelper=function(index, filepath)
 {
     this._index=index;
+    this._filepath = filepath;
+};
+
+DVT.loadHelper.prototype.updateLoad=function()
+{
+  return;
 };

@@ -29,6 +29,8 @@
     "gulp-git": "^1.2.4",
     "gulp-closure-deps": "^0.4.0",
     "gulp-shell": "^0.4.2",
-    "jsdoc": "^3.3.2"
+    "jsdoc": "^3.3.2",
+    "gulp-yuidoc": "^0.1.2",
+    "gulp-plumber": "^1.0.1"
   }
 }

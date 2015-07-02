@@ -49,7 +49,7 @@ DVT.loader=function(){
      * @type {number}
      * @private
      */
-    this._curIndex=0;
+    this._curIndex=2;
 };
 
 /**
@@ -70,6 +70,6 @@ DVT.loader.prototype.init=function()
 
 DVT.loader.prototype.load=function(filepath)
 {
-
-    return this._curIndex - 1;
+var j=0;
+    return this._curIndex - 1+j;
 };
