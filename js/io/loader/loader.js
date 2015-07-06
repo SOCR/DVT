@@ -10,12 +10,6 @@ goog.provide('DVT.loader');
 goog.require('DVT');
 goog.require('DVT.loadHelper');
 
-/**
- * Provide base DVT loader
- * 
- * @module DVTloader
- * 
- */
 
 DVT.getLoader = (
     function () {

@@ -5,13 +5,13 @@ YUI.add("yuidoc-meta", function(Y) {
         "loader"
     ],
     "modules": [
-        "DVTloader"
+        "DVT"
     ],
     "allModules": [
         {
-            "displayName": "DVTloader",
-            "name": "DVTloader",
-            "description": "Provide base DVT loader"
+            "displayName": "DVT",
+            "name": "DVT",
+            "description": "Provide base DVT module"
         }
     ]
 } };
