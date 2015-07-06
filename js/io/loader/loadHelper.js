@@ -11,15 +11,21 @@ goog.require('DVT');
  * @param index
  * @param filepath
  */
-DVT.loadHelper=function(index, filepath)
+DVT.loadHelper=function(index, filepath, modalID)
 {
     this._index=index;
     this._filepath = filepath;
     this._loadID='loadBar'+this._index;
     this._parseID='parseBar'+this._index;
     this._renderID='renderBar'+this._index;
+    this._modalID=modalID;
 
-    //add progress bars to modal window
+    //add progress bar elements to modal window
+    this._addElement(this._loadID);
+    this._addElement(this._renderID);
+    this._addElement(this._parseID);
+
+    //initialize loading bars and set behavior
     this._parseLine = new ProgressBar.Line('#'+this._parseID, {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
@@ -50,3 +56,8 @@ DVT.loadHelper.prototype.updateLoad=function()
 {
 
 };
+
+DVT.loadHelper.prototype._addElement=function(elementID)
+{
+    $('#'+this._modalID+' .modal-body').append('<div id='+ elementID + '></div>');
+}

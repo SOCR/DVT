@@ -74,6 +74,6 @@ DVT.loader.prototype.load=function(container)
     this._numActive+=3;
 
     //add load bars
-    $('#'+modalID+ ' .modal-body').append();
+    $('#'+this._modalID+ ' .modal-body').append();
     return this._curIndex - 1;
 };
