@@ -23,5 +23,12 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "closure-compiler": "~0.2.6",
+    "jquery": "~2.1.4",
+    "progressbar.js": "~0.8.1",
+    "threejs": "*"
+  }
 }

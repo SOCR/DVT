@@ -68,8 +68,12 @@ DVT.loader.prototype.init=function()
     return;
 };
 
-DVT.loader.prototype.load=function(filepath, container)
+DVT.loader.prototype.load=function(container)
 {
+    var filepath=container.filepath;
+    this._numActive+=3;
 
+    //add load bars
+    $('#'+modalID+ ' .modal-body').append();
     return this._curIndex - 1;
 };

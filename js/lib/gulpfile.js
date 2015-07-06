@@ -16,6 +16,7 @@ var depsWriter = require('gulp-closure-deps');
 var shell = require('gulp-shell');
 var yuidoc = require('gulp-yuidoc');
 var plumber = require('gulp-plumber');
+var plato = require('plato');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -84,8 +85,28 @@ gulp.task('deps', function() {
 
 //generate jsdoc documentation
 gulp.task( 'jsdoc', shell.task( [
-'node ./node_modules/jsdoc/jsdoc ../../js -r -c ./conf.json -a all -d ../../doc --package ./package.json'
+'node ./node_modules/jsdoc/jsdoc ../../js -r -c ./conf.json -a all -d ../../doc'
 ] ) );
+
+//generate plato code analysis
+gulp.task( 'plato', function(){
+    var files = ['../../js'];
+
+    var outputDir = '../../doc/stats';
+// null options for this example
+    var options = {
+        exclude: /.*(lib+).*js/,
+        recurse: true
+
+    };
+
+    var callback = function (report){
+// once done the analysis,
+// execute this
+    };
+
+    plato.inspect(files, outputDir, options, callback);
+} );
 
 //generate yuidoc
 gulp.task('yuidoc', function() {
@@ -108,4 +129,4 @@ gulp.task('watch', function() {
 
 gulp.task('default', [  'sass', 'closure', 'deps', 'jsdoc', 'watch']);
 
-gulp.task('publish', [ 'sass', 'closure', 'deps', 'jsdoc']);
+gulp.task('publish', [ 'sass', 'closure', 'deps', 'jsdoc', 'plato']);
