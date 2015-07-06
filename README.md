@@ -16,6 +16,7 @@ npm install gulp -g
 ```node
 cd DVT/js/lib
 npm install
+npm install bower -g
 bower install
 ```
 </li>
