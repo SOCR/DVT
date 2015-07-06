@@ -41,9 +41,15 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
+                <li><a href="../classes/loader.html">loader</a></li>
+            
+                <li><a href="../classes/loadHelper.html">loadHelper</a></li>
+            
             </ul>
 
             <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/DVTloader.html">DVTloader</a></li>
             
             </ul>
         </div>
@@ -96,6 +102,13 @@ goog.provide(&#x27;DVT.loader&#x27;);
 goog.require(&#x27;DVT&#x27;);
 goog.require(&#x27;DVT.loadHelper&#x27;);
 
+/**
+ * Provide base DVT loader
+ * 
+ * @module DVTloader
+ * 
+ */
+
 DVT.getLoader = (
     function () {
         var resourceLoader=new DVT.loader();
@@ -105,6 +118,7 @@ DVT.getLoader = (
 
 /**
  * Creates a loader for binary or ASCII data
+ * @class loader
  * @constructor
  */
 DVT.loader=function(){

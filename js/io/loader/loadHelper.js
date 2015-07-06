@@ -8,9 +8,11 @@ goog.require('DVT');
 
 /**
  * creates a loadHelper object
+ * @class loadHelper
  * @constructor
  * @param index
  * @param filepath
+ * @param modalID
  */
 DVT.loadHelper=function(index, filepath, modalID)
 {
