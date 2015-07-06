@@ -130,7 +130,17 @@ DVT.loadHelper.prototype.updateRender=function(oEvent)
     }
 };
 
+DVT.loadHelper.prototype.finishLoad=function()
+{
+
+};
+
 DVT.loadHelper.prototype._addElement=function(elementID)
 {
     $('#'+this._modalID+' .modal-body').append('<div id='+ elementID + '></div>');
+};
+
+DVT.loadHelper.prototype._removeElement=function()
+{
+
 };
