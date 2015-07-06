@@ -7,17 +7,53 @@ goog.provide('DVT.loadHelper');
 goog.require('DVT');
 
 /**
+ * creates a loadHelper object
  * @constructor
  * @param index
  * @param filepath
  */
 DVT.loadHelper=function(index, filepath, modalID)
 {
+    /**
+     * index number in file queue
+     * @private
+     * @type {number}
+     */
     this._index=index;
+
+    /**
+     * path of the file to load
+     * @private
+     * @type {string}
+     */
     this._filepath = filepath;
+
+    /**
+     * id to html element for load bar
+     * @type {string}
+     * @private
+     */
     this._loadID='loadBar'+this._index;
+
+    /**
+     * id to html element for parse progress bar
+     * @type {string}
+     * @private
+     */
     this._parseID='parseBar'+this._index;
+
+    /**
+     * id to html element for render progress bar
+     * @type {string}
+     * @private
+     */
     this._renderID='renderBar'+this._index;
+
+    /**
+     * id to modal body
+     * @type {string}
+     * @private
+     */
     this._modalID=modalID;
 
     //add progress bar elements to modal window
@@ -52,12 +88,49 @@ DVT.loadHelper=function(index, filepath, modalID)
     });
 };
 
-DVT.loadHelper.prototype.updateLoad=function()
+/**
+ * updates progressbar to reflect current loading status
+ * @param oEvent the returned event
+ */
+DVT.loadHelper.prototype.updateLoad=function(oEvent)
 {
+    if (oEvent.lengthComputable) {
+        var percentComplete = oEvent.loaded / oEvent.total;
+        this._loadLine.animate(percentComplete);
+    } else {
+        this._loadLine.animate(0.5);
+    }
+};
 
+/**
+ * updates progressbar to reflect current parsing status
+ * @param oEvent the returned event
+ */
+DVT.loadHelper.prototype.updateParse=function(oEvent)
+{
+    if (oEvent.lengthComputable) {
+        var percentComplete = oEvent.loaded / oEvent.total;
+        this._parseLine.animate(percentComplete);
+    } else {
+        this._parseLine.animate(0.5);
+    }
+};
+
+/**
+ * updates progressbar to reflect current loading status
+ * @param oEvent the returned event
+ */
+DVT.loadHelper.prototype.updateRender=function(oEvent)
+{
+    if (oEvent.lengthComputable) {
+        var percentComplete = oEvent.loaded / oEvent.total;
+        this._renderLine.animate(percentComplete);
+    } else {
+        this._renderLine.animate(0.5);
+    }
 };
 
 DVT.loadHelper.prototype._addElement=function(elementID)
 {
     $('#'+this._modalID+' .modal-body').append('<div id='+ elementID + '></div>');
-}
+};
