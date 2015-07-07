@@ -1,6 +1,10 @@
 /**
  * Created by shusa_000 on 6/29/2015.
  */
+
+"use strict";
+
+
 goog.provide('DVT.renderer');
 
 
@@ -28,10 +32,10 @@ goog.require('DVT.base');
 goog.require('goog.dom');
 goog.require('DVT.dataContainer');
 goog.require('DVT.event');
-goog.require('DVT.array');
+//goog.require('DVT.array');
 goog.require('DVT.loader');
-goog.require('DVT.progressbar');
-goog.require('goog.Timer');
+//goog.require('DVT.progressbar');
+//goog.require('goog.Timer');
 
 /**
  * The superclass for all renderers.
@@ -39,13 +43,7 @@ goog.require('goog.Timer');
  * @constructor
  * @extends DVT.base
  */
-X.renderer = function() {
-
-    /**
-     * @inheritDoc
-     * @const
-     */
-    this._classname = 'renderer';
+DVT.renderer = function() {
 
     /**
      * The HTML container of this renderer, E.g. a <div>.
@@ -88,19 +86,19 @@ X.renderer = function() {
     this._height = this._container.clientHeight;
 
     /**
-     * An X.array containing the displayable objects of this renderer. The object
+     * An DVT.array containing the displayable objects of this renderer. The object
      * reflects the rendering order for the associated objects.
      *
-     * @type {!X.array}
+     * @type {!DVT.array}
      * @protected
      */
-    this._objects = new X.array(X.dataContainer.OPACITY_COMPARATOR);
+    this._objects = new DVT.array(DVT.dataContainer.OPACITY_COMPARATOR);
 
 
     /**
      * The loader associated with this renderer.
      *
-     * @type {?X.loader}
+     * @type {?DVT.loader}
      * @protected
      */
     this._loader = null;
@@ -120,7 +118,7 @@ X.renderer = function() {
     /**
      * The progressBar of this renderer.
      *
-     * @type {?X.progressbar}
+     * @type {?DVT.progressbar}
      * @protected
      */
     this._progressBar = null;
@@ -128,7 +126,7 @@ X.renderer = function() {
     /**
      * The progressBar for computing progress.
      *
-     * @type {?X.progressbar}
+     * @type {?DVT.progressbar}
      * @protected
      */
     this._progressBar2 = null;
@@ -138,7 +136,7 @@ X.renderer = function() {
     // ________________________________________________________________________________________________________________________
     // ________________________________________________________________________________________________________________________
     //
-    // call the standard constructor of X.base
+    // call the standard constructor of DVT.base
     goog.base(this);
 
 
@@ -147,18 +145,18 @@ X.renderer = function() {
         .log('XTK release 10 -- ###TIMESTAMP### -- http://www.goXTK.com -- @goXTK');
 
 };
-// inherit from X.base
-goog.inherits(X.renderer, X.base);
+// inherit from DVT.base
+goog.inherits(DVT.renderer, DVT.base);
 
 
 /**
- * The callback for X.event.events.COMPUTING events which indicate computing
+ * The callback for DVT.event.events.COMPUTING events which indicate computing
  * for volume rendering
  *
- * @param {!X.event.ComputingEvent} event The computing event.
+ * @param {!DVT.event.ComputingEvent} event The computing event.
  * @public
  */
-X.renderer.prototype.onComputing = function(event) {
+DVT.renderer.prototype.onComputing = function(event) {
 
     // stop the rendering loop
     window.cancelAnimationFrame(this._AnimationFrameID);
@@ -166,7 +164,7 @@ X.renderer.prototype.onComputing = function(event) {
     // only do the following if the progressBar was not turned off
     if (this._config['PROGRESSBAR_ENABLED']) {
 
-        this._progressBar2 = new X.progressbar(this._container, 3);
+        this._progressBar2 = new DVT.progressbar(this._container, 3);
 
     }
 
@@ -174,13 +172,13 @@ X.renderer.prototype.onComputing = function(event) {
 
 
 /**
- * The callback for X.event.events.COMPUTING_END events which indicate the end of computing
+ * The callback for DVT.event.events.COMPUTING_END events which indicate the end of computing
  * for volume rendering
  *
- * @param {!X.event.ComputingEndEvent} event The computing end event.
+ * @param {!DVT.event.ComputingEndEvent} event The computing end event.
  * @public
  */
-X.renderer.prototype.onComputingEnd = function(event) {
+DVT.renderer.prototype.onComputingEnd = function(event) {
 
     // only do the following if the progressBar was not turned off
     if (this._config['PROGRESSBAR_ENABLED']) {
@@ -222,14 +220,14 @@ X.renderer.prototype.onComputingEnd = function(event) {
 
 
 /**
- * The callback for X.event.events.COMPUTING_PROGRESS events which indicate progress
+ * The callback for DVT.event.events.COMPUTING_PROGRESS events which indicate progress
  * updates during computing.
  *
- * @param {!X.event.ComputingProgressEvent} event The progress event holding the total
+ * @param {!DVT.event.ComputingProgressEvent} event The progress event holding the total
  *          progress value.
  * @public
  */
-X.renderer.prototype.onComputingProgress = function(event) {
+DVT.renderer.prototype.onComputingProgress = function(event) {
 
     if (this._progressBar2) {
 
@@ -242,14 +240,14 @@ X.renderer.prototype.onComputingProgress = function(event) {
 
 
 /**
- * The callback for X.event.events.PROGRESS events which indicate progress
+ * The callback for DVT.event.events.PROGRESS events which indicate progress
  * updates during loading.
  *
- * @param {!X.event.ProgressEvent} event The progress event holding the total
+ * @param {!DVT.event.ProgressEvent} event The progress event holding the total
  *          progress value.
  * @public
  */
-X.renderer.prototype.onProgress = function(event) {
+DVT.renderer.prototype.onProgress = function(event) {
 
     if (this._progressBar) {
 
@@ -262,16 +260,16 @@ X.renderer.prototype.onProgress = function(event) {
 
 //***********PASTE??**********
 /**
- * The callback for X.event.events.MODIFIED events which re-configures the
+ * The callback for DVT.event.events.MODIFIED events which re-configures the
  * object for rendering. This does not trigger re-rendering.
  *
- * @param {!X.event.ModifiedEvent} event The modified event pointing to the
+ * @param {!DVT.event.ModifiedEvent} event The modified event pointing to the
  *          modified object.
  * @public
  */
-X.renderer.prototype.onModified = function(event) {console.log('Function call: onModified in renderer')
+DVT.renderer.prototype.onModified = function(event) {console.log('Function call: onModified in renderer')
 
-    if (goog.isDefAndNotNull(event) && event instanceof X.event.ModifiedEvent) {
+    if (goog.isDefAndNotNull(event) && event instanceof DVT.event.ModifiedEvent) {
 
         if (!event._dataContainer) {
             // we need an object here
@@ -286,17 +284,17 @@ X.renderer.prototype.onModified = function(event) {console.log('Function call: o
 };
 
 /**
- * The callback for X.event.events.REMOVE events which re-configures the
+ * The callback for DVT.event.events.REMOVE events which re-configures the
  * object for rendering. This does not trigger re-rendering.
  *
- * @param {!X.event.RemoveEvent} event The modified event pointing to the
+ * @param {!DVT.event.RemoveEvent} event The modified event pointing to the
  *          modified object.
  * @public
  */
 //***********PASTE??**********
-X.renderer.prototype.onRemove = function(event) {
+DVT.renderer.prototype.onRemove = function(event) {
 
-    if (goog.isDefAndNotNull(event) && event instanceof X.event.RemoveEvent) {
+    if (goog.isDefAndNotNull(event) && event instanceof DVT.event.RemoveEvent) {
 
         if (!event._object) {
 
@@ -313,17 +311,17 @@ X.renderer.prototype.onRemove = function(event) {
 
 
 /**
- * The callback for X.event.events.HOVER events which indicate a hovering over
+ * The callback for DVT.event.events.HOVER events which indicate a hovering over
  * the viewport.
  *
- * @param {!X.event.HoverEvent} event The hover event pointing to the relevant
+ * @param {!DVT.event.HoverEvent} event The hover event pointing to the relevant
  *          screen coordinates.
  * @throws {Error} An error if the given event is invalid.
  * @protected
  */
-X.renderer.prototype.onHover_ = function(event) {
+DVT.renderer.prototype.onHover_ = function(event) {
 
-    if (!goog.isDefAndNotNull(event) || !(event instanceof X.event.HoverEvent)) {
+    if (!goog.isDefAndNotNull(event) || !(event instanceof DVT.event.HoverEvent)) {
 
         throw new Error('Invalid hover event.');
 
@@ -335,7 +333,7 @@ X.renderer.prototype.onHover_ = function(event) {
 /**
  * @protected
  */
-X.renderer.prototype.onResize_ = function() {
+DVT.renderer.prototype.onResize_ = function() {
     this.resize();
 };
 
@@ -343,7 +341,7 @@ X.renderer.prototype.onResize_ = function() {
 /**
  * Resizes the control to fit the size of the container.
  */
-X.renderer.prototype.resize = function() {
+DVT.renderer.prototype.resize = function() {
 
     // grab the new width and height of the container
     var container = goog.dom.getElement(this._container);
@@ -361,7 +359,7 @@ X.renderer.prototype.resize = function() {
         this._context.viewport(0, 0, this._width, this._height);
 
         // modify perspective
-        this._camera._perspective = X.matrix.makePerspective(X.matrix.identity(), this._camera._fieldOfView, (this._canvas.width/this._canvas.height), 1, 10000);
+        this._camera._perspective = DVT.matriDVT.makePerspective(DVT.matriDVT.identity(), this._camera._fieldOfView, (this._canvas.width/this._canvas.height), 1, 10000);
 
     }
 
@@ -372,17 +370,17 @@ X.renderer.prototype.resize = function() {
 
 
 /**
- * The callback for X.event.events.SCROLL events which indicate scrolling of the
+ * The callback for DVT.event.events.SCROLL events which indicate scrolling of the
  * viewport.
  *
- * @param {!X.event.ScrollEvent} event The scroll event indicating the scrolling
+ * @param {!DVT.event.ScrollEvent} event The scroll event indicating the scrolling
  *          direction.
  * @throws {Error} An error if the given event is invalid.
  * @protected
  */
-X.renderer.prototype.onScroll_ = function(event) {
+DVT.renderer.prototype.onScroll_ = function(event) {
 
-    if (!goog.isDefAndNotNull(event) || !(event instanceof X.event.ScrollEvent)) {
+    if (!goog.isDefAndNotNull(event) || !(event instanceof DVT.event.ScrollEvent)) {
 
         throw new Error('Invalid scroll event.');
 
@@ -404,7 +402,7 @@ X.renderer.prototype.onScroll_ = function(event) {
  *
  * @return {Object} The configuration.
  */
-X.renderer.prototype.__defineGetter__('config', function() {
+DVT.renderer.prototype.__defineGetter__('config', function() {
 
     return this._config;
 
@@ -415,9 +413,9 @@ X.renderer.prototype.__defineGetter__('config', function() {
  * Get the interactor of this renderer. The interactor is null until this
  * renderer is initialized.
  *
- * @return {?X.interactor} The interactor.
+ * @return {?DVT.interactor} The interactor.
  */
-X.renderer.prototype.__defineGetter__('interactor', function() {
+DVT.renderer.prototype.__defineGetter__('interactor', function() {
 
     return this._interactor;
 
@@ -428,9 +426,9 @@ X.renderer.prototype.__defineGetter__('interactor', function() {
  * Get the camera of this renderer. The camera is null until this renderer is
  * initialized.
  *
- * @return {?X.camera} The camera.
+ * @return {?DVT.camera} The camera.
  */
-X.renderer.prototype.__defineGetter__('camera', function() {
+DVT.renderer.prototype.__defineGetter__('camera', function() {
 
     return this._camera;
 
@@ -444,7 +442,7 @@ X.renderer.prototype.__defineGetter__('camera', function() {
  * @return {boolean} TRUE if all objects were completely loaded, FALSE else
  *         wise.
  */
-X.renderer.prototype.__defineGetter__('loadingCompleted', function() {
+DVT.renderer.prototype.__defineGetter__('loadingCompleted', function() {
 
     return this._loadingCompleted;
 
@@ -457,7 +455,7 @@ X.renderer.prototype.__defineGetter__('loadingCompleted', function() {
  * @return {!Element|HTMLBodyElement} The container of this renderer.
  * @public
  */
-X.renderer.prototype.__defineGetter__('container', function() {
+DVT.renderer.prototype.__defineGetter__('container', function() {
 
     return this._container;
 
@@ -466,14 +464,14 @@ X.renderer.prototype.__defineGetter__('container', function() {
 
 /**
  * Set the container for this renderer. This has to happen before
- * X.renderer.init() is called.
+ * DVT.renderer.init() is called.
  *
  * @param {!string|Element|HTMLBodyElement} container Either an ID to a DOM
  *          container or the DOM element itself.
  * @throws {Error} An error, if the given container is invalid.
  * @public
  */
-X.renderer.prototype.__defineSetter__('container', function(container) {
+DVT.renderer.prototype.__defineSetter__('container', function(container) {
 
     // check if a container is passed
     if (!goog.isDefAndNotNull(container)) {
@@ -509,7 +507,7 @@ X.renderer.prototype.__defineSetter__('container', function(container) {
  * objects, the configured camera position as well as its focus _and_ triggers
  * re-rendering.
  */
-X.renderer.prototype.resetViewAndRender = function() {
+DVT.renderer.prototype.resetViewAndRender = function() {
 
     this._camera.reset();
     // this.render_(false, false);
@@ -522,7 +520,7 @@ X.renderer.prototype.resetViewAndRender = function() {
  *
  * @protected
  */
-X.renderer.prototype.showProgressBar_ = function() {
+DVT.renderer.prototype.showProgressBar_ = function() {
 
     // only do the following if the progressBar was not turned off
     if (this._config['PROGRESSBAR_ENABLED']) {
@@ -531,7 +529,7 @@ X.renderer.prototype.showProgressBar_ = function() {
         // loader is working
         if (!this._progressBar) {
 
-            this._progressBar = new X.progressbar(this._container, 3);
+            this._progressBar = new DVT.progressbar(this._container, 3);
 
         }
 
@@ -545,7 +543,7 @@ X.renderer.prototype.showProgressBar_ = function() {
  *
  * @protected
  */
-X.renderer.prototype.hideProgressBar_ = function() {
+DVT.renderer.prototype.hideProgressBar_ = function() {
 
     // only do the following if the progressBar was not turned off
     if (this._config['PROGRESSBAR_ENABLED']) {
@@ -591,7 +589,7 @@ X.renderer.prototype.hideProgressBar_ = function() {
  * @throws {Error} An exception if there were problems during initialization.
  * @protected
  */
-X.renderer.prototype.init = function(_contextName) {
+DVT.renderer.prototype.init = function(_contextName) {
 
     // create the canvas
     var _canvas = goog.dom.createDom('canvas');
@@ -611,11 +609,11 @@ X.renderer.prototype.init = function(_contextName) {
     _canvas.height = this._height;
 
     this._canvas=_canvas;
-    this._loader = new X.loader();
+    this._loader = new DVT.loader();
 
     // listen to a progress event which gets fired during loading whenever
     // progress was made
-    goog.events.listen(this._loader, X.event.events.PROGRESS, this.onProgress.bind(this));
+    goog.events.listen(this._loader, DVT.event.events.PROGRESS, this.onProgress.bind(this));
 
     /* 
      // the container might have resized now, so update our width and height
@@ -667,7 +665,7 @@ X.renderer.prototype.init = function(_contextName) {
      }
 
      //
-     // Step 1b: Configure the X.loader
+     // Step 1b: Configure the DVT.loader
      //
 
      //
@@ -686,25 +684,25 @@ X.renderer.prototype.init = function(_contextName) {
 
      //
      // create a new interactor
-     var _interactor = new X.interactor3D(this._canvas);
+     var _interactor = new DVT.interactor3D(this._canvas);
 
      // in the 2d case, create a 2d interactor (of course..)
      if (_contextName == '2d') {
 
-     _interactor = new X.interactor2D(this._canvas);
+     _interactor = new DVT.interactor2D(this._canvas);
 
      }
      // initialize it and..
      _interactor.init();
 
      // .. listen to resetViewEvents
-     goog.events.listen(_interactor, X.event.events.RESETVIEW,
+     goog.events.listen(_interactor, DVT.event.events.RESETVIEW,
      this.resetViewAndRender.bind(this));
      // .. listen to hoverEvents
-     goog.events.listen(_interactor, X.event.events.HOVER, this.onHover_
+     goog.events.listen(_interactor, DVT.event.events.HOVER, this.onHover_
      .bind(this));
      // .. listen to scroll events
-     goog.events.listen(_interactor, X.event.events.SCROLL, this.onScroll_
+     goog.events.listen(_interactor, DVT.event.events.SCROLL, this.onScroll_
      .bind(this));
 
      // .. and finally register it to this instance
@@ -713,17 +711,17 @@ X.renderer.prototype.init = function(_contextName) {
      //
      // create a new camera
      // width and height are required to calculate the perspective
-     var _camera = new X.camera3D(this._width, this._height);
+     var _camera = new DVT.camera3D(this._width, this._height);
 
      if (_contextName == '2d') {
-     _camera = new X.camera2D(this._width, this._height);
+     _camera = new DVT.camera2D(this._width, this._height);
      }
      // observe the interactor for user interactions (mouse-movements etc.)
      _camera.observe(this._interactor);
      // ..listen to render requests from the camera
      // these get fired after user-interaction and camera re-positioning to re-draw
      // all objects
-     // goog.events.listen(_camera, X.event.events.RENDER, this.render_.bind(this,
+     // goog.events.listen(_camera, DVT.event.events.RENDER, this.render_.bind(this,
      // false, false));
 
      //
@@ -745,18 +743,18 @@ X.renderer.prototype.init = function(_contextName) {
 
 /**
  * Add a new object to this renderer. The renderer has to be initialized before
- * doing so. A X.renderer.render() call has to be initiated to display added
+ * doing so. A DVT.renderer.render() call has to be initiated to display added
  * objects.
  *
- * @param {!X.object} object The object to add to this renderer.
+ * @param {!DVT.object} object The object to add to this renderer.
  * @throws {Error} An exception if something goes wrong.
  */
-X.renderer.prototype.add = function(object) {
+DVT.renderer.prototype.add = function(object) {
 
     // for constructable objects (e.g. cube, sphere, cylinder), we call the
     // modified() function to generate the CSG representations
-    /*  if (object instanceof X.cube || object instanceof X.sphere ||
-     object instanceof X.cylinder) {
+    /*  if (object instanceof DVT.cube || object instanceof DVT.sphere ||
+     object instanceof DVT.cylinder) {
 
      object.modified();
 
@@ -774,12 +772,12 @@ X.renderer.prototype.add = function(object) {
 /**
  * Remove an existing object and all its children from the rendering context.
  *
- * @param {!X.object} object The object to remove from the renderer.
+ * @param {!DVT.object} object The object to remove from the renderer.
  * @return {boolean} TRUE or FALSE depending on success.
  * @throws {Error} An exception if something goes wrong.
  * @public
  */
-X.renderer.prototype.remove = function(object) {
+DVT.renderer.prototype.remove = function(object) {
 
     if (!this._canvas || !this._context) {
 
@@ -818,15 +816,15 @@ X.renderer.prototype.remove = function(object) {
 
 /**
  * Configure a displayable object within this renderer. The object can be a
- * newly created one or an existing one. A X.renderer.render() call has to be
+ * newly created one or an existing one. A DVT.renderer.render() call has to be
  * initiated to display the object.
  *
- * @param {!X.object} object The displayable object to setup within this
+ * @param {!DVT.object} object The displayable object to setup within this
  *          renderer.
  * @throws {Error} An exception if something goes wrong.
  * @protected
  */
-X.renderer.prototype.update_ = function(object) {console.log('Function Call: update_ in renderer')
+DVT.renderer.prototype.update_ = function(object) {console.log('Function Call: update_ in renderer')
     if (!this._canvas || !this._context) {
 
         throw new Error('The renderer was not initialized properly.');
@@ -841,37 +839,37 @@ X.renderer.prototype.update_ = function(object) {console.log('Function Call: upd
     }
     else {
 
-        if(!goog.events.hasListener(object, X.event.events.MODIFIED)) {
+        if(!goog.events.hasListener(object, DVT.event.events.MODIFIED)) {
 
-            goog.events.listen(object, X.event.events.MODIFIED, this.onModified
+            goog.events.listen(object, DVT.event.events.MODIFIED, this.onModified
                 .bind(this));
 
         }
 
-        if(!goog.events.hasListener(object, X.event.events.REMOVE)) {
+        if(!goog.events.hasListener(object, DVT.event.events.REMOVE)) {
 
-            goog.events.listen(object, X.event.events.REMOVE, this.onRemove
+            goog.events.listen(object, DVT.event.events.REMOVE, this.onRemove
                 .bind(this));
 
         }
 
-        if(!goog.events.hasListener(object, X.event.events.COMPUTING)) {
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING)) {
 
-            goog.events.listen(object, X.event.events.COMPUTING, this.onComputing
+            goog.events.listen(object, DVT.event.events.COMPUTING, this.onComputing
                 .bind(this));
 
         }
 
-        if(!goog.events.hasListener(object, X.event.events.COMPUTING_PROGRESS)) {
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_PROGRESS)) {
 
-            goog.events.listen(object, X.event.events.COMPUTING_PROGRESS, this.onComputingProgress
+            goog.events.listen(object, DVT.event.events.COMPUTING_PROGRESS, this.onComputingProgress
                 .bind(this));
 
         }
 
-        if(!goog.events.hasListener(object, X.event.events.COMPUTING_END)) {
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_END)) {
 
-            goog.events.listen(object, X.event.events.COMPUTING_END, this.onComputingEnd
+            goog.events.listen(object, DVT.event.events.COMPUTING_END, this.onComputingEnd
                 .bind(this));
 
         }
@@ -882,14 +880,14 @@ X.renderer.prototype.update_ = function(object) {console.log('Function Call: upd
 
 
 /**
- * Get the existing X.object with the given id.
+ * Get the existing DVT.object with the given id.
  *
  * @param {!number} id The object's id.
- * @return {?X.object} The requested X.object or null if it was not found.
+ * @return {?DVT.object} The requested DVT.object or null if it was not found.
  * @throws {Error} If the given id was invalid.
  * @public
  */
-X.renderer.prototype.get = function(id) {
+DVT.renderer.prototype.get = function(id) {
 
     if (!goog.isDefAndNotNull(id)) {
 
@@ -924,7 +922,7 @@ X.renderer.prototype.get = function(id) {
  *
  * @public
  */
-X.renderer.prototype.printScene = function() {
+DVT.renderer.prototype.printScene = function() {
 
     var _numberOfTopLevelObjects = this._topLevelObjects.length;
     // window.console.log(_numberOfTopLevelObjects);
@@ -945,11 +943,11 @@ X.renderer.prototype.printScene = function() {
 /**
  * Recursively loop through a hierarchy tree of objects and print it.
  *
- * @param {!X.object} object The starting point object.
+ * @param {!DVT.object} object The starting point object.
  * @param {number} level The current level in the scene hierarchy.
  * @protected
  */
-X.renderer.prototype.generateTree_ = function(object, level) {
+DVT.renderer.prototype.generateTree_ = function(object, level) {
 
     // for slices, container is right size but empty
     if(typeof(object) == 'undefined'){
@@ -995,7 +993,7 @@ X.renderer.prototype.generateTree_ = function(object, level) {
  *
  * @public
  */
-X.renderer.prototype.render = function() {
+DVT.renderer.prototype.render = function() {
 
     if (!this._canvas || !this._context) {
 
@@ -1073,7 +1071,7 @@ X.renderer.prototype.render = function() {
         // if we have a progress bar
         if (this._progressBar) {
 
-            // this means the X.loader is done..
+            // this means the DVT.loader is done..
             this.hideProgressBar_();
 
             // .. we exit here since the hiding takes some time and automatically
@@ -1106,7 +1104,7 @@ X.renderer.prototype.render = function() {
  *
  * @public
  */
-X.renderer.prototype.onShowtime = function() {
+DVT.renderer.prototype.onShowtime = function() {
 
     // do nothing
 };
@@ -1117,7 +1115,7 @@ X.renderer.prototype.onShowtime = function() {
  *
  * @public
  */
-X.renderer.prototype.onRender = function() {
+DVT.renderer.prototype.onRender = function() {
 
     // do nothing
 };
@@ -1128,14 +1126,14 @@ X.renderer.prototype.onRender = function() {
  *
  * @public
  */
-X.renderer.prototype.afterRender = function() {
+DVT.renderer.prototype.afterRender = function() {
 
     // do nothing
 };
 
 /**
  * Internal function to perform the actual rendering by looping through all
- * associated X.objects.
+ * associated DVT.objects.
  *
  * @param {boolean} picking If TRUE, perform picking - if FALSE render to the
  *          canvas viewport.
@@ -1144,7 +1142,7 @@ X.renderer.prototype.afterRender = function() {
  * @throws {Error} If anything goes wrong.
  * @protected
  */
-X.renderer.prototype.render_ = function(picking, invoked) {
+DVT.renderer.prototype.render_ = function(picking, invoked) {
 
 
 
@@ -1156,7 +1154,7 @@ X.renderer.prototype.render_ = function(picking, invoked) {
  *
  * @public
  */
-X.renderer.prototype.destroy = function() {
+DVT.renderer.prototype.destroy = function() {
 
     // disconnect events listeners
     goog.events.removeAll(this);
