@@ -4,30 +4,15 @@
 //
 // check if we test the dev tree or the build tree
 //
-if (location.href.match(/(\?|&)build($|&|=)/)) {
 
-    // testing the BUILD tree
-    addJavascript('../../utils/xtk.js', 'head');
-
-    console.log('Testing the BUILD tree.');
-
-} else {
 
     console.log('Testing the DEV tree.');
 
-    // includes
-//  goog.require('X.renderer2D');
-    console.log('!!!')
-    goog.require('X.renderer3D');
-    console.log('!!')
-    goog.require('X.fibers');
-//  goog.require('X.mesh');
-//  goog.require('X.volume');
-//  goog.require('X.cube');
-//  goog.require('X.sphere');
-//  goog.require('X.cylinder');
-
-}
+//  goog.require('DVT.renderer2D');
+    console.log('!!!');
+    goog.require('DVT.renderer3D');
+    console.log('!!');
+    goog.require('DVT.fibers');
 
 /**
  * From http://javascript.about.com/library/bladdjs.htm Import javascript.
