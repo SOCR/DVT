@@ -4,106 +4,9 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="Initialize testing suite&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/css/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/js/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/testTRK.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/vendor/prettify/CHANGES.html" afterPath="$PROJECT_DIR$/doc/assets/vendor/prettify/CHANGES.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/vendor/prettify/COPYING" afterPath="$PROJECT_DIR$/doc/assets/vendor/prettify/COPYING" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/vendor/prettify/README.html" afterPath="$PROJECT_DIR$/doc/assets/vendor/prettify/README.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/js/api-filter.js" afterPath="$PROJECT_DIR$/doc/assets/js/api-filter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/js/api-list.js" afterPath="$PROJECT_DIR$/doc/assets/js/api-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/js/api-search.js" afterPath="$PROJECT_DIR$/doc/assets/js/api-search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/api.js" afterPath="$PROJECT_DIR$/doc/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/js/apidocs.js" afterPath="$PROJECT_DIR$/doc/assets/js/apidocs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/bootstrap-popover.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/bootstrap-popover.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/bootstrap-tooltip.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/bootstrap-tooltip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/vendor/bootstrap.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/vendor/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/closetag.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/closetag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/vendor/codemirror.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/vendor/codemirror.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/bundles/codemirror.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/bundles/codemirror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/codemirror.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/codemirror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/codemirror.markpopovertext.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/codemirror.markpopovertext.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/colorize.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/colorize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/continuecomment.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/continuecomment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/continuelist.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/continuelist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/bundles/core-bundle.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/bundles/core-bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/dialog.css" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/dialog.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/dialog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/display.html" afterPath="$PROJECT_DIR$/doc/stats/display.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/foldcode.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/foldcode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/vendor/font-awesome.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/vendor/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/font/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/doc/stats/assets/font/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/formatting.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/formatting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/index.html" afterPath="$PROJECT_DIR$/doc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/index.html" afterPath="$PROJECT_DIR$/doc/assets/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/index.html" afterPath="$PROJECT_DIR$/doc/stats/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/index.html" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/javascript-hint.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/javascript-hint.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/javascript.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/jquery.fittext.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/jquery.fittext.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/loadmode.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/loadmode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/lodash.min.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/lodash.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/css/main.css" afterPath="$PROJECT_DIR$/doc/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/match-highlighter.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/match-highlighter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/matchbrackets.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/matchbrackets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/morris.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/morris.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/vendor/morris.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/vendor/morris.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/multiplex.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/multiplex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/overlay.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/overlay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/pig-hint.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/pig-hint.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/plato-display.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/plato-display.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-display.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-display.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/plato-file.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/plato-file.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-file.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-file.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/plato-overview.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/plato-overview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-overview.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-overview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-sortable-file-list.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/plato-sortable-file-list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/css/plato.css" afterPath="$PROJECT_DIR$/doc/stats/assets/css/plato.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/raphael-min.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/raphael-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.js" afterPath="$PROJECT_DIR$/doc/stats/report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.json" afterPath="$PROJECT_DIR$/doc/stats/report.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/runmode-standalone.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/runmode-standalone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/runmode.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/runmode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/search.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/searchcursor.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/searchcursor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/simple-hint.css" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/simple-hint.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/simple-hint.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/simple-hint.js" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/xml-hint.js" afterPath="$PROJECT_DIR$/doc/stats/assets/scripts/vendor/codemirror/util/xml-hint.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/assets/js/yui-prettify.js" afterPath="$PROJECT_DIR$/doc/assets/js/yui-prettify.js" />
     </list>
     <ignored path="DVT.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,8 +31,10 @@
         <entry file="file://$PROJECT_DIR$/js/DVT.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,8 +43,10 @@
         <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-              <folding />
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+              <folding>
+                <marker date="1436258307397" expanded="true" signature="408:428" placeholder="/** Creates a loader for binary or ASCII data ...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,9 +55,10 @@
         <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
+                <marker date="1436258307396" expanded="true" signature="114:242" placeholder="/** creates a loadHelper object ...*/" />
               </folding>
             </state>
           </provider>
@@ -262,6 +170,7 @@
         <option value="$PROJECT_DIR$/test/js/default.js" />
         <option value="$PROJECT_DIR$/test/testTRK.html" />
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -381,20 +290,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -575,7 +470,13 @@
       <option name="project" value="LOCAL" />
       <updated>1436179283383</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Initialize testing suite&#10;">
+      <created>1436258277749</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1436258277749</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -645,6 +546,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Imported npm and Gulp&#10;" />
     <MESSAGE value="test commit&#10;" />
     <MESSAGE value="create gulpfile" />
@@ -669,16 +571,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/io/loader/listeners.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -983,8 +875,10 @@
     <entry file="file://$PROJECT_DIR$/js/DVT.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,17 +895,20 @@
     <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="19" selection-start-line="75" selection-start-column="19" selection-end-line="75" selection-end-column="19" />
-          <folding />
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+          <folding>
+            <marker date="1436258307397" expanded="true" signature="408:428" placeholder="/** Creates a loader for binary or ASCII data ...*/" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1436258307396" expanded="true" signature="114:242" placeholder="/** creates a loadHelper object ...*/" />
           </folding>
         </state>
       </provider>
@@ -1060,6 +957,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2982456">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21356784">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
