@@ -16,6 +16,7 @@ npm install gulp -g
 ```node
 cd DVT/js/lib
 npm install
+npm install bower -g
 bower install
 ```
 </li>
@@ -26,3 +27,17 @@ To compile:
 cd DVT/js/lib
 gulp 
 ```
+
+## Objective
+
+The DVT is a framework from which one can visualize dynamic 4-D models from a given file.
+This includes, but is not limited to:
+
+<li> Animated brain tractographies (.TRK files) </li>
+
+<li> Animated meshes </li>
+
+<li> Dynamic volume rendering </li>
+
+<li> Cell and nuclear visualization </li>
+

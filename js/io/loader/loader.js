@@ -10,6 +10,7 @@ goog.provide('DVT.loader');
 goog.require('DVT');
 goog.require('DVT.loadHelper');
 
+
 DVT.getLoader = (
     function () {
         var resourceLoader=new DVT.loader();
@@ -19,6 +20,7 @@ DVT.getLoader = (
 
 /**
  * Creates a loader for binary or ASCII data
+ * @class loader
  * @constructor
  */
 DVT.loader=function(){
