@@ -30,8 +30,8 @@ goog.provide('DVT.renderer');
  */
 goog.require('DVT.base');
 goog.require('goog.dom');
-goog.require('DVT.dataContainer');
-goog.require('DVT.event');
+//goog.require('DVT.dataContainer');
+//goog.require('DVT.event');
 //goog.require('DVT.array');
 goog.require('DVT.loader');
 //goog.require('DVT.progressbar');
@@ -609,13 +609,13 @@ DVT.renderer.prototype.init = function(_contextName) {
     _canvas.height = this._height;
 
     this._canvas=_canvas;
-    this._loader = new DVT.loader();
+    this._loader = DVT.getLoader();
 
     // listen to a progress event which gets fired during loading whenever
     // progress was made
-    goog.events.listen(this._loader, DVT.event.events.PROGRESS, this.onProgress.bind(this));
+    //goog.events.listen(this._loader, DVT.event.events.PROGRESS, this.onProgress.bind(this));
 
-    /* 
+    /
      // the container might have resized now, so update our width and height
      // settings
      this._width = this._container.clientWidth;
@@ -624,7 +624,7 @@ DVT.renderer.prototype.init = function(_contextName) {
      // width and height can not be set using CSS but via object properties
      _canvas.width = this._width;
      _canvas.height = this._height;
-
+/*
 
      // --------------------------------------------------------------------------
      //
