@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Plato - ../../js/visualizaion/renderer.js</title>
+  <title>Plato - ..\..\js\visualizaion\renderer.js</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -36,7 +36,7 @@
 
 <div class="jumbotron">
   <div class="container">
-    <h1>../../js/visualizaion/renderer.js</h1>
+    <h1>..\..\js\visualizaion\renderer.js</h1>
   </div>
 </div>
 
@@ -44,11 +44,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
-      <p class="stat">95.10</p>
+      <p class="stat">68.42</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
-      <p class="stat">1</p>
+      <p class="stat">1201</p>
     </div>
   </div>
   <div class="row historical">
@@ -62,11 +62,11 @@
   <div class="row">
     <div class="col-md-6">
       <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
-      <p class="stat">1.00</p>
+      <p class="stat">70.84</p>
     </div>
     <div class="col-md-6">
       <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
-      <p class="stat">0.00</p>
+      <p class="stat">4.62</p>
     </div>
   </div>
 </div>
@@ -92,7 +92,1208 @@
     <textarea id="file-source" class="col-md-12">/**
  * Created by shusa_000 on 6/29/2015.
  */
-goog.provide(&#039;DVT.renderer&#039;);</textarea>
+
+&quot;use strict&quot;;
+
+
+goog.provide(&#039;DVT.renderer&#039;);
+
+
+
+// requires
+/*
+ goog.require(&#039;DVT.camera&#039;);
+ goog.require(&#039;DVT.camera2D&#039;);
+ goog.require(&#039;DVT.camera3D&#039;);
+ goog.require(&#039;DVT.cube&#039;);
+ goog.require(&#039;DVT.cylinder&#039;);
+ goog.require(&#039;DVT.interactor2D&#039;);
+ goog.require(&#039;DVT.interactor3D&#039;);
+ goog.require(&#039;DVT.labelmap&#039;);
+ goog.require(&#039;DVT.object&#039;);
+ goog.require(&#039;DVT.sphere&#039;);
+ goog.require(&#039;DVT.volume&#039;);
+ goog.require(&#039;THREE&#039;)
+ goog.require(&#039;DVT.interactor&#039;);
+ goog.require(&#039;goog.events&#039;);
+ goog.require(&#039;goog.events.EventType&#039;);
+
+ */
+goog.require(&#039;DVT.base&#039;);
+goog.require(&#039;goog.dom&#039;);
+goog.require(&#039;DVT.dataContainer&#039;);
+goog.require(&#039;DVT.event&#039;);
+//goog.require(&#039;DVT.array&#039;);
+goog.require(&#039;DVT.loader&#039;);
+//goog.require(&#039;DVT.progressbar&#039;);
+//goog.require(&#039;goog.Timer&#039;);
+
+/**
+ * The superclass for all renderers.
+ *
+ * @constructor
+ * @extends DVT.base
+ */
+DVT.renderer = function() {
+
+    /**
+     * The HTML container of this renderer, E.g. a &lt;div&gt;.
+     *
+     * @type {!Element|HTMLBodyElement}
+     * @protected
+     */
+    this._container = window.document.body;
+
+    /**
+     * The Canvas of this renderer.
+     *
+     * @type {?Element}
+     * @public
+     */
+    this._canvas = null;
+
+    /**
+     * The rendering context of this renderer.
+     *
+     * @type {?Object}
+     * @protected
+     */
+    this._context = null;
+
+    /**
+     * The width of this renderer.
+     *
+     * @type {!number}
+     * @public
+     */
+    this._width = this._container.clientWidth;
+
+    /**
+     * The height of this renderer.
+     *
+     * @type {!number}
+     * @public
+     */
+    this._height = this._container.clientHeight;
+
+    /**
+     * An DVT.array containing the displayable objects of this renderer. The object
+     * reflects the rendering order for the associated objects.
+     *
+     * @type {!DVT.array}
+     * @protected
+     */
+    this._objects = new DVT.array(DVT.dataContainer.OPACITY_COMPARATOR);
+
+
+    /**
+     * The loader associated with this renderer.
+     *
+     * @type {?DVT.loader}
+     * @protected
+     */
+    this._loader = null;
+
+    /**
+     * The configuration of this renderer.
+     *
+     * @enum {boolean}
+     */
+    this._config = {
+        &#039;PROGRESSBAR_ENABLED&#039;: true,
+        &#039;INTERMEDIATE_RENDERING&#039;: false,
+        &#039;SLICENAVIGATORS&#039;: true
+    };
+
+
+    /**
+     * The progressBar of this renderer.
+     *
+     * @type {?DVT.progressbar}
+     * @protected
+     */
+    this._progressBar = null;
+
+    /**
+     * The progressBar for computing progress.
+     *
+     * @type {?DVT.progressbar}
+     * @protected
+     */
+    this._progressBar2 = null;
+
+    // ________________________________________________________________________________________________________________________
+    // ________________________________________________________________________________________________________________________
+    // ________________________________________________________________________________________________________________________
+    // ________________________________________________________________________________________________________________________
+    //
+    // call the standard constructor of DVT.base
+    goog.base(this);
+
+
+
+    window.console
+        .log(&#039;XTK release 10 -- ###TIMESTAMP### -- http://www.goXTK.com -- @goXTK&#039;);
+
+};
+// inherit from DVT.base
+goog.inherits(DVT.renderer, DVT.base);
+
+
+/**
+ * The callback for DVT.event.events.COMPUTING events which indicate computing
+ * for volume rendering
+ *
+ * @param {!DVT.event.ComputingEvent} event The computing event.
+ * @public
+ */
+DVT.renderer.prototype.onComputing = function(event) {
+
+    // stop the rendering loop
+    window.cancelAnimationFrame(this._AnimationFrameID);
+
+    // only do the following if the progressBar was not turned off
+    if (this._config[&#039;PROGRESSBAR_ENABLED&#039;]) {
+
+        this._progressBar2 = new DVT.progressbar(this._container, 3);
+
+    }
+
+};
+
+
+/**
+ * The callback for DVT.event.events.COMPUTING_END events which indicate the end of computing
+ * for volume rendering
+ *
+ * @param {!DVT.event.ComputingEndEvent} event The computing end event.
+ * @public
+ */
+DVT.renderer.prototype.onComputingEnd = function(event) {
+
+    // only do the following if the progressBar was not turned off
+    if (this._config[&#039;PROGRESSBAR_ENABLED&#039;]) {
+
+        if (this._progressBar2) {
+
+            // show a green, full progress bar
+            this._progressBar2.done();
+
+            // wait for a short time
+            this.__readyCheckTimer2 = goog.Timer.callOnce(function() {
+
+                this.__readyCheckTimer2 = null;
+
+                if (this._progressBar2) {
+
+                    // we are done, kill the progressbar
+                    this._progressBar2.kill();
+                    this._progressBar2 = null;
+
+                }
+
+                // // we don&#039;t want to call onShowtime again
+                this._onShowtime = true;
+                this._loadingCompleted = true;
+
+                // restart the rendering loop
+                this.render();
+
+            }.bind(this), 700);
+            // .. and jump out
+            return;
+
+        } // if progressBar still exists
+
+    } // if progressBar is enabled
+
+};
+
+
+/**
+ * The callback for DVT.event.events.COMPUTING_PROGRESS events which indicate progress
+ * updates during computing.
+ *
+ * @param {!DVT.event.ComputingProgressEvent} event The progress event holding the total
+ *          progress value.
+ * @public
+ */
+DVT.renderer.prototype.onComputingProgress = function(event) {
+
+    if (this._progressBar2) {
+
+        var _progress = event._value;
+        this._progressBar2.setValue(_progress * 100);
+
+    }
+
+};
+
+
+/**
+ * The callback for DVT.event.events.PROGRESS events which indicate progress
+ * updates during loading.
+ *
+ * @param {!DVT.event.ProgressEvent} event The progress event holding the total
+ *          progress value.
+ * @public
+ */
+DVT.renderer.prototype.onProgress = function(event) {
+
+    if (this._progressBar) {
+
+        var _progress = event._value;
+        this._progressBar.setValue(_progress * 100);
+
+    }
+
+};
+
+//***********PASTE??**********
+/**
+ * The callback for DVT.event.events.MODIFIED events which re-configures the
+ * object for rendering. This does not trigger re-rendering.
+ *
+ * @param {!DVT.event.ModifiedEvent} event The modified event pointing to the
+ *          modified object.
+ * @public
+ */
+DVT.renderer.prototype.onModified = function(event) {console.log(&#039;Function call: onModified in renderer&#039;)
+
+    if (goog.isDefAndNotNull(event) &amp;&amp; event instanceof DVT.event.ModifiedEvent) {
+
+        if (!event._dataContainer) {
+            // we need an object here
+            return;
+
+        }
+
+        this.update_(event._dataContainer);
+
+    }
+
+};
+
+/**
+ * The callback for DVT.event.events.REMOVE events which re-configures the
+ * object for rendering. This does not trigger re-rendering.
+ *
+ * @param {!DVT.event.RemoveEvent} event The modified event pointing to the
+ *          modified object.
+ * @public
+ */
+//***********PASTE??**********
+DVT.renderer.prototype.onRemove = function(event) {
+
+    if (goog.isDefAndNotNull(event) &amp;&amp; event instanceof DVT.event.RemoveEvent) {
+
+        if (!event._object) {
+
+            // we need an object here
+            return;
+
+        }
+
+        this.remove(event._object);
+
+    }
+
+};
+
+
+/**
+ * The callback for DVT.event.events.HOVER events which indicate a hovering over
+ * the viewport.
+ *
+ * @param {!DVT.event.HoverEvent} event The hover event pointing to the relevant
+ *          screen coordinates.
+ * @throws {Error} An error if the given event is invalid.
+ * @protected
+ */
+DVT.renderer.prototype.onHover_ = function(event) {
+
+    if (!goog.isDefAndNotNull(event) || !(event instanceof DVT.event.HoverEvent)) {
+
+        throw new Error(&#039;Invalid hover event.&#039;);
+
+    }
+
+};
+
+
+/**
+ * @protected
+ */
+DVT.renderer.prototype.onResize_ = function() {
+    this.resize();
+};
+
+
+/**
+ * Resizes the control to fit the size of the container.
+ */
+DVT.renderer.prototype.resize = function() {
+
+    // grab the new width and height of the container
+    var container = goog.dom.getElement(this._container);
+    this._width = container.clientWidth;
+    this._height = container.clientHeight;
+
+    // propagate it to the canvas
+    var canvas = goog.dom.getElement(this._canvas);
+    canvas.width = this._width;
+    canvas.height = this._height;
+
+    if (this._classname == &#039;renderer3D&#039;) {
+
+        // modify 3d viewport
+        this._context.viewport(0, 0, this._width, this._height);
+
+        // modify perspective
+        this._camera._perspective = DVT.matriDVT.makePerspective(DVT.matriDVT.identity(), this._camera._fieldOfView, (this._canvas.width/this._canvas.height), 1, 10000);
+
+    }
+
+    // .. and re-draw
+    //this.resetViewAndRender();
+
+};
+
+
+/**
+ * The callback for DVT.event.events.SCROLL events which indicate scrolling of the
+ * viewport.
+ *
+ * @param {!DVT.event.ScrollEvent} event The scroll event indicating the scrolling
+ *          direction.
+ * @throws {Error} An error if the given event is invalid.
+ * @protected
+ */
+DVT.renderer.prototype.onScroll_ = function(event) {
+
+    if (!goog.isDefAndNotNull(event) || !(event instanceof DVT.event.ScrollEvent)) {
+
+        throw new Error(&#039;Invalid scroll event.&#039;);
+
+    }
+
+};
+
+
+/**
+ * Access the configuration of this renderer. Possible settings and there
+ * default values are:
+ *
+ * &lt;pre&gt;
+ * config.PROGRESSBAR_ENABLED: true
+ * config.INTERMEDIATE_RENDERING: false
+ * config.SLICENAVIGATORS: true
+ * config.PROGRESSBAR_ENABLED: true
+ * &lt;/pre&gt;
+ *
+ * @return {Object} The configuration.
+ */
+DVT.renderer.prototype.__defineGetter__(&#039;config&#039;, function() {
+
+    return this._config;
+
+});
+
+
+/**
+ * Get the interactor of this renderer. The interactor is null until this
+ * renderer is initialized.
+ *
+ * @return {?DVT.interactor} The interactor.
+ */
+DVT.renderer.prototype.__defineGetter__(&#039;interactor&#039;, function() {
+
+    return this._interactor;
+
+});
+
+
+/**
+ * Get the camera of this renderer. The camera is null until this renderer is
+ * initialized.
+ *
+ * @return {?DVT.camera} The camera.
+ */
+DVT.renderer.prototype.__defineGetter__(&#039;camera&#039;, function() {
+
+    return this._camera;
+
+});
+
+
+/**
+ * Check if the initial loading of all objects was completed. This value gets
+ * set immediately after the onShowtime function is executed.
+ *
+ * @return {boolean} TRUE if all objects were completely loaded, FALSE else
+ *         wise.
+ */
+DVT.renderer.prototype.__defineGetter__(&#039;loadingCompleted&#039;, function() {
+
+    return this._loadingCompleted;
+
+});
+
+
+/**
+ * Get the container of this renderer.
+ *
+ * @return {!Element|HTMLBodyElement} The container of this renderer.
+ * @public
+ */
+DVT.renderer.prototype.__defineGetter__(&#039;container&#039;, function() {
+
+    return this._container;
+
+});
+
+
+/**
+ * Set the container for this renderer. This has to happen before
+ * DVT.renderer.init() is called.
+ *
+ * @param {!string|Element|HTMLBodyElement} container Either an ID to a DOM
+ *          container or the DOM element itself.
+ * @throws {Error} An error, if the given container is invalid.
+ * @public
+ */
+DVT.renderer.prototype.__defineSetter__(&#039;container&#039;, function(container) {
+
+    // check if a container is passed
+    if (!goog.isDefAndNotNull(container)) {
+
+        throw new Error(&#039;An ID to a valid container (&lt;div&gt;..) is required.&#039;);
+
+    }
+
+    // check if the passed container is really valid
+    var _container = container;
+
+    // if an id is given, try to get the corresponding DOM element
+    if (goog.isString(_container)) {
+
+        _container = goog.dom.getElement(container);
+
+    }
+
+    // now we should have a valid DOM element
+    if (!goog.dom.isElement(_container)) {
+
+        throw new Error(&#039;Could not find the given container.&#039;);
+
+    }
+
+    this._container = _container;
+
+});
+
+
+/**
+ * Resets the view according to the global bounding box of all associated
+ * objects, the configured camera position as well as its focus _and_ triggers
+ * re-rendering.
+ */
+DVT.renderer.prototype.resetViewAndRender = function() {
+
+    this._camera.reset();
+    // this.render_(false, false);
+
+};
+
+
+/**
+ * Shows the loading progress bar by modifying the DOM tree.
+ *
+ * @protected
+ */
+DVT.renderer.prototype.showProgressBar_ = function() {
+
+    // only do the following if the progressBar was not turned off
+    if (this._config[&#039;PROGRESSBAR_ENABLED&#039;]) {
+
+        // create a progress bar here if this is the first render request and the
+        // loader is working
+        if (!this._progressBar) {
+
+            this._progressBar = new DVT.progressbar(this._container, 3);
+
+        }
+
+    }
+
+};
+
+
+/**
+ * Hides the loading progress bar.
+ *
+ * @protected
+ */
+DVT.renderer.prototype.hideProgressBar_ = function() {
+
+    // only do the following if the progressBar was not turned off
+    if (this._config[&#039;PROGRESSBAR_ENABLED&#039;]) {
+
+        if (this._progressBar &amp;&amp; !this.__readyCheckTimer2) {
+
+            // show a green, full progress bar
+            this._progressBar.done();
+
+            // wait for a short time
+            this.__readyCheckTimer2 = goog.Timer.callOnce(function() {
+
+                this.__readyCheckTimer2 = null;
+
+                if (this._progressBar) {
+
+                    // we are done, kill the progressbar
+                    this._progressBar.kill();
+                    this._progressBar = null;
+
+                }
+
+                this.render();
+
+            }.bind(this), 700);
+            // .. and jump out
+            return;
+
+        } // if progressBar still exists
+
+    } // if progressBar is enabled
+
+};
+
+
+/**
+ * Create the canvas of this renderer inside the configured container and using
+ * attributes like width, height etc. Then, initialize the rendering context and
+ * attach all necessary objects (e.g. camera, shaders..). Finally, initialize
+ * the event listeners.
+ *
+ * @param {string} _contextName The name of the context to create.
+ * @throws {Error} An exception if there were problems during initialization.
+ * @protected
+ */
+DVT.renderer.prototype.init = function(_contextName) {
+
+    // create the canvas
+    var _canvas = goog.dom.createDom(&#039;canvas&#039;);
+
+    //
+    // append it to the container
+    goog.dom.appendChild(this._container, _canvas);
+    if(this._classname==&#039;renderer3D&#039;)
+    {
+
+    }
+    this._width = this._container.clientWidth;
+    this._height = this._container.clientHeight;
+
+    // width and height can not be set using CSS but via object properties
+    _canvas.width = this._width;
+    _canvas.height = this._height;
+
+    this._canvas=_canvas;
+    this._loader = new DVT.loader();
+
+    // listen to a progress event which gets fired during loading whenever
+    // progress was made
+    goog.events.listen(this._loader, DVT.event.events.PROGRESS, this.onProgress.bind(this));
+
+    /* 
+     // the container might have resized now, so update our width and height
+     // settings
+     this._width = this._container.clientWidth;
+     this._height = this._container.clientHeight;
+
+     // width and height can not be set using CSS but via object properties
+     _canvas.width = this._width;
+     _canvas.height = this._height;
+
+
+     // --------------------------------------------------------------------------
+     //
+     // Viewport initialization
+     //
+
+     //
+     // Step1: Get Context of canvas
+     //
+     try {
+
+     var _context = _canvas.getContext(_contextName);
+
+     if (!_context) {
+
+     // this exception triggers the display of the error message
+     // because the context creation can either fail with an exception
+     // or return a NULL context
+     throw new Error();
+
+     }
+
+     } catch (e) {
+
+     // Canvas2D is not supported with this browser/machine/gpu
+
+     // attach a message to the container&#039;s inner HTML
+     var _style = &quot;color:red;font-family:sans-serif;&quot;;
+     var _msg = &#039;Sorry, &#039; +
+     _contextName +
+     &#039; context is &lt;strong&gt;not supported&lt;/strong&gt; on this machine! See &lt;a href=&quot;http://crash.goXTK.com&quot; target=&quot;_blank&quot;&gt;http://crash.goXTK.com&lt;/a&gt; for requirements..&#039;;
+     this._container.innerHTML = &#039;&lt;h3 style=&quot;&#039; + _style +
+     &#039;&quot;&gt;Oooops..&lt;/h3&gt;&lt;p style=&quot;&#039; + _style + &#039;&quot;&gt;&#039; + _msg + &#039;&lt;/p&gt;&#039;;
+
+     // .. and throw an exception
+     throw new Error(_msg);
+
+     }
+
+     //
+     // Step 1b: Configure the DVT.loader
+     //
+
+     //
+     // Step 1c: Register the created canvas to this instance
+     //
+     this._canvas = _canvas;
+
+     //
+     // Step 1d: Register the created context to this instance
+     //
+     this._context = _context;
+
+     //
+     // Step2: Configure the context and the viewport
+     //
+
+     //
+     // create a new interactor
+     var _interactor = new DVT.interactor3D(this._canvas);
+
+     // in the 2d case, create a 2d interactor (of course..)
+     if (_contextName == &#039;2d&#039;) {
+
+     _interactor = new DVT.interactor2D(this._canvas);
+
+     }
+     // initialize it and..
+     _interactor.init();
+
+     // .. listen to resetViewEvents
+     goog.events.listen(_interactor, DVT.event.events.RESETVIEW,
+     this.resetViewAndRender.bind(this));
+     // .. listen to hoverEvents
+     goog.events.listen(_interactor, DVT.event.events.HOVER, this.onHover_
+     .bind(this));
+     // .. listen to scroll events
+     goog.events.listen(_interactor, DVT.event.events.SCROLL, this.onScroll_
+     .bind(this));
+
+     // .. and finally register it to this instance
+     this._interactor = _interactor;
+
+     //
+     // create a new camera
+     // width and height are required to calculate the perspective
+     var _camera = new DVT.camera3D(this._width, this._height);
+
+     if (_contextName == &#039;2d&#039;) {
+     _camera = new DVT.camera2D(this._width, this._height);
+     }
+     // observe the interactor for user interactions (mouse-movements etc.)
+     _camera.observe(this._interactor);
+     // ..listen to render requests from the camera
+     // these get fired after user-interaction and camera re-positioning to re-draw
+     // all objects
+     // goog.events.listen(_camera, DVT.event.events.RENDER, this.render_.bind(this,
+     // false, false));
+
+     //
+     // attach all created objects as class attributes
+     // should be one of the last things to do here since we use these attributes
+     // to check if the initialization was completed successfully
+     this._camera = _camera;
+
+     // .. listen to resizeEvents
+     goog.events.listen(window, goog.events.EventType.RESIZE, this.onResize_,
+     false, this);
+
+     //
+     //
+     // .. the rest should be performed in the subclasses
+     */
+};
+
+
+/**
+ * Add a new object to this renderer. The renderer has to be initialized before
+ * doing so. A DVT.renderer.render() call has to be initiated to display added
+ * objects.
+ *
+ * @param {!DVT.object} object The object to add to this renderer.
+ * @throws {Error} An exception if something goes wrong.
+ */
+DVT.renderer.prototype.add = function(object) {
+
+    // for constructable objects (e.g. cube, sphere, cylinder), we call the
+    // modified() function to generate the CSG representations
+    /*  if (object instanceof DVT.cube || object instanceof DVT.sphere ||
+     object instanceof DVT.cylinder) {
+
+     object.modified();
+
+     } */
+
+    // we know that objects which are directly added using this function are def.
+    // top-level objects, meaning that they do not have a parent
+    //this._topLevelObjects.push(object);
+
+    this.update_(object);
+
+};
+
+
+/**
+ * Remove an existing object and all its children from the rendering context.
+ *
+ * @param {!DVT.object} object The object to remove from the renderer.
+ * @return {boolean} TRUE or FALSE depending on success.
+ * @throws {Error} An exception if something goes wrong.
+ * @public
+ */
+DVT.renderer.prototype.remove = function(object) {
+
+    if (!this._canvas || !this._context) {
+
+        throw new Error(&#039;The renderer was not initialized properly.&#039;);
+
+    }
+
+    if (!goog.isDefAndNotNull(object)) {
+
+        //throw new Error(&#039;Illegal object.&#039;);
+
+    }
+    else{
+
+        goog.events.removeAll(object);
+
+        var _numberOfTopLevelObjects = this._topLevelObjects.length;
+
+        var _y;
+        for (_y = 0; _y &lt; _numberOfTopLevelObjects; _y++) {
+
+            if(this._topLevelObjects[_y]._id == object._id){
+                this._topLevelObjects[_y] = null;
+                this._topLevelObjects.splice(_y, 1);
+                return true;
+            }
+        }
+    }
+
+    // to be overloaded
+
+    return false;
+
+};
+
+
+/**
+ * Configure a displayable object within this renderer. The object can be a
+ * newly created one or an existing one. A DVT.renderer.render() call has to be
+ * initiated to display the object.
+ *
+ * @param {!DVT.object} object The displayable object to setup within this
+ *          renderer.
+ * @throws {Error} An exception if something goes wrong.
+ * @protected
+ */
+DVT.renderer.prototype.update_ = function(object) {console.log(&#039;Function Call: update_ in renderer&#039;)
+    if (!this._canvas || !this._context) {
+
+        throw new Error(&#039;The renderer was not initialized properly.&#039;);
+
+    }
+
+    if (!goog.isDefAndNotNull(object)) {
+        //window.console.log(object);
+        //window.console.log(&#039;Illegal object&#039;);
+        //throw new Error(&#039;Illegal object.&#039;);
+
+    }
+    else {
+
+        if(!goog.events.hasListener(object, DVT.event.events.MODIFIED)) {
+
+            goog.events.listen(object, DVT.event.events.MODIFIED, this.onModified
+                .bind(this));
+
+        }
+
+        if(!goog.events.hasListener(object, DVT.event.events.REMOVE)) {
+
+            goog.events.listen(object, DVT.event.events.REMOVE, this.onRemove
+                .bind(this));
+
+        }
+
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING)) {
+
+            goog.events.listen(object, DVT.event.events.COMPUTING, this.onComputing
+                .bind(this));
+
+        }
+
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_PROGRESS)) {
+
+            goog.events.listen(object, DVT.event.events.COMPUTING_PROGRESS, this.onComputingProgress
+                .bind(this));
+
+        }
+
+        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_END)) {
+
+            goog.events.listen(object, DVT.event.events.COMPUTING_END, this.onComputingEnd
+                .bind(this));
+
+        }
+
+    }
+
+};
+
+
+/**
+ * Get the existing DVT.object with the given id.
+ *
+ * @param {!number} id The object&#039;s id.
+ * @return {?DVT.object} The requested DVT.object or null if it was not found.
+ * @throws {Error} If the given id was invalid.
+ * @public
+ */
+DVT.renderer.prototype.get = function(id) {
+
+    if (!goog.isDefAndNotNull(id)) {
+
+        throw new Error(&#039;Invalid object id.&#039;);
+
+    }
+
+    // loop through objects and try to find the id
+    var _objects = this._objects.values();
+    var _numberOfObjects = _objects.length;
+
+    var _k = 0;
+    for (_k = 0; _k &lt; _numberOfObjects; _k++) {
+
+        if (_objects[_k]._id == id) {
+
+            // found!
+            return _objects[_k];
+
+        }
+
+    }
+
+    // not found
+    return null;
+
+};
+
+
+/**
+ * Print the full hierarchy tree of objects.
+ *
+ * @public
+ */
+DVT.renderer.prototype.printScene = function() {
+
+    var _numberOfTopLevelObjects = this._topLevelObjects.length;
+    // window.console.log(_numberOfTopLevelObjects);
+    // window.console.log(this._objects);
+
+    var _y;
+    for (_y = 0; _y &lt; _numberOfTopLevelObjects; _y++) {
+
+        var _topLevelObject = this._topLevelObjects[_y];
+
+        this.generateTree_(_topLevelObject, 0);
+
+    }
+
+};
+
+
+/**
+ * Recursively loop through a hierarchy tree of objects and print it.
+ *
+ * @param {!DVT.object} object The starting point object.
+ * @param {number} level The current level in the scene hierarchy.
+ * @protected
+ */
+DVT.renderer.prototype.generateTree_ = function(object, level) {
+
+    // for slices, container is right size but empty
+    if(typeof(object) == &#039;undefined&#039;){
+        return;
+    }
+
+    var _output = &quot;&quot;;
+
+    var _l = 0;
+    for (_l = 0; _l &lt; level; _l++) {
+
+        _output += &quot;&gt;&quot;;
+
+    }
+
+    _output += object._id;
+
+    // window.console.log(object);
+    // window.console.log(_output);
+
+    if (object._children.length &gt; 0) {
+
+        // loop through the children
+        var _children = object._children;
+        var _numberOfChildren = _children.length;
+        var _c = 0;
+
+        for (_c = 0; _c &lt; _numberOfChildren; _c++) {
+
+            this.generateTree_(_children[_c], level + 1);
+
+        }
+
+    }
+
+};
+
+
+/**
+ * (Re-)render all associated displayable objects of this renderer. This method
+ * clears the viewport and re-draws everything by looping through the tree of
+ * objects. The current camera is used to setup the world space.
+ *
+ * @public
+ */
+DVT.renderer.prototype.render = function() {
+
+    if (!this._canvas || !this._context) {
+
+        throw new Error(&#039;The renderer was not initialized properly.&#039;);
+
+    }
+
+    // READY CHECK
+    //
+    // now we check if we are ready to display everything
+    // - ready means: all textures loaded and setup, all external files loaded and
+    // setup and all other objects loaded and setup
+    //
+    // if we are not ready, we wait..
+    // if we are ready, we continue with the rendering
+    // let&#039;s check if render() was called before and the single-shot timer is
+    // already there
+    // f.e., if we are in a setInterval-configured render loop, we do not want to
+    // create multiple single-shot timers
+    if (goog.isDefAndNotNull(this._readyCheckTimer)) {
+
+        return;
+
+    }
+
+    //
+    // LOADING..
+    //
+    if (!this._loader.completed()) {
+
+        // we are not ready yet.. the loader is still working;
+
+        this.showProgressBar_();
+
+        // also reset the loadingCompleted flags
+        this._loadingCompleted = false;
+        this._onShowtime = false;
+
+        // let&#039;s check again in a short time
+        this._readyCheckTimer = goog.Timer.callOnce(function() {
+
+            this._readyCheckTimer = null; // destroy the timer
+
+            // try to render now..
+            // if the loader is ready it will work, else wise another single-shot gets
+            // configured in 500 ms
+            this.render();
+
+        }.bind(this), 100); // check again in 500 ms
+
+        // intermediate rendering means render also
+        // while loading is still active
+        if (!this._config[&#039;INTERMEDIATE_RENDERING&#039;]) {
+
+            return; // .. and jump out
+
+        }
+
+    } else {
+        // we are ready! yahoooo!
+
+        // call the onShowtime function which can be overloaded
+
+        // we need two flags here since the render loop repeats so fast
+        // that there would be timing issues
+        if (!this._loadingCompleted &amp;&amp; !this._onShowtime) {
+
+            this._onShowtime = true;
+            eval(&quot;this.onShowtime()&quot;);
+            this._loadingCompleted = true; // flag the renderer as &#039;initial
+            // loading completed&#039;
+
+        }
+
+        // if we have a progress bar
+        if (this._progressBar) {
+
+            // this means the DVT.loader is done..
+            this.hideProgressBar_();
+
+            // .. we exit here since the hiding takes some time and automatically
+            // triggers the rendering when done
+            return;
+
+        }
+
+    }
+    //
+    // END OF LOADING
+    //
+
+    //
+    // CURTAIN UP! LET THE SHOW BEGIN..
+    //
+
+    // this starts the rendering loops and store its id
+    //this._AnimationFrameID = window.requestAnimationFrame(this.render.bind(this));
+    eval(&quot;this.onRender()&quot;);
+    this.render_(false, true);
+    eval(&quot;this.afterRender()&quot;);
+
+};
+
+
+/**
+ * Overload this function to execute code after all initial loading (files,
+ * textures..) has completed and just before the first real rendering call.
+ *
+ * @public
+ */
+DVT.renderer.prototype.onShowtime = function() {
+
+    // do nothing
+};
+
+
+/**
+ * Overload this function to execute code on each rendering call.
+ *
+ * @public
+ */
+DVT.renderer.prototype.onRender = function() {
+
+    // do nothing
+};
+
+
+/**
+ * Overload this function to execute code after each rendering completed.
+ *
+ * @public
+ */
+DVT.renderer.prototype.afterRender = function() {
+
+    // do nothing
+};
+
+/**
+ * Internal function to perform the actual rendering by looping through all
+ * associated DVT.objects.
+ *
+ * @param {boolean} picking If TRUE, perform picking - if FALSE render to the
+ *          canvas viewport.
+ * @param {?boolean=} invoked If TRUE, the render counts as invoked and f.e.
+ *          statistics are generated.
+ * @throws {Error} If anything goes wrong.
+ * @protected
+ */
+DVT.renderer.prototype.render_ = function(picking, invoked) {
+
+
+
+};
+
+
+/**
+ * Destroy this renderer.
+ *
+ * @public
+ */
+DVT.renderer.prototype.destroy = function() {
+
+    // disconnect events listeners
+    goog.events.removeAll(this);
+    goog.events.unlisten(window, goog.events.EventType.RESIZE, this.onResize_,
+        false, this);
+
+    // stop the rendering loop
+    window.cancelAnimationFrame(this._AnimationFrameID);
+
+    // delete the loader if any
+    if (this._loader) {
+        delete this._loader;
+        this._loader = null;
+    }
+
+    // remove the progress bar if any
+    if (this._progressBar) {
+        this._progressBar.kill();
+        delete this._progressBar;
+        this._progressBar = null;
+    }
+
+    // remove all objects
+    this._objects.clear();
+    delete this._objects;
+    this._topLevelObjects.length = 0;
+    delete this._topLevelObjects;
+
+    // remove loader, camera and interactor
+    delete this._loader;
+    this._loader = null;
+
+    delete this._camera;
+    this._camera = null;
+
+    delete this._interactor;
+    this._interactor = null;
+
+    // remove the rendering context
+    delete this._context;
+    this._context = null;
+
+    // remove the canvas from the dom tree
+    goog.dom.removeNode(this._canvas);
+    delete this._canvas;
+    this._canvas = null;
+
+};</textarea>
   </div>
 </div>
 
