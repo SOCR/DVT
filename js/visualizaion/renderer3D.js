@@ -255,12 +255,12 @@ X.renderer3D.prototype.update_ = function(object) {
     if(!goog.isDefAndNotNull(object)){
         return;
     }
-    if (this.get(object._id)) {
+    if (this.get(object)) {
         // this means, we are updating
         existed = true;
 
     }
-    console.log(this.get(object._id))
+    console.log(this.get(object));
     var file = object._file;
     /*
      var id = object._id;

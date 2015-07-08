@@ -87,12 +87,18 @@ DVT.renderer = function() {
 
 
     /**
-     * array containing all renderable top-level objects
+     * array containing all renderable objects
      * @type {Array}
      * @private
      */
     this._objects = [];
 
+    /**
+     * array containing all renderable objects with no parents
+     * @type {Array}
+     * @private
+     */
+    this._topLevelObjects = [];
 
     /**
      * The loader associated with this renderer.
@@ -629,18 +635,9 @@ DVT.renderer.prototype.init = function(_contextName) {
  */
 DVT.renderer.prototype.add = function(object) {
 
-    // for constructable objects (e.g. cube, sphere, cylinder), we call the
-    // modified() function to generate the CSG representations
-    /*  if (object instanceof DVT.cube || object instanceof DVT.sphere ||
-     object instanceof DVT.cylinder) {
-
-     object.modified();
-
-     } */
-
     // we know that objects which are directly added using this function are def.
     // top-level objects, meaning that they do not have a parent
-    //this._topLevelObjects.push(object);
+    this._topLevelObjects.push(object);
 
     this.update_(object);
 
@@ -712,45 +709,12 @@ DVT.renderer.prototype.update_ = function(object) {console.log('Function Call: u
     if (!goog.isDefAndNotNull(object)) {
         //window.console.log(object);
         //window.console.log('Illegal object');
-        //throw new Error('Illegal object.');
+        throw new Error('Illegal object.');
 
     }
     else {
 
-        if(!goog.events.hasListener(object, DVT.event.events.MODIFIED)) {
-
-            goog.events.listen(object, DVT.event.events.MODIFIED, this.onModified
-                .bind(this));
-
-        }
-
-        if(!goog.events.hasListener(object, DVT.event.events.REMOVE)) {
-
-            goog.events.listen(object, DVT.event.events.REMOVE, this.onRemove
-                .bind(this));
-
-        }
-
-        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING)) {
-
-            goog.events.listen(object, DVT.event.events.COMPUTING, this.onComputing
-                .bind(this));
-
-        }
-
-        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_PROGRESS)) {
-
-            goog.events.listen(object, DVT.event.events.COMPUTING_PROGRESS, this.onComputingProgress
-                .bind(this));
-
-        }
-
-        if(!goog.events.hasListener(object, DVT.event.events.COMPUTING_END)) {
-
-            goog.events.listen(object, DVT.event.events.COMPUTING_END, this.onComputingEnd
-                .bind(this));
-
-        }
+        //TODO implement event binding
 
     }
 
@@ -760,27 +724,27 @@ DVT.renderer.prototype.update_ = function(object) {console.log('Function Call: u
 /**
  * Get the existing DVT.object with the given id.
  *
- * @param {!number} id The object's id.
+ * @param {!DVT.object} object The object to search for
  * @return {?DVT.object} The requested DVT.object or null if it was not found.
- * @throws {Error} If the given id was invalid.
+ * @throws {Error} If the given object was invalid.
  * @public
  */
-DVT.renderer.prototype.get = function(id) {
+DVT.renderer.prototype.get = function(object) {
 
-    if (!goog.isDefAndNotNull(id)) {
+    if (!goog.isDefAndNotNull(object)) {
 
-        throw new Error('Invalid object id.');
+        throw new Error('Invalid object');
 
     }
 
     // loop through objects and try to find the id
-    var _objects = this._objects.values();
+    var _objects = this._objects;
     var _numberOfObjects = _objects.length;
 
     var _k = 0;
     for (_k = 0; _k < _numberOfObjects; _k++) {
 
-        if (_objects[_k]._id == id) {
+        if (_objects[_k] == object) {
 
             // found!
             return _objects[_k];
