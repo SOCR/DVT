@@ -85,14 +85,13 @@ DVT.renderer = function() {
      */
     this._height = this._container.clientHeight;
 
+
     /**
-     * An DVT.array containing the displayable objects of this renderer. The object
-     * reflects the rendering order for the associated objects.
-     *
-     * @type {!DVT.array}
-     * @protected
+     * array containing all renderable top-level objects
+     * @type {Array}
+     * @private
      */
-    this._objects = new DVT.array(DVT.dataContainer.OPACITY_COMPARATOR);
+    this._objects = [];
 
 
     /**
@@ -610,134 +609,13 @@ DVT.renderer.prototype.init = function(_contextName) {
 
     this._canvas=_canvas;
     this._loader = DVT.getLoader();
+    this._context = this._canvas.getContext(_contextName);
 
     // listen to a progress event which gets fired during loading whenever
     // progress was made
+    //TODO update event
     //goog.events.listen(this._loader, DVT.event.events.PROGRESS, this.onProgress.bind(this));
 
-    /
-     // the container might have resized now, so update our width and height
-     // settings
-     this._width = this._container.clientWidth;
-     this._height = this._container.clientHeight;
-
-     // width and height can not be set using CSS but via object properties
-     _canvas.width = this._width;
-     _canvas.height = this._height;
-/*
-
-     // --------------------------------------------------------------------------
-     //
-     // Viewport initialization
-     //
-
-     //
-     // Step1: Get Context of canvas
-     //
-     try {
-
-     var _context = _canvas.getContext(_contextName);
-
-     if (!_context) {
-
-     // this exception triggers the display of the error message
-     // because the context creation can either fail with an exception
-     // or return a NULL context
-     throw new Error();
-
-     }
-
-     } catch (e) {
-
-     // Canvas2D is not supported with this browser/machine/gpu
-
-     // attach a message to the container's inner HTML
-     var _style = "color:red;font-family:sans-serif;";
-     var _msg = 'Sorry, ' +
-     _contextName +
-     ' context is <strong>not supported</strong> on this machine! See <a href="http://crash.goXTK.com" target="_blank">http://crash.goXTK.com</a> for requirements..';
-     this._container.innerHTML = '<h3 style="' + _style +
-     '">Oooops..</h3><p style="' + _style + '">' + _msg + '</p>';
-
-     // .. and throw an exception
-     throw new Error(_msg);
-
-     }
-
-     //
-     // Step 1b: Configure the DVT.loader
-     //
-
-     //
-     // Step 1c: Register the created canvas to this instance
-     //
-     this._canvas = _canvas;
-
-     //
-     // Step 1d: Register the created context to this instance
-     //
-     this._context = _context;
-
-     //
-     // Step2: Configure the context and the viewport
-     //
-
-     //
-     // create a new interactor
-     var _interactor = new DVT.interactor3D(this._canvas);
-
-     // in the 2d case, create a 2d interactor (of course..)
-     if (_contextName == '2d') {
-
-     _interactor = new DVT.interactor2D(this._canvas);
-
-     }
-     // initialize it and..
-     _interactor.init();
-
-     // .. listen to resetViewEvents
-     goog.events.listen(_interactor, DVT.event.events.RESETVIEW,
-     this.resetViewAndRender.bind(this));
-     // .. listen to hoverEvents
-     goog.events.listen(_interactor, DVT.event.events.HOVER, this.onHover_
-     .bind(this));
-     // .. listen to scroll events
-     goog.events.listen(_interactor, DVT.event.events.SCROLL, this.onScroll_
-     .bind(this));
-
-     // .. and finally register it to this instance
-     this._interactor = _interactor;
-
-     //
-     // create a new camera
-     // width and height are required to calculate the perspective
-     var _camera = new DVT.camera3D(this._width, this._height);
-
-     if (_contextName == '2d') {
-     _camera = new DVT.camera2D(this._width, this._height);
-     }
-     // observe the interactor for user interactions (mouse-movements etc.)
-     _camera.observe(this._interactor);
-     // ..listen to render requests from the camera
-     // these get fired after user-interaction and camera re-positioning to re-draw
-     // all objects
-     // goog.events.listen(_camera, DVT.event.events.RENDER, this.render_.bind(this,
-     // false, false));
-
-     //
-     // attach all created objects as class attributes
-     // should be one of the last things to do here since we use these attributes
-     // to check if the initialization was completed successfully
-     this._camera = _camera;
-
-     // .. listen to resizeEvents
-     goog.events.listen(window, goog.events.EventType.RESIZE, this.onResize_,
-     false, this);
-
-     //
-     //
-     // .. the rest should be performed in the subclasses
-     */
 };
 
 

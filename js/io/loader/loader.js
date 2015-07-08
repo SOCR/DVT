@@ -72,7 +72,7 @@ DVT.loader.prototype.init=function()
 
 DVT.loader.prototype.load=function(container)
 {
-    var filepath=container.filepath;
+    var filepath=container.file;
     this._numActive+=3;
 
     //add load bars

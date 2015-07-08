@@ -4,36 +4,10 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="improved inheritance tree">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/display.html" afterPath="$PROJECT_DIR$/doc/stats/display.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/index.html" afterPath="$PROJECT_DIR$/doc/stats/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/loaded.js" afterPath="$PROJECT_DIR$/js/objects/loaded.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/object.js" afterPath="$PROJECT_DIR$/js/objects/object.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.js" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_DVT_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_events_eventsCore_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_listeners_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loadHelper_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_loader_loader_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_io_parser_parserTRK_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer2D_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer3D_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.json" afterPath="$PROJECT_DIR$/doc/stats/files/______js_visualizaion_renderer_js/report.history.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.js" afterPath="$PROJECT_DIR$/doc/stats/report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/stats/report.json" afterPath="$PROJECT_DIR$/doc/stats/report.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testTRK.js" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loader.js" afterPath="$PROJECT_DIR$/js/io/loader/loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/renderer.js" afterPath="$PROJECT_DIR$/js/visualizaion/renderer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/renderer3D.js" afterPath="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -55,6 +29,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="testTRK.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -77,21 +61,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bower.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lib/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3880597">
+            <state vertical-scroll-proportion="-6.0">
               <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/core/base.js">
+      <file leaf-file-name="renderer3D.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.38948995">
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -133,6 +117,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="renderer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="617" column="0" selection-start-line="617" selection-start-column="0" selection-end-line="617" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="fiber.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,16 +135,6 @@
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/lib/node_modules/plato/lib/reporters/complexity/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="7.814815">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -179,7 +163,6 @@
       <list>
         <option value="$PROJECT_DIR$/js/events/plugins/eventsCore.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/io/loader/listeners.js" />
         <option value="$PROJECT_DIR$/js/DVT.js" />
         <option value="$PROJECT_DIR$/js/io/loader/loaderCore.js" />
@@ -187,7 +170,6 @@
         <option value="$PROJECT_DIR$/dist/DVT.js" />
         <option value="$PROJECT_DIR$/js/lib/conf.json" />
         <option value="$PROJECT_DIR$/js/lib/node_modules/plato/lib/plato.js" />
-        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
         <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
         <option value="$PROJECT_DIR$/test/testTRK.js" />
         <option value="$PROJECT_DIR$/test/css/default.css" />
@@ -195,7 +177,6 @@
         <option value="$PROJECT_DIR$/test/js/default.js" />
         <option value="$PROJECT_DIR$/js/core/base/base.js" />
         <option value="$PROJECT_DIR$/js/events/eventsCore.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/renderer.js" />
         <option value="$PROJECT_DIR$/js/lib/bower_components/threejs/build/three.js" />
         <option value="$PROJECT_DIR$/js/lib/gulpfile.js" />
         <option value="$PROJECT_DIR$/js/objects/fiber.js" />
@@ -204,6 +185,9 @@
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/js/lib/bower.json" />
+        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/renderer.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
       </list>
     </option>
   </component>
@@ -308,7 +292,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="visualizaion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,11 +310,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
+              <option name="myItemId" value="io" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -344,7 +324,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="doc" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="loader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -588,10 +576,16 @@
       <option name="project" value="LOCAL" />
       <updated>1436339817975</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="update base renderer initialization&#10;">
+      <created>1436349308802</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1436349308802</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -604,16 +598,17 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32444444" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32444444" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -621,7 +616,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -660,7 +654,8 @@
     <MESSAGE value="Fix goog require" />
     <MESSAGE value="setup object skeleton" />
     <MESSAGE value="improved inheritance tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved inheritance tree" />
+    <MESSAGE value="update base renderer initialization&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update base renderer initialization&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -842,34 +837,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/bower_components/threejs/build/three.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.397196">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="397" column="27" selection-start-line="397" selection-start-column="27" selection-end-line="397" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,26 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/object.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1053,8 +1004,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3880597">
+        <state vertical-scroll-proportion="-6.0">
           <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/object.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="617" column="0" selection-start-line="617" selection-start-column="0" selection-end-line="617" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38948995">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding />
         </state>
       </provider>

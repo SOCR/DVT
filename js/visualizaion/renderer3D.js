@@ -148,16 +148,12 @@ X.renderer3D.prototype.init = function() {
 
     // call the superclass' init method
     goog.base(this, 'init', "experimental-webgl");
-    var _context=this._canvas.getContext('experimental-webgl');
-    if(_context)
-    {
-    }
 
     //configure camera
     this._camera=new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
 
     //configure canvas opacity to reflect background color of container
-    _context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
+    this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
     //setup scene
     this._scene= new THREE.Scene();
@@ -166,7 +162,6 @@ X.renderer3D.prototype.init = function() {
     this._scene.add(this._camera);
 
     this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas} );
-    this._context=_context;
     /*  //
      // Step2: Configure the context
      //
@@ -251,20 +246,6 @@ X.renderer3D.prototype.init = function() {
 
      }
 
-     //
-     // WebGL Viewport initialization done
-     // --------------------------------------------------------------------------
-
-
-     //
-     // add default shaders to this renderer
-     // it is possible to attach other custom shaders after this init call
-     // also, this has to happen after this._canvas, this._context and
-     // this._camera
-     // were
-     // attached to this renderer since we check for these
-     var _defaultShaders = new X.shaders();
-     this.addShaders(_defaultShaders);
      */
 };
 
