@@ -29,6 +29,13 @@ DVT.loaded = function(copyFrom)
      * @type {string}
      */
     this.file='';
+
+    //copies properties from target
+    if(copyFrom)
+    {
+        this.file=copyFrom.file;
+        this._loaded=copyFrom._loaded;
+    }
 };
 
 goog.inherits(DVT.loaded, DVT.object);

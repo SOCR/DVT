@@ -9,7 +9,7 @@ test = function() {
     test_renderer.init();
 
     // load a .trk file
-    var fibers = new X.fibers();
+    var fibers = new DVT.fibers();
     fibers.file = 'data/smalltrack.trk';
 
     // add the object

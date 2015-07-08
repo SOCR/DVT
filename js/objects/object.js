@@ -26,7 +26,11 @@ DVT.object = function(copyFrom)
     this.THREEContainer=null;
 
 
-
+    //copies variables from target
+    if(copyFrom)
+    {
+        this.THREEContainer=copyFrom.THREEContainer;
+    }
 };
 
 goog.inherits(DVT.object,DVT.base);
