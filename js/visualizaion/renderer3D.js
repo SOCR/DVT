@@ -161,23 +161,15 @@ X.renderer3D.prototype.init = function() {
     //add camera to scene
     this._scene.add(this._camera);
 
-    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas} );
+    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
+    this._renderer.setSize(this._width, this._height);
     /*  //
      // Step2: Configure the context
      //
      try {
 
-     this._context.viewport(0, 0, this._width, this._height);
 
-     // configure opacity to 0.0 to overwrite the viewport background-color by
-     // the container color
-     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
-     // enable transparency
-     this._context.enable(this._context.BLEND);
-     this._context.blendEquation(this._context.FUNC_ADD);
-     this._context.blendFunc(this._context.SRC_ALPHA,
-     this._context.ONE_MINUS_SRC_ALPHA);
      // .. and depth test
      this._context.enable(this._context.DEPTH_TEST);
      // .. with perspective rendering
@@ -185,9 +177,7 @@ X.renderer3D.prototype.init = function() {
      //
 
 
-     // clear color and depth buffer
-     this._context.clear(this._context.COLOR_BUFFER_BIT |
-     this._context.DEPTH_BUFFER_BIT);
+
 
      if (this._config['PICKING_ENABLED']) {
      //
@@ -249,114 +239,6 @@ X.renderer3D.prototype.init = function() {
      */
 };
 
-
-/**
- * Add a pair of shaders to this renderer. The renderer has to be initialized
- * before adding the shaders.
- *
- * @param {!X.shaders} shaders The X.shaders pair to add to this renderer.
- * @public
- */
-X.renderer3D.prototype.addShaders = function(shaders) {
-    /*
-     // check if the renderer is initialized properly
-     if (!goog.isDefAndNotNull(this._canvas) ||
-     !goog.isDefAndNotNull(this._context) ||
-     !goog.isDefAndNotNull(this._camera)) {
-
-     throw new Error('Renderer was not initialized properly.');
-
-     }
-
-     // check if the given shaders are valid
-     if (!goog.isDefAndNotNull(shaders) || !(shaders instanceof X.shaders)) {
-
-     throw new Error('Could not add shaders.');
-
-     }
-
-     // call the validate() method of the shader pair
-     // this will cause an exception if the validation fails..
-     shaders.validate();
-
-     // compile the fragment and vertex shaders
-     var _glFragmentShader = this._context
-     .createShader(this._context.FRAGMENT_SHADER);
-     var _glVertexShader = this._context.createShader(this._context.VERTEX_SHADER);
-
-     // attach the sources, defined in the shaders pair
-     this._context.shaderSource(_glFragmentShader, shaders.fragment());
-     this._context.shaderSource(_glVertexShader, shaders.vertex());
-
-     // start compilation
-     this._context.compileShader(_glFragmentShader);
-     this._context.compileShader(_glVertexShader);
-
-     if (!this._context.getShaderParameter(_glFragmentShader,
-     this._context.COMPILE_STATUS)) {
-
-     throw new Error('Fragement Shader compilation failed!\n' +
-     this._context.getShaderInfoLog(_glFragmentShader));
-
-     }
-
-     if (!this._context.getShaderParameter(_glVertexShader,
-     this._context.COMPILE_STATUS)) {
-
-     throw new Error('Vertex Shader compilation failed!\n' +
-     this._context.getShaderInfoLog(_glVertexShader));
-
-     }
-
-     // create a shaderProgram, attach the shaders and link'em all together
-     var _shaderProgram = this._context.createProgram();
-     this._context.attachShader(_shaderProgram, _glVertexShader);
-     this._context.attachShader(_shaderProgram, _glFragmentShader);
-     this._context.linkProgram(_shaderProgram);
-
-     if (!this._context.getProgramParameter(_shaderProgram,
-     this._context.LINK_STATUS)) {
-
-     throw new Error('Could not create shader program!\n' +
-     this._context.getShaderInfoLog(_glFragmentShader) + '\n' +
-     this._context.getShaderInfoLog(_glVertexShader) + '\n' +
-     this._context.getProgramInfoLog(_shaderProgram));
-
-     }
-
-     // activate the new shaderProgram
-     this._context.useProgram(_shaderProgram);
-
-     // attach the shaderProgram to this renderer
-     this._shaderProgram = _shaderProgram;
-
-     // store the pointers to the shaders' attributes
-     var _attributes = Object.keys(X.shaders.attributes);
-
-     _attributes.forEach(function(a) {
-
-     a = X.shaders.attributes[a];
-     this._attributePointers.set(a, this._context.getAttribLocation(
-     this._shaderProgram, a));
-     this._context.enableVertexAttribArray(this._attributePointers.get(a));
-
-     }.bind(this));
-
-     // store the pointers to the shaders' uniforms
-     var _uniforms = Object.keys(X.shaders.uniforms);
-
-     _uniforms.forEach(function(u) {
-
-     u = X.shaders.uniforms[u];
-     this._uniformLocations.set(u, this._context.getUniformLocation(
-     this._shaderProgram, u));
-
-     }.bind(this));
-
-     // finally, attach the shaders to this renderer
-     this._shaders = shaders;
-     */
-};
 
 
 /**

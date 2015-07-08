@@ -33,4 +33,4 @@ DVT.object = function(copyFrom)
     }
 };
 
-goog.inherits(DVT.object,DVT.base);
+goog.inherits(DVT.object, DVT.base);
