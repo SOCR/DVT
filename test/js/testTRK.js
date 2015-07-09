@@ -12,8 +12,11 @@ test = function() {
     var fibers = new DVT.fiber();
     fibers.file = 'data/smalltrack.trk';
 
+    var fibers2 = new DVT.fiber();
+    fibers2.file = 'data/fibers.trk';
     // add the object
-    test_renderer.add(fibers);
+    //test_renderer.add(fibers);
+    test_renderer.add(fibers2);
 
     // .. and render it
     test_renderer.render();

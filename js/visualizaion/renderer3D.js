@@ -1192,7 +1192,7 @@ DVT.renderer3D.prototype.pick = function(x, y) {
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Function call: render_ in renderer3D')
+DVT.renderer3D.prototype.render_ = function(picking, invoked) {
     /*
      // call the render_ method of the superclass
      goog.base(this, 'render_', picking, invoked);

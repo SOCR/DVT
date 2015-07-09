@@ -837,7 +837,7 @@ DVT.renderer.prototype.generateTree_ = function(object, level) {
  *
  * @public
  */
-DVT.renderer.prototype.render = function() {console.log('BOOOOOO');
+DVT.renderer.prototype.render = function() {
     if (!this._canvas || !this._context) {
 
         throw new Error('The renderer was not initialized properly.');
