@@ -69,6 +69,14 @@ DVT.loader.prototype.load = function(container) {
     //add load bars
     var helper = new DVT.loadHelper(this._curIndex, filePath, this._modalID, container);
 
+    //listen for load bar completion event
+    goog.events.listen(helper, 'PROGRESS', function(){
+        this._numActive -= 1
+        if(this._numActive === 0)
+        {
+            $('#'+this._modalID).modal('hide');
+        }}, false, this);
+
     //load data
     helper.load();
 
