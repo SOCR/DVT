@@ -76,9 +76,9 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
     this._modalID = modalID;
 
     //add progress bar elements to modal window
-    this._addElement(this._loadID);
-    this._addElement(this._renderID);
-    this._addElement(this._parseID);
+    this._addElement(this._loadID, 'Loading ' + this._filepath);
+    this._addElement(this._parseID, 'Parsing ' + this._filepath);
+    this._addElement(this._renderID, 'Rendering ' + this._filepath);
     this._container._loader = this;
 
     //initialize loading bars and set behavior
@@ -184,23 +184,24 @@ DVT.loadHelper.prototype.updateRender=function(oEvent)
 };
 
 DVT.loadHelper.prototype.finishLoad = function(XHR) {
-    console.log('LOADED!!!!!!!!!!');
     if(XHR.status === 404)
     {
         alert('error: file not found');
         return;
     }
-
-
+    this._loadLine.animate(1,this._removeElement.bind(this, this._loadID, this._loadLine));
+    this._parseInit(XHR.response);
 };
 
-DVT.loadHelper.prototype._addElement = function(elementID) {
-    $('#' + this._modalID + ' .modal-body').append('<div id=' + elementID + '></div>');
+DVT.loadHelper.prototype._addElement = function(elementID, message) {
+    $('#' + this._modalID + ' .modal-body').append('<div id = holder' + elementID + '><span>' + message + '</span><span id=' + elementID + '></span></div><br>');
 };
 
-DVT.loadHelper.prototype._removeElement=function()
+DVT.loadHelper.prototype._removeElement=function(elementID, bar)
 {
-
+    $('#holder' + elementID).fadeOut(700,function(){
+        $('#holder' + elementID).css({"visibility":"hidden",display:'block'}).slideUp();
+    });
 };
 
 /**
@@ -214,5 +215,15 @@ DVT.loadHelper.prototype.isBinary = function () {
             break;
         default:
             return false
+    }
+};
+
+DVT.loadHelper.prototype.parseInit = function(data) {
+    switch(this._extension) {
+        case 'trk':
+            DVT.parseTRK();
+            break;
+        default:
+            alert('Parser not found');
     }
 }
