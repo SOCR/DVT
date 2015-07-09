@@ -6,6 +6,7 @@ goog.provide('DVT.loadHelper');
 goog.require('DVT');
 goog.require('goog.events');
 goog.require('ProgressBar');
+goog.require('bootstrap');
 
 /**
  * creates a loadHelper object
@@ -107,12 +108,22 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
     });
 };
 
+/**
+ * initiates XHR and parsing protocol
+ */
 DVT.loadHelper.prototype.load = function () {
+    $('#' + this._modalID).modal('show');
     var XHR = new XMLHttpRequest();
 
     //add events for listening
-    XHR.addEventListener("progress", this.updateLoad, false);
-    goog.events.listen(XHR, 'load', this.finishLoad.bind(this));
+    XHR.addEventListener("progress", this.updateLoad.bind(this), false);
+    goog.events.listen(XHR, 'load', this.finishLoad.bind(this, XHR));
+
+     // abort events
+    goog.events.listen(XHR, 'abort', this.loadFailed.bind(this));
+
+    // error events
+    goog.events.listen(XHR, 'error', this.loadFailed.bind(this));
 
     XHR.open('GET', this._filepath, true);
 
@@ -126,11 +137,16 @@ DVT.loadHelper.prototype.load = function () {
     XHR.send();
 };
 
+DVT.loadHelper.prototype.loadFailed = function () {
+    console.log('LOAD FAILED');
+    alert('load failed');
+}
+
 /**
  * updates progressbar to reflect current loading status
  * @param oEvent the returned event
  */
-DVT.loadHelper.prototype.updateLoad=function(oEvent) {
+DVT.loadHelper.prototype.updateLoad =function(oEvent) {
     if (oEvent.lengthComputable) {
         var percentComplete = oEvent.loaded / oEvent.total;
         this._loadLine.animate(percentComplete);
@@ -167,8 +183,15 @@ DVT.loadHelper.prototype.updateRender=function(oEvent)
     }
 };
 
-DVT.loadHelper.prototype.finishLoad = function() {
+DVT.loadHelper.prototype.finishLoad = function(XHR) {
     console.log('LOADED!!!!!!!!!!');
+    if(XHR.status === 404)
+    {
+        alert('error: file not found');
+        return;
+    }
+
+
 };
 
 DVT.loadHelper.prototype._addElement = function(elementID) {
