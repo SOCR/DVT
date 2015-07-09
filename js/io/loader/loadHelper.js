@@ -225,14 +225,15 @@ DVT.loadHelper.prototype._addElement = function(elementID, message) {
 
 DVT.loadHelper.prototype._removeElement=function(elementID, bar)
 {
+    window.setTimeout(
+        this.dispatchEvent.bind(this, {type:'PROGRESS', target: this}),1000)
     $('#holder' + elementID).fadeOut(700,function(){
         $('#holder' + elementID).css({"visibility":"hidden",display:'block'}).slideUp();
-        this.dispatchEvent.bind(this, {type:'PROGRESS'});
     });
 };
 
 /**
- * determines wether file needs to be parsed as binary or JSON style data
+ * determines whether file needs to be parsed as binary or JSON style data
  * @returns {boolean}
  */
 DVT.loadHelper.prototype.isBinary = function () {

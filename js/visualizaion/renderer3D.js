@@ -917,6 +917,7 @@ DVT.renderer3D.prototype.update_ = function(object) {
     if (!existed) {
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
+        object._loader.finishRender();
         this.render();
     }
 
