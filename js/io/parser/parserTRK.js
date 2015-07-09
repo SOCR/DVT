@@ -207,7 +207,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
     object._locked = false;
     fibers.translateX(0-(min.x+max.x)/2);
     fibers.translateY(0-(min.y+max.y)/2);
-    fibers.translateZ(-500-(min.z+max.z)/2);
+    fibers.translateZ(-300-(min.z+max.z)/2);
     object.dispatchEvent({type: 'PROCESSED', target: object});
 
 };

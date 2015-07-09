@@ -269,7 +269,6 @@ THREE.OrbitControls = function ( object, domElement ) {
 	};
 
 	this.update = function () {
-
 		var position = this.object.position;
 
 		offset.copy( position ).sub( this.target );
@@ -333,7 +332,6 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 		if ( lastPosition.distanceToSquared( this.object.position ) > EPS
 		    || 8 * (1 - lastQuaternion.dot(this.object.quaternion)) > EPS ) {
-
 			this.dispatchEvent( changeEvent );
 
 			lastPosition.copy( this.object.position );
@@ -473,8 +471,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 			panStart.copy( panEnd );
 
 		}
-
-		if ( state !== STATE.NONE ) scope.update();
+		if ( state !== STATE.NONE) scope.update();
 
 	}
 

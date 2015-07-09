@@ -16,6 +16,7 @@ goog.provide('DVT.renderer3D');
  */
 goog.require('DVT.renderer');
 goog.require('THREE');
+goog.require('orbitControls');
 
 
 
@@ -47,6 +48,13 @@ DVT.renderer3D = function() {
      * @protected
      */
     this._camera = null;
+
+    /**
+     * Allows far pan, zoom, scroll, etc
+     * @type {THREE.OrbitControls}
+     * @private
+     */
+    this._controller = null;
 
     /**
      * The scene object used by Three.js
@@ -140,6 +148,12 @@ DVT.renderer3D.prototype.onHover_ = function(event) {
 
 };
 
+DVT.renderer3D.prototype.animate = function () {
+    window.requestAnimationFrame(this.animate.bind(this));
+    this._controller.update();
+
+}
+
 
 /**
  * @inheritDoc
@@ -151,7 +165,13 @@ DVT.renderer3D.prototype.init = function() {
 
     //configure camera
     this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
+    this._camera.position.z = 500;
 
+    //setup controller
+    this._controller = new THREE.OrbitControls(this._camera);
+
+    this._controller.damping = 0.2;
+    this._controller.addEventListener( 'change', this.render.bind(this));
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
@@ -163,6 +183,9 @@ DVT.renderer3D.prototype.init = function() {
 
     this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
     this._renderer.setSize(this._width, this._height);
+
+
+    this.animate();
     /*  //
      // Step2: Configure the context
      //
