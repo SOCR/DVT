@@ -226,4 +226,4 @@ DVT.loadHelper.prototype.parseInit = function(data) {
         default:
             alert('Parser not found');
     }
-}
+};
