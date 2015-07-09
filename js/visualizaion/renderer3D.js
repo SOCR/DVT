@@ -262,6 +262,8 @@ DVT.renderer3D.prototype.update_ = function(object) {
     }
     console.log(this.get(object));
     var loaded = object._loaded;
+    var locked = object._locked;
+
     /*
      var id = object._id;
      var points = object._points;
@@ -362,11 +364,11 @@ DVT.renderer3D.prototype.update_ = function(object) {
      */
 
     //@@@ CHANGED FROM ELIF
-    if (goog.isDefAndNotNull(file) && !file._dirty) {
+    if (goog.isDefAndNotNull(file) && !loaded) {
         // this object is based on an external file and it is dirty..
         console.log('Function call: update_ in renderer3D message: load ')
         // start loading..
-        this._loader.load(object, object);
+        this._loader.load(object);
         return;
 
     }/* else if (goog.isDefAndNotNull(scalars) &&

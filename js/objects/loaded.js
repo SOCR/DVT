@@ -25,6 +25,13 @@ DVT.loaded = function(copyFrom)
     this._loaded=false;
 
     /**
+     * Indicates whether object is available for use
+     * @type {boolean}
+     * @private
+     */
+    this._locked=false;
+    
+    /**
      * filepath for the loadable object
      * @type {string}
      */
