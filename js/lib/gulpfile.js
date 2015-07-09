@@ -77,7 +77,7 @@ gulp.task('deps', function() {
         }))
         .pipe(depsWriter({
             fileName: 'deps.js',
-            //prefix: '../../../..',
+            prefix: '../../../..',
             baseDir: '../../dist'
         }))
         .pipe(gulp.dest('../../dist'));

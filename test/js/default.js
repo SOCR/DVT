@@ -12,7 +12,7 @@
     console.log('!!!');
     goog.require('DVT.renderer3D');
     console.log('!!');
-    goog.require('DVT.fibers');
+    goog.require('DVT.fiber');
 
 /**
  * From http://javascript.about.com/library/bladdjs.htm Import javascript.
