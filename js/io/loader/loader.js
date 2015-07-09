@@ -2,7 +2,6 @@
  * Created by shusa_000 on 7/2/2015.
  * loader base class
  */
-"use strict";
 
 
 goog.provide('DVT.loader');

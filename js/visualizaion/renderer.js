@@ -2,7 +2,7 @@
  * Created by shusa_000 on 6/29/2015.
  */
 
-"use strict";
+
 
 
 goog.provide('DVT.renderer');

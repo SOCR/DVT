@@ -2,7 +2,6 @@
  * Created by shusa_000 on 6/30/2015.
  */
 
-"use strict";
 
 // Include gulp
 var gulp = require('gulp');
