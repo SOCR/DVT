@@ -2,12 +2,12 @@
 // Please do not edit.
 goog.addDependency('../../../../../js/DVT.js', ['DVT'], ['jQuery'], false);
 goog.addDependency('../../../../../js/core/base.js', ['DVT.base'], ['DVT', 'goog.events', 'goog.events.EventTarget'], false);
-goog.addDependency('../../../../../js/core/jquery.min.js', ['jQuery'], [], false);
-goog.addDependency('../../../../../js/core/three.min.js', ['THREE'], [], false);
 goog.addDependency('../../../../../js/events/eventsCore.js', ['DVT.eventCore'], [], false);
 goog.addDependency('../../../../../js/io/loader/listeners.js', ['DVT.listeners'], [], false);
 goog.addDependency('../../../../../js/io/loader/loadHelper.js', ['DVT.loadHelper'], ['DVT'], false);
 goog.addDependency('../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DVT', 'DVT.loadHelper'], false);
+goog.addDependency('../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);
+goog.addDependency('../../../../../js/lib/three.min.js', ['THREE'], [], false);
 goog.addDependency('../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT.loaded'], false);
 goog.addDependency('../../../../../js/objects/loaded.js', ['DVT.loaded'], ['DVT.object'], false);
 goog.addDependency('../../../../../js/objects/object.js', ['DVT.object'], ['DVT.base'], false);
