@@ -10,6 +10,7 @@
  * 
  */
 goog.provide('DVT');
+goog.require('jQuery');
 DVT=DVT||{};
 var $ = window.$;
 

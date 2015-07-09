@@ -5,12 +5,12 @@ goog.provide('DVT.renderer3D');
 
 // requires
 /*
- goog.require('X.buffer');
- goog.require('X.caption');
- goog.require('X.matrix');
- goog.require('X.shaders');
- goog.require('X.triplets');
- goog.require('X.vector');
+ goog.require('DVT.buffer');
+ goog.require('DVT.caption');
+ goog.require('DVT.matrix');
+ goog.require('DVT.shaders');
+ goog.require('DVT.triplets');
+ goog.require('DVT.vector');
  goog.require('goog.structs.Map');
  goog.require('goog.style');
  */
@@ -23,12 +23,12 @@ goog.require('THREE');
  * Create a 3D renderer inside a given DOM Element.
  *
  * @constructor
- * @extends X.renderer
+ * @extends DVT.renderer
  */
 DVT.renderer3D = function() {
 
     //
-    // call the standard constructor of X.renderer
+    // call the standard constructor of DVT.renderer
     goog.base(this);
 
     //
@@ -82,8 +82,8 @@ DVT.renderer3D = function() {
 
     this._renderer =null
 };
-// inherit from X.renderer
-goog.inherits(X.renderer3D, X.renderer);
+// inherit from DVT.renderer
+goog.inherits(DVT.renderer3D, DVT.renderer);
 
 
 /**
@@ -100,7 +100,7 @@ goog.inherits(X.renderer3D, X.renderer);
  *
  * @return {Object} The configuration.
  */
-X.renderer3D.prototype.__defineGetter__('config', function() {
+DVT.renderer3D.prototype.__defineGetter__('config', function() {
 
     return this._config;
 
@@ -109,13 +109,13 @@ X.renderer3D.prototype.__defineGetter__('config', function() {
 
 /**
  * Reset the global bounding box for all objects to undefined and reset the
- * center to 0,0,0. This can be useful before calling X.object.modified() on all
+ * center to 0,0,0. This can be useful before calling DVT.object.modified() on all
  * objects after transforms etc. which then re-calculates the global bounding
- * box.
+ * boDVT.
  *
  * @public
  */
-X.renderer3D.prototype.resetBoundingBox = function() {
+DVT.renderer3D.prototype.resetBoundingBox = function() {
 
     this._minX = null;
     this._maxX = null;
@@ -132,7 +132,7 @@ X.renderer3D.prototype.resetBoundingBox = function() {
 /**
  * @inheritDoc
  */
-X.renderer3D.prototype.onHover_ = function(event) {
+DVT.renderer3D.prototype.onHover_ = function(event) {
 
     goog.base(this, 'onHover_', event);
 
@@ -144,7 +144,7 @@ X.renderer3D.prototype.onHover_ = function(event) {
 /**
  * @inheritDoc
  */
-X.renderer3D.prototype.init = function() {
+DVT.renderer3D.prototype.init = function() {
 
     // call the superclass' init method
     goog.base(this, 'init', "experimental-webgl");
@@ -184,7 +184,7 @@ X.renderer3D.prototype.init = function() {
      // create a frame buffer for the picking functionality
      //
      // inspired by JAX https://github.com/sinisterchipmunk/jax/ and
-     // http://dl.dropbox.com/u/5095342/WebGL/webgldemo3.js
+     // http://dl.dropboDVT.com/u/5095342/WebGL/webgldemo3.js
      //
      // we basically render into an invisible framebuffer and use a unique
      // object
@@ -244,7 +244,7 @@ X.renderer3D.prototype.init = function() {
 /**
  * @inheritDoc
  */
-X.renderer3D.prototype.update_ = function(object) {
+DVT.renderer3D.prototype.update_ = function(object) {
     console.log('function call: update_ in renderer3D')
     // call the update_ method of the superclass
     goog.base(this, 'update_', object);
@@ -306,7 +306,7 @@ X.renderer3D.prototype.update_ = function(object) {
      // a) the object has an external texture
      // b) the object is based on an external file (vtk, stl...)
      // in these cases, we do not directly update the object but activate the
-     // X.loader to get the externals and then let it call the update method
+     // DVT.loader to get the externals and then let it call the update method
      if (goog.isDefAndNotNull(colortable) &&
      goog.isDefAndNotNull(colortable._file) && colortable._file._dirty) {
      // a colortable file is associated to this object and it is dirty..
@@ -430,10 +430,10 @@ X.renderer3D.prototype.update_ = function(object) {
      //
      // This gets executed after all dynamic content has been loaded.
 
-     // X.TIMER(this._classname + '.update');
+     // DVT.TIMER(this._classname + '.update');
 
-     // check if this is an X.slice as part of a X.labelmap
-     var isLabelMap = (object instanceof X.slice && object._volume instanceof X.labelmap);
+     // check if this is an DVT.slice as part of a DVT.labelmap
+     var isLabelMap = (object instanceof DVT.slice && object._volume instanceof DVT.labelmap);
 
      //
      // TEXTURE
@@ -486,7 +486,7 @@ X.renderer3D.prototype.update_ = function(object) {
 
      // setup the glTexture, at this point the image for the texture was
      // already
-     // loaded thanks to X.loader
+     // loaded thanks to DVT.loader
      var glTexture = this._context.createTexture();
 
      // connect the image and the glTexture
@@ -554,8 +554,8 @@ X.renderer3D.prototype.update_ = function(object) {
      this._context.bufferData(this._context.ARRAY_BUFFER, new Float32Array(
      textureCoordinateMap), this._context.STATIC_DRAW);
 
-     // create an X.buffer to store the texture-coordinate map
-     texturePositionBuffer = new X.buffer(glTexturePositionBuffer,
+     // create an DVT.buffer to store the texture-coordinate map
+     texturePositionBuffer = new DVT.buffer(glTexturePositionBuffer,
      textureCoordinateMap.length, 2);
 
      this._texturePositionBuffers.set(id, texturePositionBuffer);
@@ -588,15 +588,15 @@ X.renderer3D.prototype.update_ = function(object) {
 
      this._locked = false; // we gotta unlock here already
 
-     X.TIMERSTOP(this._classname + '.update');
+     DVT.TIMERSTOP(this._classname + '.update');
 
      this._loader.addProgress(0.9); // add the missing progress
 
      return; // sayonara
 
      // this prevents storing of not required buffers, objects etc. since the
-     // labelmaps are only pseudo X.objects and never rendered directly but
-     // merged into an X.volume
+     // labelmaps are only pseudo DVT.objects and never rendered directly but
+     // merged into an DVT.volume
 
      }
 
@@ -610,26 +610,26 @@ X.renderer3D.prototype.update_ = function(object) {
      if (!existed || points._dirty || transform._dirty) {
      var transformationMatrix = transform._matrix;
 
-     var tMin = X.matrix.multiplyByVector(transformationMatrix, points._minA, points._minB, points._minC);
-     var tMax = X.matrix.multiplyByVector(transformationMatrix, points._maxA, points._maxB, points._maxC);
+     var tMin = DVT.matriDVT.multiplyByVector(transformationMatrix, points._minA, points._minB, points._minC);
+     var tMax = DVT.matriDVT.multiplyByVector(transformationMatrix, points._maxA, points._maxB, points._maxC);
 
      if (goog.isNull(this._minX) || tMin.x < this._minX) {
      this._minX = tMin.x;
      }
-     if (goog.isNull(this._maxX) || tMax.x > this._maxX) {
-     this._maxX = tMax.x;
+     if (goog.isNull(this._maxX) || tMaDVT.x > this._maxX) {
+     this._maxX = tMaDVT.x;
      }
      if (goog.isNull(this._minY) || tMin.y < this._minY) {
      this._minY = tMin.y;
      }
-     if (goog.isNull(this._maxY) || tMax.y > this._maxY) {
-     this._maxY = tMax.y;
+     if (goog.isNull(this._maxY) || tMaDVT.y > this._maxY) {
+     this._maxY = tMaDVT.y;
      }
      if (goog.isNull(this._minZ) || tMin.z < this._minZ) {
      this._minZ = tMin.z;
      }
-     if (goog.isNull(this._maxZ) || tMax.z > this._maxZ) {
-     this._maxZ = tMax.z;
+     if (goog.isNull(this._maxZ) || tMaDVT.z > this._maxZ) {
+     this._maxZ = tMaDVT.z;
      }
      // we always keep track of the current center position
      this._center = [(this._minX + this._maxX) / 2,
@@ -683,9 +683,9 @@ X.renderer3D.prototype.update_ = function(object) {
      this._context.bufferData(this._context.ARRAY_BUFFER, points._triplets,
      this._context.STATIC_DRAW);
 
-     // create an X.buffer to store the vertices
+     // create an DVT.buffer to store the vertices
      // every vertex consists of 3 items (x,y,z)
-     vertexBuffer = new X.buffer(glVertexBuffer, points.count, 3);
+     vertexBuffer = new DVT.buffer(glVertexBuffer, points.count, 3);
 
      points._dirty = false;
 
@@ -741,9 +741,9 @@ X.renderer3D.prototype.update_ = function(object) {
      this._context.bufferData(this._context.ARRAY_BUFFER, normals._triplets,
      this._context.STATIC_DRAW);
 
-     // create an X.buffer to store the normals
+     // create an DVT.buffer to store the normals
      // every normal consists of 3 items (x,y,z)
-     normalBuffer = new X.buffer(glNormalBuffer, normals.count, 3);
+     normalBuffer = new DVT.buffer(glNormalBuffer, normals.count, 3);
 
      normals._dirty = false;
 
@@ -784,7 +784,7 @@ X.renderer3D.prototype.update_ = function(object) {
      }
 
      // check if we have point colors, then we need to setup the glBuffer and the
-     // X.buffer
+     // DVT.buffer
      var colorBuffer = null;
 
      if (colors) {
@@ -815,9 +815,9 @@ X.renderer3D.prototype.update_ = function(object) {
      this._context.bufferData(this._context.ARRAY_BUFFER, colors._triplets,
      this._context.STATIC_DRAW);
 
-     // create an X.buffer to store the colors
+     // create an DVT.buffer to store the colors
      // every color consists of 3 items (r,g,b)
-     colorBuffer = new X.buffer(glColorBuffer, colors.count, 3);
+     colorBuffer = new DVT.buffer(glColorBuffer, colors.count, 3);
 
      colors._dirty = false;
 
@@ -837,7 +837,7 @@ X.renderer3D.prototype.update_ = function(object) {
      //
      // SCALARS
      //
-     // Objects can have scalars attached to each vertex.
+     // Objects can have scalars attached to each verteDVT.
 
      if (existed && scalars && scalars._dirty) {
 
@@ -857,7 +857,7 @@ X.renderer3D.prototype.update_ = function(object) {
      }
 
      // check if we have scalars, then we need to setup the glBuffer and the
-     // X.buffer
+     // DVT.buffer
      var scalarBuffer = null;
 
      if (scalars) {
@@ -885,9 +885,9 @@ X.renderer3D.prototype.update_ = function(object) {
      this._context.bufferData(this._context.ARRAY_BUFFER, scalarsArray,
      this._context.STATIC_DRAW);
 
-     // create an X.buffer to store the colors
+     // create an DVT.buffer to store the colors
      // every scalar consists of 1 item
-     scalarBuffer = new X.buffer(glScalarBuffer, scalarsArray.length, 3);
+     scalarBuffer = new DVT.buffer(glScalarBuffer, scalarsArray.length, 3);
 
      scalars._dirty = false;
 
@@ -935,7 +935,7 @@ X.renderer3D.prototype.update_ = function(object) {
     // clean the object
     object._dirty = false;
 
-    // X.TIMERSTOP(this._classname + '.update');
+    // DVT.TIMERSTOP(this._classname + '.update');
 
     // unlock
     this._locked = false;
@@ -944,14 +944,14 @@ X.renderer3D.prototype.update_ = function(object) {
 
 
 /**
- * Show the caption of the X.object at viewport position x,y. This performs
+ * Show the caption of the DVT.object at viewport position x,y. This performs
  * object picking and shows a tooltip if an object with a caption exists at this
  * position.
  *
  * @param {number} x The x coordinate (viewport).
  * @param {number} y The y coordinate (viewport).
  */
-X.renderer3D.prototype.showCaption_ = function(x, y) {
+DVT.renderer3D.prototype.showCaption_ = function(x, y) {
     /*
      var pickedId = this.pick(x, y);
 
@@ -965,7 +965,7 @@ X.renderer3D.prototype.showCaption_ = function(x, y) {
 
      var pos = goog.style.getClientPosition(this._container);
 
-     var t = new X.caption(this._container, pos.x + x +
+     var t = new DVT.caption(this._container, pos.x + x +
      10, pos.y + y + 10, this._interactor);
      t.setHtml(caption);
 
@@ -979,22 +979,22 @@ X.renderer3D.prototype.showCaption_ = function(x, y) {
 /**
  * (Re-)configure the volume rendering orientation based on the current view
  * matrix of the camera. We always use the slices which are best oriented to
- * create the tiled textures of X.volumes.
+ * create the tiled textures of DVT.volumes.
  *
- * @param {X.volume} volume The X.volume to configure
+ * @param {DVT.volume} volume The DVT.volume to configure
  */
-X.renderer3D.prototype.orientVolume_ = function(volume) {
+DVT.renderer3D.prototype.orientVolume_ = function(volume) {
     /*
-     var realCentroidVector = X.matrix.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[0]._sliceNormal[0],volume._RASCenter[1]+ volume._childrenInfo[0]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[0]._sliceNormal[2]);
-     var realCentroidVector2 = X.matrix.multiplyByVector(this._camera._view,volume._RASCenter[0]-volume._childrenInfo[0]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[0]._sliceNormal[1], volume._RASCenter[2]-volume._childrenInfo[0]._sliceNormal[2]);
+     var realCentroidVector = DVT.matriDVT.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[0]._sliceNormal[0],volume._RASCenter[1]+ volume._childrenInfo[0]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[0]._sliceNormal[2]);
+     var realCentroidVector2 = DVT.matriDVT.multiplyByVector(this._camera._view,volume._RASCenter[0]-volume._childrenInfo[0]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[0]._sliceNormal[1], volume._RASCenter[2]-volume._childrenInfo[0]._sliceNormal[2]);
      var dX = Math.abs(realCentroidVector.z - realCentroidVector2.z);
 
-     realCentroidVector = X.matrix.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[1]._sliceNormal[0], volume._RASCenter[1]+volume._childrenInfo[1]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[1]._sliceNormal[2]);
-     realCentroidVector2 = X.matrix.multiplyByVector(this._camera._view, volume._RASCenter[0]-volume._childrenInfo[1]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[1]._sliceNormal[1], volume._RASCenter[2] +-volume._childrenInfo[1]._sliceNormal[2]);
+     realCentroidVector = DVT.matriDVT.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[1]._sliceNormal[0], volume._RASCenter[1]+volume._childrenInfo[1]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[1]._sliceNormal[2]);
+     realCentroidVector2 = DVT.matriDVT.multiplyByVector(this._camera._view, volume._RASCenter[0]-volume._childrenInfo[1]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[1]._sliceNormal[1], volume._RASCenter[2] +-volume._childrenInfo[1]._sliceNormal[2]);
      var dY = Math.abs(realCentroidVector.z - realCentroidVector2.z);
 
-     realCentroidVector = X.matrix.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[2]._sliceNormal[0], volume._RASCenter[1]+volume._childrenInfo[2]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[2]._sliceNormal[2]);
-     realCentroidVector2 = X.matrix.multiplyByVector(this._camera._view, volume._RASCenter[0]-volume._childrenInfo[2]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[2]._sliceNormal[1], volume._RASCenter[2]-volume._childrenInfo[2]._sliceNormal[2]);
+     realCentroidVector = DVT.matriDVT.multiplyByVector(this._camera._view, volume._RASCenter[0]+volume._childrenInfo[2]._sliceNormal[0], volume._RASCenter[1]+volume._childrenInfo[2]._sliceNormal[1], volume._RASCenter[2]+volume._childrenInfo[2]._sliceNormal[2]);
+     realCentroidVector2 = DVT.matriDVT.multiplyByVector(this._camera._view, volume._RASCenter[0]-volume._childrenInfo[2]._sliceNormal[0], volume._RASCenter[1]-volume._childrenInfo[2]._sliceNormal[1], volume._RASCenter[2]-volume._childrenInfo[2]._sliceNormal[2]);
      var dZ = Math.abs(realCentroidVector.z - realCentroidVector2.z);
 
      var maxDistance = Math.max(dX, dY, dZ);
@@ -1016,17 +1016,17 @@ X.renderer3D.prototype.orientVolume_ = function(volume) {
 
 
 /**
- * Calculate the distance to the eye (camera) for one X.object.
+ * Calculate the distance to the eye (camera) for one DVT.object.
  *
- * @param {!X.object} object The X.object to use for calculation.
+ * @param {!DVT.object} object The DVT.object to use for calculation.
  * @return {number} The distance to the eye.
  */
-X.renderer3D.prototype.distanceToEye_ = function(object) {
+DVT.renderer3D.prototype.distanceToEye_ = function(object) {
     /*
      var centroid = object._points._centroid;
-     var transformedCentroidVector = X.matrix.multiplyByVector(object._transform._matrix, centroid[0], centroid[1], centroid[2]);
-     var realCentroidVector = X.matrix.multiplyByVector(this._camera._view, transformedCentroidVector.x, transformedCentroidVector.y, transformedCentroidVector.z);
-     var distanceFromEye = X.vector.distance(this._camera._position,
+     var transformedCentroidVector = DVT.matriDVT.multiplyByVector(object._transform._matrix, centroid[0], centroid[1], centroid[2]);
+     var realCentroidVector = DVT.matriDVT.multiplyByVector(this._camera._view, transformedCentroidVector.x, transformedCentroidVector.y, transformedCentroidVector.z);
+     var distanceFromEye = DVT.vector.distance(this._camera._position,
      realCentroidVector);
 
      return Math.round(distanceFromEye * 1000) / 1000;
@@ -1035,11 +1035,11 @@ X.renderer3D.prototype.distanceToEye_ = function(object) {
 
 
 /**
- * Calculates the distance for each associated X.object and orders objects array
+ * Calculates the distance for each associated DVT.object and orders objects array
  * accordingly from back-to-front while fully opaque objects are drawn first.
  * Jumps out as early as possible if all objects are fully opaque.
  */
-X.renderer3D.prototype.order_ = function() {
+DVT.renderer3D.prototype.order_ = function() {
     /*
      // by default we do not want to update the rendering order
      var reSortRequired = false;
@@ -1052,10 +1052,10 @@ X.renderer3D.prototype.order_ = function() {
 
      var object = topLevelObjects[t];
 
-     // special case for X.volumes in volumeRendering mode
+     // special case for DVT.volumes in volumeRendering mode
      // a) we know the volumeRendering direction and the center of the volume
      // b) check if first or last slice is the closest an order slices accordingly
-     if (object instanceof X.volume && object._volumeRendering && object._volumeRenderingDirection != -1) {
+     if (object instanceof DVT.volume && object._volumeRendering && object._volumeRenderingDirection != -1) {
 
      var _slices = object._children[object._volumeRenderingDirection]._children;
      var numberOfSlices = _slices.length;
@@ -1064,8 +1064,8 @@ X.renderer3D.prototype.order_ = function() {
      var firstSlice = _slices[0];
 
      var _targetChild = object._volumeRenderingDirection;
-     var realCentroidVector = X.matrix.multiplyByVector(this._camera._view, object._RASCenter[0]+object._childrenInfo[_targetChild]._sliceDirection[0], object._RASCenter[1]+object._childrenInfo[_targetChild]._sliceDirection[1], object._RASCenter[2]+object._childrenInfo[_targetChild]._sliceDirection[2]);
-     var realCentroidVector2 = X.matrix.multiplyByVector(this._camera._view,object._RASCenter[0]-object._childrenInfo[_targetChild]._sliceDirection[0], object._RASCenter[1]-object._childrenInfo[_targetChild]._sliceDirection[1], object._RASCenter[2]-object._childrenInfo[_targetChild]._sliceDirection[2]);
+     var realCentroidVector = DVT.matriDVT.multiplyByVector(this._camera._view, object._RASCenter[0]+object._childrenInfo[_targetChild]._sliceDirection[0], object._RASCenter[1]+object._childrenInfo[_targetChild]._sliceDirection[1], object._RASCenter[2]+object._childrenInfo[_targetChild]._sliceDirection[2]);
+     var realCentroidVector2 = DVT.matriDVT.multiplyByVector(this._camera._view,object._RASCenter[0]-object._childrenInfo[_targetChild]._sliceDirection[0], object._RASCenter[1]-object._childrenInfo[_targetChild]._sliceDirection[1], object._RASCenter[2]-object._childrenInfo[_targetChild]._sliceDirection[2]);
      var dX = realCentroidVector.z - realCentroidVector2.z;
 
      var _acquisitionDirection = Math.max(object._IJKToRAS[object._volumeRenderingDirection], Math.max(object._IJKToRAS[object._volumeRenderingDirection+4], object._IJKToRAS[object._volumeRenderingDirection+8]));
@@ -1119,9 +1119,9 @@ X.renderer3D.prototype.order_ = function() {
 
      // the following cases do not need to be calculated
      // a) opacity is 1
-     // b) object is an X.slice since we take care of that when grabbing the
+     // b) object is an DVT.slice since we take care of that when grabbing the
      // volume
-     if ((object._opacity == 1) || (object instanceof X.slice)) {
+     if ((object._opacity == 1) || (object instanceof DVT.slice)) {
 
      continue;
 
@@ -1149,14 +1149,14 @@ X.renderer3D.prototype.order_ = function() {
 
 /**
  * Picks an object at a position defined by display coordinates. If
- * X.renderer3D.config['PICKING_ENABLED'] is FALSE, this function always returns
+ * DVT.renderer3D.config['PICKING_ENABLED'] is FALSE, this function always returns
  * -1.
  *
  * @param {!number} x The X-value of the display coordinates.
  * @param {!number} y The Y-value of the display coordinates.
- * @return {number} The ID of the found X.object or -1 if no X.object was found.
+ * @return {number} The ID of the found DVT.object or -1 if no DVT.object was found.
  */
-X.renderer3D.prototype.pick = function(x, y) {
+DVT.renderer3D.prototype.pick = function(x, y) {
     /*
      if (this._config['PICKING_ENABLED']) {
 
@@ -1188,7 +1188,7 @@ X.renderer3D.prototype.pick = function(x, y) {
 /**
  * @inheritDoc
  */
-X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Function call: render_ in renderer3D')
+DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Function call: render_ in renderer3D')
     /*
      // call the render_ method of the superclass
      goog.base(this, 'render_', picking, invoked);
@@ -1230,16 +1230,16 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      // propagate perspective and view matrices to the uniforms of
      // the shader
      this._context.uniformMatrix4fv(this._uniformLocations
-     .get(X.shaders.uniforms.PERSPECTIVE), false, perspectiveMatrix);
+     .get(DVT.shaders.uniforms.PERSPECTIVE), false, perspectiveMatrix);
 
      this._context.uniformMatrix4fv(this._uniformLocations
-     .get(X.shaders.uniforms.VIEW), false, viewMatrix);
+     .get(DVT.shaders.uniforms.VIEW), false, viewMatrix);
 
      // propagate the objects' center to the shader
      //
      var center = this._center;
      this._context.uniform3f(
-     this._uniformLocations.get(X.shaders.uniforms.CENTER),
+     this._uniformLocations.get(DVT.shaders.uniforms.CENTER),
      parseFloat(center[0]), parseFloat(center[1]), parseFloat(center[2]));
 
      //
@@ -1250,7 +1250,7 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      var topLevelObjectsLength = this._topLevelObjects.length;
      for (i = 0; i < topLevelObjectsLength; ++i) {
      var topLevelObject = this._topLevelObjects[i];
-     if (topLevelObject instanceof X.volume) {
+     if (topLevelObject instanceof DVT.volume) {
      this.orientVolume_(topLevelObject);
      }
      }
@@ -1280,51 +1280,51 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      // caching for multiple objects
      //
      var aPointers = this._attributePointers;
-     var aPosition = aPointers.get(X.shaders.attributes.VERTEXPOSITION);
-     var aNormal = aPointers.get(X.shaders.attributes.VERTEXNORMAL);
-     var aColor = aPointers.get(X.shaders.attributes.VERTEXCOLOR);
-     var aTexturePosition = aPointers.get(X.shaders.attributes.VERTEXTEXTUREPOS);
-     var aScalar = aPointers.get(X.shaders.attributes.VERTEXSCALAR);
+     var aPosition = aPointers.get(DVT.shaders.attributes.VERTEXPOSITION);
+     var aNormal = aPointers.get(DVT.shaders.attributes.VERTEXNORMAL);
+     var aColor = aPointers.get(DVT.shaders.attributes.VERTEXCOLOR);
+     var aTexturePosition = aPointers.get(DVT.shaders.attributes.VERTEXTEXTUREPOS);
+     var aScalar = aPointers.get(DVT.shaders.attributes.VERTEXSCALAR);
 
      var uLocations = this._uniformLocations;
-     var uUsePicking = uLocations.get(X.shaders.uniforms.USEPICKING);
-     var uUseObjectColor = uLocations.get(X.shaders.uniforms.USEOBJECTCOLOR);
-     var uObjectColor = uLocations.get(X.shaders.uniforms.OBJECTCOLOR);
-     var uUseScalars = uLocations.get(X.shaders.uniforms.USESCALARS);
+     var uUsePicking = uLocations.get(DVT.shaders.uniforms.USEPICKING);
+     var uUseObjectColor = uLocations.get(DVT.shaders.uniforms.USEOBJECTCOLOR);
+     var uObjectColor = uLocations.get(DVT.shaders.uniforms.OBJECTCOLOR);
+     var uUseScalars = uLocations.get(DVT.shaders.uniforms.USESCALARS);
      var uScalarsReplaceMode = uLocations
-     .get(X.shaders.uniforms.SCALARSREPLACEMODE);
-     var uScalarsMin = uLocations.get(X.shaders.uniforms.SCALARSMIN);
-     var uScalarsMax = uLocations.get(X.shaders.uniforms.SCALARSMAX);
-     var uScalarsMinColor = uLocations.get(X.shaders.uniforms.SCALARSMINCOLOR);
-     var uScalarsMaxColor = uLocations.get(X.shaders.uniforms.SCALARSMAXCOLOR);
-     var uScalarsInterpolation = uLocations.get(X.shaders.uniforms.SCALARSINTERPOLATION);
+     .get(DVT.shaders.uniforms.SCALARSREPLACEMODE);
+     var uScalarsMin = uLocations.get(DVT.shaders.uniforms.SCALARSMIN);
+     var uScalarsMax = uLocations.get(DVT.shaders.uniforms.SCALARSMAX);
+     var uScalarsMinColor = uLocations.get(DVT.shaders.uniforms.SCALARSMINCOLOR);
+     var uScalarsMaxColor = uLocations.get(DVT.shaders.uniforms.SCALARSMAXCOLOR);
+     var uScalarsInterpolation = uLocations.get(DVT.shaders.uniforms.SCALARSINTERPOLATION);
      var uScalarsMinThreshold = uLocations
-     .get(X.shaders.uniforms.SCALARSMINTHRESHOLD);
+     .get(DVT.shaders.uniforms.SCALARSMINTHRESHOLD);
      var uScalarsMaxThreshold = uLocations
-     .get(X.shaders.uniforms.SCALARSMAXTHRESHOLD);
-     var uObjectOpacity = uLocations.get(X.shaders.uniforms.OBJECTOPACITY);
-     var uLabelMapOpacity = uLocations.get(X.shaders.uniforms.LABELMAPOPACITY);
-     var uLabelMapColor = uLocations.get(X.shaders.uniforms.LABELMAPCOLOR);
-     var uUseTexture = uLocations.get(X.shaders.uniforms.USETEXTURE);
+     .get(DVT.shaders.uniforms.SCALARSMAXTHRESHOLD);
+     var uObjectOpacity = uLocations.get(DVT.shaders.uniforms.OBJECTOPACITY);
+     var uLabelMapOpacity = uLocations.get(DVT.shaders.uniforms.LABELMAPOPACITY);
+     var uLabelMapColor = uLocations.get(DVT.shaders.uniforms.LABELMAPCOLOR);
+     var uUseTexture = uLocations.get(DVT.shaders.uniforms.USETEXTURE);
      var uUseLabelMapTexture = uLocations
-     .get(X.shaders.uniforms.USELABELMAPTEXTURE);
-     var uTextureSampler = uLocations.get(X.shaders.uniforms.TEXTURESAMPLER);
-     var uTextureSampler2 = uLocations.get(X.shaders.uniforms.TEXTURESAMPLER2);
+     .get(DVT.shaders.uniforms.USELABELMAPTEXTURE);
+     var uTextureSampler = uLocations.get(DVT.shaders.uniforms.TEXTURESAMPLER);
+     var uTextureSampler2 = uLocations.get(DVT.shaders.uniforms.TEXTURESAMPLER2);
      var uVolumeLowerThreshold = uLocations
-     .get(X.shaders.uniforms.VOLUMELOWERTHRESHOLD);
+     .get(DVT.shaders.uniforms.VOLUMELOWERTHRESHOLD);
      var uVolumeUpperThreshold = uLocations
-     .get(X.shaders.uniforms.VOLUMEUPPERTHRESHOLD);
-     var uVolumeScalarMin = uLocations.get(X.shaders.uniforms.VOLUMESCALARMIN);
-     var uVolumeScalarMax = uLocations.get(X.shaders.uniforms.VOLUMESCALARMAX);
-     var uVolumeWindowLow = uLocations.get(X.shaders.uniforms.VOLUMEWINDOWLOW);
-     var uVolumeWindowHigh = uLocations.get(X.shaders.uniforms.VOLUMEWINDOWHIGH);
+     .get(DVT.shaders.uniforms.VOLUMEUPPERTHRESHOLD);
+     var uVolumeScalarMin = uLocations.get(DVT.shaders.uniforms.VOLUMESCALARMIN);
+     var uVolumeScalarMax = uLocations.get(DVT.shaders.uniforms.VOLUMESCALARMAX);
+     var uVolumeWindowLow = uLocations.get(DVT.shaders.uniforms.VOLUMEWINDOWLOW);
+     var uVolumeWindowHigh = uLocations.get(DVT.shaders.uniforms.VOLUMEWINDOWHIGH);
      var uVolumeScalarMinColor = uLocations
-     .get(X.shaders.uniforms.VOLUMESCALARMINCOLOR);
+     .get(DVT.shaders.uniforms.VOLUMESCALARMINCOLOR);
      var uVolumeScalarMaxColor = uLocations
-     .get(X.shaders.uniforms.VOLUMESCALARMAXCOLOR);
-     var uVolumeTexture = uLocations.get(X.shaders.uniforms.VOLUMETEXTURE);
-     var uObjectTransform = uLocations.get(X.shaders.uniforms.OBJECTTRANSFORM);
-     var uPointSize = uLocations.get(X.shaders.uniforms.POINTSIZE);
+     .get(DVT.shaders.uniforms.VOLUMESCALARMAXCOLOR);
+     var uVolumeTexture = uLocations.get(DVT.shaders.uniforms.VOLUMETEXTURE);
+     var uObjectTransform = uLocations.get(DVT.shaders.uniforms.OBJECTTRANSFORM);
+     var uPointSize = uLocations.get(DVT.shaders.uniforms.POINTSIZE);
 
      //
      // loop through all objects and (re-)draw them
@@ -1340,7 +1340,7 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      // special case for volumes
      var volume = null;
 
-     if (object instanceof X.slice && object._volume) {
+     if (object instanceof DVT.slice && object._volume) {
 
      // we got a volume
      volume = object._volume;
@@ -1539,7 +1539,7 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      this._context.vertexAttribPointer(aTexturePosition,
      texturePositionBuffer._itemSize, this._context.FLOAT, false, 0, 0);
 
-     // by default, no X.volume texture
+     // by default, no DVT.volume texture
      this._context.uniform1i(uVolumeTexture, false);
 
      } else {
@@ -1556,11 +1556,11 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
 
      // VOLUMES
      // several special values need to be passed to the shaders if the object
-     // is a X.slice (part of an X.volume)
+     // is a DVT.slice (part of an DVT.volume)
      // this is the case if we have a volume here..
      if (volume) {
 
-     // this is a X.volume texture
+     // this is a DVT.volume texture
      this._context.uniform1i(uVolumeTexture, true);
 
      // pass the lower threshold
@@ -1630,7 +1630,7 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
 
      // POINT SIZE
      var pointSize = 1;
-     if (object._type == X.displayable.types.POINTS) {
+     if (object._type == DVT.displayable.types.POINTS) {
      pointSize = object._pointsize;
      }
      this._context.uniform1f(uPointSize, pointSize);
@@ -1639,14 +1639,14 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      // .. and draw with the object's DRAW MODE
      //
      var drawMode = -1;
-     if (object._type == X.displayable.types.TRIANGLES) {
+     if (object._type == DVT.displayable.types.TRIANGLES) {
 
      drawMode = this._context.TRIANGLES;
      if (statisticsEnabled) {
      trianglesCounter += (vertexBuffer._itemCount / 3);
      }
 
-     } else if (object._type == X.displayable.types.LINES) {
+     } else if (object._type == DVT.displayable.types.LINES) {
 
      this._context.lineWidth(object._linewidth);
 
@@ -1655,27 +1655,27 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
      linesCounter += (vertexBuffer._itemCount / 2);
      }
 
-     } else if (object._type == X.displayable.types.POINTS) {
+     } else if (object._type == DVT.displayable.types.POINTS) {
 
      drawMode = this._context.POINTS;
      if (statisticsEnabled) {
      pointsCounter += vertexBuffer._itemCount;
      }
 
-     } else if (object._type == X.displayable.types.TRIANGLE_STRIPS) {
+     } else if (object._type == DVT.displayable.types.TRIANGLE_STRIPS) {
 
      drawMode = this._context.TRIANGLE_STRIP;
      if (statisticsEnabled) {
      trianglesCounter += (vertexBuffer._itemCount / 3);
      }
 
-     } else if (object._type == X.displayable.types.POLYGONS) {
+     } else if (object._type == DVT.displayable.types.POLYGONS) {
 
      // TODO right now, this is hacked.. we need to use the Van Gogh
      // triangulation algorithm or something faster to properly convert
      // POLYGONS to TRIANGLES.
      // Remark: The Van Gogh algorithm is implemented in the
-     // X.object.toCSG/fromCSG functions but not used here.
+     // DVT.object.toCSG/fromCSG functions but not used here.
      if (vertexBuffer._itemCount % 3 == 0) {
 
      drawMode = this._context.TRIANGLES;
@@ -1721,7 +1721,7 @@ X.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Functi
 /**
  * @inheritDoc
  */
-X.renderer3D.prototype.remove = function(object) {
+DVT.renderer3D.prototype.remove = function(object) {
     /*
      // call the remove_ method of the superclass
      goog.base(this, 'remove', object);
@@ -1830,7 +1830,7 @@ X.renderer3D.prototype.remove = function(object) {
      /**
      * @inheritDoc
      */
-    X.renderer3D.prototype.destroy = function() {
+    DVT.renderer3D.prototype.destroy = function() {
 
         // remove all shaders
         this._shaders = null;
@@ -1851,7 +1851,7 @@ X.renderer3D.prototype.remove = function(object) {
      * @return {!Array} The background color normalized.
      * @public
      */
-    X.renderer3D.prototype.__defineGetter__('bgColor', function() {
+    DVT.renderer3D.prototype.__defineGetter__('bgColor', function() {
 
         return this._bgColor;
 
@@ -1864,7 +1864,7 @@ X.renderer3D.prototype.remove = function(object) {
      *          bgColor The background color normalized.
      * @public
      */
-    X.renderer3D.prototype.__defineSetter__('bgColor', function(bgColor) {
+    DVT.renderer3D.prototype.__defineSetter__('bgColor', function(bgColor) {
 
         this._bgColor = bgColor;
 
@@ -1879,7 +1879,7 @@ X.renderer3D.prototype.remove = function(object) {
      * @return {!Array} An array with collections of in and out intersections.
      * @protected
      */
-    X.renderer3D.prototype.ray_intersect_box_ = function(box, ray_start, ray_direction) {
+    DVT.renderer3D.prototype.ray_intersect_box_ = function(box, ray_start, ray_direction) {
 
         /*
          var _solutionsIn = new Array();
@@ -1943,11 +1943,11 @@ X.renderer3D.prototype.remove = function(object) {
      * @param {!number} y The viewport Y coordinate.
      * @param {!number=} delta The sample rate to probe for intersections. Default is 5.
      * @param {!number=} epsilon The threshold to mark a neighboring point as intersection. Default is 2mm.
-     * @param {X.object=} object The object to pick on. Default is auto-detect.
+     * @param {DVT.object=} object The object to pick on. Default is auto-detect.
      * @return {?Array} The closest 3D point of a valid object after ray casting. If NULL, than delta and epsilon should be tuned.
      * @public
      */
-    X.renderer3D.prototype.pick3d = function(x, y, delta, epsilon, object) {
+    DVT.renderer3D.prototype.pick3d = function(x, y, delta, epsilon, object) {
 
         // default values for delta and epsilon
         // to determine the picking accuracy with a speed tradeoff
@@ -1992,8 +1992,8 @@ X.renderer3D.prototype.remove = function(object) {
         ray_far[2] += this._center[2];
 
         // and apply the transform of the object
-        // ray_near = X.matrix.multiplyByVector(object.transform.matrix, ray_near[0], ray_near[1], ray_near[2]);
-        // ray_far = X.matrix.multiplyByVector(object.transform.matrix, ray_far[0], ray_far[1], ray_far[2]);
+        // ray_near = DVT.matriDVT.multiplyByVector(object.transform.matrix, ray_near[0], ray_near[1], ray_near[2]);
+        // ray_far = DVT.matriDVT.multiplyByVector(object.transform.matrix, ray_far[0], ray_far[1], ray_far[2]);
         // ray_near = [ray_near.xx, ray_near.yy, ray_near.zz];
         // ray_far = [ray_far.xx, ray_far.yy, ray_far.zz];
 
@@ -2010,14 +2010,14 @@ X.renderer3D.prototype.remove = function(object) {
         var G = [object._points._maxA, object._points._maxB, object._points._maxC];
         var H = [object._points._maxA, object._points._minB, object._points._maxC];
         // transform all box coordinates
-        var transformed_points = [X.matrix.multiplyByVector(object._transform._matrix, A[0], A[1], A[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, B[0], B[1], B[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, C[0], C[1], C[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, D[0], D[1], D[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, E[0], E[1], E[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, F[0], F[1], F[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, G[0], G[1], G[2]),
-            X.matrix.multiplyByVector(object._transform._matrix, H[0], H[1], H[2])];
+        var transformed_points = [DVT.matriDVT.multiplyByVector(object._transform._matrix, A[0], A[1], A[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, B[0], B[1], B[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, C[0], C[1], C[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, D[0], D[1], D[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, E[0], E[1], E[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, F[0], F[1], F[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, G[0], G[1], G[2]),
+            DVT.matriDVT.multiplyByVector(object._transform._matrix, H[0], H[1], H[2])];
 
         // now create a bigger bounding box around the maybe rotated box
         // by finding x_min, x_max, y_min, y_max, z_min, z_max
@@ -2036,12 +2036,12 @@ X.renderer3D.prototype.remove = function(object) {
         }
 
 
-        // var minA = X.matrix.multiplyByVector(object._transform.matrix, object._points._minA, 0, 0);
-        // var maxA = X.matrix.multiplyByVector(object._transform.matrix, object._points._maxA, 0, 0);
-        // var minB = X.matrix.multiplyByVector(object._transform.matrix, 0, object._points._minB, 0);
-        // var maxB = X.matrix.multiplyByVector(object._transform.matrix, 0, object._points._maxB, 0);
-        // var minC = X.matrix.multiplyByVector(object._transform.matrix, 0, 0, object._points._minC);
-        // var maxC = X.matrix.multiplyByVector(object._transform.matrix, 0, 0, object._points._maxC);
+        // var minA = DVT.matriDVT.multiplyByVector(object._transform.matrix, object._points._minA, 0, 0);
+        // var maxA = DVT.matriDVT.multiplyByVector(object._transform.matrix, object._points._maxA, 0, 0);
+        // var minB = DVT.matriDVT.multiplyByVector(object._transform.matrix, 0, object._points._minB, 0);
+        // var maxB = DVT.matriDVT.multiplyByVector(object._transform.matrix, 0, object._points._maxB, 0);
+        // var minC = DVT.matriDVT.multiplyByVector(object._transform.matrix, 0, 0, object._points._minC);
+        // var maxC = DVT.matriDVT.multiplyByVector(object._transform.matrix, 0, 0, object._points._maxC);
         //var box = [object._points._minA, object._points._maxA, object._points._minB, object._points._maxB, object._points._minC, object._points._maxC];
         //var box = [minA.x, maxA.x, minB.y, maxB.y, minC.z, maxC.z];
         var box = extremes;
@@ -2093,8 +2093,8 @@ X.renderer3D.prototype.remove = function(object) {
 
         var sampled = new Array(10);
 
-        //var m_i = X.matrix.identity();
-        //X.matrix.invert(object.transform.matrix, m_i);
+        //var m_i = DVT.matriDVT.identity();
+        //DVT.matriDVT.invert(object.transform.matrix, m_i);
 
         // sample
         for (var i=0; i<sample_count; i+=delta) {
@@ -2104,7 +2104,7 @@ X.renderer3D.prototype.remove = function(object) {
             s_p = [s_p[0] + delta*sample_unit_v[0], s_p[1] + delta*sample_unit_v[1], s_p[2] + delta*sample_unit_v[2]];
 
             // multiply s_p with the inverse transformation matrix
-            // s_p = X.matrix.multiplyByVector(m_i, s_p);
+            // s_p = DVT.matriDVT.multiplyByVector(m_i, s_p);
             // s_p = [s_p.x, s_p.y, s_p.z];
 
             // find the closest point
@@ -2113,8 +2113,8 @@ X.renderer3D.prototype.remove = function(object) {
                 var c_p_x = points[p];
                 var c_p_y = points[p+1];
                 var c_p_z = points[p+2];
-                var c_p = new X.vector(c_p_x, c_p_y, c_p_z);
-                c_p = X.matrix.multiplyByVector(object._transform._matrix, c_p_x, c_p_y, c_p_z);
+                var c_p = new DVT.vector(c_p_x, c_p_y, c_p_z);
+                c_p = DVT.matriDVT.multiplyByVector(object._transform._matrix, c_p_x, c_p_y, c_p_z);
 
                 // calculate distance to the marching point
                 var d = Math.sqrt((s_p[0]-c_p.x)*(s_p[0]-c_p.x)+(s_p[1]-c_p.y)*(s_p[1]-c_p.y)+(s_p[2]-c_p.z)*(s_p[2]-c_p.z));
@@ -2136,26 +2136,26 @@ X.renderer3D.prototype.remove = function(object) {
     };
 
 // export symbols (required for advanced compilation)
-    goog.exportSymbol('X.renderer3D', X.renderer3D);
-    goog.exportSymbol('X.renderer3D.prototype.init', X.renderer3D.prototype.init);
-    goog.exportSymbol('X.renderer3D.prototype.add', X.renderer3D.prototype.add);
-    goog.exportSymbol('X.renderer3D.prototype.onShowtime',
-        X.renderer3D.prototype.onShowtime);
-    goog.exportSymbol('X.renderer3D.prototype.onRender',
-        X.renderer3D.prototype.onRender);
-    goog.exportSymbol('X.renderer3D.prototype.get', X.renderer3D.prototype.get);
-    goog.exportSymbol('X.renderer3D.prototype.render',
-        X.renderer3D.prototype.render);
-    goog.exportSymbol('X.renderer3D.prototype.destroy',
-        X.renderer3D.prototype.destroy);
-    goog.exportSymbol('X.renderer3D.prototype.remove',
-        X.renderer3D.prototype.remove);
-    goog.exportSymbol('X.renderer3D.prototype.resetBoundingBox',
-        X.renderer3D.prototype.resetBoundingBox);
-    goog.exportSymbol('X.renderer3D.prototype.resetViewAndRender',
-        X.renderer3D.prototype.resetViewAndRender);
-    goog.exportSymbol('X.renderer3D.prototype.pick', X.renderer3D.prototype.pick);
-    goog.exportSymbol('X.renderer3D.prototype.pick3d', X.renderer3D.prototype.pick3d);
-    goog.exportSymbol('X.renderer3D.prototype.afterRender', X.renderer3D.prototype.afterRender);
-    goog.exportSymbol('X.renderer3D.prototype.resize', X.renderer3D.prototype.resize);
+    goog.exportSymbol('DVT.renderer3D', DVT.renderer3D);
+    goog.exportSymbol('DVT.renderer3D.prototype.init', DVT.renderer3D.prototype.init);
+    goog.exportSymbol('DVT.renderer3D.prototype.add', DVT.renderer3D.prototype.add);
+    goog.exportSymbol('DVT.renderer3D.prototype.onShowtime',
+        DVT.renderer3D.prototype.onShowtime);
+    goog.exportSymbol('DVT.renderer3D.prototype.onRender',
+        DVT.renderer3D.prototype.onRender);
+    goog.exportSymbol('DVT.renderer3D.prototype.get', DVT.renderer3D.prototype.get);
+    goog.exportSymbol('DVT.renderer3D.prototype.render',
+        DVT.renderer3D.prototype.render);
+    goog.exportSymbol('DVT.renderer3D.prototype.destroy',
+        DVT.renderer3D.prototype.destroy);
+    goog.exportSymbol('DVT.renderer3D.prototype.remove',
+        DVT.renderer3D.prototype.remove);
+    goog.exportSymbol('DVT.renderer3D.prototype.resetBoundingBox',
+        DVT.renderer3D.prototype.resetBoundingBox);
+    goog.exportSymbol('DVT.renderer3D.prototype.resetViewAndRender',
+        DVT.renderer3D.prototype.resetViewAndRender);
+    goog.exportSymbol('DVT.renderer3D.prototype.pick', DVT.renderer3D.prototype.pick);
+    goog.exportSymbol('DVT.renderer3D.prototype.pick3d', DVT.renderer3D.prototype.pick3d);
+    goog.exportSymbol('DVT.renderer3D.prototype.afterRender', DVT.renderer3D.prototype.afterRender);
+    goog.exportSymbol('DVT.renderer3D.prototype.resize', DVT.renderer3D.prototype.resize);
 }

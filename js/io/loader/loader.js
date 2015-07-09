@@ -10,14 +10,6 @@ goog.provide('DVT.loader');
 goog.require('DVT');
 goog.require('DVT.loadHelper');
 
-
-DVT.getLoader = (
-    function () {
-        var resourceLoader=new DVT.loader();
-        resourceLoader._init();
-        return function () {return resourceLoader;};
-    })();
-
 /**
  * Creates a loader for binary or ASCII data
  * @class loader
@@ -60,7 +52,7 @@ DVT.loader=function(){
  */
 DVT.loader.prototype.init=function()
 {
-    $(document.body).append('<div class="modal fade" id="'+this._modalID+'" tabindex="-1" role="dialog" aria-labelledby="myModal' +
+    $('body').append('<div class="modal fade" id="'+this._modalID+'" tabindex="-1" role="dialog" aria-labelledby="myModal' +
         'Label"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button' +
         'type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></b'+
         'utton><h4 class="modal-title" id="myModalLabel">Modal title</h4></div><div class="modal-body">'+
@@ -79,3 +71,12 @@ DVT.loader.prototype.load=function(container)
     $('#'+this._modalID+ ' .modal-body').append();
     return this._curIndex - 1;
 };
+
+
+
+DVT.getLoader = (
+    function () {
+        var resourceLoader=new DVT.loader();
+        resourceLoader.init();
+        return function () {return resourceLoader;};
+    })();
