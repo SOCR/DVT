@@ -8,6 +8,7 @@ goog.provide('DVT.loader');
 
 goog.require('DVT');
 goog.require('DVT.loadHelper');
+goog.require('jQuery');
 
 /**
  * Creates a loader for binary or ASCII data
@@ -21,14 +22,14 @@ DVT.loader=function(){
      * @type {number}
      * @private
      */
-    this._numActive=0;
+    this._numActive = 0;
 
     /**
      * current status of modal box(hidden vs visible)
      * @type {boolean}
      * @private
      */
-    this._visible=false;
+    this._visible = false;
 
     /**
      * HTML selector ID for modal box
@@ -42,16 +43,15 @@ DVT.loader=function(){
      * @type {number}
      * @private
      */
-    this._curIndex=2;
+    this._curIndex = 0;
 };
 
 /**
  * Sets up modal box and initial loader conditions
  * @private
  */
-DVT.loader.prototype.init=function()
-{
-    $('body').append('<div class="modal fade" id="'+this._modalID+'" tabindex="-1" role="dialog" aria-labelledby="myModal' +
+DVT.loader.prototype.init = function () {
+    $('body').append('<div class="modal fade" id="' + this._modalID + '" tabindex="-1" role="dialog" aria-labelledby="myModal' +
         'Label"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button' +
         'type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></b'+
         'utton><h4 class="modal-title" id="myModalLabel">Modal title</h4></div><div class="modal-body">'+
@@ -61,21 +61,28 @@ DVT.loader.prototype.init=function()
     return;
 };
 
-DVT.loader.prototype.load=function(container)
-{
-    var filepath=container.file;
-    this._numActive+=3;
+DVT.loader.prototype.load = function(container) {
+    var filePath = container.file;
+    this._numActive += 3;
 
     //add load bars
-    $('#'+this._modalID+ ' .modal-body').append();
+    var helper = new DVT.loadHelper(this._curIndex, filePath, this._modalID, container);
+
+    //load data
+    helper.load();
+
+    //increment and return index
+    this._curIndex += 1;
     return this._curIndex - 1;
 };
 
 
+$(function(){
+    DVT.getLoader = (
+        function () {
+            var resourceLoader = new DVT.loader();
+            resourceLoader.init();
+            return function () {return resourceLoader;};
+        })();
+});
 
-DVT.getLoader = (
-    function () {
-        var resourceLoader=new DVT.loader();
-        resourceLoader.init();
-        return function () {return resourceLoader;};
-    })();

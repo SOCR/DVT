@@ -13,8 +13,7 @@ goog.require('DVT.object');
  * @extends DVT.object
  */
 
-DVT.loaded = function(copyFrom)
-{
+DVT.loaded = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
 
     /**
@@ -30,12 +29,19 @@ DVT.loaded = function(copyFrom)
      * @private
      */
     this._locked=false;
-    
+
     /**
      * filepath for the loadable object
      * @type {string}
      */
-    this.file='';
+    this.file = '';
+
+    /**
+     * loading manager for object
+     * @type {DVT.loadHelper}
+     * @private
+     */
+    this._loader = null;
 
     //copies properties from target
     if(copyFrom)

@@ -11,7 +11,7 @@
  */
 goog.provide('DVT');
 goog.require('jQuery');
-DVT=DVT||{};
+DVT = DVT || {};
 var $ = window.$;
 
 //Insert any required shims here

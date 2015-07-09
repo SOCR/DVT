@@ -34,6 +34,7 @@ goog.require('goog.dom');
 //goog.require('DVT.event');
 //goog.require('DVT.array');
 goog.require('DVT.loader');
+goog.require('goog.events');
 //goog.require('DVT.progressbar');
 //goog.require('goog.Timer');
 
@@ -43,7 +44,7 @@ goog.require('DVT.loader');
  * @constructor
  * @extends DVT.base
  */
-DVT.renderer = function() {
+DVT.renderer = function(){
 
     /**
      * The HTML container of this renderer, E.g. a <div>.
@@ -349,16 +350,15 @@ DVT.renderer.prototype.onResize_ = function() {
 DVT.renderer.prototype.resize = function() {
 
     // grab the new width and height of the container
-    var container = goog.dom.getElement(this._container);
+    var container = goog.dom.getElement(this._container), canvas = goog.dom.getElement(this._canvas);
     this._width = container.clientWidth;
     this._height = container.clientHeight;
 
     // propagate it to the canvas
-    var canvas = goog.dom.getElement(this._canvas);
     canvas.width = this._width;
     canvas.height = this._height;
 
-    if (this._classname == 'renderer3D') {
+    if (this._classname === 'renderer3D') {
 
         // modify 3d viewport
         this._context.viewport(0, 0, this._width, this._height);
@@ -639,6 +639,9 @@ DVT.renderer.prototype.add = function(object) {
     // top-level objects, meaning that they do not have a parent
     this._topLevelObjects.push(object);
 
+    //attach listener to object
+    goog.events.listen(object, 'PROCESSED',function(e){this.update_(e.target);},false,this);
+
     this.update_(object);
 
 };
@@ -714,7 +717,6 @@ DVT.renderer.prototype.update_ = function(object) {console.log('Function Call: u
     }
     else {
 
-        //TODO implement event binding
 
     }
 

@@ -4,6 +4,8 @@
 goog.provide('DVT.loadHelper');
 
 goog.require('DVT');
+goog.require('goog.events');
+goog.require('ProgressBar');
 
 /**
  * creates a loadHelper object
@@ -13,14 +15,22 @@ goog.require('DVT');
  * @param filepath
  * @param modalID
  */
-DVT.loadHelper=function(index, filepath, modalID)
-{
+DVT.loadHelper = function (index, filepath, modalID, container) {
     /**
      * index number in file queue
      * @private
      * @type {number}
      */
-    this._index=index;
+    this._index = index;
+
+    var re = /(?:\.([^.]+))?$/;
+
+    /**
+     * file extension of target
+     * @type {Array|{index: number, input: string}}
+     * @private
+     */
+    this._extension = re.exec(filepath);
 
     /**
      * path of the file to load
@@ -30,48 +40,56 @@ DVT.loadHelper=function(index, filepath, modalID)
     this._filepath = filepath;
 
     /**
+     * container which needs to accept the loaded data
+     * @private
+     * @type {DVT.loaded}
+     */
+    this._container = container;
+
+    /**
      * id to html element for load bar
      * @type {string}
      * @private
      */
-    this._loadID='loadBar'+this._index;
+    this._loadID = 'loadBar' + this._index;
 
     /**
      * id to html element for parse progress bar
      * @type {string}
      * @private
      */
-    this._parseID='parseBar'+this._index;
+    this._parseID = 'parseBar' + this._index;
 
     /**
      * id to html element for render progress bar
      * @type {string}
      * @private
      */
-    this._renderID='renderBar'+this._index;
+    this._renderID = 'renderBar' + this._index;
 
     /**
      * id to modal body
      * @type {string}
      * @private
      */
-    this._modalID=modalID;
+    this._modalID = modalID;
 
     //add progress bar elements to modal window
     this._addElement(this._loadID);
     this._addElement(this._renderID);
     this._addElement(this._parseID);
+    this._container._loader = this;
 
     //initialize loading bars and set behavior
-    this._parseLine = new ProgressBar.Line('#'+this._parseID, {
+    this._parseLine = new ProgressBar.Line('#' + this._parseID, {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
         to: { color: '#6FD57F'},
-        step: function(state, bar) {
+        step: function (state, bar) {
             bar.path.setAttribute('stroke', state.color);
         }
     });
-    this._renderLine = new ProgressBar.Line('#'+this._renderID, {
+    this._renderLine = new ProgressBar.Line('#' + this._renderID, {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
         to: { color: '#6FD57F'},
@@ -89,12 +107,30 @@ DVT.loadHelper=function(index, filepath, modalID)
     });
 };
 
+DVT.loadHelper.prototype.load = function () {
+    var XHR = new XMLHttpRequest();
+
+    //add events for listening
+    XHR.addEventListener("progress", this.updateLoad, false);
+    goog.events.listen(XHR, 'load', this.finishLoad.bind(this));
+
+    XHR.open('GET', this._filepath, true);
+
+    //configures request for binary data, if necessary
+    if (this.isBinary()) {
+        XHR.responseType = 'arraybuffer';
+    }
+
+
+    //finalize request
+    XHR.send();
+};
+
 /**
  * updates progressbar to reflect current loading status
  * @param oEvent the returned event
  */
-DVT.loadHelper.prototype.updateLoad=function(oEvent)
-{
+DVT.loadHelper.prototype.updateLoad=function(oEvent) {
     if (oEvent.lengthComputable) {
         var percentComplete = oEvent.loaded / oEvent.total;
         this._loadLine.animate(percentComplete);
@@ -131,17 +167,29 @@ DVT.loadHelper.prototype.updateRender=function(oEvent)
     }
 };
 
-DVT.loadHelper.prototype.finishLoad=function()
-{
-
+DVT.loadHelper.prototype.finishLoad = function() {
+    console.log('LOADED!!!!!!!!!!');
 };
 
-DVT.loadHelper.prototype._addElement=function(elementID)
-{
-    $('#'+this._modalID+' .modal-body').append('<div id='+ elementID + '></div>');
+DVT.loadHelper.prototype._addElement = function(elementID) {
+    $('#' + this._modalID + ' .modal-body').append('<div id=' + elementID + '></div>');
 };
 
 DVT.loadHelper.prototype._removeElement=function()
 {
 
 };
+
+/**
+ * determines wether file needs to be parsed as binary or JSON style data
+ * @returns {boolean}
+ */
+DVT.loadHelper.prototype.isBinary = function () {
+    switch(this._extension) {
+        case 'trk':
+            return true;
+            break;
+        default:
+            return false
+    }
+}

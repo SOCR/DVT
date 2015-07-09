@@ -150,13 +150,13 @@ DVT.renderer3D.prototype.init = function() {
     goog.base(this, 'init', "experimental-webgl");
 
     //configure camera
-    this._camera=new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
+    this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
 
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
     //setup scene
-    this._scene= new THREE.Scene();
+    this._scene = new THREE.Scene();
 
     //add camera to scene
     this._scene.add(this._camera);
@@ -364,11 +364,13 @@ DVT.renderer3D.prototype.update_ = function(object) {
      */
 
     //@@@ CHANGED FROM ELIF
-    if (goog.isDefAndNotNull(file) && !loaded) {
+    if (!loaded) {
         // this object is based on an external file and it is dirty..
-        console.log('Function call: update_ in renderer3D message: load ')
-        // start loading..
-        this._loader.load(object);
+        if (!locked) {
+            console.log('Function call: update_ in renderer3D message: load ');
+            // start loading..
+            this._loader.load(object);
+        }
         return;
 
     }/* else if (goog.isDefAndNotNull(scalars) &&
@@ -1201,7 +1203,7 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.log('Func
      this._context.DEPTH_BUFFER_BIT); */
 
     // only proceed if there are actually objects to render
-    var _objects = this._objects.values();
+    var _objects = this._objects;
     var _numberOfObjects = _objects.length;
     if (_numberOfObjects == 0) {
         // there is nothing to render
