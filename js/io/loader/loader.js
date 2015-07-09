@@ -62,6 +62,7 @@ DVT.loader.prototype.init = function () {
 };
 
 DVT.loader.prototype.load = function(container) {
+    container._locked = true;
     var filePath = container.file;
     this._numActive += 3;
 

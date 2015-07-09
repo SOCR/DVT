@@ -18,6 +18,9 @@ goog.require('DVT.parserTRK');
  * @param modalID
  */
 DVT.loadHelper = function (index, filepath, modalID, container) {
+
+    goog.base(this);
+
     /**
      * index number in file queue
      * @private
@@ -108,6 +111,7 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
         }
     });
 };
+goog.inherits(DVT.loadHelper, DVT.base);
 
 /**
  * initiates XHR and parsing protocol
@@ -176,14 +180,9 @@ DVT.loadHelper.prototype.updateLoad =function(oEvent) {
  * updates progressbar to reflect current parsing status
  * @param oEvent the returned event
  */
-DVT.loadHelper.prototype.updateParse=function(oEvent)
+DVT.loadHelper.prototype.updateParse=function(percentComplete)
 {
-    if (oEvent.lengthComputable) {
-        var percentComplete = oEvent.loaded / oEvent.total;
-        this._parseLine.animate(percentComplete);
-    } else {
-        this._parseLine.animate(0.5);
-    }
+    this._parseLine.animate(percentComplete);
 };
 
 /**
@@ -207,7 +206,17 @@ DVT.loadHelper.prototype.finishLoad = function(XHR) {
         return;
     }
     this._loadLine.animate(1,this._removeElement.bind(this, this._loadID, this._loadLine));
+    goog.events.listenOnce(this._container, 'PROCESSED', this.finishParse,false,this);
     this._parseInit(XHR.response);
+
+};
+
+DVT.loadHelper.prototype.finishParse = function() {
+    this._parseLine.animate(1,this._removeElement.bind(this, this._parseID, this._parseLine));
+};
+
+DVT.loadHelper.prototype.finishRender = function() {
+    this._renderLine.animate(1,this._removeElement.bind(this, this._renderID, this._renderLine));
 };
 
 DVT.loadHelper.prototype._addElement = function(elementID, message) {
@@ -218,6 +227,7 @@ DVT.loadHelper.prototype._removeElement=function(elementID, bar)
 {
     $('#holder' + elementID).fadeOut(700,function(){
         $('#holder' + elementID).css({"visibility":"hidden",display:'block'}).slideUp();
+        this.dispatchEvent.bind(this, {type:'PROGRESS'});
     });
 };
 

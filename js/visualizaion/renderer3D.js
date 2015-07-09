@@ -914,35 +914,11 @@ DVT.renderer3D.prototype.update_ = function(object) {
      */
     // add the object to the internal tree which reflects the rendering order
     // (based on opacity)
-    if (!existed)
-    {
-        this._objects.add(object);
-        for(var j in object._points)
-        {
-            var lineJ=new THREE.Line( object._points[j], this._material )
-            lineJ.translateX(object.translation.x);
-            lineJ.translateY(object.translation.y);
-            lineJ.translateZ(object.translation.z);
-            this._scene.add(lineJ);
-        }
+    if (!existed) {
+        this._objects.push(object);
+        this._scene.add(object.THREEContainer);
+        this.render();
     }
-    /*
-     // add the buffers for the object to the internal hash maps
-     // at this point the buffers are: either null (if possible), a newly generated
-     // one or an old one
-     this._vertexBuffers.set(id, vertexBuffer);
-     this._normalBuffers.set(id, normalBuffer);
-     this._colorBuffers.set(id, colorBuffer);
-     this._texturePositionBuffers.set(id, texturePositionBuffer);
-     this._scalarBuffers.set(id, scalarBuffer);
-     */
-    // clean the object
-    object._dirty = false;
-
-    // DVT.TIMERSTOP(this._classname + '.update');
-
-    // unlock
-    this._locked = false;
 
 };
 

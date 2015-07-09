@@ -203,10 +203,12 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
 
     // the object should be set up here, so let's fire a modified event
     object.THREEContainer=fibers;
+    object._loaded = true;
+    object._locked = false;
     fibers.translateX(0-(min.x+max.x)/2);
     fibers.translateY(0-(min.y+max.y)/2);
     fibers.translateZ(-500-(min.z+max.z)/2);
-    this.dispatchEvent({type: 'PROCESSED', target: object});
+    object.dispatchEvent({type: 'PROCESSED', target: object});
 
 };
 

@@ -4,10 +4,12 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="finalize loader errors">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/io/parser/parser.js" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loadHelper.js" afterPath="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loader.js" afterPath="$PROJECT_DIR$/js/io/loader/loader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/renderer.js" afterPath="$PROJECT_DIR$/js/visualizaion/renderer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/renderer3D.js" afterPath="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -29,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.1854714">
+              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -42,8 +44,8 @@
       <file leaf-file-name="loadHelper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="228" column="2" selection-start-line="228" selection-start-column="2" selection-end-line="228" selection-end-column="2" />
+            <state vertical-scroll-proportion="-10.75862">
+              <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -53,18 +55,20 @@
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="189" column="75" selection-start-line="189" selection-start-column="75" selection-end-line="189" selection-end-column="75" />
+              <caret line="210" column="4" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parser.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.026275115">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="59" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,8 +98,8 @@
       <file leaf-file-name="renderer3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1034484">
-              <caret line="921" column="71" selection-start-line="921" selection-start-column="62" selection-end-line="921" selection-end-column="71" />
+            <state vertical-scroll-proportion="-10.034483">
+              <caret line="916" column="18" selection-start-line="916" selection-start-column="18" selection-end-line="916" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -116,8 +120,8 @@
       <file leaf-file-name="renderer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1034484">
-              <caret line="988" column="0" selection-start-line="988" selection-start-column="0" selection-end-line="988" selection-end-column="0" />
+            <state vertical-scroll-proportion="-88.51724">
+              <caret line="846" column="0" selection-start-line="846" selection-start-column="0" selection-end-line="846" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,16 +184,16 @@
         <option value="$PROJECT_DIR$/js/objects/fiber.js" />
         <option value="$PROJECT_DIR$/js/lib/gulpfile.js" />
         <option value="$PROJECT_DIR$/js/DVT.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/renderer.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/objects/loaded.js" />
         <option value="$PROJECT_DIR$/js/lib/progressbar.min.js" />
-        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
         <option value="$PROJECT_DIR$/js/lib/bootstrap.min.js" />
         <option value="$PROJECT_DIR$/test/testTRK.html" />
-        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
-        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parser.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/renderer.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
+        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
       </list>
     </option>
   </component>
@@ -375,7 +379,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -664,7 +668,19 @@
       <option name="project" value="LOCAL" />
       <updated>1436453919365</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="initialize base parser&#10;">
+      <created>1436456381013</created>
+      <option name="number" value="00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1436456381013</updated>
+    </task>
+    <task id="LOCAL-00037" summary="implement TRK parser">
+      <created>1436458628971</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1436458628971</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -714,8 +730,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="initialize load helper&#10;" />
-    <MESSAGE value="finalize gulp taskchain" />
     <MESSAGE value="updatebar progress" />
     <MESSAGE value="initialize progress bar" />
     <MESSAGE value="finish prograss bar initialization&#10;" />
@@ -739,7 +753,9 @@
     <MESSAGE value="establish upload framework" />
     <MESSAGE value="fix loading function binding&#10;" />
     <MESSAGE value="finalize loader errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalize loader errors" />
+    <MESSAGE value="initialize base parser&#10;" />
+    <MESSAGE value="implement TRK parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement TRK parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1055,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1034484">
-          <caret line="988" column="0" selection-start-line="988" selection-start-column="0" selection-end-line="988" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1083,14 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1107,19 +1107,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="228" column="2" selection-start-line="228" selection-start-column="2" selection-end-line="228" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1034484">
-          <caret line="921" column="71" selection-start-line="921" selection-start-column="62" selection-end-line="921" selection-end-column="71" />
-          <folding />
+          <caret line="101" column="59" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,6 +1127,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.034483">
+          <caret line="916" column="18" selection-start-line="916" selection-start-column="18" selection-end-line="916" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/object.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1143,18 +1145,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="189" column="75" selection-start-line="189" selection-start-column="75" selection-end-line="189" selection-end-column="75" />
+        <state vertical-scroll-proportion="-88.51724">
+          <caret line="846" column="0" selection-start-line="846" selection-start-column="0" selection-end-line="846" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026275115">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.75862">
+          <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="210" column="4" selection-start-line="210" selection-start-column="4" selection-end-line="210" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1854714">
+          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
           <folding />
         </state>
       </provider>
