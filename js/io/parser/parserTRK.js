@@ -81,7 +81,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
     var fibers = new THREE.Object3D();
     var lineMaterial = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
 
-    var numPoints = this.scan('uint', (this._data.byteLength - 1000) / 4);
+    var _numPoints = this.scan('uint', (this._data.byteLength - 1000) / 4);
     this.jumpTo(header.hdr_size);
     var _points = this.scan('float', (this._data.byteLength - 1000) / 4);
 
@@ -91,7 +91,19 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
     var _totalPoints = 0;
 
     var i;
+    var updateCheck = 0;
+    if(numberOfFibers === Infinity) {
+        updateCheck = 100000;
+    }
+    else {
+        updateCheck = Math.ceil(numberOfFibers / 100);
+    }
+
     for (i = 0; i < numberOfFibers; i++) {
+        if(i%updateCheck === 0)
+        {
+            loader.updateParse(i/numberOfFibers);
+        }
         // if undefined, it means we have parsed all the data
         // (useful if n_count not defined or === 0)
         if(typeof(_numPoints[offset]) === 'undefined'){
@@ -194,7 +206,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
     fibers.translateX(0-(min.x+max.x)/2);
     fibers.translateY(0-(min.y+max.y)/2);
     fibers.translateZ(-500-(min.z+max.z)/2);
-    this.dispatchEvent(modifiedEvent);
+    this.dispatchEvent({type: 'PROCESSED', target: object});
 
 };
 

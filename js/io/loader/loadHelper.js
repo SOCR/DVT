@@ -7,6 +7,7 @@ goog.require('DVT');
 goog.require('goog.events');
 goog.require('ProgressBar');
 goog.require('bootstrap');
+goog.require('DVT.parserTRK');
 
 /**
  * creates a loadHelper object
@@ -31,7 +32,7 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
      * @type {Array|{index: number, input: string}}
      * @private
      */
-    this._extension = re.exec(filepath);
+    this._extension = re.exec(filepath)[1];
 
     /**
      * path of the file to load
@@ -137,6 +138,22 @@ DVT.loadHelper.prototype.load = function () {
     XHR.send();
 };
 
+/**
+ * Selects appropriate parser based on file extension
+ * @param data
+ * @private
+ */
+DVT.loadHelper.prototype._parseInit = function(data) {
+    switch (this._extension) {
+        case 'trk':
+            var parser = new DVT.parserTRK();
+            parser.parse(this._container, data, this);
+            break;
+        default:
+            alert('Parser not found');
+    }
+};
+
 DVT.loadHelper.prototype.loadFailed = function () {
     console.log('LOAD FAILED');
     alert('load failed');
@@ -215,15 +232,5 @@ DVT.loadHelper.prototype.isBinary = function () {
             break;
         default:
             return false
-    }
-};
-
-DVT.loadHelper.prototype.parseInit = function(data) {
-    switch(this._extension) {
-        case 'trk':
-            DVT.parseTRK();
-            break;
-        default:
-            alert('Parser not found');
     }
 };
