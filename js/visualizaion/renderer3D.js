@@ -19,6 +19,11 @@ goog.require('THREE');
 goog.require('orbitControls');
 
 
+//TODO remove after speed optimizations
+$(function () {
+    ROTATEVECTOR = new THREE.Vector3(0,1,1);
+    ROTATEAMOUNT = .1;
+})
 
 /**
  * Create a 3D renderer inside a given DOM Element.
@@ -148,11 +153,13 @@ DVT.renderer3D.prototype.onHover_ = function(event) {
 
 };
 
+/*
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
     this._controller.update();
 
 }
+*/
 
 
 /**
@@ -168,10 +175,10 @@ DVT.renderer3D.prototype.init = function() {
     this._camera.position.z = 500;
 
     //setup controller
-    this._controller = new THREE.OrbitControls(this._camera);
+    //this._controller = new THREE.OrbitControls(this._camera);
 
-    this._controller.damping = 0.2;
-    this._controller.addEventListener( 'change', this.render.bind(this));
+    //this._controller.damping = 0.2;
+    //this._controller.addEventListener( 'change', this.render_.bind(this, false, true));
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
@@ -185,7 +192,7 @@ DVT.renderer3D.prototype.init = function() {
     this._renderer.setSize(this._width, this._height);
 
 
-    this.animate();
+    //this.animate();
     /*  //
      // Step2: Configure the context
      //
@@ -942,10 +949,17 @@ DVT.renderer3D.prototype.update_ = function(object) {
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
         this.render();
+
+        //TODO remove after optimization tests are complete
+        this.rotate();
     }
 
 };
-
+DVT.renderer3D.prototype.rotate = function () {
+    //requestAnimationFrame(this.rotate.bind(this));
+    this._objects[0].THREEContainer.rotateOnAxis(ROTATEVECTOR, ROTATEAMOUNT);
+    this._renderer.render(this._scene, this._camera);
+}
 
 /**
  * Show the caption of the DVT.object at viewport position x,y. This performs
