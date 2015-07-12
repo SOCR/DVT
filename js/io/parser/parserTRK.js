@@ -31,7 +31,7 @@ goog.inherits(DVT.parserTRK, DVT.parser);
 /**
  * @inheritDoc
  */
-DVT.parserTRK.prototype.parse = function(object, data, loader) {console.count('parserTRK.parse');
+DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count('parserTRK.parse');
 
 
     this._data = data;
