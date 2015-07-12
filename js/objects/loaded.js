@@ -13,7 +13,7 @@ goog.require('DVT.object');
  * @extends DVT.object
  */
 
-DVT.loaded = function(copyFrom) {
+DVT.loaded = function(copyFrom) {console.count('loaded');
     goog.base(this, 'constructor', copyFrom);
 
     /**

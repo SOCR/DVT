@@ -15,7 +15,7 @@ goog.require('DVT.loaded');
  */
 
 DVT.fiber = function(copyFrom)
-{
+{console.count('fiber');
     goog.base(this, 'constructor', copyFrom);
 
 

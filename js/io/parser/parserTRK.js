@@ -31,7 +31,7 @@ goog.inherits(DVT.parserTRK, DVT.parser);
 /**
  * @inheritDoc
  */
-DVT.parserTRK.prototype.parse = function(object, data, loader) {
+DVT.parserTRK.prototype.parse = function(object, data, loader) {console.count('parserTRK.parse');
 
 
     this._data = data;
@@ -136,8 +136,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
 
             // Convert coordinates to world space by dividing by spacing
             x = x / header.voxel_size[0];
-            y = y / header.voxel_size[1];
-            z = z / header.voxel_size[2];
+            y = y / header.voxel_size[1] + 2900;
+            z = -z / header.voxel_size[2]-200;
             var vector=new THREE.Vector3( x,  y, z )
             vector.applyProjection(m)
             vector.x-=0
@@ -205,9 +205,6 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {
     object.THREEContainer=fibers;
     object._loaded = true;
     object._locked = false;
-    fibers.translateX(0-(min.x+max.x)/2);
-    fibers.translateY(0-(min.y+max.y)/2);
-    fibers.translateZ(-300-(min.z+max.z)/2);
     object.dispatchEvent({type: 'PROCESSED', target: object});
 
 };
