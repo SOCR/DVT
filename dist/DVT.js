@@ -1,0 +1,1 @@
+var b=window.a,c=["$"],d=this;c[0]in d||!d.execScript||d.execScript("var "+c[0]);for(var e;c.length&&(e=c.shift());)c.length||void 0===b?d[e]?d=d[e]:d=d[e]={}:d[e]=b;(function(){var f=new g;f.a();return function(){return f}})();function g(){};

@@ -1,0 +1,37 @@
+{
+  "name": "DVT",
+  "version": "0.0.0",
+  "description": "Dynamic Visualization Toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sshusain/DVT.git"
+  },
+  "keywords": [
+    "Brain",
+    "4d"
+  ],
+  "author": "Syed Husain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshusain/DVT/issues"
+  },
+  "homepage": "https://github.com/sshusain/DVT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-closure-compiler": "^0.2.19",
+    "gulp-rename": "^1.2.2",
+    "gulp-jshint": "^1.11.1",
+    "gulp-sass": "^2.0.3",
+    "gulp-git": "^1.2.4",
+    "gulp-closure-deps": "^0.4.0",
+    "gulp-shell": "^0.4.2",
+    "jsdoc": "^3.3.2",
+    "gulp-yuidoc": "^0.1.2",
+    "gulp-plumber": "^1.0.1",
+    "plato": "^1.5.0"
+  }
+}

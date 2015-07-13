@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="dist"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|prettify/|**/*.min.js" kind="src" path="doc/DVT/0.0.0/scripts"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="doc/DVT/0.0.0/scripts/prettify"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|prettify/|**/*.min.js" kind="src" path="doc/scripts"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="doc/scripts/prettify"/>
+	<classpathentry excluding="lib/closure-library/third_party/closure/goog/jpeg_encoder/|**/node_modules/*|lib/closure-library/third_party/closure/goog/svgpan/|lib/closure-library/third_party/closure/goog/dojo/dom/|lib/closure-library/closure/goog/a11y/aria/|lib/closure-library/third_party/closure/goog/osapi/|lib/closure-library/third_party/closure/goog/caja/string/html/|lib/closure-library/|lib/closure-library/closure/goog/testing/|**/bower_components/*|lib/closure-library/closure/goog/webgl/|lib/closure-library/closure/goog/array/|lib/closure-library/third_party/closure/goog/mochikit/async/|io/parser/|io/loader/|lib/|lib/closure-library/closure/goog/vec/|**/*.min.js|lib/closure-library/closure/goog/window/|visualizaion/|lib/closure-library/third_party/closure/goog/loremipsum/text/|events/|lib/closure-library/third_party/closure/goog/" kind="src" path="js"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/events"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/io/loader"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/io/parser"/>
+	<classpathentry excluding="closure-library/closure/goog/a11y/aria/|closure-library/third_party/closure/goog/osapi/|closure-library/closure/goog/vec/|closure-library/closure/goog/window/|**/node_modules/*|closure-library/third_party/closure/goog/dojo/dom/|closure-library/third_party/closure/goog/|closure-library/third_party/closure/goog/mochikit/async/|closure-library/|**/bower_components/*|closure-library/third_party/closure/goog/jpeg_encoder/|closure-library/third_party/closure/goog/loremipsum/text/|closure-library/closure/goog/testing/|closure-library/closure/goog/webgl/|closure-library/third_party/closure/goog/svgpan/|**/*.min.js|closure-library/closure/goog/array/|closure-library/third_party/closure/goog/caja/string/html/" kind="src" path="js/lib"/>
+	<classpathentry excluding="closure/goog/testing/|third_party/closure/goog/mochikit/async/|closure/goog/webgl/|**/node_modules/*|third_party/closure/goog/jpeg_encoder/|closure/goog/array/|third_party/closure/goog/loremipsum/text/|closure/goog/vec/|third_party/closure/goog/caja/string/html/|closure/goog/window/|third_party/closure/goog/svgpan/|third_party/closure/goog/|third_party/closure/goog/osapi/|**/bower_components/*|closure/goog/a11y/aria/|third_party/closure/goog/dojo/dom/|**/*.min.js" kind="src" path="js/lib/closure-library"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/a11y/aria"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/array"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/testing"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/vec"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/webgl"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/closure/goog/window"/>
+	<classpathentry excluding="loremipsum/text/|jpeg_encoder/|**/bower_components/*|**/node_modules/*|mochikit/async/|svgpan/|**/*.min.js|caja/string/html/|dojo/dom/|osapi/" kind="src" path="js/lib/closure-library/third_party/closure/goog"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/caja/string/html"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/dojo/dom"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/jpeg_encoder"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/loremipsum/text"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/mochikit/async"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/osapi"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/lib/closure-library/third_party/closure/goog/svgpan"/>
+	<classpathentry excluding="**/bower_components/*|**/node_modules/*|**/*.min.js" kind="src" path="js/visualizaion"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
