@@ -22,8 +22,8 @@ goog.require('orbitControls');
 //TODO remove after speed optimizations
 $(function () {
     ROTATEVECTOR = new THREE.Vector3(0,1,1);
-    ROTATEAMOUNT = .1;
-    ROTATECALLS = 10;
+    ROTATEAMOUNT = .01;
+    ROTATECALLS = 500;
 })
 
 /**
@@ -926,10 +926,17 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
 
 };
 DVT.renderer3D.prototype.rotate = function () {//console.count('renderer3D.rotate');
+    console.time('renderer3D.rotate');
+    console.time('renderer3D.rotate(rotateOnAxis)');
     if(ROTATECALLS > 0)requestAnimationFrame(this.rotate.bind(this));
     ROTATECALLS -= 1;
     this._objects[0].THREEContainer.rotateOnAxis(ROTATEVECTOR, ROTATEAMOUNT);
+    console.timeEnd('renderer3D.rotate(rotateOnAxis)');
+    console.time('renderer3D.rotate(render)');
     this._renderer.render(this._scene, this._camera);
+    console.timeEnd('renderer3D.rotate(render)');
+    console.timeEnd('renderer3D.rotate');
+
 }
 
 

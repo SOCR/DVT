@@ -136,8 +136,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
             // Convert coordinates to world space by dividing by spacing
             x = x / header.voxel_size[0];
-            y = y / header.voxel_size[1] + 2900;
-            z = -z / header.voxel_size[2]-200;
+            y = y / header.voxel_size[1] + 0;
+            z = -z / header.voxel_size[2]+00;
             var vector=new THREE.Vector3( x,  y, z )
             vector.applyProjection(m)
             vector.x-=0
