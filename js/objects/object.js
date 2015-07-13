@@ -13,7 +13,7 @@ goog.require('DVT.base');
  * @extends DVT.base
  */
 DVT.object = function(copyFrom)
-{console.count('object');
+{//console.count('object');
 
     goog.base(this);
 
