@@ -114,6 +114,7 @@ goog.inherits(DVT.renderer3D, DVT.renderer);
  *
  * @return {Object} The configuration.
  */
+
 DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count('renderer3D.getConfig');
 
     return this._config;
