@@ -22,8 +22,12 @@ goog.require('orbitControls');
 //TODO remove after speed optimizations
 $(function () {
     ROTATEVECTOR = new THREE.Vector3(0,1,1);
-    ROTATEAMOUNT = .01;
-    ROTATECALLS = 500;
+    ROTATEAMOUNT = .005;
+    ROTATECALLS = 1000;
+    TOTALTIMES=[];
+    RENDERTIMES=[];
+    ROTATETIMES=[];
+
 })
 
 /**
@@ -927,22 +931,55 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
 
 };
 DVT.renderer3D.prototype.rotate = function () {//console.count('renderer3D.rotate');
-    console.time('renderer3D.rotate');
-    console.time('renderer3D.rotate(rotateOnAxis)');
+    //console.time('renderer3D.rotate');
+    //console.time('renderer3D.rotate(rotateOnAxis)');
+    STARTTOTAL= window.performance.now();
     if(ROTATECALLS > 0)requestAnimationFrame(this.rotate.bind(this));
+    else{
+        console.log('average(ROTATE): '+average(ROTATETIMES),'std dev(ROTATE): ' + standardDeviation(ROTATETIMES));
+        console.log('average(RENDER): '+average(RENDERTIMES),'std dev(RENDER): ' + standardDeviation(RENDERTIMES));
+        console.log('average(TOTAL): '+average(TOTALTIMES),'std dev(TOTAL): ' + standardDeviation(TOTALTIMES));
+    }
     ROTATECALLS -= 1;
     this._objects[0].THREEContainer.rotateOnAxis(ROTATEVECTOR, ROTATEAMOUNT);
-    console.timeEnd('renderer3D.rotate(rotateOnAxis)');
-    console.time('renderer3D.rotate(render)');
+    ROTATETIMES.push(window.performance.now()-STARTTOTAL);
+    STARTRENDER = window.performance.now();
+    //console.timeEnd('renderer3D.rotate(rotateOnAxis)');
+    //console.time('renderer3D.rotate(render)');
     this._renderer.render(this._scene, this._camera);
-    console.timeEnd('renderer3D.rotate(render)');
-    console.timeEnd('renderer3D.rotate');
+    //console.timeEnd('renderer3D.rotate(render)');
+    //console.timeEnd('renderer3D.rotate');
+    RENDERTIMES.push(window.performance.now()-STARTRENDER);
+    TOTALTIMES.push(window.performance.now()-STARTTOTAL);
+
 
 }
 
 
 
+function standardDeviation(values){
+    var avg = average(values);
 
+    var squareDiffs = values.map(function(value){
+        var diff = value - avg;
+        var sqrDiff = diff * diff;
+        return sqrDiff;
+    });
+
+    var avgSquareDiff = average(squareDiffs);
+
+    var stdDev = Math.sqrt(avgSquareDiff);
+    return stdDev;
+}
+
+function average(data){
+    var sum = data.reduce(function(sum, value){
+        return sum + value;
+    }, 0);
+
+    var avg = sum / data.length;
+    return avg;
+}
 
 
 /**
