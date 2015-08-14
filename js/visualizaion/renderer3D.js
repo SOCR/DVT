@@ -28,7 +28,7 @@ $(function () {
     RENDERTIMES=[];
     ROTATETIMES=[];
 
-})
+});
 
 /**
  * Create a 3D renderer inside a given DOM Element.
