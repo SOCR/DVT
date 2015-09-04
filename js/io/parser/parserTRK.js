@@ -99,6 +99,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         updateCheck = Math.ceil(numberOfFibers / 100);
     }
 
+    var pointsCounted = 0;
+    var currentPoints = new THREE.Geometry();
     for (i = 0; i < numberOfFibers; i++) {
         if(i%updateCheck === 0)
         {
@@ -117,9 +119,9 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         // console.log(numPoints, offset);
 
 
-        var currentPoints = new THREE.Geometry()
 
         var length = 0.0;
+        oldPoint = 0;
 
         // loop through the points of this fiber
         for ( var j = 0; j < numPoints; j++) {
@@ -136,67 +138,78 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
             // Convert coordinates to world space by dividing by spacing
             x = x / header.voxel_size[0];
-            y = y / header.voxel_size[1] + 0;
-            z = -z / header.voxel_size[2]+00;
-            var vector=new THREE.Vector3( x,  y, z )
-            vector.applyProjection(m)
-            vector.x-=0
-            vector.y-=0
-            vector.x*=1
-            vector.y*=1
+            y = y / header.voxel_size[1];
+            z = -z / header.voxel_size[2];
+            var vector=new THREE.Vector3( x,  y, z );
+            vector.applyProjection(m);
+            vector.x-=0;
+            vector.y-=0;
+            vector.x*=1;
+            vector.y*=1;
             if(vector.x<min.x)
-                min.x=vector.x
+                min.x=vector.x;
             if(vector.x>max.x)
-                max.x=vector.x
+                max.x=vector.x;
             if(vector.y<min.y)
-                min.y=vector.y
+                min.y=vector.y;
             if(vector.y>max.y)
-                max.y=vector.y
+                max.y=vector.y;
             if(vector.z<min.z)
-                min.z=vector.z
+                min.z=vector.z;
             if(vector.z>max.z)
-                max.z=vector.z
-            currentPoints.vertices.push(vector );
+                max.z=vector.z;
+            if(j%5==0)
+            currentPoints.vertices.push(vector);
+
 
             // fiber length
             if (j > 0) {
 
                 // if not the first point, calculate length
-                var oldPoint = currentPoints.vertices[j - 1];
-                var displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)]
+
+                var displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)];
                 curLength=Math.sqrt(displacement[0]*displacement[0] +
                     displacement[1]*displacement[1] + displacement[2]*displacement[2]);
-                length += curLength
+                length += curLength;
 
                 //adds in vertex color values
                 if(j==1)
-                    currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ))
+                    currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
 
-                currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ))
+                if(j%5==0)
+                currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+                /*if(j < numPoints - 1)
+                {
+                    currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+                    currentPoints.vertices.push(vector);
+                }*/
             }
-
+            oldPoint = vector;
             // increase the number of points if this is not the last track
             if (j < numPoints - 1) {
                 _totalPoints += 6;
             }
 
         }
-        currentPoints.computeBoundingBox();
-        currentPoints.computeFaceNormals();
-        currentPoints.computeVertexNormals();
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
-
+        pointsCounted += numPoints/5;
 
         // read additional properties
         // var properties = this.scan('float', header.n_properties);
 
         // append this track to our fibers list
-        var curLine = new THREE.Line(currentPoints, lineMaterial);
-        fibers.add(curLine);
 
     } // end of loop through all tracks
 
-
+    currentPoints.computeBoundingBox();
+    //currentPoints.computeFaceNormals();
+    //currentPoints.computeVertexNormals();
+    var options={vertexColors:true};
+    console.log(currentPoints.colors.length,currentPoints.vertices.length);
+    var material = new THREE.PointCloudMaterial(options);
+    fibers = new THREE.PointCloud(currentPoints, material);
+    console.log(currentPoints.vertices.length - currentPoints.colors.length)
+    //fibers.type = THREE.LinePieces;
 
     // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
     //DVT.matriDVT.transpose(header.vox_to_ras, object._transform._matrix);
