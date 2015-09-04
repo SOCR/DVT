@@ -14,10 +14,29 @@ goog.require('DVT.loaded');
  * @constructor
  */
 
-DVT.fiber = function(copyFrom)
-{//console.count('fiber');
+DVT.fiber = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
 
+    /**
+     * Container for storing fiber data
+     * @type {THREE.Object3D}
+     * @private
+     */
+    this._fiberContainer = null;
+
+    /**
+     * Container for storing current particle locations
+     * @type {Array}
+     * @private
+     */
+    this._particleLocations = null;
+
+    /**
+     * Container for storing all possible particle locations
+     * @type {THREE.Object3D}
+     * @private
+     */
+    this._particlePoints = null;
 
 };
 goog.inherits(DVT.fiber, DVT.loaded);

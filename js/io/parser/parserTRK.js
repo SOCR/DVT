@@ -72,14 +72,10 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     var numberOfFibers = (header.n_count === 0) ? Infinity : header.n_count;
     var numberOfScalars = header.n_scalars;
 
-    var m = new THREE.Matrix4()
-    var min={x: Infinity, y: Infinity, z:Infinity}
-    var max={x: -Infinity, y: -Infinity, z: -Infinity}
+    var m = new THREE.Matrix4();
+    var min={x: Infinity, y: Infinity, z:Infinity};
+    var max={x: -Infinity, y: -Infinity, z: -Infinity};
     m.set(header.vox_to_ras[0],header.vox_to_ras[1],header.vox_to_ras[2],header.vox_to_ras[3],header.vox_to_ras[4],header.vox_to_ras[5],header.vox_to_ras[6],header.vox_to_ras[7],header.vox_to_ras[8],header.vox_to_ras[9],header.vox_to_ras[10],header.vox_to_ras[11],header.vox_to_ras[12],header.vox_to_ras[13],header.vox_to_ras[14],header.vox_to_ras[15]);
-
-    // loop through all fibers
-    var fibers = new THREE.Object3D();
-    var lineMaterial = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
 
     var _numPoints = this.scan('uint', (this._data.byteLength - 1000) / 4);
     this.jumpTo(header.hdr_size);
@@ -96,11 +92,11 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         updateCheck = 100000;
     }
     else {
-        updateCheck = Math.ceil(numberOfFibers / 100);
+        updateCheck = Math.ceil(numberOfFibers / 20);
     }
 
     var pointsCounted = 0;
-    var currentPoints = new THREE.Geometry();
+    var particlePoints= new THREE.Geometry(), fiberPoints = new THREE.Geometry();
     for (i = 0; i < numberOfFibers; i++) {
         if(i%updateCheck === 0)
         {
@@ -159,7 +155,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             if(vector.z>max.z)
                 max.z=vector.z;
             if(j%5==0)
-            currentPoints.vertices.push(vector);
+                particlePoints.vertices.push(vector);
+            fiberPoints.vertices.push(vector);
 
 
             // fiber length
@@ -168,31 +165,30 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                 // if not the first point, calculate length
 
                 var displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)];
-                curLength=Math.sqrt(displacement[0]*displacement[0] +
+                var curLength = Math.sqrt(displacement[0]*displacement[0] +
                     displacement[1]*displacement[1] + displacement[2]*displacement[2]);
                 length += curLength;
 
                 //adds in vertex color values
-                if(j==1)
-                    currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+                if(j==1) {
+                    particlePoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
+                    fiberPoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
+                }
+
+                fiberPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
 
                 if(j%5==0)
-                currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
-                /*if(j < numPoints - 1)
+                particlePoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+
+                if(j < numPoints - 1)
                 {
-                    currentPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
-                    currentPoints.vertices.push(vector);
-                }*/
-            }
-            oldPoint = vector;
-            // increase the number of points if this is not the last track
-            if (j < numPoints - 1) {
-                _totalPoints += 6;
+                    fiberPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+                    fiberPoints.vertices.push(vector);
+                }
             }
 
         }
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
-        pointsCounted += numPoints/5;
 
         // read additional properties
         // var properties = this.scan('float', header.n_properties);
@@ -200,22 +196,19 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         // append this track to our fibers list
 
     } // end of loop through all tracks
-
-    currentPoints.computeBoundingBox();
-    //currentPoints.computeFaceNormals();
-    //currentPoints.computeVertexNormals();
+    fiberPoints.computeBoundingBox();
+    fiberPoints.computeFaceNormals();
+    fiberPoints.computeVertexNormals();
+    console.log(fiberPoints.colors.length, fiberPoints.vertices.length);
     var options={vertexColors:true};
-    console.log(currentPoints.colors.length,currentPoints.vertices.length);
-    var material = new THREE.PointCloudMaterial(options);
-    fibers = new THREE.PointCloud(currentPoints, material);
-    console.log(currentPoints.vertices.length - currentPoints.colors.length)
+    var material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
+    object._fiberContainer = new THREE.Line(fiberPoints, material, THREE.LinePieces);
     //fibers.type = THREE.LinePieces;
-
     // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
     //DVT.matriDVT.transpose(header.vox_to_ras, object._transform._matrix);
 
     // the object should be set up here, so let's fire a modified event
-    object.THREEContainer=fibers;
+    object.THREEContainer=object._fiberContainer;
     object._loaded = true;
     object._locked = false;
     object.dispatchEvent({type: 'PROCESSED', target: object});

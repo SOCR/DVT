@@ -2,7 +2,7 @@
  * Created by shusa_000 on 6/29/2015.
  */
 
-goog.provide('DVT.parserTRK');
+goog.provide('DVT.parserTRKParticle');
 
 // requires
 goog.require('DVT.parser');
@@ -17,7 +17,7 @@ goog.require('THREE');
  * @constructor
  * @extends DVT.parser
  */
-DVT.parserTRK = function() {
+DVT.parserTRKParticle = function() {
 
     //
     // call the standard constructor of DVT.base
@@ -25,13 +25,13 @@ DVT.parserTRK = function() {
 
 };
 // inherit from DVT.parser
-goog.inherits(DVT.parserTRK, DVT.parser);
+goog.inherits(DVT.parserTRKParticle, DVT.parser);
 
 
 /**
  * @inheritDoc
  */
-DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count('parserTRK.parse');
+DVT.parserTRKParticle.prototype.parse = function(object, data, loader) {//console.count('parserTRKParticle.parse');
 
 
     this._data = data;
@@ -225,5 +225,5 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
 
 // export symbols (required for advanced compilation)
-goog.exportSymbol('DVT.parserTRK', DVT.parserTRK);
-goog.exportSymbol('DVT.parserTRK.prototype.parse', DVT.parserTRK.prototype.parse);
+goog.exportSymbol('DVT.parserTRKParticle', DVT.parserTRKParticle);
+goog.exportSymbol('DVT.parserTRKParticle.prototype.parse', DVT.parserTRKParticle.prototype.parse);

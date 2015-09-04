@@ -263,7 +263,6 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     if (this.get(object)) {
         // this means, we are updating
         existed = true;
-
     }
     console.log(this.get(object));
     var loaded = object._loaded;
