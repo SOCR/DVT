@@ -8,6 +8,7 @@ goog.addDependency('../../../../../js/io/loader/loadHelper.js', ['DVT.loadHelper
 goog.addDependency('../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DVT', 'DVT.loadHelper', 'jQuery'], false);
 goog.addDependency('../../../../../js/io/parser/parser.js', ['DVT.parser'], ['DVT.base'], false);
 goog.addDependency('../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'THREE'], false);
+goog.addDependency('../../../../../js/io/parser/parserTRKParticle.js', ['DVT.parserTRKParticle'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);
 goog.addDependency('../../../../../js/lib/bootstrap.min.js', ['bootstrap'], [], false);
 goog.addDependency('../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);

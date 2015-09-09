@@ -22,9 +22,13 @@ goog.require('orbitControls');
 //TODO remove after speed optimizations
 $(function () {
     ROTATEVECTOR = new THREE.Vector3(0,1,1);
-    ROTATEAMOUNT = .1;
-    ROTATECALLS = 10;
-})
+    ROTATEAMOUNT = .005;
+    ROTATECALLS = 1000;
+    TOTALTIMES=[];
+    RENDERTIMES=[];
+    ROTATETIMES=[];
+
+});
 
 /**
  * Create a 3D renderer inside a given DOM Element.
@@ -114,7 +118,8 @@ goog.inherits(DVT.renderer3D, DVT.renderer);
  *
  * @return {Object} The configuration.
  */
-DVT.renderer3D.prototype.__defineGetter__('config', function() {console.count('renderer3D.getConfig');
+
+DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count('renderer3D.getConfig');
 
     return this._config;
 
@@ -123,19 +128,19 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {console.count('r
 
 
 
-/*
+
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
     this._controller.update();
 
 }
-*/
+
 
 
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.init = function() {console.count('renderer3D.init');
+DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     // call the superclass' init method
     goog.base(this, 'init', "experimental-webgl");
@@ -145,10 +150,10 @@ DVT.renderer3D.prototype.init = function() {console.count('renderer3D.init');
     this._camera.position.z = 500;
 
     //setup controller
-    //this._controller = new THREE.OrbitControls(this._camera);
+    this._controller = new THREE.OrbitControls(this._camera);
 
-    //this._controller.damping = 0.2;
-    //this._controller.addEventListener( 'change', this.render_.bind(this, false, true));
+    this._controller.damping = 0.2;
+    this._controller.addEventListener( 'change', this.render_.bind(this, false, true));
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
@@ -162,7 +167,7 @@ DVT.renderer3D.prototype.init = function() {console.count('renderer3D.init');
     this._renderer.setSize(this._width, this._height);
 
 
-    //this.animate();
+    this.animate();
     /*  //
      // Step2: Configure the context
      //
@@ -244,7 +249,7 @@ DVT.renderer3D.prototype.init = function() {console.count('renderer3D.init');
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.update_ = function(object) {console.count('renderer3D.update_');
+DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D.update_');
     console.log('function call: update_ in renderer3D')
     // call the update_ method of the superclass
     goog.base(this, 'update_', object);
@@ -258,7 +263,6 @@ DVT.renderer3D.prototype.update_ = function(object) {console.count('renderer3D.u
     if (this.get(object)) {
         // this means, we are updating
         existed = true;
-
     }
     console.log(this.get(object));
     var loaded = object._loaded;
@@ -921,26 +925,66 @@ DVT.renderer3D.prototype.update_ = function(object) {console.count('renderer3D.u
         this.render();
 
         //TODO remove after optimization tests are complete
-        this.rotate();
+        //this.rotate();
     }
 
 };
-DVT.renderer3D.prototype.rotate = function () {console.count('renderer3D.rotate');
+DVT.renderer3D.prototype.rotate = function () {//console.count('renderer3D.rotate');
+    //console.time('renderer3D.rotate');
+    //console.time('renderer3D.rotate(rotateOnAxis)');
+    STARTTOTAL= window.performance.now();
     if(ROTATECALLS > 0)requestAnimationFrame(this.rotate.bind(this));
+    else{
+        console.log('average(ROTATE): '+average(ROTATETIMES),'std dev(ROTATE): ' + standardDeviation(ROTATETIMES));
+        console.log('average(RENDER): '+average(RENDERTIMES),'std dev(RENDER): ' + standardDeviation(RENDERTIMES));
+        console.log('average(TOTAL): '+average(TOTALTIMES),'std dev(TOTAL): ' + standardDeviation(TOTALTIMES));
+    }
     ROTATECALLS -= 1;
     this._objects[0].THREEContainer.rotateOnAxis(ROTATEVECTOR, ROTATEAMOUNT);
+    ROTATETIMES.push(window.performance.now()-STARTTOTAL);
+    STARTRENDER = window.performance.now();
+    //console.timeEnd('renderer3D.rotate(rotateOnAxis)');
+    //console.time('renderer3D.rotate(render)');
     this._renderer.render(this._scene, this._camera);
+    //console.timeEnd('renderer3D.rotate(render)');
+    //console.timeEnd('renderer3D.rotate');
+    RENDERTIMES.push(window.performance.now()-STARTRENDER);
+    TOTALTIMES.push(window.performance.now()-STARTTOTAL);
+
+
 }
 
 
 
+function standardDeviation(values){
+    var avg = average(values);
 
+    var squareDiffs = values.map(function(value){
+        var diff = value - avg;
+        var sqrDiff = diff * diff;
+        return sqrDiff;
+    });
+
+    var avgSquareDiff = average(squareDiffs);
+
+    var stdDev = Math.sqrt(avgSquareDiff);
+    return stdDev;
+}
+
+function average(data){
+    var sum = data.reduce(function(sum, value){
+        return sum + value;
+    }, 0);
+
+    var avg = sum / data.length;
+    return avg;
+}
 
 
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.count('renderer3D.render_');
+DVT.renderer3D.prototype.render_ = function(picking, invoked) {//console.count('renderer3D.render_');
 
 
     // only proceed if there are actually objects to render
@@ -963,7 +1007,7 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.count('re
      * @return {!Array} The background color normalized.
      * @public
      */
-    DVT.renderer3D.prototype.__defineGetter__('bgColor', function() {console.count('renderer3D.getbg');
+    DVT.renderer3D.prototype.__defineGetter__('bgColor', function() {//console.count('renderer3D.getbg');
 
         return this._bgColor;
 
@@ -976,7 +1020,7 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {console.count('re
      *          bgColor The background color normalized.
      * @public
      */
-    DVT.renderer3D.prototype.__defineSetter__('bgColor', function(bgColor) {console.count('renderer3D.setbg');
+    DVT.renderer3D.prototype.__defineSetter__('bgColor', function(bgColor) {//console.count('renderer3D.setbg');
 
         this._bgColor = bgColor;
 

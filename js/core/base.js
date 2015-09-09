@@ -21,7 +21,7 @@ goog.require('goog.events.EventTarget');
  * @constructor
  * @extends goog.events.EventTarget
  */
-DVT.base = function() {console.count('base');
+DVT.base = function() {//console.count('base');
 
     //
     // register this class within the event system by calling the superclass

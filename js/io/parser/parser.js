@@ -14,7 +14,7 @@ goog.require('DVT.base');
  * @constructor
  * @extends DVT.base
  */
-DVT.parser = function() {console.count('parser.constructor');
+DVT.parser = function() {//console.count('parser.constructor');
 
     //
     // call the standard constructor of DVT.base
@@ -99,7 +99,7 @@ goog.inherits(DVT.parser, DVT.base);
  * @throws {Error}
  *           An exception if something goes wrong.
  */
-DVT.parser.prototype.parse = function( data, object, loader) {console.count('parser.parse');
+DVT.parser.prototype.parse = function( data, object, loader) {//console.count('parser.parse');
 
     throw new Error('The function parse() should be overloaded.');
 
@@ -117,7 +117,7 @@ DVT.parser.prototype.parse = function( data, object, loader) {console.count('par
  *          data The data array to analyze.
  * @return {!Array} An array with length 2 containing the [min, max] values.
  */
-DVT.parser.prototype.arrayMinMax = function(data) {console.count('parser.arrayminmax');
+DVT.parser.prototype.arrayMinMax = function(data) {//console.count('parser.arrayminmax');
 
     var _min = Infinity;
     var _max = -Infinity;
@@ -156,7 +156,7 @@ DVT.parser.prototype.arrayMinMax = function(data) {console.count('parser.arraymi
  *          end The end position. If undefined, use the whole array.
  * @return {string} The created string.
  */
-DVT.parser.prototype.parseChars = function(array, start, end) {console.count('parser.parseChars');
+DVT.parser.prototype.parseChars = function(array, start, end) {//console.count('parser.parseChars');
 
     // without borders, use the whole array
     if (start === undefined) {
@@ -190,7 +190,7 @@ DVT.parser.prototype.parseChars = function(array, start, end) {console.count('pa
  * @param {!number}
  *          position The new offset.
  */
-DVT.parser.prototype.jumpTo = function(position) {console.count('parser.jumpto');
+DVT.parser.prototype.jumpTo = function(position) {//console.count('parser.jumpto');
 
     this._dataPointer = position;
 
@@ -206,7 +206,7 @@ DVT.parser.prototype.jumpTo = function(position) {console.count('parser.jumpto')
  * @param {!number=}
  *          chunks The number of chunks to scan. By default, 1.
  */
-DVT.parser.prototype.scan = function(type, chunks) {console.count('parser.scan');
+DVT.parser.prototype.scan = function(type, chunks) {//console.count('parser.scan');
 
     if (!goog.isDefAndNotNull(chunks)) {
 
@@ -293,7 +293,7 @@ DVT.parser.prototype.scan = function(type, chunks) {console.count('parser.scan')
  *          chunkSize The size of each element.
  * @return {!Object} The converted typed array.
  */
-DVT.parser.prototype.flipEndianness = function(array, chunkSize) {console.count('parser.flipEndianness');
+DVT.parser.prototype.flipEndianness = function(array, chunkSize) {//console.count('parser.flipEndianness');
 
     var u8 = new Uint8Array(array.buffer, array.byteOffset, array.byteLength);
     for ( var i = 0; i < array.byteLength; i += chunkSize) {

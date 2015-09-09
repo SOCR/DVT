@@ -14,10 +14,73 @@ goog.require('DVT.loaded');
  * @constructor
  */
 
-DVT.fiber = function(copyFrom)
-{console.count('fiber');
+DVT.fiber = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
 
+    /**
+     * Container for storing fiber data
+     * @type {THREE.Object3D}
+     * @private
+     */
+    this._fiberContainer = null;
+
+    /**
+     * Container for storing current particle locations
+     * @type {Array}
+     * @private
+     */
+    this._currentParticles = null;
+
+    /**
+     * Container for storing all possible particle locations
+     * @type {THREE.Object3D}
+     * @private
+     */
+    this._particleLocations = null;
+
+    /**
+     * Private variable telling whether fibers are visible. Default: true
+     * @type {boolean}
+     * @private
+     */
+    this._fibersVisible = true;
+
+    /**
+     * private variable telling whether particles are visible. Default: false
+     * @type {boolean}
+     * @private
+     */
+    this._particlesVisible = false;
 
 };
 goog.inherits(DVT.fiber, DVT.loaded);
+
+/**
+ * sets visibility of particle system on/off
+ * @param status {bool} indicator to show/hide particles
+ */
+DVT.fiber.prototype.showParticles = function (status) {
+    if(this._currentParticles) {
+        if (status) {
+            this._currentParticles.visible = true;
+        } else {
+            this._currentParticles.visible = false;
+        }
+        this._particlesVisible = status;
+    }
+};
+
+/**
+ * sets visibility of fiber system on/off
+ * @param status indicator to show/hide particles
+ */
+DVT.fiber.prototype.showFibers = function (status) {
+    if(this._fiberContainer) {
+        if (status) {
+            this._fiberContainer.visible = true;
+        } else {
+            this._fiberContainer.visible = true;
+        }
+    }
+    this._fibersVisible = status;
+};
