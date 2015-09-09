@@ -168,7 +168,6 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                 var curLength = Math.sqrt(displacement[0]*displacement[0] +
                     displacement[1]*displacement[1] + displacement[2]*displacement[2]);
                 length += curLength;
-
                 //adds in vertex color values
                 if(j==1) {
                     particlePoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
@@ -186,7 +185,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                     fiberPoints.vertices.push(vector);
                 }
             }
-
+            oldPoint = vector;
         }
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
 
@@ -208,7 +207,9 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     //DVT.matriDVT.transpose(header.vox_to_ras, object._transform._matrix);
 
     // the object should be set up here, so let's fire a modified event
-    object.THREEContainer=object._fiberContainer;
+    object.THREEContainer = new THREE.Object3D();
+    object.THREEContainer.add(object._fiberContainer);
+    object._fiberContainer.visible = object._fibersVisible;
     object._loaded = true;
     object._locked = false;
     object.dispatchEvent({type: 'PROCESSED', target: object});

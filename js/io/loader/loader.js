@@ -61,7 +61,12 @@ DVT.loader.prototype.init = function () {//console.count('loader.init');
     return;
 };
 
-DVT.loader.prototype.load = function(container) {//console.count('loader.load');
+/**
+ * begins loading taskchain, and tracks statistics
+ * @param container DVT Object in which data is to be stored
+ * @returns {number}
+ */
+DVT.loader.prototype.load = function(container) {
     container._locked = true;
     var filePath = container.file;
     this._numActive += 3;
@@ -70,7 +75,7 @@ DVT.loader.prototype.load = function(container) {//console.count('loader.load');
     var helper = new DVT.loadHelper(this._curIndex, filePath, this._modalID, container);
 
     //listen for load bar completion event
-    goog.events.listen(helper, 'PROGRESS', function(){//console.count('loader.PROGRESS');
+    goog.events.listen(helper, 'PROGRESS', function(){
         this._numActive -= 1;
         if(this._numActive === 0)
         {
