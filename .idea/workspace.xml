@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/object.js" afterPath="$PROJECT_DIR$/js/objects/object.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.92117465">
+              <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -71,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="object.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="object.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/objects/object.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76352394">
+            <state vertical-scroll-proportion="0.0">
               <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding />
             </state>
@@ -192,9 +192,9 @@
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
         <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
-        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/objects/object.js" />
+        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
       </list>
     </option>
   </component>
@@ -589,12 +589,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00008" summary="implement closure compiler&#10;">
-      <created>1435822535744</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1435822535744</updated>
-    </task>
     <task id="LOCAL-00009" summary="implement DTV Base">
       <created>1435831643789</created>
       <option name="number" value="00009" />
@@ -883,7 +877,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441947452741</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="create init process&#10;">
+      <created>1441947713980</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1441947713980</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -933,7 +933,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="update loading protocol" />
     <MESSAGE value="establish upload framework" />
     <MESSAGE value="fix loading function binding&#10;" />
     <MESSAGE value="finalize loader errors" />
@@ -958,7 +957,8 @@
     <MESSAGE value="implement animation skeleton" />
     <MESSAGE value="instantiate fiber animation" />
     <MESSAGE value="implement ping-pong buffering" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement ping-pong buffering" />
+    <MESSAGE value="create init process&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="create init process&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1275,14 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1337,8 +1329,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/object.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76352394">
+        <state vertical-scroll-proportion="0.0">
           <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92117465">
+          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
           <folding />
         </state>
       </provider>

@@ -101,3 +101,10 @@ DVT.fiber.prototype.animate = function () {
     material.uniforms.map.value = fboParticles.out;
 
 };
+
+/**
+ * @inheritDoc
+ */
+DVT.fiber.prototype.init = function (renderer) {
+
+}
