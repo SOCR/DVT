@@ -67,15 +67,14 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     //
     // parse the data
-
     // if n_count not provided, we parse the data until end of points
     var numberOfFibers = (header.n_count === 0) ? Infinity : header.n_count;
     var numberOfScalars = header.n_scalars;
 
     var m = new THREE.Matrix4();
-    var min={x: Infinity, y: Infinity, z:Infinity};
-    var max={x: -Infinity, y: -Infinity, z: -Infinity};
-    m.set(header.vox_to_ras[0],header.vox_to_ras[1],header.vox_to_ras[2],header.vox_to_ras[3],header.vox_to_ras[4],header.vox_to_ras[5],header.vox_to_ras[6],header.vox_to_ras[7],header.vox_to_ras[8],header.vox_to_ras[9],header.vox_to_ras[10],header.vox_to_ras[11],header.vox_to_ras[12],header.vox_to_ras[13],header.vox_to_ras[14],header.vox_to_ras[15]);
+    var min = {x: Infinity, y: Infinity, z:Infinity};
+    var max = {x: -Infinity, y: -Infinity, z: -Infinity};
+    m.set(header.vox_to_ras[0],header.vox_to_ras[1], header.vox_to_ras[2], header.vox_to_ras[3], header.vox_to_ras[4], header.vox_to_ras[5], header.vox_to_ras[6], header.vox_to_ras[7], header.vox_to_ras[8], header.vox_to_ras[9], header.vox_to_ras[10], header.vox_to_ras[11], header.vox_to_ras[12], header.vox_to_ras[13], header.vox_to_ras[14], header.vox_to_ras[15]);
 
     var _numPoints = this.scan('uint', (this._data.byteLength - 1000) / 4);
     this.jumpTo(header.hdr_size);
@@ -83,28 +82,22 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     var offset = 0;
 
-    // keep track of the number of all points along all tracks
-    var _totalPoints = 0;
-
     var i;
     var updateCheck = 0;
-    if(numberOfFibers === Infinity) {
+    if (numberOfFibers === Infinity) {
         updateCheck = 100000;
-    }
-    else {
+    } else {
         updateCheck = Math.ceil(numberOfFibers / 20);
     }
 
-    var pointsCounted = 0;
-    var particlePoints= new THREE.Geometry(), fiberPoints = new THREE.Geometry();
+    var fiberPoints = new THREE.Geometry();
     for (i = 0; i < numberOfFibers; i++) {
-        if(i%updateCheck === 0)
-        {
-            loader.updateParse(i/numberOfFibers);
+        if (i % updateCheck === 0) {
+            loader.updateParse(i / numberOfFibers);
         }
         // if undefined, it means we have parsed all the data
         // (useful if n_count not defined or === 0)
-        if(typeof(_numPoints[offset]) === 'undefined'){
+        if (typeof (_numPoints[offset]) === 'undefined'){
             numberOfFibers = i;
             break;
         }
@@ -117,7 +110,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
 
         var length = 0.0;
-        oldPoint = 0;
+        var oldPoint = 0;
 
         // loop through the points of this fiber
         for ( var j = 0; j < numPoints; j++) {
@@ -154,8 +147,6 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                 min.z=vector.z;
             if(vector.z>max.z)
                 max.z=vector.z;
-            if(j%5==0)
-                particlePoints.vertices.push(vector);
             fiberPoints.vertices.push(vector);
 
 
@@ -170,14 +161,11 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                 length += curLength;
                 //adds in vertex color values
                 if(j==1) {
-                    particlePoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
                     fiberPoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
                 }
 
                 fiberPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
 
-                if(j%5==0)
-                particlePoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
 
                 if(j < numPoints - 1)
                 {

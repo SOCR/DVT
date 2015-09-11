@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -39,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92117465">
-              <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="114" column="30" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -91,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="196" column="39" selection-start-line="196" selection-start-column="39" selection-end-line="196" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.56414217">
+              <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -190,11 +190,11 @@
         <option value="$PROJECT_DIR$/js/io/parser/parserTRKParticle.js" />
         <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
-        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
         <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/objects/object.js" />
         <option value="$PROJECT_DIR$/js/objects/fiber.js" />
+        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       </list>
     </option>
   </component>
@@ -489,8 +489,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -510,7 +510,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -588,18 +588,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00009" summary="implement DTV Base">
-      <created>1435831643789</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1435831643789</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix compiler, initialize loader">
-      <created>1435841044757</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1435841044757</updated>
     </task>
     <task id="LOCAL-00011" summary="initialize load helper&#10;">
       <created>1435847360772</created>
@@ -883,7 +871,19 @@
       <option name="project" value="LOCAL" />
       <updated>1441947713980</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="begin implementing init process for fibers">
+      <created>1441947783603</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1441947783603</updated>
+    </task>
+    <task id="LOCAL-00059" summary="initialize fiber renderer object">
+      <created>1441948393180</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1441948393180</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -902,22 +902,22 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32592592" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -933,8 +933,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="establish upload framework" />
-    <MESSAGE value="fix loading function binding&#10;" />
     <MESSAGE value="finalize loader errors" />
     <MESSAGE value="initialize base parser&#10;" />
     <MESSAGE value="implement TRK parser" />
@@ -958,7 +956,9 @@
     <MESSAGE value="instantiate fiber animation" />
     <MESSAGE value="implement ping-pong buffering" />
     <MESSAGE value="create init process&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="create init process&#10;" />
+    <MESSAGE value="begin implementing init process for fibers" />
+    <MESSAGE value="initialize fiber renderer object" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize fiber renderer object" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1207,7 +1207,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="238" column="64" selection-start-line="238" selection-start-column="64" selection-end-line="238" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1237,7 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,7 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="426" column="76" selection-start-line="426" selection-start-column="76" selection-end-line="426" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1253,7 +1249,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,32 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="64" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="196" column="39" selection-start-line="196" selection-start-column="39" selection-end-line="196" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1337,8 +1306,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92117465">
-          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="30" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="64" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56414217">
+          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
           <folding />
         </state>
       </provider>
