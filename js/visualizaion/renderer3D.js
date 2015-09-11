@@ -249,7 +249,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D.update_');
+DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D.update_');o
     console.log('function call: update_ in renderer3D')
     // call the update_ method of the superclass
     goog.base(this, 'update_', object);
