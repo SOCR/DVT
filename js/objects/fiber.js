@@ -10,7 +10,7 @@ goog.require('DVT.loaded');
 /**
  * Class representing dMRI-generated tractography data
  * @param copyFrom Object to copy properties from
- * @extends DVT.loadedl
+ * @extends DVT.loaded
  * @constructor
  */
 
