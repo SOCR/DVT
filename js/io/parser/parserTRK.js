@@ -92,6 +92,9 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     var fiberPoints = new THREE.Geometry();
     var particlePoints = new THREE.Geometry();
+    var mapArray = [], mapPoints = 0;
+
+
     for (i = 0; i < numberOfFibers; i++) {
         if (i % updateCheck === 0) {
             loader.updateParse(i / numberOfFibers);
@@ -180,13 +183,13 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         var curve = new THREE.SplineCurve3(particleArray);
         var curveLength = curve.getLength();
         particleGeom = new THREE.Geometry();
-        particleArray = curve.getSpacedPoints(curveLength / 50 * 60);
+        particleArray = curve.getSpacedPoints(curveLength / 30 * 60);
         oldPoint = particleArray[0];
 
         //calculate particle system Colors
-        for( j =1; j<particleGeom.vertices.length; j++)
+        for( j = 1; j < particleArray.length; j++)
         {
-            vector = particleGeom.vertices[j];
+            vector = particleArray[j];
             displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)];
             curLength = Math.sqrt(displacement[0]*displacement[0] + displacement[1]*displacement[1] + displacement[2]*displacement[2]);
 
@@ -201,6 +204,29 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         }
         particleGeom.vertices = particleArray;
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
+
+        for(j = 0;j < particleArray.length; j++)
+        {
+            if(j % 30 == 0) {
+                mapArray.push(particleArray[j].x);
+                mapArray.push(particleArray[j].y);
+                mapArray.push(particleArray[j].z);
+
+                //index in all points
+                mapArray.push(j + mapPoints);
+            }
+
+        }
+
+        //insert rollback token
+        particleGeom.vertices.push(new THREE.Vector3(-999,-999,-999));
+        particleGeom.vertices.push(new THREE.Vector3(particleGeom.vertices.length - 1, particleGeom.vertices.length - 1, particleGeom.vertices.length - 1));
+
+        //pad color array to maintain 1:1 ratio with vertices
+        particleGeom.colors.push( new THREE.Color(0,0,0));
+        particleGeom.colors.push( new THREE.Color(0,0,0));
+
+        mapPoints += particleGeom.vertices.length;
 
         // read additional properties
         // var properties = this.scan('float', header.n_properties);
