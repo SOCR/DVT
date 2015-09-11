@@ -205,6 +205,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         particleGeom.vertices = particleArray;
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
 
+        //populate map array (xyzw)
         for(j = 0;j < particleArray.length; j++)
         {
             if(j % 30 == 0) {

@@ -53,6 +53,13 @@ DVT.fiber = function(copyFrom) {
     this._particlesVisible = false;
 
     /**
+     * indicates whether animation is enabled for particle system
+     * @type {boolean}
+     * @private
+     */
+    this._particlesAnimated = true;
+
+    /**
      * THREE.js renderer associated with the object
      * @type {!THREE.renderer}
      * @private
@@ -92,20 +99,30 @@ DVT.fiber.prototype.showFibers = function (status) {
 };
 
 /**
+ * enables or disables animation for particles
+ * @param status {boolean}
+ */
+DVT.fiber.prototype.enableAnimation = function (status) {
+    this._particlesAnimated = status;
+};
+
+/**
  * @inheritDoc
  */
 DVT.fiber.prototype.animate = function () {
 
-    // swap for ping-pong buffer
-    var tmp = fboParticles.in;
-    fboParticles.in = fboParticles.out;
-    fboParticles.out = tmp;
+    if(this._particlesAnimated && this._particlesVisible) {
+
+        // swap for ping-pong buffer
+        var tmp = fboParticles.in;
+        fboParticles.in = fboParticles.out;
+        fboParticles.out = tmp;
 
 
-    simulationShader.uniforms.tPositions.value = fboParticles.in;
-    fboParticles.simulate(fboParticles.out);
-    material.uniforms.map.value = fboParticles.out;
-
+        simulationShader.uniforms.tPositions.value = fboParticles.in;
+        fboParticles.simulate(fboParticles.out);
+        material.uniforms.map.value = fboParticles.out;
+    }
 };
 
 /**
