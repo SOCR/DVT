@@ -3,7 +3,8 @@
 */
 
 // Utils for FBO Particles Simulations
-
+goog.require('THREE');
+goog.provide('FBOUtils');
 
 THREE.FBOUtils = function( textureWidth, renderer, simulationShader ) {
 
