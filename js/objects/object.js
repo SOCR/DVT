@@ -37,7 +37,14 @@ DVT.object = function(copyFrom)
  */
 DVT.object.prototype.animate = function () {
     //implement in children
-}
+};
 
+/**
+ *
+ * @param renderer {!THREE.renderer} THREE.js renderer object into which object is being drawn
+ */
+DVT.object.prototype.init = function (renderer) {
+    //implement in children
+}
 
 goog.inherits(DVT.object, DVT.base);
