@@ -83,15 +83,6 @@ DVT.renderer3D = function() {
     this._bgColor = [0, 0, 0];
 
     /**
-     * The material used for lines
-     *
-     * @type {?Object}
-     * @protected
-     */
-
-    this._material = new THREE.LineBasicMaterial({vertexColors:THREE.VertexColors});
-
-    /**
      * The THREE.js rendering module
      *
      * @type {?Object}
@@ -922,6 +913,7 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
+        object.init(this._renderer);
         this.render();
 
         //TODO remove after optimization tests are complete

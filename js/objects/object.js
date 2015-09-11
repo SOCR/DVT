@@ -39,4 +39,5 @@ DVT.object.prototype.animate = function () {
     //implement in children
 }
 
+
 goog.inherits(DVT.object, DVT.base);

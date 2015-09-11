@@ -90,4 +90,14 @@ DVT.fiber.prototype.showFibers = function (status) {
  */
 DVT.fiber.prototype.animate = function () {
 
-}
+    // swap for ping-pong buffer
+    var tmp = fboParticles.in;
+    fboParticles.in = fboParticles.out;
+    fboParticles.out = tmp;
+
+
+    simulationShader.uniforms.tPositions.value = fboParticles.in;
+    fboParticles.simulate(fboParticles.out);
+    material.uniforms.map.value = fboParticles.out;
+
+};
