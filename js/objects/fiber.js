@@ -84,3 +84,10 @@ DVT.fiber.prototype.showFibers = function (status) {
     }
     this._fibersVisible = status;
 };
+
+/**
+ * @inheritDoc
+ */
+DVT.fiber.prototype.animate = function () {
+
+}
