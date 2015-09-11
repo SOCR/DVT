@@ -91,6 +91,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     }
 
     var fiberPoints = new THREE.Geometry();
+    var particlePoints = new THREE.Geometry();
     for (i = 0; i < numberOfFibers; i++) {
         if (i % updateCheck === 0) {
             loader.updateParse(i / numberOfFibers);
@@ -111,7 +112,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
         var length = 0.0;
         var oldPoint = 0;
-
+        var particleArray = [], particleGeom = new THREE.Geometry();
         // loop through the points of this fiber
         for ( var j = 0; j < numPoints; j++) {
 
@@ -148,7 +149,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             if(vector.z>max.z)
                 max.z=vector.z;
             fiberPoints.vertices.push(vector);
-
+            particleArray.push(vector);
 
             // fiber length
             if (j > 0) {
@@ -174,6 +175,29 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
                 }
             }
             oldPoint = vector;
+        }
+
+        var curve = new THREE.SplineCurve3(particleArray);
+        var curveLength = curve.getLength();
+        particleGeom = curve.getSpacedPoints(curveLength / 50 * 60);
+
+        oldPoint = particleGeom.vertices[0];
+
+        //calculate particle system Colors
+        for( j =1; j<particleGeom.vertices.length; j++)
+        {
+            vector = particleGeom.vertices[j];
+            displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)];
+            curLength = Math.sqrt(displacement[0]*displacement[0] + displacement[1]*displacement[1] + displacement[2]*displacement[2]);
+
+            if(j==1) {
+                fiberPoints.colors.push(new THREE.Color(displacement[0] / curLength, displacement[1] / curLength, displacement[2] / curLength));
+            }
+
+            fiberPoints.colors.push( new THREE.Color( displacement[0]/curLength, displacement[1]/curLength, displacement[2]/curLength ));
+
+            oldPoint = vector;
+
         }
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
 
