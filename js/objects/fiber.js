@@ -52,6 +52,12 @@ DVT.fiber = function(copyFrom) {
      */
     this._particlesVisible = false;
 
+    /**
+     * THREE.js renderer associated with the object
+     * @type {!THREE.renderer}
+     * @private
+     */
+    this._renderer = null;
 };
 goog.inherits(DVT.fiber, DVT.loaded);
 
@@ -106,5 +112,5 @@ DVT.fiber.prototype.animate = function () {
  * @inheritDoc
  */
 DVT.fiber.prototype.init = function (renderer) {
-
+    this._renderer = renderer;
 }
