@@ -41,16 +41,23 @@ DVT.ParticleRenderV = [
     "varying vec2 vUv;",
     "void main() {",
     "vec2 uv = position.xy + vec2( 0.5 / width, 0.5 / width );",
+    "vUv = uv;",
     "vec3 color = texture2D( map, uv ).rgb * 200.0 - 100.0;",
-    "gl_PointSize = 1.0;",
-    "gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );",
+    "gl_PointSize = 20.0;",
+    //"gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );",
+    "gl_Position = projectionMatrix * modelViewMatrix * vec4( position.xy*400.0,-100.0, 1.0 );",
     "}"
 ].join("\n");
 
 DVT.ParticleBasicColorF = [
 
+    "uniform sampler2D map;",
+    "uniform float width;",
+    "varying vec2 vUv;",
     "void main() {",
-    "gl_FragColor = vec4(0.0,1.0,1.0,1.0);",
+    "vec3 color = normalize(texture2D( map, vUv ).rgb);",
+    "gl_FragColor = vec4(abs(color), 1.0);",
+    "gl_FragColor = vec4(abs(color), 1.0);",
     "}"
 
 ].join("\n");

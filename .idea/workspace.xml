@@ -8,6 +8,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testTRK.js" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -33,7 +34,7 @@
         <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+              <caret line="30" column="32" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="32" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -45,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
+              <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -71,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="334" column="54" selection-start-line="334" selection-start-column="54" selection-end-line="334" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.26429674">
+              <caret line="252" column="100" selection-start-line="252" selection-start-column="100" selection-end-line="252" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -101,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76352394">
-              <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -194,10 +195,10 @@
         <option value="$PROJECT_DIR$/js/objects/object.js" />
         <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
+        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
-        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
       </list>
     </option>
   </component>
@@ -574,12 +575,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00036" summary="initialize base parser&#10;">
-      <created>1436456381013</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1436456381013</updated>
-    </task>
     <task id="LOCAL-00037" summary="implement TRK parser">
       <created>1436458628971</created>
       <option name="number" value="00037" />
@@ -868,7 +863,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442247198775</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="fix render shader bugs">
+      <created>1442250825759</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1442250825759</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -918,7 +919,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="initialize fiber renderer object" />
     <MESSAGE value="remove old point parser" />
     <MESSAGE value="implement color parser for particles&#10;" />
     <MESSAGE value="fix color parser bug" />
@@ -943,7 +943,8 @@
     <MESSAGE value="compile shader" />
     <MESSAGE value="implement animation loop" />
     <MESSAGE value="debug animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug animation" />
+    <MESSAGE value="fix render shader bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix render shader bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1271,14 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1034484">
-          <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="166.86208">
@@ -1295,20 +1288,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="334" column="54" selection-start-line="334" selection-start-column="54" selection-end-line="334" selection-end-column="54" />
+        <state vertical-scroll-proportion="-7.1034484">
+          <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1316,18 +1309,26 @@
     <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="174" column="50" selection-start-line="174" selection-start-column="50" selection-end-line="174" selection-end-column="50" />
+          <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
+    <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76352394">
-          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="32" />
           <folding>
-            <element signature="e#0#45#0" expanded="false" />
+            <element signature="e#0#44#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26429674">
+          <caret line="252" column="100" selection-start-line="252" selection-start-column="100" selection-end-line="252" selection-end-column="100" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -28,6 +28,6 @@ test = function() {
 
     //fibers3.showFibers(false);
     fibers.showParticles(true);
-    fibers.enableAnimation(true);
+    fibers.enableAnimation(false);
     fibers.showFibers(false);
 };

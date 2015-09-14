@@ -135,10 +135,12 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             z = -z / header.voxel_size[2];
             var vector=new THREE.Vector3( x,  y, z );
             vector.applyProjection(m);
-            vector.x-=0;
-            vector.y-=0;
+            vector.x-= -30;
+            vector.y-= -40;
+            vector.z-= -110;
             vector.x*=1;
             vector.y*=1;
+            vector.z*=1;
             if(vector.x<min.x)
                 min.x=vector.x;
             if(vector.x>max.x)
@@ -242,14 +244,19 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     //create texture for particle map
 
     //calculate width of particle map texture
-    object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapArray.length))/Math.LN2));
+    object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapArray.length/4))/Math.LN2));
     console.log(object._mapWidth);
     //create static array, for conversion into texture
     var mapStaticArray = new Float32Array(object._mapWidth*object._mapWidth*4);
-    for(var j = 0; j < mapArray.length;j++)
+    for(var j = 0; j < mapArray.length;j+=4)
     {
-        mapStaticArray[object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth)-1)+j%object._mapWidth] = mapArray[j];
+        mapStaticArray[(object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth/4)-1)+(j/4)%object._mapWidth)*4+0] = mapArray[j+0];
+        mapStaticArray[(object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth/4)-1)+(j/4)%object._mapWidth)*4+1] = mapArray[j+1];
+        mapStaticArray[(object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth/4)-1)+(j/4)%object._mapWidth)*4+2] = mapArray[j+2];
+        mapStaticArray[(object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth/4)-1)+(j/4)%object._mapWidth)*4+3] = mapArray[j+3];
     }
+    console.log('mapArray', mapArray);
+    console.log(mapStaticArray)
 
     //convert static array into texture
     var mapTexture = new THREE.DataTexture( mapStaticArray, object._mapWidth, object._mapWidth, THREE.RGBAFormat, THREE.FloatType );

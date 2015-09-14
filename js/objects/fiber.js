@@ -164,7 +164,6 @@ DVT.fiber.prototype.enableAnimation = function (status) {
 DVT.fiber.prototype.animate = function () {
 
     if(this._particlesAnimated && this._particlesVisible) {
-
         // swap for ping-pong buffer
         var tmp = this._FBOManager.in;
         this._FBOManager.in = this._FBOManager.out;
