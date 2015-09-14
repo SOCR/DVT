@@ -271,6 +271,13 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         pointsStaticArray[object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth] = particlePoints.vertices[j];
     }
 
+    //convert static array into textures
+    var particleTexture = new THREE.DataTexture( pointsStaticArray, object._coordinateWidth, object._coordinateWidth, THREE.RGBFormat, THREE.FloatType );
+    particleTexture.minFilter = THREE.NearestFilter;
+    particleTexture.magFilter = THREE.NearestFilter;
+    particleTexture.needsUpdate = true;
+    object._particleLocations = particleTexture;
+
     console.log('LENGTH:', mapPoints, mapArray.length);
 
     fiberPoints.computeBoundingBox();

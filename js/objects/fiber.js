@@ -40,14 +40,14 @@ DVT.fiber = function(copyFrom) {
 
     /**
      * Container for storing all possible particle locations
-     * @type {THREE.Object3D}
+     * @type {THREE.DataTexture}
      * @private
      */
     this._particleLocations = null;
 
     /**
      * texture file holding particle mapping matrix
-     * @type {THREE.dataTexture}
+     * @type {THREE.DataTexture}
      * @private
      */
     this._particleMap = null;
