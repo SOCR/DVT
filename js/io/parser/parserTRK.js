@@ -135,9 +135,9 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             z = -z / header.voxel_size[2];
             var vector=new THREE.Vector3( x,  y, z );
             vector.applyProjection(m);
-            vector.x-= -30;
-            vector.y-= -40;
-            vector.z-= -110;
+            vector.x-= -0;
+            vector.y-= 0;
+            vector.z-= -0;
             vector.x*=1;
             vector.y*=1;
             vector.z*=1;
@@ -185,7 +185,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         var curve = new THREE.SplineCurve3(particleArray);
         var curveLength = curve.getLength();
         particleGeom = new THREE.Geometry();
-        particleArray = curve.getSpacedPoints(curveLength / 50 * 60);
+        particleArray = curve.getSpacedPoints(curveLength / 40 * 60);
         oldPoint = particleArray[0];
 
         //calculate particle system Colors
@@ -210,7 +210,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         //populate map array (xyzw)
         for(var j = 0; j < particleArray.length; j++)
         {
-            if(j % 30 == 0) {
+            if(j % 60 == 0) {
                 mapArray.push(particleArray[j].x);
                 mapArray.push(particleArray[j].y);
                 mapArray.push(particleArray[j].z);
@@ -300,7 +300,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     var particleSystemGeometry = new THREE.Geometry();
 
     var l;
-    for (  i = 0, l = mapArray.length; i < l; i ++ ) {
+    for (  i = 0, l = mapArray.length/4; i < l; i ++ ) {
 
         var vertex = new THREE.Vector3();
         vertex.x = ( i % object._mapWidth ) / object._mapWidth ;

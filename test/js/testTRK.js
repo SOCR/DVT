@@ -12,22 +12,23 @@ test = function() {
     var fibers = new DVT.fiber();
     fibers.file = 'data/smalltrack.trk';
 
-    //var fibers2 = new DVT.fiber();
-    //fibers2.file = 'data/fibers.trk';
+    var fibers2 = new DVT.fiber();
+    fibers2.file = 'data/fibers.trk';
 
-    //var fibers3 = new DVT.fiber();
-    //fibers3.file = 'http://x.babymri.org/?cctracks.trk';
+    var fibers3 = new DVT.fiber();
+    fibers3.file = 'http://x.babymri.org/?cctracks.trk';
 
     // add the object
     test_renderer.add(fibers);
-    //test_renderer.add(fibers2);
-    //test_renderer.add(fibers3);
+    test_renderer.add(fibers2);
+    test_renderer.add(fibers3);
 
     // .. and render it
     test_renderer.render();
 
-    //fibers3.showFibers(false);
-    fibers.showParticles(true);
-    fibers.enableAnimation(false);
-    fibers.showFibers(false);
+    fibers2.showFibers(false);
+    fibers3.showParticles(true);
+    fibers3.enableAnimation(true);
+    fibers3.showFibers(false);
+    fibers2.showParticles(true);
 };
