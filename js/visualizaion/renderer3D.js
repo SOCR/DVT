@@ -90,6 +90,13 @@ DVT.renderer3D = function() {
      */
 
     this._renderer =null
+
+    /**
+     * switch for speed slowdown in animations
+     * @type {boolean}
+     * @private
+     */
+    this._animateFrame = false;
 };
 // inherit from DVT.renderer
 goog.inherits(DVT.renderer3D, DVT.renderer);
@@ -122,12 +129,17 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
+    if(this._animateFrame)
+        this.render_(true,true);
+    this._animateFrame = !this._animateFrame;
+
+};
+
+DVT.renderer3D.prototype.control = function () {
+    window.requestAnimationFrame(this.control.bind(this));
     this._controller.update();
-    this.render_(true,true);
 
-}
-
-
+};
 
 /**
  * @inheritDoc
