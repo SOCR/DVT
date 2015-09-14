@@ -6,7 +6,7 @@ goog.provide('DVT.parserTRK');
 
 // requires
 goog.require('DVT.parser');
-
+goog.require('DVT.shader');
 goog.require('THREE');
 
 
@@ -278,8 +278,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     particleTexture.needsUpdate = true;
     object._particleLocations = particleTexture;
 
-    console.log('LENGTH:', mapPoints, mapArray.length);
-
+    //create fiber Object3D
     fiberPoints.computeBoundingBox();
     fiberPoints.computeFaceNormals();
     fiberPoints.computeVertexNormals();
@@ -287,6 +286,39 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     var material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
     object._fiberContainer = new THREE.Line(fiberPoints, material, THREE.LinePieces);
 
+    //create particle geometry
+    var particleSystemGeometry = new THREE.Geometry();
+
+    var l;
+    for (  i = 0, l = mapArray.length; i < l; i ++ ) {
+
+        var vertex = new THREE.Vector3();
+        vertex.x = ( i % object._mapWidth ) / object._mapWidth ;
+        vertex.y = Math.floor( i / object._mapWidth ) / object._mapWidth;
+        particleSystemGeometry.vertices.push( vertex );
+
+    }
+
+    //create particle material and attach shader
+    var particleSystemMaterial = new THREE.ShaderMaterial( {
+
+        uniforms: {
+
+            "map": { type: "t", value: object._particleMap },
+            "width": { type: "f", value: width },
+
+        },
+        vertexShader: DVT.ParticleRenderV,
+        fragmentShader: DVT.ParticleBasicColorV,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+        depthTest: false,
+        transparent: true
+
+    } );
+
+    //create and assign particle system Object3D
+    object._currentParticles = new THREE.ParticleSystem( geometry, material );
 
     //fibers.type = THREE.LinePieces;
     // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
