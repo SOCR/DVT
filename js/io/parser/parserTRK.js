@@ -318,7 +318,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     } );
 
     //create and assign particle system Object3D
-    object._currentParticles = new THREE.ParticleSystem( geometry, material );
+    object._currentParticles = new THREE.ParticleSystem( particleSystemGeometry, particleSystemMaterial );
 
     //fibers.type = THREE.LinePieces;
     // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
@@ -328,6 +328,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     object.THREEContainer = new THREE.Object3D();
     object.THREEContainer.add(object._fiberContainer);
     object._fiberContainer.visible = object._fibersVisible;
+    object._currentParticles.visible = object._particlesVisible;
     object._loaded = true;
     object._locked = false;
     object.dispatchEvent({type: 'PROCESSED', target: object});
