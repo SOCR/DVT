@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -95,8 +94,8 @@
       <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76352394">
-              <caret line="241" column="67" selection-start-line="241" selection-start-column="67" selection-end-line="241" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.39567232">
+              <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -511,7 +510,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -589,12 +588,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00016" summary="finish progress bar onprogress actions&#10;">
-      <created>1436178964209</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1436178964209</updated>
     </task>
     <task id="LOCAL-00017" summary="initialize progress bar removal handler">
       <created>1436179283383</created>
@@ -884,7 +877,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441991162705</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="merge particle points&#10;">
+      <created>1442197457829</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1442197457830</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -903,6 +902,7 @@
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -912,7 +912,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -934,7 +933,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="implement camera controls" />
     <MESSAGE value="improve camera controls" />
     <MESSAGE value="initialize framerate debugging" />
     <MESSAGE value="annotate debug count statements" />
@@ -959,7 +957,8 @@
     <MESSAGE value="fix color parser bug" />
     <MESSAGE value="implement vertex map" />
     <MESSAGE value="enable animation toggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="enable animation toggle" />
+    <MESSAGE value="merge particle points&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge particle points&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1334,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76352394">
-          <caret line="241" column="67" selection-start-line="241" selection-start-column="67" selection-end-line="241" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.39567232">
+          <caret line="243" column="8" selection-start-line="243" selection-start-column="8" selection-end-line="243" selection-end-column="8" />
           <folding />
         </state>
       </provider>

@@ -238,8 +238,12 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             particlePoints.colors.push(particleGeom.colors[k]);
     } // end of loop through all tracks
 
+
+    //calculate width of particle map texture
+    object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
+    var
     //create texture for particle map
-    console.log('LENGTH:', mapPoints, particlePoints.colors.length)
+    console.log('LENGTH:', mapPoints, object._mapWidth);
 
     fiberPoints.computeBoundingBox();
     fiberPoints.computeFaceNormals();
