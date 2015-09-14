@@ -170,15 +170,17 @@ DVT.fiber.prototype.init = function (renderer) {
     var simShader = THREE.ShaderMaterial({
 
         uniforms: {
-            tPositions: { type: "t", value: texture },
-            origin: { type: "v3", value: new THREE.Vector3() },
-            timer: { type: "f", value: 0 }
+            midMap: { type: "t", value: this._particleMap },
+            allCoordinates: { type: "t", value: this._particleLocations },
+            limit: { type: "f", value: this._numParticles },
+            width: { type: "f", value: this._coordinateWidth },
+            mapWidth: { type: "f", value: this._mapWidth }
         },
 
-        vertexShader: document.getElementById('texture_vertex_simulation_shader').textContent,
-        fragmentShader:  document.getElementById('texture_fragment_simulation_shader').textContent
+        vertexShader: DVT.ParticleSimulationV,
+        fragmentShader:  DVT.ParticleSimulationF
 
     });
 
-    this._FBOManager =
+    this._FBOManager = new THREE.FBOUtils( this._mapWidth, this._renderer, simShader);
 };

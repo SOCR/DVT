@@ -21,12 +21,13 @@ DVT.ParticleSimulationV = [
 DVT.ParticleSimulationF = [
     "varying vec2 vUv;",
     "uniform float width;",
+    "uniform float mapWidth;",
     "uniform float limit;",
     "uniform sampler2D midMap;",
     "uniform sampler2D allCoordinates;",
     "void main() {",
     "float curLoc = texture2D( midMap, vUv ).w;",
-    "curLoc += (vUv.x+vUv.y*width)*width < limit?1:0;",
+    "curLoc += (vUv.x+vUv.y*mapWidth)*mapWidth < limit?1:0;",
     "curLoc-=texture2D(allCoordinates, ((curLoc % width)/ width, floor(curLoc/width)/width)).z==999?texture2D(allCoordinates, (((curLoc +1)% width)/ width, floor((curLoc+1)/width)/width)).z:0;",
     "gl_FragColor = (texture2D(allCoordinates, ((curLoc % width)/ width, floor(curLoc/width)/width)).xyz,curLoc);",
     "} "

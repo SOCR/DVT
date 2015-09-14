@@ -4,11 +4,9 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="fix particlesystem creation bug">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/FBOUtils.js" afterPath="$PROJECT_DIR$/js/lib/FBOUtils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/deps.js" afterPath="$PROJECT_DIR$/dist/deps.js" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -30,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.8160742">
+              <caret line="184" column="85" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -82,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52704793">
+            <state vertical-scroll-proportion="0.0">
               <caret line="301" column="43" selection-start-line="301" selection-start-column="43" selection-end-line="301" selection-end-column="43" />
               <folding />
             </state>
@@ -106,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="23" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="23" />
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -195,10 +193,10 @@
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/objects/object.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
         <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
-        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
+        <option value="$PROJECT_DIR$/js/objects/fiber.js" />
       </list>
     </option>
   </component>
@@ -575,12 +573,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00030" summary="disable strict mode">
-      <created>1436432560586</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1436432560586</updated>
-    </task>
     <task id="LOCAL-00031" summary="update extern references">
       <created>1436433099845</created>
       <option name="number" value="00031" />
@@ -869,7 +861,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442240208877</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="implement particle count">
+      <created>1442241025125</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1442241025125</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -919,7 +917,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="implement animation skeleton" />
     <MESSAGE value="instantiate fiber animation" />
     <MESSAGE value="implement ping-pong buffering" />
     <MESSAGE value="create init process&#10;" />
@@ -944,7 +941,8 @@
     <MESSAGE value="create texture for particle positions" />
     <MESSAGE value="create particlesystem object" />
     <MESSAGE value="fix particlesystem creation bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix particlesystem creation bug" />
+    <MESSAGE value="implement particle count" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement particle count" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1308,25 +1306,25 @@
     <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="23" />
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+          <caret line="301" column="43" selection-start-line="301" selection-start-column="43" selection-end-line="301" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52704793">
-          <caret line="301" column="43" selection-start-line="301" selection-start-column="43" selection-end-line="301" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.8160742">
+          <caret line="184" column="85" selection-start-line="184" selection-start-column="85" selection-end-line="184" selection-end-column="85" />
           <folding />
         </state>
       </provider>
