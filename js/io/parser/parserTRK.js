@@ -242,13 +242,13 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     //create texture for particle map
 
     //calculate width of particle map texture
-    object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
+    object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapArray.length))/Math.LN2));
 
     //create static array, for conversion into texture
     var mapStaticArray = new Float32Array(object._mapWidth*object._mapWidth*4);
     for(var j = 0; j < mapArray.length;j++)
     {
-        mapStaticArray[j] = mapArray[j];
+        mapStaticArray[object._mapWidth*(object._mapWidth-Math.floor(j/object._mapWidth)-1)+j%object._mapWidth] = mapArray[j];
     }
 
     //convert static array into texture
@@ -258,7 +258,13 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     mapTexture.needsUpdate = true;
     object._particleMap = mapTexture;
 
-    console.log('LENGTH:', mapPoints, object._mapWidth);
+
+    //create texture for particle positions
+
+    //calculate width of particle position texture
+    object._coordinateWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
+    var pointsStaticArray =  new Float32Array(object._coordinateWidth*object._coordinateWidth*3);
+    console.log('LENGTH:', mapPoints, mapArray.length);
 
     fiberPoints.computeBoundingBox();
     fiberPoints.computeFaceNormals();
