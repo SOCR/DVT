@@ -45,3 +45,11 @@ DVT.ParticleRenderV = [
     "gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );",
     "}"
 ].join("\n");
+
+DVT.ParticleBasicColorV = [
+
+    "void main() {",
+    "gl_FragColor = (0.0,1.0,1.0,1.0)",
+    "};"
+
+].join("\n");

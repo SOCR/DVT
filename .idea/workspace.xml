@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -93,8 +92,8 @@
       <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6043277">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.8423493">
+              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -573,18 +572,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00021" summary="Fix goog require">
-      <created>1436261584130</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1436261584130</updated>
-    </task>
-    <task id="LOCAL-00022" summary="setup object skeleton">
-      <created>1436262051932</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1436262051932</updated>
-    </task>
     <task id="LOCAL-00023" summary="improved inheritance tree">
       <created>1436339817975</created>
       <option name="number" value="00023" />
@@ -867,7 +854,19 @@
       <option name="project" value="LOCAL" />
       <updated>1442206463023</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="implement particle fiber simulation fragment shader">
+      <created>1442215072730</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1442215072731</updated>
+    </task>
+    <task id="LOCAL-00071" summary="implement particle render vertex shader&#10;">
+      <created>1442215553884</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1442215553884</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -917,8 +916,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="enable viable test dataset" />
-    <MESSAGE value="test directory switch" />
     <MESSAGE value="test directory switch2" />
     <MESSAGE value="implement stat tracking" />
     <MESSAGE value="Implement Static Particle System" />
@@ -942,7 +939,9 @@
     <MESSAGE value="create map texture" />
     <MESSAGE value="initialize shader library" />
     <MESSAGE value="implement pass-through vertex simulation shader" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement pass-through vertex simulation shader" />
+    <MESSAGE value="implement particle fiber simulation fragment shader" />
+    <MESSAGE value="implement particle render vertex shader&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement particle render vertex shader&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1318,8 +1317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6043277">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.8423493">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
