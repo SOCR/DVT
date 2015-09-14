@@ -7,7 +7,7 @@ goog.addDependency('../../../../../js/io/loader/listeners.js', ['DVT.listeners']
 goog.addDependency('../../../../../js/io/loader/loadHelper.js', ['DVT.loadHelper'], ['DVT', 'DVT.parserTRK', 'ProgressBar', 'bootstrap', 'goog.events'], false);
 goog.addDependency('../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DVT', 'DVT.loadHelper', 'jQuery'], false);
 goog.addDependency('../../../../../js/io/parser/parser.js', ['DVT.parser'], ['DVT.base'], false);
-goog.addDependency('../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'THREE'], false);
+goog.addDependency('../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'DVT.shader', 'THREE'], false);
 goog.addDependency('../../../../../js/io/parser/parserTRKParticle.js', ['DVT.parserTRKParticle'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../js/lib/FBOUtils.js', ['FBOUtils'], ['THREE'], false);
 goog.addDependency('../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);
@@ -15,7 +15,7 @@ goog.addDependency('../../../../../js/lib/bootstrap.min.js', ['bootstrap'], [], 
 goog.addDependency('../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);
 goog.addDependency('../../../../../js/lib/progressbar.min.js', ['ProgressBar'], [], false);
 goog.addDependency('../../../../../js/lib/three.min.js', ['THREE'], [], false);
-goog.addDependency('../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT.loaded'], false);
+goog.addDependency('../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT.loaded', 'DVT.shader'], false);
 goog.addDependency('../../../../../js/objects/loaded.js', ['DVT.loaded'], ['DVT.object'], false);
 goog.addDependency('../../../../../js/objects/object.js', ['DVT.object'], ['DVT.base'], false);
 goog.addDependency('../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);

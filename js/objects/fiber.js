@@ -6,6 +6,8 @@
 goog.provide('DVT.fiber');
 
 goog.require('DVT.loaded');
+goog.require('DVT.shader');
+goog.require('THREE.FBOUtils');
 
 /**
  * Class representing dMRI-generated tractography data
@@ -23,6 +25,13 @@ DVT.fiber = function(copyFrom) {
      * @private
      */
     this._renderer = null;
+
+    /**
+     * manages simulation and texture rendering shaders
+     * @type {THREE.FBOUtils}
+     * @private
+     */
+    this._FBOManager = null;
 
     /**
      * Container for storing fiber data
@@ -86,6 +95,13 @@ DVT.fiber = function(copyFrom) {
      * @private
      */
     this._coordinateWidth = 0;
+
+    /**
+     * number of total particles rendered in particleSystem
+     * @type {number}
+     * @private
+     */
+    this._numParticles = 0;
 };
 goog.inherits(DVT.fiber, DVT.loaded);
 
@@ -151,4 +167,18 @@ DVT.fiber.prototype.animate = function () {
  */
 DVT.fiber.prototype.init = function (renderer) {
     this._renderer = renderer;
-}
+    var simShader = THREE.ShaderMaterial({
+
+        uniforms: {
+            tPositions: { type: "t", value: texture },
+            origin: { type: "v3", value: new THREE.Vector3() },
+            timer: { type: "f", value: 0 }
+        },
+
+        vertexShader: document.getElementById('texture_vertex_simulation_shader').textContent,
+        fragmentShader:  document.getElementById('texture_fragment_simulation_shader').textContent
+
+    });
+
+    this._FBOManager =
+};

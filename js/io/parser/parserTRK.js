@@ -299,13 +299,15 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     }
 
+    object._numParticles = mapArray.length;
+
     //create particle material and attach shader
     var particleSystemMaterial = new THREE.ShaderMaterial( {
 
         uniforms: {
 
             "map": { type: "t", value: object._particleMap },
-            "width": { type: "f", value: width },
+            "width": { type: "f", value: object._mapWidth },
 
         },
         vertexShader: DVT.ParticleRenderV,
@@ -318,10 +320,9 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     } );
 
     //create and assign particle system Object3D
-    object._currentParticles = new THREE.ParticleSystem( particleSystemGeometry, particleSystemMaterial );
+    object._currentParticles = new THREE.PointCloud( particleSystemGeometry, particleSystemMaterial );
 
-    //fibers.type = THREE.LinePieces;
-    // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
+    // TODO move tracks to RAS space (note: we switch from row-major to column-major by transposing)
     //DVT.matriDVT.transpose(header.vox_to_ras, object._transform._matrix);
 
     // the object should be set up here, so let's fire a modified event
