@@ -42,15 +42,15 @@ DVT.ParticleRenderV = [
     "void main() {",
     "vec2 uv = position.xy + vec2( 0.5 / width, 0.5 / width );",
     "vec3 color = texture2D( map, uv ).rgb * 200.0 - 100.0;",
-    "gl_PointSize = 1;",
+    "gl_PointSize = 1.0;",
     "gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );",
     "}"
 ].join("\n");
 
-DVT.ParticleBasicColorV = [
+DVT.ParticleBasicColorF = [
 
     "void main() {",
-    "gl_FragColor = (0.0,1.0,1.0,1.0)",
-    "};"
+    "gl_FragColor = vec4(0.0,1.0,1.0,1.0);",
+    "}"
 
 ].join("\n");

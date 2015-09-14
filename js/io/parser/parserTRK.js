@@ -314,7 +314,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
         },
         vertexShader: DVT.ParticleRenderV,
-        fragmentShader: DVT.ParticleBasicColorV,
+        fragmentShader: DVT.ParticleBasicColorF,
         blending: THREE.AdditiveBlending,
         depthWrite: false,
         depthTest: false,
@@ -333,6 +333,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     // the object should be set up here, so let's fire a modified event
     object.THREEContainer = new THREE.Object3D();
     object.THREEContainer.add(object._fiberContainer);
+    object.THREEContainer.add(object._currentParticles);
     object._fiberContainer.visible = object._fibersVisible;
     object._currentParticles.visible = object._particlesVisible;
     object._loaded = true;

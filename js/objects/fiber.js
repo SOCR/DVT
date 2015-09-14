@@ -131,8 +131,8 @@ DVT.fiber.prototype.showParticles = function (status) {
         } else {
             this._currentParticles.visible = false;
         }
-        this._particlesVisible = status;
     }
+    this._particlesVisible = status;
 };
 
 /**
@@ -166,14 +166,14 @@ DVT.fiber.prototype.animate = function () {
     if(this._particlesAnimated && this._particlesVisible) {
 
         // swap for ping-pong buffer
-        var tmp = fboParticles.in;
-        fboParticles.in = fboParticles.out;
-        fboParticles.out = tmp;
+        var tmp = this._FBOManager.in;
+        this._FBOManager.in = this._FBOManager.out;
+        this._FBOManager.out = tmp;
 
         //load simulator, run, and update results
-        this._simMaterial.uniforms.midMap.value = fboParticles.in;
-        fboParticles.simulate(fboParticles.out);
-        this._renderMaterial.uniforms.map.value = fboParticles.out;
+        this._simMaterial.uniforms.midMap.value = this._FBOManager.in;
+        this._FBOManager.simulate(this._FBOManager.out);
+        this._renderMaterial.uniforms.map.value = this._FBOManager.out;
     }
 };
 
