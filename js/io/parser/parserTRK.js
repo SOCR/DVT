@@ -243,13 +243,19 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
 
     //create static array, for conversion into texture
-    var mapStaticArray = new Float32Array(width*width*4);
+    var mapStaticArray = new Float32Array(object._mapWidth*object._mapWidth*4);
     for(var j = 0; j < mapArray.length;j++)
     {
         mapStaticArray[j] = mapArray[j];
     }
 
+    //convert static array into texture
     var mapTexture = new THREE.DataTexture( mapStaticArray, object._mapWidth, object._mapWidth, THREE.RGBAFormat, THREE.FloatType );
+    mapTexture.minFilter = THREE.NearestFilter;
+    mapTexture.magFilter = THREE.NearestFilter;
+    mapTexture.needsUpdate = true;
+
+    //convert
 
     //create texture for particle map
     console.log('LENGTH:', mapPoints, object._mapWidth);
