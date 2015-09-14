@@ -187,7 +187,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         oldPoint = particleArray[0];
 
         //calculate particle system Colors
-        for( j = 1; j < particleArray.length; j++)
+        for( var j = 1; j < particleArray.length; j++)
         {
             vector = particleArray[j];
             displacement=[Math.abs(vector.x - oldPoint.x), Math.abs(vector.y - oldPoint.y), Math.abs( vector.z- oldPoint.z)];
@@ -206,7 +206,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         offset += numPoints * 3 + numPoints * numberOfScalars + 1;
 
         //populate map array (xyzw)
-        for(j = 0;j < particleArray.length; j++)
+        for(var j = 0; j < particleArray.length; j++)
         {
             if(j % 30 == 0) {
                 mapArray.push(particleArray[j].x);
@@ -263,7 +263,14 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     //calculate width of particle position texture
     object._coordinateWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
+
+    //create static array
     var pointsStaticArray =  new Float32Array(object._coordinateWidth*object._coordinateWidth*3);
+    for(var j = 0; j < mapPoints; j++)
+    {
+        pointsStaticArray[object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth] = particlePoints.vertices[j];
+    }
+
     console.log('LENGTH:', mapPoints, mapArray.length);
 
     fiberPoints.computeBoundingBox();
