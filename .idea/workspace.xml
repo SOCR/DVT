@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -84,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="257" column="13" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
+              <caret line="222" column="53" selection-start-line="222" selection-start-column="53" selection-end-line="222" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -93,8 +93,8 @@
       <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13137558">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6043277">
+              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -573,18 +573,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00019" summary="update gitignore&#10;">
-      <created>1436258496531</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1436258496531</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Enable base class">
-      <created>1436259285104</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1436259285104</updated>
-    </task>
     <task id="LOCAL-00021" summary="Fix goog require">
       <created>1436261584130</created>
       <option name="number" value="00021" />
@@ -867,7 +855,19 @@
       <option name="project" value="LOCAL" />
       <updated>1442205085129</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="initialize shader library">
+      <created>1442206174366</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1442206174367</updated>
+    </task>
+    <task id="LOCAL-00069" summary="implement pass-through vertex simulation shader">
+      <created>1442206463023</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1442206463023</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -917,8 +917,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="annotate debug count statements" />
-    <MESSAGE value="remove function conters" />
     <MESSAGE value="enable viable test dataset" />
     <MESSAGE value="test directory switch" />
     <MESSAGE value="test directory switch2" />
@@ -942,7 +940,9 @@
     <MESSAGE value="merge particle points&#10;" />
     <MESSAGE value="calculate map width" />
     <MESSAGE value="create map texture" />
-    <option name="LAST_COMMIT_MESSAGE" value="create map texture" />
+    <MESSAGE value="initialize shader library" />
+    <MESSAGE value="implement pass-through vertex simulation shader" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement pass-through vertex simulation shader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1300,14 +1300,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="257" column="13" selection-start-line="257" selection-start-column="13" selection-end-line="257" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/core/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1316,10 +1308,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="222" column="53" selection-start-line="222" selection-start-column="53" selection-end-line="222" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13137558">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6043277">
+          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>

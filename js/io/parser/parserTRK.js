@@ -220,7 +220,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         }
 
         //insert rollback token
-        particleGeom.vertices.push(new THREE.Vector3(-999,-999,-999));
+        particleGeom.vertices.push(new THREE.Vector3(999,999,999));
         particleGeom.vertices.push(new THREE.Vector3(particleGeom.vertices.length - 1, particleGeom.vertices.length - 1, particleGeom.vertices.length - 1));
 
         //pad color array to maintain 1:1 ratio with vertices
