@@ -35,6 +35,20 @@ DVT.fiber = function(copyFrom) {
     this._FBOManager = null;
 
     /**
+     * shaders used for particleSystem rendering
+     * @type {THREE.SHaderMaterial}
+     * @private
+     */
+    this._renderMaterial = null;
+
+    /**
+     * shaders used for particleSystem simulation
+     * @type {THREE.SHaderMaterial}
+     * @private
+     */
+    this._simMaterial = null;
+
+    /**
      * Container for storing fiber data
      * @type {THREE.Object3D}
      * @private
@@ -156,10 +170,10 @@ DVT.fiber.prototype.animate = function () {
         fboParticles.in = fboParticles.out;
         fboParticles.out = tmp;
 
-
-        simulationShader.uniforms.tPositions.value = fboParticles.in;
+        //load simulator, run, and update results
+        this._simMaterial.uniforms.midMap.value = fboParticles.in;
         fboParticles.simulate(fboParticles.out);
-        material.uniforms.map.value = fboParticles.out;
+        this._renderMaterial.uniforms.map.value = fboParticles.out;
     }
 };
 
@@ -182,6 +196,8 @@ DVT.fiber.prototype.init = function (renderer) {
         fragmentShader:  DVT.ParticleSimulationF
 
     });
+
+    this._simMaterial = simShader;
 
     //create simulation manager
     this._FBOManager = new THREE.FBOUtils( this._mapWidth, this._renderer, simShader);

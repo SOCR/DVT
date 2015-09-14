@@ -319,6 +319,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     } );
 
+    object._renderMaterial = particleSystemMaterial;
+
     //create and assign particle system Object3D
     object._currentParticles = new THREE.PointCloud( particleSystemGeometry, particleSystemMaterial );
 

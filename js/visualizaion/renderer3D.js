@@ -123,6 +123,7 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
     this._controller.update();
+    this.render_(true,true);
 
 }
 
@@ -986,6 +987,9 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {//console.count('
         // there is nothing to render
         // get outta here
         return;
+    }
+    for(var j = 0; j < _numberOfObjects;j++) {
+        _objects[j].animate();
     }
     this._renderer.render(this._scene, this._camera)
 
