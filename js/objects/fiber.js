@@ -7,6 +7,7 @@ goog.provide('DVT.fiber');
 
 goog.require('DVT.loaded');
 goog.require('DVT.shader');
+goog.require('THREE');
 goog.require('THREE.FBOUtils');
 
 /**
@@ -167,7 +168,7 @@ DVT.fiber.prototype.animate = function () {
  */
 DVT.fiber.prototype.init = function (renderer) {
     this._renderer = renderer;
-    var simShader = THREE.ShaderMaterial({
+    var simShader = new THREE.ShaderMaterial({
 
         uniforms: {
             midMap: { type: "t", value: this._particleMap },
@@ -182,5 +183,22 @@ DVT.fiber.prototype.init = function (renderer) {
 
     });
 
+    //create simulation manager
     this._FBOManager = new THREE.FBOUtils( this._mapWidth, this._renderer, simShader);
+
+    //setup simulation render target
+    this._FBOManager.in = new THREE.WebGLRenderTarget(this._mapWidth, this._mapWidth, {
+        wrapS:THREE.RepeatWrapping,
+        wrapT:THREE.RepeatWrapping,
+        minFilter: THREE.NearestFilter,
+        magFilter: THREE.NearestFilter,
+        format: THREE.RGBAFormat,
+        type:THREE.FloatType,
+        stencilBuffer: false
+    });
+
+    //setup ping-pong simulation render target
+    this._FBOManager.out = this._FBOManager.in.clone();
+    this._FBOManager.renderToTexture(this._particleMap, this._FBOManager.out);
+    console.log('INIT DONE');
 };
