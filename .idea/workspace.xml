@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testTRK.js" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -573,12 +571,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00034" summary="fix loading function binding&#10;">
-      <created>1436450040772</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1436450040772</updated>
-    </task>
     <task id="LOCAL-00035" summary="finalize loader errors">
       <created>1436453919365</created>
       <option name="number" value="00035" />
@@ -867,7 +859,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442245441272</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="debug animation">
+      <created>1442247192554</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1442247192554</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -917,7 +915,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="begin implementing init process for fibers" />
     <MESSAGE value="initialize fiber renderer object" />
     <MESSAGE value="remove old point parser" />
     <MESSAGE value="implement color parser for particles&#10;" />
@@ -942,7 +939,8 @@
     <MESSAGE value="instantiate FBOManager" />
     <MESSAGE value="compile shader" />
     <MESSAGE value="implement animation loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement animation loop" />
+    <MESSAGE value="debug animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug animation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
