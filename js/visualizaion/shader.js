@@ -42,10 +42,10 @@ DVT.ParticleRenderV = [
     "void main() {",
     "vec2 uv = position.xy + vec2( 0.5 / width, 0.5 / width );",
     "vUv = uv;",
-    "vec3 color = texture2D( map, uv ).rgb ;",
-    "gl_PointSize = 2.0;",
-    "gl_Position = projectionMatrix * modelViewMatrix * vec4( color, 1.0 );",
-    //"gl_Position = projectionMatrix * modelViewMatrix * vec4( position.xy*400.0,-100.0, 1.0 );",
+    "vec4 pos = vec4(texture2D( map, uv ).rgb,1.0) ;",
+    "vec4 mvPosition =modelViewMatrix * pos;",
+    "gl_PointSize = 1.0 * ( 1000.0 / length( mvPosition.xyz ) );",
+    "gl_Position = projectionMatrix * mvPosition;",
     "}"
 ].join("\n");
 
@@ -61,3 +61,5 @@ DVT.ParticleBasicColorF = [
     "}"
 
 ].join("\n");
+
+
