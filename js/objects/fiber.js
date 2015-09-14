@@ -46,6 +46,13 @@ DVT.fiber = function(copyFrom) {
     this._particleLocations = null;
 
     /**
+     * texture file holding particle mapping matrix
+     * @type {THREE.dataTexture}
+     * @private
+     */
+    this._particleMap = null;
+
+    /**
      * Private variable telling whether fibers are visible. Default: true
      * @type {boolean}
      * @private

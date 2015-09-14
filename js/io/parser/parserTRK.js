@@ -239,6 +239,8 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     } // end of loop through all tracks
 
 
+    //create texture for particle map
+
     //calculate width of particle map texture
     object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapPoints))/Math.LN2));
 
@@ -254,19 +256,18 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     mapTexture.minFilter = THREE.NearestFilter;
     mapTexture.magFilter = THREE.NearestFilter;
     mapTexture.needsUpdate = true;
+    object._particleMap = mapTexture;
 
-    //convert
-
-    //create texture for particle map
     console.log('LENGTH:', mapPoints, object._mapWidth);
 
     fiberPoints.computeBoundingBox();
     fiberPoints.computeFaceNormals();
     fiberPoints.computeVertexNormals();
     console.log(fiberPoints.colors.length, fiberPoints.vertices.length);
-    var options={vertexColors:true};
     var material = new THREE.LineBasicMaterial({vertexColors: THREE.VertexColors});
     object._fiberContainer = new THREE.Line(fiberPoints, material, THREE.LinePieces);
+
+
     //fibers.type = THREE.LinePieces;
     // move tracks to RAS space (note: we switch from row-major to column-major by transposing)
     //DVT.matriDVT.transpose(header.vox_to_ras, object._transform._matrix);

@@ -9,6 +9,7 @@ goog.addDependency('../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DV
 goog.addDependency('../../../../../js/io/parser/parser.js', ['DVT.parser'], ['DVT.base'], false);
 goog.addDependency('../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../js/io/parser/parserTRKParticle.js', ['DVT.parserTRKParticle'], ['DVT.parser', 'THREE'], false);
+goog.addDependency('../../../../../js/lib/FBOUtils.js', ['FBOUtils'], ['THREE'], false);
 goog.addDependency('../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);
 goog.addDependency('../../../../../js/lib/bootstrap.min.js', ['bootstrap'], [], false);
 goog.addDependency('../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);
@@ -20,3 +21,4 @@ goog.addDependency('../../../../../js/objects/object.js', ['DVT.object'], ['DVT.
 goog.addDependency('../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);
 goog.addDependency('../../../../../js/visualizaion/renderer2D.js', ['DVT.renderer2D'], ['DVT.renderer'], false);
 goog.addDependency('../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['DVT.renderer', 'THREE', 'orbitControls'], false);
+goog.addDependency('../../../../../js/visualizaion/shader.js', ['DVT.shader'], [], false);
