@@ -243,7 +243,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
     //calculate width of particle map texture
     object._mapWidth = Math.pow(2,Math.ceil(Math.log(Math.sqrt(mapArray.length))/Math.LN2));
-
+    console.log(object._mapWidth);
     //create static array, for conversion into texture
     var mapStaticArray = new Float32Array(object._mapWidth*object._mapWidth*4);
     for(var j = 0; j < mapArray.length;j++)
@@ -268,9 +268,12 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     var pointsStaticArray =  new Float32Array(object._coordinateWidth*object._coordinateWidth*3);
     for(var j = 0; j < mapPoints; j++)
     {
-        pointsStaticArray[object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth] = particlePoints.vertices[j];
+        pointsStaticArray[(object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth)*3+0] = particlePoints.vertices[j].x;
+        pointsStaticArray[(object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth)*3+1] = particlePoints.vertices[j].y;
+        pointsStaticArray[(object._coordinateWidth*(object._coordinateWidth-Math.floor(j/object._coordinateWidth)-1)+j%object._coordinateWidth)*3+2] = particlePoints.vertices[j].z;
     }
-
+    console.log(pointsStaticArray);
+    console.log(particlePoints.vertices)
     //convert static array into textures
     var particleTexture = new THREE.DataTexture( pointsStaticArray, object._coordinateWidth, object._coordinateWidth, THREE.RGBFormat, THREE.FloatType );
     particleTexture.minFilter = THREE.NearestFilter;
