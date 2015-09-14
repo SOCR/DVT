@@ -18,6 +18,13 @@ DVT.fiber = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
 
     /**
+     * THREE.js renderer associated with the object
+     * @type {!THREE.renderer}
+     * @private
+     */
+    this._renderer = null;
+
+    /**
      * Container for storing fiber data
      * @type {THREE.Object3D}
      * @private
@@ -26,7 +33,7 @@ DVT.fiber = function(copyFrom) {
 
     /**
      * Container for storing current particle locations
-     * @type {Array}
+     * @type {THREE.Object3D}
      * @private
      */
     this._currentParticles = null;
@@ -60,11 +67,18 @@ DVT.fiber = function(copyFrom) {
     this._particlesAnimated = true;
 
     /**
-     * THREE.js renderer associated with the object
-     * @type {!THREE.renderer}
+     * width of mapping matrix (always a power of 2)
+     * @type {number}
      * @private
      */
-    this._renderer = null;
+    this._mapWidth = 0;
+
+    /**
+     * width of coordinate matrix/texture (always a power of 2)
+     * @type {number}
+     * @private
+     */
+    this._coordinateWidth = 0;
 };
 goog.inherits(DVT.fiber, DVT.loaded);
 

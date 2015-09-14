@@ -183,7 +183,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         var curve = new THREE.SplineCurve3(particleArray);
         var curveLength = curve.getLength();
         particleGeom = new THREE.Geometry();
-        particleArray = curve.getSpacedPoints(curveLength / 30 * 60);
+        particleArray = curve.getSpacedPoints(curveLength / 50 * 60);
         oldPoint = particleArray[0];
 
         //calculate particle system Colors
@@ -233,8 +233,14 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         // var properties = this.scan('float', header.n_properties);
 
         // append this track to our fibers list
-
+        particlePoints.merge(particleGeom);
+        for(var k = 0; k < particleGeom.colors.length; k++)
+            particlePoints.colors.push(particleGeom.colors[k]);
     } // end of loop through all tracks
+
+    //create texture for particle map
+    console.log('LENGTH:', mapPoints, particlePoints.colors.length)
+
     fiberPoints.computeBoundingBox();
     fiberPoints.computeFaceNormals();
     fiberPoints.computeVertexNormals();
