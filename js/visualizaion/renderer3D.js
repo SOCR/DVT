@@ -83,15 +83,6 @@ DVT.renderer3D = function() {
     this._bgColor = [0, 0, 0];
 
     /**
-     * The material used for lines
-     *
-     * @type {?Object}
-     * @protected
-     */
-
-    this._material = new THREE.LineBasicMaterial({vertexColors:THREE.VertexColors});
-
-    /**
      * The THREE.js rendering module
      *
      * @type {?Object}
@@ -99,6 +90,13 @@ DVT.renderer3D = function() {
      */
 
     this._renderer =null
+
+    /**
+     * switch for speed slowdown in animations
+     * @type {boolean}
+     * @private
+     */
+    this._animateFrame = false;
 };
 // inherit from DVT.renderer
 goog.inherits(DVT.renderer3D, DVT.renderer);
@@ -131,11 +129,17 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
+    if(this._animateFrame)
+        this.render_(true,true);
+    this._animateFrame = !this._animateFrame;
+
+};
+
+DVT.renderer3D.prototype.control = function () {
+    window.requestAnimationFrame(this.control.bind(this));
     this._controller.update();
 
-}
-
-
+};
 
 /**
  * @inheritDoc
@@ -249,7 +253,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D.update_');
+DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D.update_');o
     console.log('function call: update_ in renderer3D')
     // call the update_ method of the superclass
     goog.base(this, 'update_', object);
@@ -922,6 +926,7 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
+        object.init(this._renderer);
         this.render();
 
         //TODO remove after optimization tests are complete
@@ -994,6 +999,9 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {//console.count('
         // there is nothing to render
         // get outta here
         return;
+    }
+    for(var j = 0; j < _numberOfObjects;j++) {
+        _objects[j].animate();
     }
     this._renderer.render(this._scene, this._camera)
 

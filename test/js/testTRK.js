@@ -27,4 +27,14 @@ test = function() {
     test_renderer.render();
 
     fibers2.showFibers(false);
+    fibers2.showParticles(true);
+    fibers3.enableAnimation(true);
+
+    fibers3.showParticles(true);
+    fibers3.enableAnimation(true);
+    fibers3.showFibers(true);
+
+    fibers.showParticles(true);
+    fibers.enableAnimation(true);
+    fibers.showFibers(false);
 };

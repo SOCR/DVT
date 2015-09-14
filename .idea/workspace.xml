@@ -4,11 +4,8 @@
     <option name="SCOPE_TYPE" value="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="Re-enable fibers">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/deps.js" afterPath="$PROJECT_DIR$/dist/deps.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/objects/fiber.js" afterPath="$PROJECT_DIR$/js/objects/fiber.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loader.js" afterPath="$PROJECT_DIR$/js/io/loader/loader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+    <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testTRK.js" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -35,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -43,33 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fiber.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7619784">
-              <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loaded.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/objects/loaded.js">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="64" selection-end-column="50" />
+              <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -79,17 +54,7 @@
         <entry file="file://$PROJECT_DIR$/js/objects/object.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
+              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -105,12 +70,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserTRKParticle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRKParticle.js">
+      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.827586">
+              <caret line="234" column="68" selection-start-line="233" selection-start-column="8" selection-end-line="234" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1034484">
+              <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parser.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="205" column="6" selection-start-line="205" selection-start-column="6" selection-end-line="205" selection-end-column="6" />
+              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8887172">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#45#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FBOUtils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lib/FBOUtils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,18 +127,8 @@
       <file leaf-file-name="renderer3D.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="251" column="91" selection-start-line="251" selection-start-column="91" selection-end-line="251" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="renderer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="426" column="76" selection-start-line="426" selection-start-column="76" selection-end-line="426" selection-end-column="76" />
+            <state vertical-scroll-proportion="-10.551724">
+              <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -187,15 +186,17 @@
         <option value="$PROJECT_DIR$/js/io/parser/parser.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer.js" />
         <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
-        <option value="$PROJECT_DIR$/js/objects/object.js" />
         <option value="$PROJECT_DIR$/js/core/base.js" />
         <option value="$PROJECT_DIR$/js/objects/loaded.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserTRKParticle.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
         <option value="$PROJECT_DIR$/js/io/loader/loader.js" />
-        <option value="$PROJECT_DIR$/test/js/testTRK.js" />
-        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+        <option value="$PROJECT_DIR$/js/objects/object.js" />
+        <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
         <option value="$PROJECT_DIR$/js/objects/fiber.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
+        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+        <option value="$PROJECT_DIR$/test/js/testTRK.js" />
       </list>
     </option>
   </component>
@@ -254,6 +255,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -386,24 +389,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="io" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -490,8 +475,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,7 +494,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="thre&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/three.min.js&#10;te&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;o&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -590,234 +573,6 @@
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
     </task>
-    <task id="LOCAL-00002" summary="test commit&#10;">
-      <created>1435613996912</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1435613996912</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test commit&#10;">
-      <created>1435614113166</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1435614113166</updated>
-    </task>
-    <task id="LOCAL-00004" summary="create gulpfile">
-      <created>1435638043631</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1435638043631</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add gulp tasks&#10;">
-      <created>1435638099185</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1435638099185</updated>
-    </task>
-    <task id="LOCAL-00006" summary="setup linter">
-      <created>1435639426436</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1435639426436</updated>
-    </task>
-    <task id="LOCAL-00007" summary="improve gulp tasklist">
-      <created>1435736820246</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1435736820246</updated>
-    </task>
-    <task id="LOCAL-00008" summary="implement closure compiler&#10;">
-      <created>1435822535744</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1435822535744</updated>
-    </task>
-    <task id="LOCAL-00009" summary="implement DTV Base">
-      <created>1435831643789</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1435831643789</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix compiler, initialize loader">
-      <created>1435841044757</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1435841044757</updated>
-    </task>
-    <task id="LOCAL-00011" summary="initialize load helper&#10;">
-      <created>1435847360772</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1435847360772</updated>
-    </task>
-    <task id="LOCAL-00012" summary="finalize gulp taskchain">
-      <created>1435851045254</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1435851045254</updated>
-    </task>
-    <task id="LOCAL-00013" summary="updatebar progress">
-      <created>1435855774575</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1435855774575</updated>
-    </task>
-    <task id="LOCAL-00014" summary="initialize progress bar">
-      <created>1436175002731</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1436175002731</updated>
-    </task>
-    <task id="LOCAL-00015" summary="finish prograss bar initialization&#10;">
-      <created>1436175698033</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1436175698033</updated>
-    </task>
-    <task id="LOCAL-00016" summary="finish progress bar onprogress actions&#10;">
-      <created>1436178964209</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1436178964209</updated>
-    </task>
-    <task id="LOCAL-00017" summary="initialize progress bar removal handler">
-      <created>1436179283383</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1436179283383</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Initialize testing suite&#10;">
-      <created>1436258277749</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1436258277749</updated>
-    </task>
-    <task id="LOCAL-00019" summary="update gitignore&#10;">
-      <created>1436258496531</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1436258496531</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Enable base class">
-      <created>1436259285104</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1436259285104</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Fix goog require">
-      <created>1436261584130</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1436261584130</updated>
-    </task>
-    <task id="LOCAL-00022" summary="setup object skeleton">
-      <created>1436262051932</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1436262051932</updated>
-    </task>
-    <task id="LOCAL-00023" summary="improved inheritance tree">
-      <created>1436339817975</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1436339817975</updated>
-    </task>
-    <task id="LOCAL-00024" summary="update base renderer initialization&#10;">
-      <created>1436349308802</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1436349308802</updated>
-    </task>
-    <task id="LOCAL-00025" summary="update render initialization">
-      <created>1436350332684</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1436350332684</updated>
-    </task>
-    <task id="LOCAL-00026" summary="cleanup init methods">
-      <created>1436356203534</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1436356203534</updated>
-    </task>
-    <task id="LOCAL-00027" summary="fix get method to work directly on object instead of id">
-      <created>1436357348677</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1436357348677</updated>
-    </task>
-    <task id="LOCAL-00028" summary="fix depswriter directory bug">
-      <created>1436431417764</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1436431417764</updated>
-    </task>
-    <task id="LOCAL-00029" summary="fixed jquery reference&#10;">
-      <created>1436432099526</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1436432099526</updated>
-    </task>
-    <task id="LOCAL-00030" summary="disable strict mode">
-      <created>1436432560586</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1436432560586</updated>
-    </task>
-    <task id="LOCAL-00031" summary="update extern references">
-      <created>1436433099845</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1436433099845</updated>
-    </task>
-    <task id="LOCAL-00032" summary="update loading protocol">
-      <created>1436437966771</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1436437966771</updated>
-    </task>
-    <task id="LOCAL-00033" summary="establish upload framework">
-      <created>1436447985859</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1436447985859</updated>
-    </task>
-    <task id="LOCAL-00034" summary="fix loading function binding&#10;">
-      <created>1436450040772</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1436450040772</updated>
-    </task>
-    <task id="LOCAL-00035" summary="finalize loader errors">
-      <created>1436453919365</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1436453919365</updated>
-    </task>
-    <task id="LOCAL-00036" summary="initialize base parser&#10;">
-      <created>1436456381013</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1436456381013</updated>
-    </task>
-    <task id="LOCAL-00037" summary="implement TRK parser">
-      <created>1436458628971</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1436458628971</updated>
-    </task>
-    <task id="LOCAL-00038" summary="enable static rendering">
-      <created>1436462136911</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1436462136911</updated>
-    </task>
-    <task id="LOCAL-00039" summary="implement auto hide for load window">
-      <created>1436462369533</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1436462369533</updated>
-    </task>
     <task id="LOCAL-00040" summary="implement camera controls">
       <created>1436465729457</created>
       <option name="number" value="00040" />
@@ -884,7 +639,235 @@
       <option name="project" value="LOCAL" />
       <updated>1441388440985</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="FIber Toggling, particle+fiber compartmentalization">
+      <created>1441810122259</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1441810122279</updated>
+    </task>
+    <task id="LOCAL-00052" summary="initialize particlesystem branch">
+      <created>1441946183143</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1441946183143</updated>
+    </task>
+    <task id="LOCAL-00053" summary="incorporate FBOUtils into closure">
+      <created>1441946516906</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1441946516906</updated>
+    </task>
+    <task id="LOCAL-00054" summary="implement animation skeleton">
+      <created>1441946674580</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1441946674580</updated>
+    </task>
+    <task id="LOCAL-00055" summary="instantiate fiber animation">
+      <created>1441946770386</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1441946770386</updated>
+    </task>
+    <task id="LOCAL-00056" summary="implement ping-pong buffering">
+      <created>1441947452741</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1441947452741</updated>
+    </task>
+    <task id="LOCAL-00057" summary="create init process&#10;">
+      <created>1441947713980</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1441947713980</updated>
+    </task>
+    <task id="LOCAL-00058" summary="begin implementing init process for fibers">
+      <created>1441947783603</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1441947783603</updated>
+    </task>
+    <task id="LOCAL-00059" summary="initialize fiber renderer object">
+      <created>1441948393180</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1441948393180</updated>
+    </task>
+    <task id="LOCAL-00060" summary="remove old point parser">
+      <created>1441979756715</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1441979756715</updated>
+    </task>
+    <task id="LOCAL-00061" summary="implement color parser for particles&#10;">
+      <created>1441980996255</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1441980996255</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fix color parser bug">
+      <created>1441983747367</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1441983747367</updated>
+    </task>
+    <task id="LOCAL-00063" summary="implement vertex map">
+      <created>1441985102287</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1441985102287</updated>
+    </task>
+    <task id="LOCAL-00064" summary="enable animation toggle">
+      <created>1441991162705</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1441991162705</updated>
+    </task>
+    <task id="LOCAL-00065" summary="merge particle points&#10;">
+      <created>1442197457829</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1442197457830</updated>
+    </task>
+    <task id="LOCAL-00066" summary="calculate map width">
+      <created>1442204668383</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1442204668383</updated>
+    </task>
+    <task id="LOCAL-00067" summary="create map texture">
+      <created>1442205085129</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1442205085129</updated>
+    </task>
+    <task id="LOCAL-00068" summary="initialize shader library">
+      <created>1442206174366</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1442206174367</updated>
+    </task>
+    <task id="LOCAL-00069" summary="implement pass-through vertex simulation shader">
+      <created>1442206463023</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1442206463023</updated>
+    </task>
+    <task id="LOCAL-00070" summary="implement particle fiber simulation fragment shader">
+      <created>1442215072730</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1442215072731</updated>
+    </task>
+    <task id="LOCAL-00071" summary="implement particle render vertex shader&#10;">
+      <created>1442215553884</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1442215553884</updated>
+    </task>
+    <task id="LOCAL-00072" summary="implement particle render basic color fragment shader&#10;">
+      <created>1442217600407</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1442217600407</updated>
+    </task>
+    <task id="LOCAL-00073" summary="finalize map texture initialization">
+      <created>1442219150555</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1442219150555</updated>
+    </task>
+    <task id="LOCAL-00074" summary="fix coordinate failure">
+      <created>1442237475221</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1442237475221</updated>
+    </task>
+    <task id="LOCAL-00075" summary="create static array for particle positions">
+      <created>1442237993017</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1442237993017</updated>
+    </task>
+    <task id="LOCAL-00076" summary="create texture for particle positions">
+      <created>1442238318955</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1442238318955</updated>
+    </task>
+    <task id="LOCAL-00077" summary="create particlesystem object">
+      <created>1442240116499</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1442240116499</updated>
+    </task>
+    <task id="LOCAL-00078" summary="fix particlesystem creation bug">
+      <created>1442240208877</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1442240208877</updated>
+    </task>
+    <task id="LOCAL-00079" summary="implement particle count">
+      <created>1442241025125</created>
+      <option name="number" value="00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1442241025125</updated>
+    </task>
+    <task id="LOCAL-00080" summary="instantiate FBOManager">
+      <created>1442241431894</created>
+      <option name="number" value="00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1442241431894</updated>
+    </task>
+    <task id="LOCAL-00081" summary="compile shader">
+      <created>1442243342130</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1442243342130</updated>
+    </task>
+    <task id="LOCAL-00082" summary="implement animation loop">
+      <created>1442245441272</created>
+      <option name="number" value="00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1442245441272</updated>
+    </task>
+    <task id="LOCAL-00083" summary="debug animation">
+      <created>1442247192554</created>
+      <option name="number" value="00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1442247192554</updated>
+    </task>
+    <task id="LOCAL-00084" summary="debug animation">
+      <created>1442247198775</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1442247198775</updated>
+    </task>
+    <task id="LOCAL-00085" summary="fix render shader bugs">
+      <created>1442250825759</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1442250825759</updated>
+    </task>
+    <task id="LOCAL-00086" summary="fix map matrix manipulation">
+      <created>1442254794258</created>
+      <option name="number" value="00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1442254794258</updated>
+    </task>
+    <task id="LOCAL-00087" summary="particleSystem working!">
+      <created>1442256123968</created>
+      <option name="number" value="00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1442256123968</updated>
+    </task>
+    <task id="LOCAL-00088" summary="implement frame control">
+      <created>1442256504620</created>
+      <option name="number" value="00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1442256504620</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -901,8 +884,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -912,7 +896,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3362963" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -934,52 +917,40 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="cleanup init methods" />
-    <MESSAGE value="fix get method to work directly on object instead of id" />
-    <MESSAGE value="fix depswriter directory bug" />
-    <MESSAGE value="fixed jquery reference&#10;" />
-    <MESSAGE value="disable strict mode" />
-    <MESSAGE value="update extern references" />
-    <MESSAGE value="update loading protocol" />
-    <MESSAGE value="establish upload framework" />
-    <MESSAGE value="fix loading function binding&#10;" />
-    <MESSAGE value="finalize loader errors" />
-    <MESSAGE value="initialize base parser&#10;" />
-    <MESSAGE value="implement TRK parser" />
-    <MESSAGE value="enable static rendering" />
-    <MESSAGE value="implement auto hide for load window" />
-    <MESSAGE value="implement camera controls" />
-    <MESSAGE value="improve camera controls" />
-    <MESSAGE value="initialize framerate debugging" />
-    <MESSAGE value="annotate debug count statements" />
-    <MESSAGE value="remove function conters" />
-    <MESSAGE value="enable viable test dataset" />
-    <MESSAGE value="test directory switch" />
-    <MESSAGE value="test directory switch2" />
-    <MESSAGE value="implement stat tracking" />
-    <MESSAGE value="Implement Static Particle System" />
-    <MESSAGE value="Re-enable fibers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-enable fibers" />
+    <MESSAGE value="implement vertex map" />
+    <MESSAGE value="enable animation toggle" />
+    <MESSAGE value="merge particle points&#10;" />
+    <MESSAGE value="calculate map width" />
+    <MESSAGE value="create map texture" />
+    <MESSAGE value="initialize shader library" />
+    <MESSAGE value="implement pass-through vertex simulation shader" />
+    <MESSAGE value="implement particle fiber simulation fragment shader" />
+    <MESSAGE value="implement particle render vertex shader&#10;" />
+    <MESSAGE value="implement particle render basic color fragment shader&#10;" />
+    <MESSAGE value="finalize map texture initialization" />
+    <MESSAGE value="fix coordinate failure" />
+    <MESSAGE value="create static array for particle positions" />
+    <MESSAGE value="create texture for particle positions" />
+    <MESSAGE value="create particlesystem object" />
+    <MESSAGE value="fix particlesystem creation bug" />
+    <MESSAGE value="implement particle count" />
+    <MESSAGE value="instantiate FBOManager" />
+    <MESSAGE value="compile shader" />
+    <MESSAGE value="implement animation loop" />
+    <MESSAGE value="debug animation" />
+    <MESSAGE value="fix render shader bugs" />
+    <MESSAGE value="fix map matrix manipulation" />
+    <MESSAGE value="particleSystem working!" />
+    <MESSAGE value="implement frame control" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement frame control" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/lib/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="35" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/node_modules/plato/lib/plato.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8478803">
-          <caret line="92" column="19" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/node_modules/plato/node_modules/lodash/object/pick.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41714287">
@@ -1183,13 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-85.155174">
-          <caret line="295" column="81" selection-start-line="295" selection-start-column="81" selection-end-line="295" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1230,7 +1194,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="238" column="64" selection-start-line="238" selection-start-column="64" selection-end-line="238" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,15 +1208,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/core/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1261,14 +1215,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="426" column="76" selection-start-line="426" selection-start-column="76" selection-end-line="426" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRKParticle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="205" column="6" selection-start-line="205" selection-start-column="6" selection-end-line="205" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="64" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1283,34 +1244,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/core/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/object.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1034484">
+          <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/FBOUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="251" column="91" selection-start-line="251" selection-start-column="91" selection-end-line="251" selection-end-column="91" />
+        <state vertical-scroll-proportion="-10.551724">
+          <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loader.js">
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="64" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRKParticle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="205" column="6" selection-start-line="205" selection-start-column="6" selection-end-line="205" selection-end-column="6" />
+        <state vertical-scroll-proportion="-7.827586">
+          <caret line="234" column="68" selection-start-line="233" selection-start-column="8" selection-end-line="234" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1318,26 +1313,20 @@
     <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+    <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="59" selection-start-line="211" selection-start-column="59" selection-end-line="211" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7619784">
-          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.8887172">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
