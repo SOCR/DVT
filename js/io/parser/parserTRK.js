@@ -317,6 +317,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         uniforms: {
 
             "map": { type: "t", value: object._particleMap },
+            "bigMap": { type: "t", value: object._particleLocations },
             "width": { type: "f", value: object._mapWidth },
 
         },

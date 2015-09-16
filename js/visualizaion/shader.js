@@ -37,6 +37,7 @@ DVT.ParticleSimulationF = [
 
 DVT.ParticleRenderV = [
     "uniform sampler2D map;",
+    "uniform sampler2D bigMap;",
     "uniform float width;",
     "varying vec2 vUv;",
     "void main() {",
@@ -52,6 +53,7 @@ DVT.ParticleRenderV = [
 DVT.ParticleBasicColorF = [
 
     "uniform sampler2D map;",
+    "uniform sampler2D bigMap;",
     "uniform float width;",
     "varying vec2 vUv;",
     "void main() {",
