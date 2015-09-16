@@ -53,15 +53,27 @@ DVT.ParticleRenderV = [
 DVT.ParticleBasicColorF = [
 
     "uniform sampler2D map;",
-    "uniform sampler2D bigMap;",
     "uniform float width;",
     "varying vec2 vUv;",
     "void main() {",
-    "vec3 color = normalize(texture2D( map, vUv ).rgb);",
-    "gl_FragColor = vec4(abs(color), 1.0);",
-    "gl_FragColor = vec4(abs(color), 1.0);",
+    "gl_FragColor = vec4(abs(normalize(texture2D( map, vUv ).rgb)), 1.0);",
     "}"
 
 ].join("\n");
 
+DVT.ParticleGradientColorF = [
+
+    "uniform sampler2D map;",
+    "uniform sampler2D bigMap;",
+    "uniform float width;",
+    "varying vec2 vUv;",
+    "void main() {",
+    "float prevIndex = texture2D( map, vUv).w;",
+    "prevIndex -= 1.0;",
+    "vec3 prevCoord = texture2D(bigMap, vec2(mod(prevIndex, width)/ width, floor(prevIndex/width)/width)).xyz;",
+    "prevCoord -= texture2D( map, vUv ).xyz;",
+    "gl_FragColor = vec4(abs(normalize(prevCoord)), 1.0);",
+    "}"
+
+].join("\n");
 
