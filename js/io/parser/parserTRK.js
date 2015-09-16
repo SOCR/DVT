@@ -210,7 +210,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         //populate map array (xyzw)
         for(var j = 0; j < particleArray.length; j++)
         {
-            if(j % 60 == 0) {
+            if(j % 80 == 0) {
                 mapArray.push(particleArray[j].x);
                 mapArray.push(particleArray[j].y);
                 mapArray.push(particleArray[j].z);
@@ -319,11 +319,11 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
             "map": { type: "t", value: object._particleMap },
             "bigMap": { type: "t", value: object._particleLocations },
             "width": { type: "f", value: object._mapWidth },
+            "bigWidth": { type: "f", value: object._coordinateWidth },
 
         },
         vertexShader: DVT.ParticleRenderV,
-        fragmentShader: DVT.ParticleBasicColorF,
-        blending: THREE.AdditiveBlending,
+        fragmentShader: DVT.ParticleCurveColorF,
         depthWrite: false,
         depthTest: false,
         transparent: true

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserTRK.js" afterPath="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/visualizaion/shader.js" afterPath="$PROJECT_DIR$/js/visualizaion/shader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testTRK.js" afterPath="$PROJECT_DIR$/test/js/testTRK.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -32,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -70,16 +71,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.827586">
-              <caret line="234" column="68" selection-start-line="233" selection-start-column="8" selection-end-line="234" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="three.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -96,18 +87,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8887172">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#45#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -129,6 +108,28 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-10.551724">
               <caret line="133" column="45" selection-start-line="133" selection-start-column="45" selection-end-line="133" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shader.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8160742">
+              <caret line="90" column="136" selection-start-line="90" selection-start-column="136" selection-end-line="90" selection-end-column="136" />
+              <folding>
+                <element signature="e#0#45#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parserTRK.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="325" column="47" selection-start-line="325" selection-start-column="47" selection-end-line="325" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -194,9 +195,9 @@
         <option value="$PROJECT_DIR$/js/lib/FBOUtils.js" />
         <option value="$PROJECT_DIR$/js/objects/fiber.js" />
         <option value="$PROJECT_DIR$/js/visualizaion/renderer3D.js" />
-        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
-        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
+        <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
+        <option value="$PROJECT_DIR$/js/visualizaion/shader.js" />
       </list>
     </option>
   </component>
@@ -494,7 +495,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="thre&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/three.min.js&#10;te&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;o&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;thre&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/three.min.js&#10;te&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;o&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -572,24 +573,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00040" summary="implement camera controls">
-      <created>1436465729457</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1436465729457</updated>
-    </task>
-    <task id="LOCAL-00041" summary="improve camera controls">
-      <created>1436473890213</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1436473890213</updated>
-    </task>
-    <task id="LOCAL-00042" summary="initialize framerate debugging">
-      <created>1436585644232</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1436585644232</updated>
     </task>
     <task id="LOCAL-00043" summary="annotate debug count statements">
       <created>1436671405375</created>
@@ -867,7 +850,25 @@
       <option name="project" value="LOCAL" />
       <updated>1442256504620</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="finalize particle system version 1">
+      <created>1442264613362</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1442264613362</updated>
+    </task>
+    <task id="LOCAL-00090" summary="expand particle variable list">
+      <created>1442403583972</created>
+      <option name="number" value="00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1442403583972</updated>
+    </task>
+    <task id="LOCAL-00091" summary="implement gradient color shader">
+      <created>1442404940051</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1442404940051</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -917,9 +918,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="implement vertex map" />
-    <MESSAGE value="enable animation toggle" />
-    <MESSAGE value="merge particle points&#10;" />
     <MESSAGE value="calculate map width" />
     <MESSAGE value="create map texture" />
     <MESSAGE value="initialize shader library" />
@@ -942,7 +940,10 @@
     <MESSAGE value="fix map matrix manipulation" />
     <MESSAGE value="particleSystem working!" />
     <MESSAGE value="implement frame control" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement frame control" />
+    <MESSAGE value="finalize particle system version 1" />
+    <MESSAGE value="expand particle variable list" />
+    <MESSAGE value="implement gradient color shader" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement gradient color shader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1260,22 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1034484">
-          <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/FBOUtils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1294,6 +1279,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/three.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1034484">
+          <caret line="578" column="258" selection-start-line="578" selection-start-column="249" selection-end-line="578" selection-end-column="258" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/objects/fiber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="165" column="59" selection-start-line="165" selection-start-column="59" selection-end-line="165" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/renderer3D.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.551724">
@@ -1304,26 +1315,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/io/parser/parserTRK.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.827586">
-          <caret line="234" column="68" selection-start-line="233" selection-start-column="8" selection-end-line="234" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
+          <caret line="325" column="47" selection-start-line="325" selection-start-column="47" selection-end-line="325" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/visualizaion/shader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8887172">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8160742">
+          <caret line="90" column="136" selection-start-line="90" selection-start-column="136" selection-end-line="90" selection-end-column="136" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
