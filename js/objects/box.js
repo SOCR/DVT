@@ -214,3 +214,13 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
     this._depth = depth;
     return this._depth;
 });
+
+DVT.box.prototype.init = function (renderer) {
+    var geometry = new THREE.BoxGeometry2(this._width, this._length, this._depth);
+    geometry.translate(this.center[0], this.center[1],this.center[2]);
+
+    //create material
+    var material = new THREE.MeshLambertMaterial();
+
+    this._THREEContainer = new THREE.mesh(geometry, material);
+}
