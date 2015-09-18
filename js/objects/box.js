@@ -20,7 +20,7 @@ DVT.box = function(copyFrom) {
     /**
      * @inheritDoc
      */
-    this.file = 'none.noload';
+    this.file = 'none.box';
 
     /**
      * length of box in the y-direction
@@ -71,7 +71,7 @@ DVT.box.prototype.__defineGetter__('length', function() {
  * @param {number} integer-valued length
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('length', function(length) {
+DVT.box.prototype.__defineSetter__('length', function(length) {
 
     this._length = length;
     return this._length;
@@ -97,7 +97,7 @@ DVT.box.prototype.__defineGetter__('width', function() {
  * @param {number} integer-valued width
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('width', function(width) {
+DVT.box.prototype.__defineSetter__('width', function(width) {
 
     this._width = width;
     return this._width;
@@ -123,7 +123,7 @@ DVT.box.prototype.__defineGetter__('depth', function() {
  * @param {number} integer-valued depth
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('depth', function(depth) {
+DVT.box.prototype.__defineSetter__('depth', function(depth) {
 
     this._depth = depth;
     return this._depth;
@@ -151,7 +151,7 @@ DVT.box.prototype.__defineGetter__('lengthY', function() {
  * @param {number} integer-valued length
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('lengthY', function(length) {
+DVT.box.prototype.__defineSetter__('lengthY', function(length) {
 
     this._length = length;
     return this._length;
@@ -177,7 +177,7 @@ DVT.box.prototype.__defineGetter__('lengthX', function() {
  * @param {number} integer-valued width
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('lengthX', function(width) {
+DVT.box.prototype.__defineSetter__('lengthX', function(width) {
 
     this._width = width;
     return this._width;
@@ -203,7 +203,7 @@ DVT.box.prototype.__defineGetter__('lengthZ', function() {
  * @param {number} integer-valued depth
  * @public
  */
-DVT.renderer3D.prototype.__defineSetter__('lengthZ', function(depth) {
+DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 
     this._depth = depth;
     return this._depth;
