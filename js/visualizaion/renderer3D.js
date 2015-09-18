@@ -923,10 +923,10 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     // add the object to the internal tree which reflects the rendering order
     // (based on opacity)
     if (!existed) {
+        object.init(this._renderer);
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
-        object.init(this._renderer);
         this.render();
 
         //TODO remove after optimization tests are complete

@@ -4,8 +4,7 @@
 
 goog.provide('DVT.box');
 
-goog.require('DVT.object');
-goog.require('DVT.loaded');
+goog.require('DVT.primitives');
 
 /**
  * Class representing cube/box surfaces
@@ -214,14 +213,4 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 
     this._depth = depth;
     return this._depth;
-});
-
-/**
- * Overrides file setting ability
- *
- * @param {number} integer-valued depth
- * @public
- */
-DVT.box.prototype.__defineSetter__('file', function(file) {
-    return file;
 });
