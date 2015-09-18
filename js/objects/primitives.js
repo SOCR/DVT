@@ -16,13 +16,14 @@ goog.require('DVT.loaded');
  * @extends DVT.loaded
  */
 
-DVT.box = function(copyFrom) {
+DVT.primitives = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
-
     /**
      * @inheritDoc
      */
     this.file = 'none.none';
+
+    this._loaded = true;
 
     /**
      * false loader
@@ -32,7 +33,7 @@ DVT.box = function(copyFrom) {
     this._loader = {finishRender: function () {}};
 };
 
-goog.inherits(DVT.box, DVT.loaded);
+goog.inherits(DVT.primitives, DVT.loaded);
 
 /**
  * Overrides file setting ability
@@ -40,6 +41,6 @@ goog.inherits(DVT.box, DVT.loaded);
  * @param {number} integer-valued depth
  * @public
  */
-DVT.box.prototype.__defineSetter__('file', function(file) {
+DVT.primitives.prototype.__defineSetter__('file', function(file) {
     return file;
 });

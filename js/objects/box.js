@@ -10,16 +10,11 @@ goog.require('DVT.primitives');
  * Class representing cube/box surfaces
  * @constructor
  * @param copyFrom
- * @extends DVT.loaded
+ * @extends DVT.primitives
  */
 
 DVT.box = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
-
-    /**
-     * @inheritDoc
-     */
-    this.file = 'none.box';
 
     /**
      * length of box in the y-direction
@@ -57,7 +52,7 @@ DVT.box = function(copyFrom) {
     }
 };
 
-goog.inherits(DVT.box, DVT.loaded);
+goog.inherits(DVT.box, DVT.primitives);
 
 /**
  * Get the box length.
@@ -136,9 +131,6 @@ DVT.box.prototype.__defineSetter__('depth', function(depth) {
 });
 
 
-
-goog.inherits(DVT.box, DVT.loaded);
-
 /**
  * Alternate getter for the box length.
  *
@@ -216,11 +208,13 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 });
 
 DVT.box.prototype.init = function (renderer) {
-    var geometry = new THREE.BoxGeometry2(this._width, this._length, this._depth);
-    geometry.translate(this.center[0], this.center[1],this.center[2]);
-
+    var geometry = new THREE.BoxGeometry(this._width, this._length, this._depth);console.log(geometry)
+    for(var j=0;j<geometry.vertices.length;j++)
+    {
+        geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]))
+    }
     //create material
-    var material = new THREE.MeshLambertMaterial();
+    var material = new THREE.MeshLambertMaterial({color:0x00ff00});
 
-    this._THREEContainer = new THREE.mesh(geometry, material);
+    this.THREEContainer = new THREE.Mesh(geometry, material);
 }

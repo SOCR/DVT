@@ -128,7 +128,7 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 
 
 DVT.renderer3D.prototype.animate = function () {
-    window.requestAnimationFrame(this.animate.bind(this));
+    //window.requestAnimationFrame(this.animate.bind(this));
     if(this._animateFrame)
         this.render_(true,true);
     this._animateFrame = !this._animateFrame;
@@ -271,7 +271,6 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     console.log(this.get(object));
     var loaded = object._loaded;
     var locked = object._locked;
-
     /*
      var id = object._id;
      var points = object._points;

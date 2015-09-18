@@ -20,9 +20,21 @@ test = function() {
 
     // add the object
     test_renderer.add(fibers);
-    test_renderer.add(fibers2);
-    test_renderer.add(fibers3);
+    //test_renderer.add(fibers2);
+    //test_renderer.add(fibers3);
 
+    cube = new DVT.box();
+
+    // setting the edge length can also be skipped since 20 is the default
+    cube.lengthX = cube.lengthY = cube.lengthZ = 100;
+
+    // can also be skipped since [0,0,0] is the default center
+    cube.center = [-30, -30, -300];
+
+    // [1,1,1] (== white) is also the default so this can be skipped aswell
+    cube.color = [1, 1, 1];
+
+    test_renderer.add(cube);
     // .. and render it
     test_renderer.render();
 

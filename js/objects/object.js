@@ -24,6 +24,7 @@ DVT.object = function(copyFrom)
      */
     this.THREEContainer=null;
 
+    this.obj=12;
 
     //copies variables from target
     if(copyFrom)
@@ -31,12 +32,13 @@ DVT.object = function(copyFrom)
         this.THREEContainer=copyFrom.THREEContainer;
     }
 };
+goog.inherits(DVT.object, DVT.base);
 
 /**
  * animation subroutines, called post-render
  */
 DVT.object.prototype.animate = function () {
-    //implement in children
+    return;
 };
 
 /**
@@ -46,5 +48,3 @@ DVT.object.prototype.animate = function () {
 DVT.object.prototype.init = function (renderer) {
     //implement in children
 };
-
-goog.inherits(DVT.object, DVT.base);
