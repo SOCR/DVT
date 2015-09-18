@@ -104,8 +104,8 @@
       <file leaf-file-name="box.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/objects/box.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49768162">
-              <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.73724884">
+              <caret line="217" column="59" selection-start-line="217" selection-start-column="59" selection-end-line="217" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -351,12 +351,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00043" summary="annotate debug count statements">
-      <created>1436671405375</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1436671405375</updated>
     </task>
     <task id="LOCAL-00044" summary="remove function conters">
       <created>1436671997726</created>
@@ -646,7 +640,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442584485047</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="fix setter bug">
+      <created>1442584570145</created>
+      <option name="number" value="00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1442584570145</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -696,7 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="create map texture" />
     <MESSAGE value="initialize shader library" />
     <MESSAGE value="implement pass-through vertex simulation shader" />
     <MESSAGE value="implement particle fiber simulation fragment shader" />
@@ -721,7 +720,8 @@
     <MESSAGE value="implement copy constructor" />
     <MESSAGE value="implement default assignment operator" />
     <MESSAGE value="implement alternate assignment operator" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement alternate assignment operator" />
+    <MESSAGE value="fix setter bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix setter bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1103,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/box.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49768162">
-          <caret line="77" column="3" selection-start-line="77" selection-start-column="3" selection-end-line="77" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.73724884">
+          <caret line="217" column="59" selection-start-line="217" selection-start-column="59" selection-end-line="217" selection-end-column="59" />
           <folding />
         </state>
       </provider>

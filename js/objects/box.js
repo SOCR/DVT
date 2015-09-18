@@ -198,7 +198,7 @@ DVT.box.prototype.__defineGetter__('lengthZ', function() {
 });
 
 /**
- * SAlternate setter for the box depth
+ * Alternate setter for the box depth
  *
  * @param {number} integer-valued depth
  * @public
@@ -207,5 +207,15 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 
     this._depth = depth;
     return this._depth;
+});
+
+/**
+ * Overrides file setting ability
+ *
+ * @param {number} integer-valued depth
+ * @public
+ */
+DVT.box.prototype.__defineSetter__('file', function(file) {
+    return file;
 });
 
