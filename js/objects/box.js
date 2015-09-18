@@ -43,6 +43,13 @@ DVT.box = function(copyFrom) {
      */
     this._depth = 1;
 
+    /**
+     * center of the cube. Default is [0,0,0]
+     * @type {number[]}
+     * @public
+     */
+    this.center = [0, 0, 0];
+
     //copies properties from target
     if (copyFrom) {
         this._length = copyFrom._length;
@@ -218,4 +225,3 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 DVT.box.prototype.__defineSetter__('file', function(file) {
     return file;
 });
-

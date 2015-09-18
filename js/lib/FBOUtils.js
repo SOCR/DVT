@@ -6,7 +6,7 @@
 goog.require('THREE');
 goog.provide('THREE.FBOUtils');
 
-THREE.FBOUtils = function( textureWidth, renderer, simulationShader ) {
+THREE.FBOUtils = function( textureWidth, renderer, simulationShader) {
 
 	// Init RTT stuff
 	gl = renderer.getContext();
