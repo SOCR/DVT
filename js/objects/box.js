@@ -44,10 +44,11 @@ DVT.box = function(copyFrom) {
     this._depth = 1;
 
     //copies properties from target
-    if(copyFrom)
-    {
-
+    if (copyFrom) {
+        this._length = copyFrom._length;
+        this._width = copyFrom._width;
+        this._depth = copyFrom._depth;
     }
 };
 
-goog.inherits(DVT.loaded, DVT.object);
+goog.inherits(DVT.box, DVT.loaded);
