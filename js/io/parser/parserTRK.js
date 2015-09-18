@@ -324,6 +324,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         },
         vertexShader: DVT.ParticleRenderV,
         fragmentShader: DVT.ParticleCurveColorF,
+       // blending: THREE.AdditiveBlending,
         depthWrite: false,
         depthTest: false,
         transparent: true

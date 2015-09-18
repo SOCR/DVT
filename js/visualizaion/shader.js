@@ -91,7 +91,7 @@ DVT.ParticleCurveColorF = [
     "vec3 nextCord = abs( texture2D( map, vUv).xyz - texture2D(bigMap, vec2(mod(prevIndex - 1.0, bigWidth)/ bigWidth, floor((prevIndex-1.0)/bigWidth)/bigWidth)).xyz);",
     "nextCord /= length(nextCord);",
     "prevCoord -= nextCord;",
-    "gl_FragColor = vec4(prevCoord/length(prevCoord), 1.0);",
+    "gl_FragColor = vec4(prevCoord/length(prevCoord), length(prevCoord)*3.55);",
     "}"
 
 ].join("\n");
