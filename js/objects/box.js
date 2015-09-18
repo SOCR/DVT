@@ -128,3 +128,84 @@ DVT.renderer3D.prototype.__defineSetter__('depth', function(depth) {
     this._depth = depth;
     return this._depth;
 });
+
+
+
+goog.inherits(DVT.box, DVT.loaded);
+
+/**
+ * Alternate getter for the box length.
+ *
+ * @return {number} length of the box
+ * @public
+ */
+DVT.box.prototype.__defineGetter__('lengthY', function() {
+
+    return this._length;
+
+});
+
+/**
+ * Alternate setter for the box length
+ *
+ * @param {number} integer-valued length
+ * @public
+ */
+DVT.renderer3D.prototype.__defineSetter__('lengthY', function(length) {
+
+    this._length = length;
+    return this._length;
+});
+
+
+
+/**
+ * Alternate getter for the box width.
+ *
+ * @return {number} width of the box
+ * @public
+ */
+DVT.box.prototype.__defineGetter__('lengthX', function() {
+
+    return this._width;
+
+});
+
+/**
+ * Alternate setter for the box width
+ *
+ * @param {number} integer-valued width
+ * @public
+ */
+DVT.renderer3D.prototype.__defineSetter__('lengthX', function(width) {
+
+    this._width = width;
+    return this._width;
+});
+
+
+
+/**
+ * Alternate getter for the box depth.
+ *
+ * @return {number} depth of the box
+ * @public
+ */
+DVT.box.prototype.__defineGetter__('lengthZ', function() {
+
+    return this._depth;
+
+});
+
+/**
+ * SAlternate setter for the box depth
+ *
+ * @param {number} integer-valued depth
+ * @public
+ */
+DVT.renderer3D.prototype.__defineSetter__('lengthZ', function(depth) {
+
+    this._depth = depth;
+    return this._depth;
+});
+
