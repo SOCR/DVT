@@ -128,7 +128,7 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 
 
 DVT.renderer3D.prototype.animate = function () {
-    //window.requestAnimationFrame(this.animate.bind(this));
+    window.requestAnimationFrame(this.animate.bind(this));
     if(this._animateFrame)
         this.render_(true,true);
     this._animateFrame = !this._animateFrame;
@@ -166,7 +166,24 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     //add camera to scene
     this._scene.add(this._camera);
+    var directionalLight = new THREE.DirectionalLight( 0x00ffff, 0.5 );
+    directionalLight.position.set( 1, 1, 1 );
+    var amlight = new THREE.AmbientLight( 0xffffff );
 
+    var spotLight = new THREE.SpotLight( 0xffffff,2 );
+    spotLight.position.set( 100, 1000, 100 );
+
+    spotLight.castShadow = true;
+
+    spotLight.shadowMapWidth = 1024;
+    spotLight.shadowMapHeight = 1024;
+
+    spotLight.shadowCameraNear = 500;
+    spotLight.shadowCameraFar = 4000;
+    spotLight.shadowCameraFov = 30;
+    //this._scene.add( directionalLight );
+    //this._scene.add( amlight );
+    this._scene.add( spotLight );
     this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
     this._renderer.setSize(this._width, this._height);
 

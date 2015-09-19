@@ -213,8 +213,9 @@ DVT.box.prototype.init = function (renderer) {
     {
         geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]))
     }
+    geometry.computeFaceNormals();
     //create material
-    var material = new THREE.MeshLambertMaterial({color:0x00ff00});
+    var material = new THREE.MeshPhongMaterial({color:0x00ff00});
 
     this.THREEContainer = new THREE.Mesh(geometry, material);
 }
