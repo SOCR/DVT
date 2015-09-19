@@ -32,7 +32,7 @@ test = function() {
 
     fibers3.showParticles(true);
     fibers3.enableAnimation(true);
-    fibers3.showFibers(true);
+    fibers3.showFibers(false);
 
     fibers.showParticles(true);
     fibers.enableAnimation(true);

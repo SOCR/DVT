@@ -55,11 +55,43 @@ DVT.ParticleBasicColorF = [
     "uniform float width;",
     "varying vec2 vUv;",
     "void main() {",
-    "vec3 color = normalize(texture2D( map, vUv ).rgb);",
-    "gl_FragColor = vec4(abs(color), 1.0);",
-    "gl_FragColor = vec4(abs(color), 1.0);",
+    "gl_FragColor = vec4(abs(normalize(texture2D( map, vUv ).rgb)), 1.0);",
     "}"
 
 ].join("\n");
 
+DVT.ParticleGradientColorF = [
 
+    "uniform sampler2D map;",
+    "uniform sampler2D bigMap;",
+    "uniform float width;",
+    "uniform float bigWidth;",
+    "varying vec2 vUv;",
+    "void main() {",
+    "float prevIndex = texture2D( map, vUv).w;",
+    "prevIndex -= 1.0;",
+    "vec3 prevCoord = abs( texture2D( map, vUv).xyz - texture2D(bigMap, vec2(mod(prevIndex, bigWidth)/ bigWidth, floor(prevIndex/bigWidth)/bigWidth)).xyz);",
+    "gl_FragColor = vec4(prevCoord/length(prevCoord), 1.0);",
+    "}"
+
+].join("\n");
+
+DVT.ParticleCurveColorF = [
+
+    "uniform sampler2D map;",
+    "uniform sampler2D bigMap;",
+    "uniform float width;",
+    "uniform float bigWidth;",
+    "varying vec2 vUv;",
+    "void main() {",
+    "float prevIndex = texture2D( map, vUv).w;",
+    "prevIndex -= 1.0;",
+    "vec3 prevCoord = abs( texture2D( map, vUv).xyz - texture2D(bigMap, vec2(mod(prevIndex, bigWidth)/ bigWidth, floor(prevIndex/bigWidth)/bigWidth)).xyz);",
+    "prevCoord/= length(prevCoord);",
+    "vec3 nextCord = abs( texture2D( map, vUv).xyz - texture2D(bigMap, vec2(mod(prevIndex - 1.0, bigWidth)/ bigWidth, floor((prevIndex-1.0)/bigWidth)/bigWidth)).xyz);",
+    "nextCord /= length(nextCord);",
+    "prevCoord -= nextCord;",
+    "gl_FragColor = vec4(prevCoord/length(prevCoord), length(prevCoord)*3.55);",
+    "}"
+
+].join("\n");
