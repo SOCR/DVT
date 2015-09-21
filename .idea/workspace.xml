@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserFSM.js" afterPath="$PROJECT_DIR$/js/io/parser/parserFSM.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/parser/parserSTL.js" afterPath="$PROJECT_DIR$/js/io/parser/parserSTL.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -27,23 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="testTRK.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#44#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parserFSM.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parserFSM.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/io/parser/parserFSM.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33576643">
-              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="144" column="62" selection-start-line="139" selection-start-column="4" selection-end-line="144" selection-end-column="62" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -128,9 +116,21 @@
       <file leaf-file-name="loadHelper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6896553">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state vertical-scroll-proportion="-15.827586">
+              <caret line="161" column="19" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parserSTL.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/io/parser/parserSTL.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.49514562">
+              <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#45#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -198,12 +198,13 @@
         <option value="$PROJECT_DIR$/js/io/parser/parserTRK.js" />
         <option value="$PROJECT_DIR$/test/js/testTRK.js" />
         <option value="$PROJECT_DIR$/js/objects/box.js" />
-        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
         <option value="$PROJECT_DIR$/test/testFSM.html" />
         <option value="$PROJECT_DIR$/js/objects/mesh.js" />
         <option value="$PROJECT_DIR$/test/js/testFSM.js" />
         <option value="$PROJECT_DIR$/test/js/default.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserFSM.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
+        <option value="$PROJECT_DIR$/js/io/parser/parserSTL.js" />
       </list>
     </option>
   </component>
@@ -215,9 +216,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="683" />
-    <option name="width" value="683" />
-    <option name="height" value="768" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -289,75 +291,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DVT" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="objects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,7 +372,7 @@
     <property name="last_opened_file_path" value="C:/Python27/Scripts/config.txt" />
     <property name="js.eslint.nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="SearchEverywhereHistoryKey" value="pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserFSM.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserFSM.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parser.js&#10;sha&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/shader.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;bo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/box.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;primitives&#9;null&#9;null&#10;box&#9;null&#9;null&#10;thre&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/three.min.js&#10;te&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;o&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
+    <property name="SearchEverywhereHistoryKey" value="pa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserFSM.js&#10;loa&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;p&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserFSM.js&#10;par&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parser.js&#10;sha&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/shader.js&#10;fib&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;re&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;bo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/box.js&#10;obj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;lo&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;f&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;primitives&#9;null&#9;null&#10;box&#9;null&#9;null&#10;thre&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/three.min.js&#10;te&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;o&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;fi&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;ob&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;ren&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;obje&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;bj&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/object.js&#10;base&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/core/base.js&#10;rende&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;test&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/testTRK.html&#10;parser&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;rendere&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;gu&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;trk&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;3d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;pars&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/parser/parserTRK.js&#10;loaded&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/loaded.js&#10;fiber&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/objects/fiber.js&#10;render&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer.js&#10;hel&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;tes&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/test/js/testTRK.js&#10;gulp&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/lib/gulpfile.js&#10;dispatchev&#9;null&#9;null&#10;l&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;load&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loader.js&#10;r&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;renderer&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/visualizaion/renderer3D.js&#10;help&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/io/loader/loadHelper.js&#10;d&#9;FILE&#9;file://C:/Users/shusa_000/Documents/GitHub/DVT/js/DVT.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -521,18 +455,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00059" summary="initialize fiber renderer object">
-      <created>1441948393180</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1441948393180</updated>
-    </task>
-    <task id="LOCAL-00060" summary="remove old point parser">
-      <created>1441979756715</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1441979756715</updated>
     </task>
     <task id="LOCAL-00061" summary="implement color parser for particles&#10;">
       <created>1441980996255</created>
@@ -816,7 +738,19 @@
       <option name="project" value="LOCAL" />
       <updated>1442841297091</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="implement wireframe meshes">
+      <created>1442855888790</created>
+      <option name="number" value="00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1442855888790</updated>
+    </task>
+    <task id="LOCAL-00109" summary="initialize STL parser">
+      <created>1442856200725</created>
+      <option name="number" value="00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1442856200725</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -829,7 +763,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="683" y="0" width="683" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -838,9 +772,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33383915" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32592592" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32833582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16032211" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -866,8 +800,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="debug animation" />
-    <MESSAGE value="fix render shader bugs" />
     <MESSAGE value="fix map matrix manipulation" />
     <MESSAGE value="particleSystem working!" />
     <MESSAGE value="implement frame control" />
@@ -891,7 +823,9 @@
     <MESSAGE value="create mesh object type" />
     <MESSAGE value="initialize FSM testing suite" />
     <MESSAGE value="Freesurfer Meshes Working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Freesurfer Meshes Working!" />
+    <MESSAGE value="implement wireframe meshes" />
+    <MESSAGE value="initialize STL parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize STL parser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -900,13 +834,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/lib/node_modules/plato/.npmignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/lib/node_modules/plato/tmp/report.history.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1208,14 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6896553">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/js/testTRK.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1268,6 +1187,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/js/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.827586">
+          <caret line="161" column="19" selection-start-line="161" selection-start-column="19" selection-end-line="161" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/js/testFSM.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1278,18 +1213,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/js/default.js">
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserFSM.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
+          <caret line="144" column="62" selection-start-line="139" selection-start-column="4" selection-end-line="144" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/io/parser/parserFSM.js">
+    <entry file="file://$PROJECT_DIR$/js/io/parser/parserSTL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33576643">
-          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.49514562">
+          <caret line="66" column="34" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
