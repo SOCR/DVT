@@ -185,7 +185,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
         var curve = new THREE.SplineCurve3(particleArray);
         var curveLength = curve.getLength();
         particleGeom = new THREE.Geometry();
-        particleArray = curve.getSpacedPoints(curveLength / 40 * 60);
+        particleArray = curve.getSpacedPoints(curveLength / 60 * 60);
         oldPoint = particleArray[0];
 
         //calculate particle system Colors
