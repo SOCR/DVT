@@ -68,10 +68,14 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     object._normals = n = new DVT.triplets(numberOfTriangles*9);
 
     var geometry = new THREE.Geometry();
+    var updateCheck = Math.ceil(numberOfTriangles / 20);
+
     // first loop through the indices
     var t;
-    for (t = 0; t < numberOfTriangles; t++) {
-
+    for (t = 0; t < numberOfTriangles; t++    ) {
+        if (t % updateCheck === 0) {
+            loader.updateParse(t / numberOfTriangles);
+        }
         var i = t * 3;
 
         // grab and push the three indices which define a triangle

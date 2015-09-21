@@ -153,6 +153,10 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             var parser = new DVT.parserTRK();
             parser.parse(this._container, data, this);
             break;
+        case 'smoothwm':
+            var parser = new DVT.parserFSM();
+            parser.parse(this._container, data, this);
+            break;
         default:
             alert('Parser not found');
     }
@@ -239,6 +243,7 @@ DVT.loadHelper.prototype._removeElement=function(elementID, bar)
 DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
     switch(this._extension) {
         case 'trk':
+        case 'smoothwm':
             return true;
             break;
         default:
