@@ -83,7 +83,6 @@ DVT.parserSTL.prototype.parse = function(object, data, loader) {
  * @protected
  */
 DVT.parserSTL.prototype.parseASCII = function(geometry, data) {
-
     var _length = data.length;
 
     //
@@ -171,6 +170,7 @@ DVT.parserSTL.prototype.parseASCII = function(geometry, data) {
  * @param {!number} triangleCount The number of triangles.
  */
 DVT.parserSTL.prototype.parseBIN = function(geometry, triangleCount) {
+    console.log('BINBIN')
 
     var i = 0;
     for (i = 0; i < triangleCount; i++) {
@@ -183,7 +183,7 @@ DVT.parserSTL.prototype.parseBIN = function(geometry, triangleCount) {
         geometry.vertices.push(new THREE.Vector3(_bytes[3], _bytes[4], _bytes[5]));
         geometry.vertices.push(new THREE.Vector3(_bytes[6], _bytes[7], _bytes[8]));
         geometry.vertices.push(new THREE.Vector3(_bytes[9], _bytes[10], _bytes[11]));
-
+        geometry.faces.push(new THREE.Face3( i * 3, i * 3 + 1, i * 3+2));
         // jump 2 bytes
         this._dataPointer += 2;
 
