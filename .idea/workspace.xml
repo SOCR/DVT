@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="010716de-e6bf-4b22-bb2f-ef78e7759ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/deps.js" afterPath="$PROJECT_DIR$/dist/deps.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/io/loader/loadHelper.js" afterPath="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/js/testFSM.js" afterPath="$PROJECT_DIR$/test/js/testFSM.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DVT.iws" />
@@ -118,8 +116,8 @@
       <file leaf-file-name="loadHelper.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0829146">
-              <caret line="261" column="17" selection-start-line="261" selection-start-column="17" selection-end-line="261" selection-end-column="17" />
+            <state vertical-scroll-proportion="-1.4522613">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -205,8 +203,8 @@
         <option value="$PROJECT_DIR$/test/js/default.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserFSM.js" />
         <option value="$PROJECT_DIR$/js/io/parser/parserSTL.js" />
-        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
         <option value="$PROJECT_DIR$/test/js/testFSM.js" />
+        <option value="$PROJECT_DIR$/js/io/loader/loadHelper.js" />
       </list>
     </option>
   </component>
@@ -489,12 +487,6 @@
       <created>1435603226116</created>
       <option name="number" value="Default" />
       <updated>1435603226116</updated>
-    </task>
-    <task id="LOCAL-00062" summary="fix color parser bug">
-      <created>1441983747367</created>
-      <option name="number" value="00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1441983747367</updated>
     </task>
     <task id="LOCAL-00063" summary="implement vertex map">
       <created>1441985102287</created>
@@ -784,7 +776,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442857229595</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="implement stl tests">
+      <created>1442857470415</created>
+      <option name="number" value="00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1442857470415</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -834,7 +832,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="particleSystem working!" />
     <MESSAGE value="implement frame control" />
     <MESSAGE value="update box req" />
     <MESSAGE value="implement copy constructor" />
@@ -859,7 +856,8 @@
     <MESSAGE value="implement wireframe meshes" />
     <MESSAGE value="initialize STL parser" />
     <MESSAGE value="complete stl parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete stl parser" />
+    <MESSAGE value="implement stl tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement stl tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1261,8 +1259,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/io/loader/loadHelper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0829146">
-          <caret line="261" column="17" selection-start-line="261" selection-start-column="17" selection-end-line="261" selection-end-column="17" />
+        <state vertical-scroll-proportion="-1.4522613">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
         </state>
       </provider>

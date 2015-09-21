@@ -9,6 +9,7 @@ goog.require('ProgressBar');
 goog.require('bootstrap');
 goog.require('DVT.parserTRK');
 goog.require('DVT.parserFSM');
+goog.require('DVT.parserSTL');
 
 /**
  * creates a loadHelper object
