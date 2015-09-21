@@ -82,15 +82,12 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
 
         var i = t * 3;
 
-        // grab the three indices which define a triangle
+        // grab and push the three indices which define a triangle
         var index1 = _indices[i];
         var index2 = _indices[i + 1];
         var index3 = _indices[i + 2];
 
-        // store the ordered vertex indices
-        ind.push(index1);
-        ind.push(index2);
-        ind.push(index3);
+        geometry.faces.push(new THREE.Face3( index1, index2, index3));
 
         // count the use of the indices
         indexCounter[index1] += 1;
