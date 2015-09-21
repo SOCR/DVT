@@ -14,7 +14,7 @@ goog.require('THREE');
  * @constructor
  */
 
-DVT.fiber = function(copyFrom) {
+DVT.mesh = function(copyFrom) {
     goog.base(this, 'constructor', copyFrom);
 
     /**
