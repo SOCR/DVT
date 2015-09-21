@@ -155,6 +155,11 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             parser.parse(this._container, data, this);
             break;
         case 'smoothwm':
+        case 'sphere':
+        case 'pial':
+        case 'inflated':
+        case 'orig':
+        case 'fsm':
             var parser = new DVT.parserFSM();
             parser.parse(this._container, data, this);
             break;
@@ -245,6 +250,11 @@ DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
     switch(this._extension) {
         case 'trk':
         case 'smoothwm':
+        case 'sphere':
+        case 'pial':
+        case 'inflated':
+        case 'orig':
+        case 'fsm':
             return true;
             break;
         default:
