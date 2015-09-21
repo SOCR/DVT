@@ -18,6 +18,16 @@ test = function() {
     lh.opacity = 0.6;
 
 
+    var porsche = new DVT.mesh();
+    // .. and associate the .stl to it
+    porsche.file = 'http://x.babymri.org/?porsche.stl';
+    // activate the magic mode which results in a colorful rendering since the
+    // point colors are based on the point position
+    porsche.magicmode = true;
+    // set a caption which appears on mouseover
+    porsche.caption = 'The magic Porsche!';
+
+
     cube = new DVT.box();
 
     // setting the edge length can also be skipped since 20 is the default
@@ -30,6 +40,7 @@ test = function() {
     cube.color = [1, 1, 1];
 
     test_renderer.add(cube);
+    test_renderer.add(porsche);
     test_renderer.add(lh);
 
     // .. and render it

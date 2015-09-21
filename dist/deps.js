@@ -8,6 +8,7 @@ goog.addDependency('../../../../../js/io/loader/loadHelper.js', ['DVT.loadHelper
 goog.addDependency('../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DVT', 'DVT.loadHelper', 'jQuery'], false);
 goog.addDependency('../../../../../js/io/parser/parser.js', ['DVT.parser'], ['DVT.base'], false);
 goog.addDependency('../../../../../js/io/parser/parserFSM.js', ['DVT.parserFSM'], ['DVT.parser', 'THREE'], false);
+goog.addDependency('../../../../../js/io/parser/parserSTL.js', ['DVT.parserSTL'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'DVT.shader', 'THREE'], false);
 goog.addDependency('../../../../../js/lib/FBOUtils.js', ['THREE.FBOUtils'], ['THREE'], false);
 goog.addDependency('../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);

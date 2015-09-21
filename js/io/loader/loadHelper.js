@@ -163,6 +163,10 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             var parser = new DVT.parserFSM();
             parser.parse(this._container, data, this);
             break;
+        case 'stl':
+            var parser = new DVT.parserSTL();
+            parser.parse(this._container, data, this);
+            break;
         default:
             alert('Parser not found');
     }
@@ -255,6 +259,7 @@ DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
         case 'inflated':
         case 'orig':
         case 'fsm':
+        case 'stl':
             return true;
             break;
         default:
