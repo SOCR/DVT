@@ -143,7 +143,7 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     //finish parsing
     geometry.computeFaceNormals();
     object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial({color:0xf00ff0}));
-    object.THREEContainer.visible = object._fibersVisible;
+    object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;
     object._locked = false;
     object.dispatchEvent({type: 'PROCESSED', target: object});
