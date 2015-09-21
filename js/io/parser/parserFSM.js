@@ -7,6 +7,7 @@ goog.provide('DVT.parserFSM');
 
 // requires
 goog.require('DVT.parser');;
+goog.require('THREE');
 
 /**
  * Create a parser for the binary freesurfer meshes
@@ -36,13 +37,8 @@ goog.inherits(DVT.parserFSM, DVT.parser);
  */
 DVT.parserFSM.prototype.parse = function(object, data, loader) {
 
-    DVT.TIMER(this._classname + '.parse');
-
-
     this._data = data;
 
-    var p = object._points;
-    var n = object._normals;
     object._pointIndices = [];
     var ind = object._pointIndices;
 
@@ -79,6 +75,7 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     object._points = p = new DVT.triplets(numberOfTriangles*9);
     object._normals = n = new DVT.triplets(numberOfTriangles*9);
 
+    var geometry = new THREE.Geometry();
     // first loop through the indices
     var t;
     for (t = 0; t < numberOfTriangles; t++) {
