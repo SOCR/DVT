@@ -63,10 +63,6 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     // parse the triangle indices
     var _indices = this.scan('uint', numberOfTriangles * 3);
 
-
-    object._points = p = new DVT.triplets(numberOfTriangles*9);
-    object._normals = n = new DVT.triplets(numberOfTriangles*9);
-
     var geometry = new THREE.Geometry();
     var updateCheck = Math.ceil(numberOfTriangles / 20);
 
@@ -142,7 +138,7 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
 
     //finish parsing
     geometry.computeFaceNormals();
-    object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial({color:0xf00ff0}));
+    object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshPhongMaterial({color:0xf00ff0}));
     object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;
     object._locked = false;
