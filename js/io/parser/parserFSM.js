@@ -89,97 +89,16 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
 
         geometry.faces.push(new THREE.Face3( index1, index2, index3));
 
-        // count the use of the indices
-        indexCounter[index1] += 1;
-        indexCounter[index2] += 1;
-        indexCounter[index3] += 1;
-
-        // grab the 3 corresponding vertices with each x,y,z coordinates
-        var _index1 = index1 * 3;
-        var _index2 = index2 * 3;
-        var _index3 = index3 * 3;
-        var v1x = _vertices[_index1];
-        var v1y = _vertices[_index1 + 1];
-        var v1z = _vertices[_index1 + 2];
-        var v2x = _vertices[_index2];
-        var v2y = _vertices[_index2 + 1];
-        var v2z = _vertices[_index2 + 2];
-        var v3x = _vertices[_index3];
-        var v3y = _vertices[_index3 + 1];
-        var v3z = _vertices[_index3 + 2];
-
-        // add the points
-        p.add(v1x, v1y, v1z);
-        p.add(v2x, v2y, v2z);
-        p.add(v3x, v3y, v3z);
-
-        //
-        // compute the normals
-        var v1v = new goog.math.Vec3(v1x, v1y, v1z);
-        var v2v = new goog.math.Vec3(v2x, v2y, v2z);
-        var v3v = new goog.math.Vec3(v3x, v3y, v3z);
-
-        var n1 = v2v.clone().subtract(v1v);
-        var n2 = v3v.clone().subtract(v1v);
-
-        var normal = goog.math.Vec3.cross(n1, n2).normalize();
-
-        // store them
-        normals[_index1] += normal.x;
-        normals[_index1 + 1] += normal.y;
-        normals[_index1 + 2] += normal.z;
-        normals[_index2] += normal.x;
-        normals[_index2 + 1] += normal.y;
-        normals[_index2 + 2] += normal.z;
-        normals[_index3] += normal.x;
-        normals[_index3 + 1] += normal.y;
-        normals[_index3 + 2] += normal.z;
-
-    }
-
-    // second loop through the indices
-    // this loop is required since we need to average the normals and only now
-    // know how often an index was used
-    for (t = 0; t < numberOfTriangles; t++) {
-
-        var i = t * 3;
-
-        // grab the three indices which define a triangle
-        var index1 = _indices[i];
-        var index2 = _indices[i + 1];
-        var index3 = _indices[i + 2];
-
-        // grab the normals for this triangle
-        var _index1 = index1 * 3;
-        var _index2 = index2 * 3;
-        var _index3 = index3 * 3;
-
-        var n1x = normals[_index1];
-        var n1y = normals[_index1 + 1];
-        var n1z = normals[_index1 + 2];
-
-        var n2x = normals[_index2];
-        var n2y = normals[_index2 + 1];
-        var n2z = normals[_index2 + 2];
-
-        var n3x = normals[_index3];
-        var n3y = normals[_index3 + 1];
-        var n3z = normals[_index3 + 2];
-
-        // convert the normals to vectors
-        var n1v = new goog.math.Vec3(n1x, n1y, n1z);
-        var n2v = new goog.math.Vec3(n2x, n2y, n2z);
-        var n3v = new goog.math.Vec3(n3x, n3y, n3z);
-
-        // transform triangle normals to vertex normals
-        var normal1 = n1v.scale(1 / indexCounter[index1]).normalize();
-        var normal2 = n2v.scale(1 / indexCounter[index2]).normalize();
-        var normal3 = n3v.scale(1 / indexCounter[index3]).normalize();
-
-        // .. add'em
-        n.add(normal1.x, normal1.y, normal1.z);
-        n.add(normal2.x, normal2.y, normal2.z);
-        n.add(normal3.x, normal3.y, normal3.z);
+        // update points corresponding to indices, if necessary
+        if (!geometry.vertices[index1]) {
+            geometry.vertices[index1] = new THREE.Vector3(_vertices[index1 * 3], _vertices[index1 * 3 + 1], _vertices[index1 * 3 + 2]);
+        }
+        if (!geometry.vertices[index2]) {
+            geometry.vertices[index2] = new THREE.Vector3(_vertices[index2 * 3], _vertices[index2 * 3 + 1], _vertices[index2 * 3 + 2]);
+        }
+        if (!geometry.vertices[index3]) {
+            geometry.vertices[index3] = new THREE.Vector3(_vertices[index3 * 3], _vertices[index3 * 3 + 1], _vertices[index3 * 3 + 2]);
+        }
 
     }
 

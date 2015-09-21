@@ -208,7 +208,7 @@ DVT.box.prototype.__defineSetter__('lengthZ', function(depth) {
 });
 
 DVT.box.prototype.init = function (renderer) {
-    var geometry = new THREE.BoxGeometry(this._width, this._length, this._depth);console.log(geometry)
+    var geometry = new THREE.BoxGeometry(this._width, this._length, this._depth);
     for(var j=0;j<geometry.vertices.length;j++)
     {
         geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]))
