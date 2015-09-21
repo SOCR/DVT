@@ -39,9 +39,6 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
 
     this._data = data;
 
-    object._pointIndices = [];
-    var ind = object._pointIndices;
-
     // Go through two newlines
     var iters = 0;
     var curChar;
@@ -51,7 +48,7 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     } while ((iters < 200) && (curChar != 0x0A))
 
     // Read one more newline
-    curChar = this.scan('uchar');
+    this.scan('uchar');
 
     // get the number of vertices
     var numberOfVertices = this.scan('uint');
@@ -66,11 +63,6 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     // parse the triangle indices
     var _indices = this.scan('uint', numberOfTriangles * 3);
 
-    // we count the appearance of indices to be able to average the normals
-    var indexCounter = new Uint32Array(numberOfVertices);
-
-    // buffer the normals since we need to calculate them in a second loop
-    var normals = new Float32Array(numberOfTriangles * 9);
 
     object._points = p = new DVT.triplets(numberOfTriangles*9);
     object._normals = n = new DVT.triplets(numberOfTriangles*9);
@@ -136,25 +128,21 @@ DVT.parserFSM.prototype.parse = function(object, data, loader) {
     }
 
     if (_cras) {
-
-        object._transform.translateX(parseFloat(_cras[0]));
-        object._transform.translateY(parseFloat(_cras[1]));
-        object._transform.translateZ(parseFloat(_cras[2]));
-
+        var transform = new THREE.Vector3(parseFloat(_cras[0]),parseFloat(_cras[1]),parseFloat(_cras[2]));
+        for(var j = 0; j < geometry.vertices.length; j++) {
+            if(geometry.vertices[j]) {
+                geometry.vertices[j].add(transform);
+            }
+        }
     }
 
-
-
-    // .. and set the objectType to triangles
-    object._type = DVT.displayable.types.TRIANGLES;
-
-    DVT.TIMERSTOP(this._classname + '.parse');
-
-    // the object should be set up here, so let's fire a modified event
-    var modifiedEvent = new DVT.event.ModifiedEvent();
-    modifiedEvent._object = object;
-    modifiedEvent._container = container;
-    this.dispatchEvent(modifiedEvent);
+    //finish parsing
+    geometry.computeFaceNormals();
+    object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshBasicMaterial({color:0xf00ff0}));
+    object.THREEContainer.visible = object._fibersVisible;
+    object._loaded = true;
+    object._locked = false;
+    object.dispatchEvent({type: 'PROCESSED', target: object});
 
 };
 
