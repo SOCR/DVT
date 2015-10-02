@@ -263,6 +263,21 @@ DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
         case 'stl':
             return true;
             break;
+        case 'pdb':
+        default:
+            return false
+    }
+};
+
+/**
+ * determines whether resources will be loaded using custom XHR, or via THREE's native loader
+ * @returns {boolean}
+ */
+DVT.loadHelper.prototype.isTHREE = function () {//console.count('isBinary');
+    switch(this._extension) {
+        case 'pdb':
+            return true;
+            break;
         default:
             return false
     }

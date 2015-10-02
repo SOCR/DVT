@@ -65,7 +65,7 @@ DVT.parserSTL.prototype.parse = function(object, data, loader) {
     }
 
     geometry.computeFaceNormals();
-    object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshNormalMaterial({color:0xf043a0, wireframe: true}));
+    object.THREEContainer = new THREE.Mesh(geometry,new THREE.MeshLambertMaterial({color:0xf043a0, wireframe: true}));
     object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;
     object._locked = false;
