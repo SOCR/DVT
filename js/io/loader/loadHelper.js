@@ -90,7 +90,7 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
         to: { color: '#6FD57F'},
-        step: function (state, bar) {console.count('step');
+        step: function (state, bar) {//console.count('step');
             bar.path.setAttribute('stroke', state.color);
         }
     });
@@ -98,7 +98,7 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
         to: { color: '#6FD57F'},
-        step: function(state, bar) {console.count('step');
+        step: function(state, bar) {//console.count('step');
             bar.path.setAttribute('stroke', state.color);
         }
     });
@@ -106,7 +106,7 @@ DVT.loadHelper = function (index, filepath, modalID, container) {
         color: '#FC5B3F',
         from: { color: '#FC5B3F'},
         to: { color: '#6FD57F'},
-        step: function(state, bar) {console.count('step');
+        step: function(state, bar) {//console.count('step');
             bar.path.setAttribute('stroke', state.color);
         }
     });
@@ -116,7 +116,7 @@ goog.inherits(DVT.loadHelper, DVT.base);
 /**
  * initiates XHR and parsing protocol
  */
-DVT.loadHelper.prototype.load = function () {console.count('load');
+DVT.loadHelper.prototype.load = function () {//console.count('load');
     $('#' + this._modalID).modal('show');
     var XHR = new XMLHttpRequest();
 
@@ -147,7 +147,7 @@ DVT.loadHelper.prototype.load = function () {console.count('load');
  * @param data
  * @private
  */
-DVT.loadHelper.prototype._parseInit = function(data) {console.count('parseInit');
+DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit');
     switch (this._extension) {
         case 'trk':
             var parser = new DVT.parserTRK();
@@ -158,7 +158,7 @@ DVT.loadHelper.prototype._parseInit = function(data) {console.count('parseInit')
     }
 };
 
-DVT.loadHelper.prototype.loadFailed = function () {console.count('loadFailed');
+DVT.loadHelper.prototype.loadFailed = function () {//console.count('loadFailed');
     console.log('LOAD FAILED');
     alert('load failed');
 }
@@ -167,7 +167,7 @@ DVT.loadHelper.prototype.loadFailed = function () {console.count('loadFailed');
  * updates progressbar to reflect current loading status
  * @param oEvent the returned event
  */
-DVT.loadHelper.prototype.updateLoad =function(oEvent) {console.count('updateLoad');
+DVT.loadHelper.prototype.updateLoad =function(oEvent) {//console.count('updateLoad');
     if (oEvent.lengthComputable) {
         var percentComplete = oEvent.loaded / oEvent.total;
         this._loadLine.animate(percentComplete);
@@ -181,7 +181,7 @@ DVT.loadHelper.prototype.updateLoad =function(oEvent) {console.count('updateLoad
  * @param oEvent the returned event
  */
 DVT.loadHelper.prototype.updateParse=function(percentComplete)
-{console.count('updateParse');
+{//console.count('updateParse');
     this._parseLine.animate(percentComplete);
 };
 
@@ -190,7 +190,7 @@ DVT.loadHelper.prototype.updateParse=function(percentComplete)
  * @param oEvent the returned event
  */
 DVT.loadHelper.prototype.updateRender=function(oEvent)
-{console.count('updateRender');
+{//console.count('updateRender');
     if (oEvent.lengthComputable) {
         var percentComplete = oEvent.loaded / oEvent.total;
         this._renderLine.animate(percentComplete);
@@ -199,7 +199,7 @@ DVT.loadHelper.prototype.updateRender=function(oEvent)
     }
 };
 
-DVT.loadHelper.prototype.finishLoad = function(XHR) {console.count('finishLoad');
+DVT.loadHelper.prototype.finishLoad = function(XHR) {//console.count('finishLoad');
     if(XHR.status === 404)
     {
         alert('error: file not found');
@@ -211,20 +211,20 @@ DVT.loadHelper.prototype.finishLoad = function(XHR) {console.count('finishLoad')
 
 };
 
-DVT.loadHelper.prototype.finishParse = function() {console.count('finishParse');
+DVT.loadHelper.prototype.finishParse = function() {//console.count('finishParse');
     this._parseLine.animate(1,this._removeElement.bind(this, this._parseID, this._parseLine));
 };
 
-DVT.loadHelper.prototype.finishRender = function() {console.count('finishRender');
+DVT.loadHelper.prototype.finishRender = function() {//console.count('finishRender');
     this._renderLine.animate(1,this._removeElement.bind(this, this._renderID, this._renderLine));
 };
 
-DVT.loadHelper.prototype._addElement = function(elementID, message) {console.count('addElement');
+DVT.loadHelper.prototype._addElement = function(elementID, message) {//console.count('addElement');
     $('#' + this._modalID + ' .modal-body').append('<div id = holder' + elementID + '><span>' + message + '</span><span id=' + elementID + '></span></div><br>');
 };
 
 DVT.loadHelper.prototype._removeElement=function(elementID, bar)
-{console.count('removeElement');
+{//console.count('removeElement');
     window.setTimeout(
         this.dispatchEvent.bind(this, {type:'PROGRESS', target: this}),1000)
     $('#holder' + elementID).fadeOut(700,function(){
@@ -236,7 +236,7 @@ DVT.loadHelper.prototype._removeElement=function(elementID, bar)
  * determines whether file needs to be parsed as binary or JSON style data
  * @returns {boolean}
  */
-DVT.loadHelper.prototype.isBinary = function () {console.count('isBinary');
+DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
     switch(this._extension) {
         case 'trk':
             return true;

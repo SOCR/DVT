@@ -41,3 +41,6 @@ This includes, but is not limited to:
 
 <li> Cell and nuclear visualization </li>
 
+## Desired Improvements/Extensions
+
+<li>Update DVTR to utilize the NextGen open-source XTK-extension (AMI), https://github.com/FNNDSC/ami</li>

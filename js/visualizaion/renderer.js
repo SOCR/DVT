@@ -138,7 +138,7 @@ goog.inherits(DVT.renderer, DVT.base);
 /**
  * Resizes the control to fit the size of the container.
  */
-DVT.renderer.prototype.resize = function() {console.count('renderer.resize');
+DVT.renderer.prototype.resize = function() {//console.count('renderer.resize');
 
     // grab the new width and height of the container
     var container = goog.dom.getElement(this._container), canvas = goog.dom.getElement(this._canvas);
@@ -173,7 +173,7 @@ DVT.renderer.prototype.resize = function() {console.count('renderer.resize');
  *
  * @return {?DVT.camera} The camera.
  */
-DVT.renderer.prototype.__defineGetter__('camera', function() {console.count('renderer.getCam');
+DVT.renderer.prototype.__defineGetter__('camera', function() {//console.count('renderer.getCam');
 
     return this._camera;
 
@@ -187,7 +187,7 @@ DVT.renderer.prototype.__defineGetter__('camera', function() {console.count('ren
  * @return {!Element|HTMLBodyElement} The container of this renderer.
  * @public
  */
-DVT.renderer.prototype.__defineGetter__('container', function() {console.count('renderer.getContainer');
+DVT.renderer.prototype.__defineGetter__('container', function() {//console.count('renderer.getContainer');
 
     return this._container;
 
@@ -203,7 +203,7 @@ DVT.renderer.prototype.__defineGetter__('container', function() {console.count('
  * @throws {Error} An error, if the given container is invalid.
  * @public
  */
-DVT.renderer.prototype.__defineSetter__('container', function(container) {console.count('setContainer');
+DVT.renderer.prototype.__defineSetter__('container', function(container) {//console.count('setContainer');
 
     // check if a container is passed
     if (!goog.isDefAndNotNull(container)) {
@@ -245,7 +245,7 @@ DVT.renderer.prototype.__defineSetter__('container', function(container) {consol
  * @throws {Error} An exception if there were problems during initialization.
  * @protected
  */
-DVT.renderer.prototype.init = function(_contextName) {console.count('renderer.init');
+DVT.renderer.prototype.init = function(_contextName) {//console.count('renderer.init');
 
     // create the canvas
     var _canvas = goog.dom.createDom('canvas');
@@ -284,7 +284,7 @@ DVT.renderer.prototype.init = function(_contextName) {console.count('renderer.in
  * @param {!DVT.object} object The object to add to this renderer.
  * @throws {Error} An exception if something goes wrong.
  */
-DVT.renderer.prototype.add = function(object) {console.count('renderer.add');
+DVT.renderer.prototype.add = function(object) {//console.count('renderer.add');
 
     // we know that objects which are directly added using this function are def.
     // top-level objects, meaning that they do not have a parent
@@ -310,7 +310,7 @@ DVT.renderer.prototype.add = function(object) {console.count('renderer.add');
  * @throws {Error} An exception if something goes wrong.
  * @protected
  */
-DVT.renderer.prototype.update_ = function(object) {console.count('renderer.update_');
+DVT.renderer.prototype.update_ = function(object) {//console.count('renderer.update_');
     if (!this._canvas || !this._context) {
 
         throw new Error('The renderer was not initialized properly.');
@@ -339,7 +339,7 @@ DVT.renderer.prototype.update_ = function(object) {console.count('renderer.updat
  * @throws {Error} If the given object was invalid.
  * @public
  */
-DVT.renderer.prototype.get = function(object) {console.count('renderer.get');
+DVT.renderer.prototype.get = function(object) {//console.count('renderer.get');
 
     if (!goog.isDefAndNotNull(object)) {
 
@@ -378,7 +378,7 @@ DVT.renderer.prototype.get = function(object) {console.count('renderer.get');
  *
  * @public
  */
-DVT.renderer.prototype.render = function() {console.count('renderer.render');
+DVT.renderer.prototype.render = function() {//console.count('renderer.render');
     if (!this._canvas || !this._context) {
 
         throw new Error('The renderer was not initialized properly.');
@@ -397,7 +397,7 @@ DVT.renderer.prototype.render = function() {console.count('renderer.render');
  *
  * @public
  */
-DVT.renderer.prototype.onRender = function() {console.count('renderer.onRender');
+DVT.renderer.prototype.onRender = function() {//console.count('renderer.onRender');
 
     // do nothing
 };
@@ -408,7 +408,7 @@ DVT.renderer.prototype.onRender = function() {console.count('renderer.onRender')
  *
  * @public
  */
-DVT.renderer.prototype.afterRender = function() {console.count('renderer.afterRender');
+DVT.renderer.prototype.afterRender = function() {//console.count('renderer.afterRender');
 
     // do nothing
 };
@@ -424,7 +424,7 @@ DVT.renderer.prototype.afterRender = function() {console.count('renderer.afterRe
  * @throws {Error} If anything goes wrong.
  * @protected
  */
-DVT.renderer.prototype.render_ = function(picking, invoked) {console.count('renderer.render_');
+DVT.renderer.prototype.render_ = function(picking, invoked) {//console.count('renderer.render_');
 
 
 

@@ -13,7 +13,7 @@ goog.require('DVT.base');
  * @extends DVT.base
  */
 DVT.object = function(copyFrom)
-{console.count('object');
+{//console.count('object');
 
     goog.base(this);
 
@@ -31,5 +31,20 @@ DVT.object = function(copyFrom)
         this.THREEContainer=copyFrom.THREEContainer;
     }
 };
+
+/**
+ * animation subroutines, called post-render
+ */
+DVT.object.prototype.animate = function () {
+    //implement in children
+};
+
+/**
+ *
+ * @param renderer {!THREE.renderer} THREE.js renderer object into which object is being drawn
+ */
+DVT.object.prototype.init = function (renderer) {
+    //implement in children
+}
 
 goog.inherits(DVT.object, DVT.base);
