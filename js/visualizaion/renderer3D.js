@@ -96,7 +96,7 @@ DVT.renderer3D = function() {
      * @type {boolean}
      * @private
      */
-    this._animateFrame = false;
+    this._animateFrame = true;
 };
 // inherit from DVT.renderer
 goog.inherits(DVT.renderer3D, DVT.renderer);
@@ -166,7 +166,24 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     //add camera to scene
     this._scene.add(this._camera);
+    var directionalLight = new THREE.DirectionalLight( 0x00ffff, 0.5 );
+    directionalLight.position.set( 1, 1, 1 );
+    var amlight = new THREE.AmbientLight( 0xffffff );
 
+    var spotLight = new THREE.SpotLight( 0xffffff,2 );
+    spotLight.position.set( 100, 1000, 100 );
+
+    spotLight.castShadow = true;
+
+    spotLight.shadowMapWidth = 1024;
+    spotLight.shadowMapHeight = 1024;
+
+    spotLight.shadowCameraNear = 500;
+    spotLight.shadowCameraFar = 4000;
+    spotLight.shadowCameraFov = 30;
+    //this._scene.add( directionalLight );
+    //this._scene.add( amlight );
+    this._scene.add( spotLight );
     this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
     this._renderer.setSize(this._width, this._height);
 
@@ -271,7 +288,6 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     console.log(this.get(object));
     var loaded = object._loaded;
     var locked = object._locked;
-
     /*
      var id = object._id;
      var points = object._points;
@@ -923,10 +939,10 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     // add the object to the internal tree which reflects the rendering order
     // (based on opacity)
     if (!existed) {
+        object.init(this._renderer);
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
-        object.init(this._renderer);
         this.render();
 
         //TODO remove after optimization tests are complete

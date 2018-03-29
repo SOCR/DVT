@@ -8,6 +8,9 @@ goog.require('goog.events');
 goog.require('ProgressBar');
 goog.require('bootstrap');
 goog.require('DVT.parserTRK');
+goog.require('DVT.parserFSM');
+goog.require('DVT.parserSTL');
+goog.require('DVT.parserPDB');
 
 /**
  * creates a loadHelper object
@@ -153,6 +156,23 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             var parser = new DVT.parserTRK();
             parser.parse(this._container, data, this);
             break;
+        case 'smoothwm':
+        case 'sphere':
+        case 'pial':
+        case 'inflated':
+        case 'orig':
+        case 'fsm':
+            var parser = new DVT.parserFSM();
+            parser.parse(this._container, data, this);
+            break;
+        case 'stl':
+            var parser = new DVT.parserSTL();
+            parser.parse(this._container, data, this);
+            break;
+        case 'pdb':
+            var parser = new DVT.parserPDB();
+            parser.parse(this._container, data, this);
+            break;
         default:
             alert('Parser not found');
     }
@@ -239,6 +259,28 @@ DVT.loadHelper.prototype._removeElement=function(elementID, bar)
 DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
     switch(this._extension) {
         case 'trk':
+        case 'smoothwm':
+        case 'sphere':
+        case 'pial':
+        case 'inflated':
+        case 'orig':
+        case 'fsm':
+        case 'stl':
+            return true;
+            break;
+        case 'pdb':
+        default:
+            return false
+    }
+};
+
+/**
+ * determines whether resources will be loaded using custom XHR, or via THREE's native loader
+ * @returns {boolean}
+ */
+DVT.loadHelper.prototype.isTHREE = function () {//console.count('isBinary');
+    switch(this._extension) {
+        case 'pdb':
             return true;
             break;
         default:
