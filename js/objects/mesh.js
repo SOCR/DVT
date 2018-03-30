@@ -31,15 +31,18 @@ DVT.mesh = function(copyFrom) {
      * @private
      */
     this._meshVisible = true;
+    
+    this._expandAnimate = false;
+    
 
 };
 goog.inherits(DVT.mesh, DVT.loaded);
 
 /**
- * sets visibility of particle system on/off
- * @param status {bool} indicator to show/hide particles
+ * sets visibility of mesh on/off
+ * @param status {bool} indicator to show/hide mesh
  */
-DVT.fiber.prototype.showMesh = function (status) {
+DVT.mesh.prototype.showMesh = function (status) {
     if(this.THREEContainer) {
         if (status) {
             this.THREEContainer.visible = true;
@@ -49,3 +52,18 @@ DVT.fiber.prototype.showMesh = function (status) {
     }
     this._meshVisible = status;
 };
+
+DVT.mesh.prototype.init = function (renderer) {
+    this._renderer = renderer;
+    
+    console.
+    if(this._voronoiSystem)
+    {
+            
+    }
+};
+
+DVT.mesh.prototype.calcVoronoi = function()
+{
+    
+}

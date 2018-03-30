@@ -20,7 +20,7 @@ test = function() {
 
     // add the object
     test_renderer.add(fibers);
-    test_renderer.add(fibers2);
+   // test_renderer.add(fibers2);
     test_renderer.add(fibers3);
 
     // .. and render it
@@ -31,7 +31,7 @@ test = function() {
     fibers3.enableAnimation(true);
 
     fibers3.showParticles(true);
-    fibers3.enableAnimation(true);
+    fibers3.enableAnimation(false);
     fibers3.showFibers(false);
 
     fibers.showParticles(true);
