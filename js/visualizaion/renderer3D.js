@@ -168,9 +168,9 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     this._scene.add(this._camera);
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
     directionalLight.position.set( 1, 1, 1 );
-    var amlight = new THREE.AmbientLight( 0xffffff );
+    var amlight = new THREE.AmbientLight( 0x333333 );
 
-    var spotLight = new THREE.SpotLight( 0xffffff,2 );
+    var spotLight = new THREE.SpotLight( 0x888888,2 );
     spotLight.position.set( 200, -200, -200 );
 
     spotLight.castShadow = true;
@@ -182,12 +182,12 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     spotLight.shadowCameraFar = 4000;
     spotLight.shadowCameraFov = 30;
     //this._scene.add( directionalLight );
-    //this._scene.add( amlight );
+    this._scene.add( amlight );
     this._scene.add( spotLight );
     
     
     
-    var spotLight2 = new THREE.SpotLight( 0xffffff,2 );
+    var spotLight2 = new THREE.SpotLight( 0x888888,2 );
     spotLight2.position.set( -200, 200, 200 );
 
     spotLight2.castShadow = true;
