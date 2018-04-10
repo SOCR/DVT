@@ -238,7 +238,6 @@ DVT.box.prototype.init = function (renderer) {
 
 DVT.box.prototype.calcVoronoi = function()
 {
-    console.log(this._voronoiSystem);
     var geom = this.THREEContainer.geometry;
     var curPoint = this._voronoiSystem[this._voronoiIndex]
     for(var j=0;j<this._voronoiSystem.length;j++)
@@ -272,6 +271,4 @@ DVT.box.prototype.calcVoronoi = function()
 
     this.THREEContainer = new THREE.Mesh(geom, material);
     
-    
-    console.log(this.THREEContainer.geometry)
 }
