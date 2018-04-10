@@ -56,7 +56,6 @@ DVT.mesh.prototype.showMesh = function (status) {
 DVT.mesh.prototype.init = function (renderer) {
     this._renderer = renderer;
     
-    console.
     if(this._voronoiSystem)
     {
             
