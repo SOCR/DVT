@@ -259,10 +259,12 @@ DVT.box.prototype.calcVoronoi = function()
             
             plane.translate(normal);
             
-            geom = sliceGeometry(geom, plane);
+            geom = sliceGeometry(geom, plane, true);
+            
+            geom.computeFaceNormals();
+            geom.computeVertexNormals();
         }
     }
-    
     geom.computeFaceNormals();
     
     //create material
