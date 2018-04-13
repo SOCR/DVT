@@ -72,7 +72,50 @@ DVT.sphere.prototype.init = function (renderer) {
     }
     geometry.computeFaceNormals();
     //create material
-    var material = new THREE.MeshPhongMaterial({color:0x00ff00});
+    var material = new THREE.MeshPhongMaterial({color:this._color});
 
     this.THREEContainer = new THREE.Mesh(geometry, material);
+    if(this._voronoiSystem)
+    {
+        this.calcVoronoi();
+    }
+}
+
+
+
+DVT.sphere.prototype.calcVoronoi = function()
+{
+    var geom = this.THREEContainer.geometry;
+    var curPoint = this._voronoiSystem[this._voronoiIndex]
+    for(var j=0;j<this._voronoiSystem.length;j++)
+    {
+        if(j!=this._voronoiIndex)
+        {
+            var normal = new THREE.Vector3(curPoint.x, curPoint.y, curPoint.z);
+            normal.sub(this._voronoiSystem[j]);
+            normal.divideScalar(2);
+            
+            var plane = new THREE.Plane(normal, 0);
+            
+            normal = new THREE.Vector3(curPoint.x, curPoint.y, curPoint.z);
+            
+            
+            normal.add(this._voronoiSystem[j]);
+            normal.divideScalar(2);
+            
+            plane.translate(normal);
+            
+            geom = sliceGeometry(geom, plane, true);
+            
+            geom.computeFaceNormals();
+            geom.computeVertexNormals();
+        }
+    }
+    geom.computeFaceNormals();
+    
+    //create material
+    var material = new THREE.MeshPhongMaterial({color:this._color});
+
+    this.THREEContainer = new THREE.Mesh(geom, material);
+    
 }
