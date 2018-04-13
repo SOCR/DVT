@@ -15,6 +15,7 @@
     goog.require('DVT.fiber');
     goog.require('DVT.mesh');
     goog.require('DVT.box');
+    goog.require('DVT.sphere');
 
 /**
  * From http://javascript.about.com/library/bladdjs.htm Import javascript.
