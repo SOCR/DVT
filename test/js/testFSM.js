@@ -37,7 +37,7 @@ test = function() {
 
 
 
-    cube = new DVT.box();
+    cube = new DVT.sphere();
 
     // setting the edge length can also be skipped since 20 is the default
     cube.lengthX = cube.lengthY = cube.lengthZ = 100;
@@ -48,9 +48,9 @@ test = function() {
     // [1,1,1] (== white) is also the default so this can be skipped aswell
     cube.color = [1, 1, 1];
 
-    //test_renderer.add(cube);
-    test_renderer.add(porsche);
-    test_renderer.add(lh);
+    test_renderer.add(cube);
+    //test_renderer.add(porsche);
+    //test_renderer.add(lh);
     //test_renderer.add(molecule);
     //test_renderer.add(molecule2);
 
