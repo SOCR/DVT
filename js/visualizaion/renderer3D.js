@@ -168,7 +168,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     this._scene.add(this._camera);
     var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
     directionalLight.position.set( 1, 1, 1 );
-    var amlight = new THREE.AmbientLight( 0x333333 );
+    var amlight = new THREE.AmbientLight( 0x666666 );
 
     var spotLight = new THREE.SpotLight( 0x888888,2 );
     spotLight.position.set( 200, -200, -200 );
