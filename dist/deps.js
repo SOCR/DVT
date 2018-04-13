@@ -27,6 +27,7 @@ goog.addDependency('../../../../../../js/objects/mesh.js', ['DVT.mesh'], ['DVT.l
 goog.addDependency('../../../../../../js/objects/object.js', ['DVT.object'], ['DVT.base'], false);
 goog.addDependency('../../../../../../js/objects/particles.js', ['DVT.particles'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/objects/primitives.js', ['DVT.primitives'], ['DVT.loaded'], false);
+goog.addDependency('../../../../../../js/objects/sphere.js', ['DVT.sphere'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer2D.js', ['DVT.renderer2D'], ['DVT.renderer'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['DVT.renderer', 'THREE', 'orbitControls'], false);
