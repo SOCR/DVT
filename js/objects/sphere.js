@@ -65,7 +65,7 @@ DVT.sphere.prototype.__defineSetter__('radius', function(radius) {
 
 
 DVT.sphere.prototype.init = function (renderer) {
-    var geometry = new THREE.SphereGeometry(this._radius);
+    var geometry = new THREE.SphereGeometry(this._radius,30,30);
     for(var j=0;j<geometry.vertices.length;j++)
     {
         geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]))

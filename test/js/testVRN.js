@@ -19,7 +19,7 @@ test = function() {
     // add some transparency
     lh.opacity = 0.6;
     lh.showMesh(false);
-    test_renderer.add(lh);
+    //test_renderer.add(lh);
     
     
     
@@ -39,10 +39,10 @@ test = function() {
     }
     for(var j=0;j<numPoints-0;j++)
     {
-        var littleCube = new DVT.mesh();
+        var littleCube = new DVT.sphere();
 
     // setting the edge length can also be skipped since 20 is the default
-    littleCube.lengthX = littleCube.lengthY = littleCube.lengthZ = 130;
+    littleCube.radius = 130;
 
     // can also be skipped since [0,0,0] is the default center
     littleCube.center = [0, -20, 10];
@@ -57,11 +57,11 @@ test = function() {
     
     littleCube._voronoiIndex =j;
     littleCube._voronoiSystem = fromCopy;
-    littleCube._voronoiContainer = lh.THREEContainer;
+    //littleCube._voronoiContainer = lh.THREEContainer;
         
     test_renderer.add(littleCube);
     }
-}, 4000);    
+}, 1000);    
     
     
 
