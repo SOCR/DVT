@@ -40,7 +40,7 @@ test = function() {
     cube = new DVT.sphere();
 
     // setting the edge length can also be skipped since 20 is the default
-    cube.lengthX = cube.lengthY = cube.lengthZ = 100;
+    cube.radius= 100;
 
     // can also be skipped since [0,0,0] is the default center
     cube.center = [-30, -30, -300];
