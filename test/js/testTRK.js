@@ -20,8 +20,8 @@ test = function() {
 
     // add the object
     test_renderer.add(fibers);
-   // test_renderer.add(fibers2);
-    test_renderer.add(fibers3);
+    test_renderer.add(fibers2);
+    //test_renderer.add(fibers3);
 
     // .. and render it
     test_renderer.render();

@@ -198,7 +198,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     spotLight2.shadowCameraNear = 500;
     spotLight2.shadowCameraFar = 4000;
     spotLight2.shadowCameraFov = 30;
-    //this._scene.add( directionalLight );
+    this._scene.add( directionalLight );
     //this._scene.add( amlight );
     this._scene.add( spotLight2 );
     
