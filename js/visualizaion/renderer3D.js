@@ -140,7 +140,43 @@ DVT.renderer3D.prototype.control = function () {
     this._controller.update();
 
 };
+function listenForKeyEvent(a)
+{
+    if(a.charCode==112)
+        {
+            saveAsImage.call(this);
+        }
+}
+    function saveAsImage() {
+        var imgData, imgNode;
 
+        try {
+            var strMime = "image/png";
+            console.log(this._renderer)
+            console.log(this._renderer.domElement);
+            imgData = $(document).toDataURL(strMime);
+
+            saveFile(imgData, "test.png");
+
+        } catch (e) {
+            console.log(e);
+            return;
+        }
+
+    }
+
+    var saveFile = function (strData, filename) {
+        var link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            document.body.appendChild(link); //Firefox requires the link to be in the body
+            link.download = filename;
+            link.href = strData;
+            link.click();
+            document.body.removeChild(link); //remove the link when done
+        } else {
+            location.replace(uri);
+        }
+    }
 /**
  * @inheritDoc
  */
@@ -203,7 +239,8 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     this._scene.add( spotLight2 );
     
     
-    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
+    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true, preserveDrawingBuffer: true, antialias:true} );
+    $(document).keypress(listenForKeyEvent.bind(this));
     this._renderer.setSize(this._width, this._height);
 
 
