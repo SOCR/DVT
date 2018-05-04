@@ -2,12 +2,13 @@
  * Created by shusa_000 on 9/21/2016.
  */
 
+//adapted from the XTK parser @https://github.com/xtk/X
+
 // provides
 goog.provide('DVT.parserFSM');
 
 // requires
 goog.require('DVT.parser');
-;
 goog.require('THREE');
 
 /**
