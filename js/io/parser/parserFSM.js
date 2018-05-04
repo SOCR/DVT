@@ -2,12 +2,13 @@
  * Created by shusa_000 on 9/21/2016.
  */
 
+//adapted from the XTK parser @https://github.com/xtk/X
+
 // provides
 goog.provide('DVT.parserFSM');
 
 // requires
 goog.require('DVT.parser');
-;
 goog.require('THREE');
 
 /**
@@ -139,6 +140,8 @@ DVT.parserFSM.prototype.parse = function (object, data, loader) {
 
     //finish parsing
     geometry.computeFaceNormals();
+    geometry.mergeVertices();
+    geometry = new THREE.BufferGeometry().fromGeometry( geometry );
     object.THREEContainer = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({color: 0xf043a0, wireframe: false}));
     object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;

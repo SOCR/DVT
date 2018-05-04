@@ -300,7 +300,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
     var particleSystemGeometry = new THREE.Geometry();
 
     var l;
-    for (  i = 0, l = mapArray.length/4; i < l; i ++ ) {
+    for (  i = 0, l = mapArray.length/500; i < l; i ++ ) {
 
         var vertex = new THREE.Vector3();
         vertex.x = ( i % object._mapWidth ) / object._mapWidth ;
@@ -323,7 +323,7 @@ DVT.parserTRK.prototype.parse = function(object, data, loader) {//console.count(
 
         },
         vertexShader: DVT.ParticleRenderV,
-        fragmentShader: DVT.ParticleCurveColorF,
+        fragmentShader: DVT.ParticleGradientColorF,
        // blending: THREE.AdditiveBlending,
         depthWrite: false,
         depthTest: false,
