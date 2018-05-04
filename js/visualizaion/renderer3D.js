@@ -144,19 +144,18 @@ function listenForKeyEvent(a)
 {
     if(a.charCode==112)
         {
-            saveAsImage.call(this);
+           requestAnimationFrame(saveAsImage.bind(this));
         }
 }
     function saveAsImage() {
         var imgData, imgNode;
 
         try {
-            var strMime = "image/png";
-            console.log(this._renderer)
-            console.log(this._renderer.domElement);
-            imgData = $(document).toDataURL(strMime);
+            var strMime = "image/jpeg";
+            console.log(this._renderer);
+            imgData = this._renderer.domElement.toDataURL(strMime);
 
-            saveFile(imgData, "test.png");
+            saveFile(imgData, "DVT_capture.jpg");
 
         } catch (e) {
             console.log(e);
@@ -239,7 +238,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     this._scene.add( spotLight2 );
     
     
-    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true, preserveDrawingBuffer: true, antialias:true} );
+    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas,  preserveDrawingBuffer: true, antialias:true} );
     $(document).keypress(listenForKeyEvent.bind(this));
     this._renderer.setSize(this._width, this._height);
 
