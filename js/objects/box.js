@@ -6,6 +6,8 @@ goog.provide('DVT.box');
 
 goog.require('DVT.primitives');
 
+goog.require('THREE.slice');
+
 /**
  * Class representing cube/box surfaces
  * @constructor
@@ -29,7 +31,9 @@ DVT.box = function(copyFrom) {
      * @private
      */
     this._width = 1;
-
+    
+    this._color=0x00ff00
+    
     /**
      * length of box in the z-direction
      * @type {number}
@@ -50,6 +54,12 @@ DVT.box = function(copyFrom) {
         this._width = copyFrom._width;
         this._depth = copyFrom._depth;
     }
+    
+    
+    
+    this._voronoiSystem = null;
+    
+    this._voronoiIndex = 0;
 };
 
 goog.inherits(DVT.box, DVT.primitives);
@@ -215,7 +225,11 @@ DVT.box.prototype.init = function (renderer) {
     }
     geometry.computeFaceNormals();
     //create material
-    var material = new THREE.MeshPhongMaterial({color:0x00ff00});
+    var material = new THREE.MeshPhongMaterial({color:this._color});
 
     this.THREEContainer = new THREE.Mesh(geometry, material);
+    if(this._voronoiSystem)
+    {
+        this.calcVoronoi();
+    }
 }
