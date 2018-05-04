@@ -9,6 +9,7 @@ goog.require('ProgressBar');
 goog.require('bootstrap');
 goog.require('DVT.parserTRK');
 goog.require('DVT.parserFSM');
+goog.require('DVT.parserOFF');
 goog.require('DVT.parserSTL');
 goog.require('DVT.parserPDB');
 
@@ -165,6 +166,10 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             var parser = new DVT.parserFSM();
             parser.parse(this._container, data, this);
             break;
+        case 'off':
+            var parser = new DVT.parserOFF();
+            parser.parse(this._container, data, this);
+            break;
         case 'stl':
             var parser = new DVT.parserSTL();
             parser.parse(this._container, data, this);
@@ -266,6 +271,7 @@ DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
         case 'orig':
         case 'fsm':
         case 'stl':
+        case 'off':
             return true;
             break;
         case 'pdb':
