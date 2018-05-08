@@ -13,6 +13,7 @@ goog.addDependency('../../../../../../js/io/parser/parserPDB.js', ['DVT.parserPD
 goog.addDependency('../../../../../../js/io/parser/parserSTL.js', ['DVT.parserSTL'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../../js/io/parser/parserTRK.js', ['DVT.parserTRK'], ['DVT.parser', 'DVT.shader', 'THREE'], false);
 goog.addDependency('../../../../../../js/io/parser/parserVTK.js', ['DVT.parserVTK'], ['DVT.parser', 'THREE'], false);
+goog.addDependency('../../../../../../js/lib/CCapture.js', ['CCapture'], [], false);
 goog.addDependency('../../../../../../js/lib/EdgesGeometry.js', ['THREE.EdgesGeometry'], ['THREE'], false);
 goog.addDependency('../../../../../../js/lib/FBOUtils.js', ['THREE.FBOUtils'], ['THREE'], false);
 goog.addDependency('../../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);
@@ -32,5 +33,5 @@ goog.addDependency('../../../../../../js/objects/primitives.js', ['DVT.primitive
 goog.addDependency('../../../../../../js/objects/sphere.js', ['DVT.sphere'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer2D.js', ['DVT.renderer2D'], ['DVT.renderer'], false);
-goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['DVT.renderer', 'THREE', 'orbitControls'], false);
+goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['CCapture', 'DVT.renderer', 'THREE', 'orbitControls'], false);
 goog.addDependency('../../../../../../js/visualizaion/shader.js', ['DVT.shader'], [], false);
