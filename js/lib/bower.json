@@ -29,7 +29,6 @@
     "closure-compiler": "~0.2.6",
     "jquery": "~2.1.4",
     "progressbar.js": "~0.8.1",
-    "google-closure-library": "v20160119",
-    "threejs": "*"
+    "google-closure-library": "v20160119"
   }
 }
