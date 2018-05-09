@@ -91,10 +91,28 @@ DVT.renderer3D = function() {
      */
 
     this._renderer =null
-    
+
+    /**
+     * boolean variable dictating if a screenshot needs to be taken
+     * @type {boolean}
+     * @private
+     */
     this._capture = false;
-    
+
+    /**
+     * boolean variable dictating recording status.
+     * TRUE: Recording
+     * FALSE: Not recording
+     * @type {boolean}
+     * @private
+     */
     this._record = false;
+
+    /**
+     * Recording module for making recordings
+     * @type {CCapture}
+     * @private
+     */
     this._recorder = new CCapture({
         verbose: false,
         display: false,
@@ -157,7 +175,8 @@ function listenForKeyEvent(a)
     {
         this._capture = true;
     }
-    
+
+
     //m
     if(a.charCode==109)
     {

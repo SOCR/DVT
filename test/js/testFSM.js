@@ -11,7 +11,7 @@ test = function() {
 
     var lh = new DVT.mesh();
     // .. attach a Freesurfer .smoothwm mesh
-    lh.file = 'data/cell1.off';
+    lh.file = "data/cell1.off";
     // change the color to a smooth red
     lh.color = [0.7, 0.2, 0.2];
     // add some transparency

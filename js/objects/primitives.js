@@ -18,11 +18,11 @@ goog.require('THREE.EdgesGeometry');
  */
 
 DVT.primitives = function(copyFrom) {
-    goog.base(this, 'constructor', copyFrom);
+    goog.base(this, "constructor", copyFrom);
     /**
      * @inheritDoc
      */
-    this.file = 'none.none';
+    this.file = "none.none";
 
     this._loaded = true;
 
@@ -60,9 +60,8 @@ DVT.primitives.prototype.calcVoronoi = function()
             var normal = new THREE.Vector3(curPoint.x, curPoint.y, curPoint.z);
             normal.sub(this._voronoiSystem[j]);
             normal.divideScalar(2);
-            
             var plane = new THREE.Plane(normal, 0);
-            
+
             normal = new THREE.Vector3(curPoint.x, curPoint.y, curPoint.z);
             
             
