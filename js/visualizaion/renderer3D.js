@@ -176,7 +176,11 @@ function listenForKeyEvent(a)
         this._capture = true;
     }
 
-
+//p
+    if(a.charCode==113)
+    {
+        console.log(this._camera.position)
+    }
     //m
     if(a.charCode==109)
     {
@@ -228,6 +232,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     //configure camera
     this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
     this._camera.position.z = 500;
+    this._camera.position.set(1013.3669635705182,901.6857135617163,-89.96293528451858);
 
     //setup controller
     this._controller = new THREE.OrbitControls(this._camera);
