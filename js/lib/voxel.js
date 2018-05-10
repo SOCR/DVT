@@ -1,21 +1,21 @@
 goog.provide('voxel');
-(function(){var require = function (file, cwd) {
-    var resolved = require.resolve(file, cwd || '/');
-    var mod = require.modules[resolved];
+ requireVox = function (file, cwd) {
+    var resolved = requireVox.resolve(file, cwd || '/');
+    var mod = requireVox.modules[resolved];
     if (!mod) throw new Error(
         'Failed to resolve module ' + file + ', tried ' + resolved
     );
-    var cached = require.cache[resolved];
+    var cached = requireVox.cache[resolved];
     var res = cached? cached.exports : mod();
     return res;
 };
 
-    require.paths = [];
-    require.modules = {};
-    require.cache = {};
-    require.extensions = [".js",".coffee",".json"];
+    requireVox.paths = [];
+    requireVox.modules = {};
+    requireVox.cache = {};
+    requireVox.extensions = [".js",".coffee",".json"];
 
-    require._core = {
+    requireVox._core = {
         'assert': true,
         'events': true,
         'fs': true,
@@ -23,12 +23,12 @@ goog.provide('voxel');
         'vm': true
     };
 
-    require.resolve = (function () {
+    requireVox.resolve = (function () {
         return function (x, cwd) {
             if (!cwd) cwd = '/';
 
-            if (require._core[x]) return x;
-            var path = require.modules.path();
+            if (requireVox._core[x]) return x;
+            var path = requireVox.modules.path();
             cwd = path.resolve('/', cwd);
             var y = cwd || '/';
 
@@ -45,21 +45,21 @@ goog.provide('voxel');
 
             function loadAsFileSync (x) {
                 x = path.normalize(x);
-                if (require.modules[x]) {
+                if (requireVox.modules[x]) {
                     return x;
                 }
 
-                for (var i = 0; i < require.extensions.length; i++) {
-                    var ext = require.extensions[i];
-                    if (require.modules[x + ext]) return x + ext;
+                for (var i = 0; i < requireVox.extensions.length; i++) {
+                    var ext = requireVox.extensions[i];
+                    if (requireVox.modules[x + ext]) return x + ext;
                 }
             }
 
             function loadAsDirectorySync (x) {
                 x = x.replace(/\/+$/, '');
                 var pkgfile = path.normalize(x + '/package.json');
-                if (require.modules[pkgfile]) {
-                    var pkg = require.modules[pkgfile]();
+                if (requireVox.modules[pkgfile]) {
+                    var pkg = requireVox.modules[pkgfile]();
                     var b = pkg.browserify;
                     if (typeof b === 'object' && b.main) {
                         var m = loadAsFileSync(path.resolve(x, b.main));
@@ -109,14 +109,14 @@ goog.provide('voxel');
         };
     })();
 
-    require.alias = function (from, to) {
-        var path = require.modules.path();
+    requireVox.alias = function (from, to) {
+        var path = requireVox.modules.path();
         var res = null;
         try {
-            res = require.resolve(from + '/package.json', '/');
+            res = requireVox.resolve(from + '/package.json', '/');
         }
         catch (err) {
-            res = require.resolve(from, '/');
+            res = requireVox.resolve(from, '/');
         }
         var basedir = path.dirname(res);
 
@@ -124,16 +124,16 @@ goog.provide('voxel');
             var res = [];
             for (var key in obj) res.push(key);
             return res;
-        })(require.modules);
+        })(requireVox.modules);
 
         for (var i = 0; i < keys.length; i++) {
             var key = keys[i];
             if (key.slice(0, basedir.length + 1) === basedir + '/') {
                 var f = key.slice(basedir.length);
-                require.modules[to + f] = require.modules[basedir + f];
+                requireVox.modules[to + f] = requireVox.modules[basedir + f];
             }
             else if (key === basedir) {
-                require.modules[to] = require.modules[basedir];
+                requireVox.modules[to] = requireVox.modules[basedir];
             }
         }
     };
@@ -143,33 +143,33 @@ goog.provide('voxel');
         var global = typeof window !== 'undefined' ? window : {};
         var definedProcess = false;
 
-        require.define = function (filename, fn) {
-            if (!definedProcess && require.modules.__browserify_process) {
-                process = require.modules.__browserify_process();
+        requireVox.define = function (filename, fn) {
+            if (!definedProcess && requireVox.modules.__browserify_process) {
+                process = requireVox.modules.__browserify_process();
                 definedProcess = true;
             }
 
-            var dirname = require._core[filename]
+            var dirname = requireVox._core[filename]
                 ? ''
-                : require.modules.path().dirname(filename)
+                : requireVox.modules.path().dirname(filename)
             ;
 
-            var require_ = function (file) {
-                var requiredModule = require(file, dirname);
-                var cached = require.cache[require.resolve(file, dirname)];
+            var requireVox_ = function (file) {
+                var requireVoxdModule = requireVox(file, dirname);
+                var cached = requireVox.cache[requireVox.resolve(file, dirname)];
 
                 if (cached && cached.parent === null) {
                     cached.parent = module_;
                 }
 
-                return requiredModule;
+                return requireVoxdModule;
             };
-            require_.resolve = function (name) {
-                return require.resolve(name, dirname);
+            requireVox_.resolve = function (name) {
+                return requireVox.resolve(name, dirname);
             };
-            require_.modules = require.modules;
-            require_.define = require.define;
-            require_.cache = require.cache;
+            requireVox_.modules = requireVox.modules;
+            requireVox_.define = requireVox.define;
+            requireVox_.cache = requireVox.cache;
             var module_ = {
                 id : filename,
                 filename: filename,
@@ -178,11 +178,11 @@ goog.provide('voxel');
                 parent: null
             };
 
-            require.modules[filename] = function () {
-                require.cache[filename] = module_;
+            requireVox.modules[filename] = function () {
+                requireVox.cache[filename] = module_;
                 fn.call(
                     module_.exports,
-                    require_,
+                    requireVox_,
                     module_,
                     module_.exports,
                     dirname,
@@ -197,7 +197,7 @@ goog.provide('voxel');
     })();
 
 
-    require.define("path",function(require,module,exports,__dirname,__filename,process,global){function filter (xs, fn) {
+    requireVox.define("path",function(requireVox,module,exports,__dirname,__filename,process,global){function filter (xs, fn) {
         var res = [];
         for (var i = 0; i < xs.length; i++) {
             if (fn(xs[i], i, xs)) res.push(xs[i]);
@@ -334,7 +334,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("__browserify_process",function(require,module,exports,__dirname,__filename,process,global){var process = module.exports = {};
+    requireVox.define("__browserify_process",function(requireVox,module,exports,__dirname,__filename,process,global){var process = module.exports = {};
 
         process.nextTick = (function () {
             var canSetImmediate = typeof window !== 'undefined'
@@ -376,7 +376,7 @@ goog.provide('voxel');
         process.argv = [];
 
         process.binding = function (name) {
-            if (name === 'evals') return (require)('vm')
+            if (name === 'evals') return (requireVox)('vm')
             else throw new Error('No such module. (Possibly not yet loaded)')
         };
 
@@ -385,21 +385,21 @@ goog.provide('voxel');
             var path;
             process.cwd = function () { return cwd };
             process.chdir = function (dir) {
-                if (!path) path = require('path');
+                if (!path) path = requireVox('path');
                 cwd = path.resolve(dir, cwd);
             };
         })();
 
     });
 
-    require.define("/package.json",function(require,module,exports,__dirname,__filename,process,global){module.exports = {"main":"index.js"}
+    requireVox.define("/package.json",function(requireVox,module,exports,__dirname,__filename,process,global){module.exports = {"main":"index.js"}
     });
 
-    require.define("/index.js",function(require,module,exports,__dirname,__filename,process,global){module.exports.meshers = {
-        culled: require('./meshers/culled').mesher,
-        greedy: require('./meshers/greedy').mesher,
-        monotone: require('./meshers/monotone').mesher,
-        stupid: require('./meshers/stupid').mesher
+    requireVox.define("/index.js",function(requireVox,module,exports,__dirname,__filename,process,global){module.exports.meshers = {
+        culled: requireVox('./meshers/culled').mesher,
+        greedy: requireVox('./meshers/greedy').mesher,
+        monotone: requireVox('./meshers/monotone').mesher,
+        stupid: requireVox('./meshers/stupid').mesher
     }
 
         module.exports.geometry = {}
@@ -478,7 +478,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("/meshers/culled.js",function(require,module,exports,__dirname,__filename,process,global){//Naive meshing (with face culling)
+    requireVox.define("/meshers/culled.js",function(requireVox,module,exports,__dirname,__filename,process,global){//Naive meshing (with face culling)
         function CulledMesh(volume, dims) {
             //Precalculate direction vectors for convenience
             var dir = new Array(3);
@@ -531,7 +531,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("/meshers/greedy.js",function(require,module,exports,__dirname,__filename,process,global){var GreedyMesh = (function() {
+    requireVox.define("/meshers/greedy.js",function(requireVox,module,exports,__dirname,__filename,process,global){var GreedyMesh = (function() {
 //Cache buffer internally
         var mask = new Int32Array(4096);
 
@@ -632,7 +632,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("/meshers/monotone.js",function(require,module,exports,__dirname,__filename,process,global){"use strict";
+    requireVox.define("/meshers/monotone.js",function(requireVox,module,exports,__dirname,__filename,process,global){"use strict";
 
         var MonotoneMesh = (function(){
 
@@ -886,7 +886,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("/meshers/stupid.js",function(require,module,exports,__dirname,__filename,process,global){//The stupidest possible way to generate a Minecraft mesh (I think)
+    requireVox.define("/meshers/stupid.js",function(requireVox,module,exports,__dirname,__filename,process,global){//The stupidest possible way to generate a Minecraft mesh (I think)
         function StupidMesh(volume, dims) {
             var vertices = [], faces = [], x = [0,0,0], n = 0;
             for(x[2]=0; x[2]<dims[2]; ++x[2])
@@ -923,7 +923,7 @@ goog.provide('voxel');
 
     });
 
-    require.define("/test.js",function(require,module,exports,__dirname,__filename,process,global){voxel = require('./')
+    requireVox.define("/test.js",function(requireVox,module,exports,__dirname,__filename,process,global){voxel = requireVox('./')
     });
-    require("/test.js");
-})();
+    requireVox("/test.js");
+
