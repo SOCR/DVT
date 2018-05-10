@@ -36,8 +36,9 @@ goog.inherits(DVT.parserGIF, DVT.parser);
 DVT.parserGIF.prototype.parse = function( object, data, loader) {
 
     var geometry = new THREE.Geometry();
-
-    console.log('CALLED');
+    var gif = new GIFuct(data);
+    var frames = gif.decompressFrames(true);
+    console.log(frames);
     //PARSE HERE
 
     console.log(geometry)
