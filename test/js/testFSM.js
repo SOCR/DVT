@@ -11,28 +11,28 @@ test = function() {
 
     var lh = new DVT.mesh();
     // .. attach a Freesurfer .smoothwm mesh
-    lh.file = "data/voxels.gif";
+    lh.file = "data/gif1.gif";
     // change the color to a smooth red
     lh.color = [0.7, 0.2, 0.2];
     // add some transparency
     lh.opacity = 0.6;
     var lh2 = new DVT.mesh();
     // .. attach a Freesurfer .smoothwm mesh
-    lh2.file = 'data/cell2.off';
+    lh2.file = 'data/gif2.gif';
     // change the color to a smooth red
     lh2.color = [0.7, 0.2, 0.2];
     // add some transparency
     lh2.opacity = 0.6;
     var lh3 = new DVT.mesh();
     // .. attach a Freesurfer .smoothwm mesh
-    lh3.file = 'data/cell3.off';
+    lh3.file = 'data/gif3.gif';
     // change the color to a smooth red
     lh3.color = [0.7, 0.2, 0.2];
     // add some transparency
     lh3.opacity = 0.6;
     var lh4 = new DVT.mesh();
     // .. attach a Freesurfer .smoothwm mesh
-    lh4.file = 'data/cell4.off';
+    lh4.file = 'data/gif4.gif';
     // change the color to a smooth red
     lh4.color = [0.7, 0.2, 0.2];
     // add some transparency
@@ -74,7 +74,7 @@ test = function() {
     test_renderer.add(lh);
     test_renderer.add(lh2);
     test_renderer.add(lh3);
-    test_renderer.add(lh4);
+    //test_renderer.add(lh4);
     //test_renderer.add(molecule);
     //test_renderer.add(molecule2);
 
