@@ -9,6 +9,8 @@ goog.require('DVT.parser');
 goog.require('THREE');
 goog.require('gifuct');
 goog.require('voxel-mesh');
+goog.require('surface-nets');
+goog.require('THREE.SubdivisionModifier');
 
 /**
  * Create a parser for the .GIF format.
@@ -46,18 +48,23 @@ DVT.parserGIF.prototype.parse = function( object, data, loader) {
     var dims = [frames[0].dims.width, frames[0].dims.height, frames.length];
     gif = null;
     frames = null;
-    var voxelObj = {dims:dims, voxels: totalPixels};
-    var mesh = new VoxelMesh(voxelObj);
-    geometry = mesh.geometry;
+    //var voxelObj = {dims:dims, voxels: totalPixels};
+    //var mesh = new VoxelMesh(voxelObj);
+    geometry = SurfaceNets(totalPixels,dims);
+    //geometry = mesh.geometry;
     dims = null;
     totalPixels = null;
-    mesh = null;
+    //voxelObj = null;
+    //mesh = null;
+    var modifier = new THREE.BufferSubdivisionModifier(2);
+    modifier.modify(geometry);
+    modifier.modify(geometry);
     console.log(geometry)
     geometry.computeFaceNormals();
     geometry.computeVertexNormals();
     geometry.mergeVertices();
     geometry = new THREE.BufferGeometry().fromGeometry( geometry );
-    object.THREEContainer = new THREE.Mesh(geometry, new THREE.MeshPhongMaterial({color:Math.random()*0xffffff, wireframe: false, opacity:Math.random(), transparent:true}));
+    object.THREEContainer = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({color:Math.random()*0xffffff, wireframe: false, transparent:true}));
     object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;
     object._locked = false;
