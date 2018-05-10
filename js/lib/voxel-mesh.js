@@ -1,9 +1,9 @@
 goog.require('THREE');
-goog.require('voxel')
+goog.require('voxel');
 goog.provide('voxel-mesh');
 
 
-function Mesh(data, mesher, scaleFactor, three) {
+function VoxelMesh(data, mesher, scaleFactor, three) {
     this.THREE = three || THREE;
     this.data = data;
     var geometry = this.geometry = new this.THREE.Geometry();
@@ -46,7 +46,7 @@ function Mesh(data, mesher, scaleFactor, three) {
 
 }
 
-Mesh.prototype.createWireMesh = function(hexColor) {
+VoxelMesh.prototype.createWireMesh = function(hexColor) {
     var wireMaterial = new this.THREE.MeshBasicMaterial({
         color : hexColor || 0xffffff,
         wireframe : true
@@ -58,7 +58,7 @@ Mesh.prototype.createWireMesh = function(hexColor) {
     return wireMesh
 }
 
-Mesh.prototype.createSurfaceMesh = function(material) {
+VoxelMesh.prototype.createSurfaceMesh = function(material) {
     material = material || new this.THREE.MeshNormalMaterial()
     var surfaceMesh  = new this.THREE.Mesh( this.geometry, material )
     surfaceMesh.scale = this.scale
@@ -67,17 +67,17 @@ Mesh.prototype.createSurfaceMesh = function(material) {
     return surfaceMesh
 }
 
-Mesh.prototype.addToScene = function(scene) {
+VoxelMesh.prototype.addToScene = function(scene) {
     if (this.wireMesh) scene.add( this.wireMesh )
     if (this.surfaceMesh) scene.add( this.surfaceMesh )
 }
 
-Mesh.prototype.setPosition = function(x, y, z) {
+VoxelMesh.prototype.setPosition = function(x, y, z) {
     if (this.wireMesh) this.wireMesh.position = new this.THREE.Vector3(x, y, z)
     if (this.surfaceMesh) this.surfaceMesh.position = new this.THREE.Vector3(x, y, z)
 }
 
-Mesh.prototype.faceVertexUv = function(i) {
+VoxelMesh.prototype.faceVertexUv = function(i) {
     var vs = [
         this.meshed.vertices[i*4+0],
         this.meshed.vertices[i*4+1],
