@@ -4,10 +4,11 @@ goog.provide('voxel-mesh');
 
 
 function VoxelMesh(data, mesher, scaleFactor, three) {
+    mesher = requireVox('./meshers/greedy').mesher;
     this.THREE = three || THREE;
     this.data = data;
     var geometry = this.geometry = new this.THREE.Geometry();
-    this.scale = scaleFactor || new this.THREE.Vector3(10, 10, 10);
+    this.scale = scaleFactor || new this.THREE.Vector3(100, 100, 200);
 
     var result = mesher( data.voxels, data.dims );
     this.meshed = result
@@ -17,7 +18,7 @@ function VoxelMesh(data, mesher, scaleFactor, three) {
 
     for (var i = 0; i < result.vertices.length; ++i) {
         var q = result.vertices[i]
-        geometry.vertices.push(new this.THREE.Vector3(q[0], q[1], q[2]))
+        geometry.vertices.push(new this.THREE.Vector3(q[0]-700, q[1]-700, q[2]))
     }
 
     for (var i = 0; i < result.faces.length; ++i) {
@@ -25,16 +26,20 @@ function VoxelMesh(data, mesher, scaleFactor, three) {
 
         var q = result.faces[i]
         if (q.length === 5) {
-            var f = new this.THREE.Face4(q[0], q[1], q[2], q[3])
-            f.color = new this.THREE.Color(q[4])
-            geometry.faces.push(f)
+
+            geometry.faceVertexUvs[0].push(this.faceVertexUv(i))
+            var f = new this.THREE.Face3(q[0], q[1], q[2]);
+            f.color = new this.THREE.Color(q[4]);
+            geometry.faces.push(f);
+            f = new this.THREE.Face3(q[2], q[3], q[0]);
+            f.color = new this.THREE.Color(q[4]);
+            geometry.faces.push(f);
         } else if (q.length == 4) {
             var f = new this.THREE.Face3(q[0], q[1], q[2])
             f.color = new this.THREE.Color(q[3])
             geometry.faces.push(f)
         }
     }
-
     geometry.computeFaceNormals()
 
     geometry.verticesNeedUpdate = true
