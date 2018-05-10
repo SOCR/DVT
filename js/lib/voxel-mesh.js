@@ -18,7 +18,7 @@ function VoxelMesh(data, mesher, scaleFactor, three) {
 
     for (var i = 0; i < result.vertices.length; ++i) {
         var q = result.vertices[i]
-        geometry.vertices.push(new this.THREE.Vector3(q[0]-700, q[1]-700, q[2]))
+        geometry.vertices.push(new this.THREE.Vector3(q[0], q[1], q[2]))
     }
 
     for (var i = 0; i < result.faces.length; ++i) {
