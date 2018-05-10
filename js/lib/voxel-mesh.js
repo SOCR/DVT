@@ -1,22 +1,18 @@
-var THREE = require('three')
+goog.require('THREE');
+goog.provide('voxel-mesh');
 
-module.exports = function(data, mesher, scaleFactor, three) {
-    return new Mesh(data, mesher, scaleFactor, three)
-}
-
-module.exports.Mesh = Mesh
 
 function Mesh(data, mesher, scaleFactor, three) {
-    this.THREE = three || THREE
-    this.data = data
-    var geometry = this.geometry = new this.THREE.Geometry()
-    this.scale = scaleFactor || new this.THREE.Vector3(10, 10, 10)
+    this.THREE = three || THREE;
+    this.data = data;
+    var geometry = this.geometry = new this.THREE.Geometry();
+    this.scale = scaleFactor || new this.THREE.Vector3(10, 10, 10);
 
-    var result = mesher( data.voxels, data.dims )
+    var result = mesher( data.voxels, data.dims );
     this.meshed = result
 
     geometry.vertices.length = 0
-    geometry.faces.length = 0
+    geometry.faces.length = 0''
 
     for (var i = 0; i < result.vertices.length; ++i) {
         var q = result.vertices[i]
@@ -44,7 +40,7 @@ function Mesh(data, mesher, scaleFactor, three) {
     geometry.elementsNeedUpdate = true
     geometry.normalsNeedUpdate = true
 
-    geometry.computeBoundingBox()
+    geometry.computeBoundingBox();
     geometry.computeBoundingSphere()
 
 }
