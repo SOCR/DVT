@@ -12,7 +12,7 @@ function Mesh(data, mesher, scaleFactor, three) {
     this.meshed = result
 
     geometry.vertices.length = 0
-    geometry.faces.length = 0''
+    geometry.faces.length = 0;
 
     for (var i = 0; i < result.vertices.length; ++i) {
         var q = result.vertices[i]
