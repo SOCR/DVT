@@ -1,3 +1,7 @@
+
+goog.provide('surface-nets');
+goog.require('THREE');
+
 // The MIT License (MIT)
 //
 // Copyright (c) 2012-2013 Mikola Lysenko
@@ -100,7 +104,7 @@ var SurfaceNets = (function() {
                     for(var k=0; k<2; ++k, idx += dims[0]*(dims[1]-2))
                         for(var j=0; j<2; ++j, idx += dims[0]-2)
                             for(var i=0; i<2; ++i, ++g, ++idx) {
-                                var p = data[idx];
+                                var p = data[idx]*-1;
                                 grid[g] = p;
                                 mask |= (p < 0) ? (1<<g) : 0;
                             }
@@ -155,7 +159,6 @@ var SurfaceNets = (function() {
                     for(var i=0; i<3; ++i) {
                         v[i] = x[i] + s * v[i];
                     }
-
                     //Add vertex to buffer, store pointer to vertex index in buffer
                     buffer[m] = vertices.length;
                     vertices.push(v);
@@ -190,7 +193,17 @@ var SurfaceNets = (function() {
                 }
         }
 
+        var geometry = new THREE.Geometry();
+        for(var z in vertices)
+        {
+            geometry.vertices.push(new THREE.Vector3(vertices[z][0],vertices[z][1],vertices[z][2]))
+        }
+        for(var z in faces)
+        {
+            geometry.faces.push(new THREE.Face3(faces[z][0],faces[z][1],faces[z][2]))
+            geometry.faces.push(new THREE.Face3(faces[z][2],faces[z][3],faces[z][0]))
+        }
         //All done!  Return the result
-        return { vertices: vertices, faces: faces };
+        return geometry;
     };
 })();
