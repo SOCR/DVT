@@ -8,7 +8,7 @@ goog.addDependency('../../../../../../js/io/loader/loadHelper.js', ['DVT.loadHel
 goog.addDependency('../../../../../../js/io/loader/loader.js', ['DVT.loader'], ['DVT', 'DVT.loadHelper', 'jQuery'], false);
 goog.addDependency('../../../../../../js/io/parser/parser.js', ['DVT.parser'], ['DVT.base'], false);
 goog.addDependency('../../../../../../js/io/parser/parserFSM.js', ['DVT.parserFSM'], ['DVT.parser', 'THREE'], false);
-goog.addDependency('../../../../../../js/io/parser/parserGIF.js', ['DVT.parserGIF'], ['DVT.parser', 'THREE', 'gifuct'], false);
+goog.addDependency('../../../../../../js/io/parser/parserGIF.js', ['DVT.parserGIF'], ['DVT.parser', 'THREE', 'gifuct', 'voxel-mesh'], false);
 goog.addDependency('../../../../../../js/io/parser/parserOFF.js', ['DVT.parserOFF'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../../js/io/parser/parserPDB.js', ['DVT.parserPDB'], ['DVT.parser', 'THREE', 'THREE.PDBUtil'], false);
 goog.addDependency('../../../../../../js/io/parser/parserSTL.js', ['DVT.parserSTL'], ['DVT.parser', 'THREE'], false);
@@ -25,6 +25,8 @@ goog.addDependency('../../../../../../js/lib/jquery.min.js', ['jQuery'], [], fal
 goog.addDependency('../../../../../../js/lib/progressbar.min.js', ['ProgressBar'], [], false);
 goog.addDependency('../../../../../../js/lib/slice.min.js', ['THREE.slice'], ['THREE'], false);
 goog.addDependency('../../../../../../js/lib/three.min.js', ['THREE'], [], false);
+goog.addDependency('../../../../../../js/lib/voxel-mesh.js', ['voxel-mesh'], ['THREE', 'voxel'], false);
+goog.addDependency('../../../../../../js/lib/voxel.js', ['voxel'], [], false);
 goog.addDependency('../../../../../../js/objects/box.js', ['DVT.box'], ['DVT.primitives', 'THREE.slice'], false);
 goog.addDependency('../../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT.loaded', 'DVT.shader', 'THREE', 'THREE.FBOUtils'], false);
 goog.addDependency('../../../../../../js/objects/loaded.js', ['DVT.loaded'], ['DVT.object'], false);
