@@ -10,6 +10,7 @@ goog.require('bootstrap');
 goog.require('DVT.parserTRK');
 goog.require('DVT.parserFSM');
 goog.require('DVT.parserOFF');
+goog.require('DVT.parserGIF');
 goog.require('DVT.parserSTL');
 goog.require('DVT.parserPDB');
 
@@ -168,6 +169,10 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             break;
         case 'off':
             var parser = new DVT.parserOFF();
+            parser.parse(this._container, data, this);
+            break;
+        case 'gif':
+            var parser = new DVT.parserGIF();
             parser.parse(this._container, data, this);
             break;
         case 'stl':

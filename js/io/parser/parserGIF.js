@@ -7,6 +7,7 @@ goog.provide('DVT.parserGIF');
 // requires
 goog.require('DVT.parser');
 goog.require('THREE');
+goog.require('gifuct');
 
 /**
  * Create a parser for the .GIF format.
@@ -36,7 +37,7 @@ DVT.parserGIF.prototype.parse = function( object, data, loader) {
 
     var geometry = new THREE.Geometry();
 
-
+    console.log('CALLED');
     //PARSE HERE
 
     console.log(geometry)
