@@ -1,3 +1,4 @@
+goog.provide('voxel');
 (function(){var require = function (file, cwd) {
     var resolved = require.resolve(file, cwd || '/');
     var mod = require.modules[resolved];

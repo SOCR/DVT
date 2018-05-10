@@ -1,4 +1,5 @@
 goog.require('THREE');
+goog.require('voxel')
 goog.provide('voxel-mesh');
 
 
