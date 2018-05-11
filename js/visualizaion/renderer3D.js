@@ -18,6 +18,7 @@ goog.require('DVT.renderer');
 goog.require('THREE');
 goog.require('orbitControls');
 goog.require('CCapture');
+goog.require('THREE.objectExporter')
 
 
 //TODO remove after speed optimizations
@@ -183,6 +184,14 @@ function listenForKeyEvent(a)
         console.log(this._camera.matrixWorldInverse);
 
     }
+    //s
+    if(a.charCode==115)
+    {
+        var exporter = new THREE.OBJExporter();
+        var s = exporter.parse(this._objects[0].THREEContainer);
+        saveFile('data:text/plain;charset=utf-16,' + encodeURIComponent(s),'DVT_export.obj');
+
+    }
     //m
     if(a.charCode==109)
     {
@@ -212,6 +221,7 @@ function listenForKeyEvent(a)
     }
 
     var saveFile = function (strData, filename) {
+        console.log(typeof strData);
         var link = document.createElement('a');
         if (typeof link.download === 'string') {
             document.body.appendChild(link); //Firefox requires the link to be in the body
@@ -234,7 +244,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     //configure camera
     this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
     this._camera.position.z = 500;
-    this._camera.position.set(1013.3669635705182,901.6857135617163,-89.96293528451858);
+    //this._camera.position.set(1013.3669635705182,901.6857135617163,-89.96293528451858);
 
     //setup controller
     this._controller = new THREE.OrbitControls(this._camera);
