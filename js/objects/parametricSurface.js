@@ -23,19 +23,19 @@ DVT.parametricSurface = function(copyFrom) {
      * @type {number}
      * @private
      */
-    this._stacks = 1;
+    this._stacks = 25;
 
     /**
      * stacks of parametricSurface in the x-direction
      * @type {number}
      * @private
      */
-    this._slices = 1;
+    this._slices = 25;
 
-    this._color=0x00ff00
+    this._color=Math.random()*0xffffff
 
 
-    this._parametricEquation = [function(u,v){reutrn 100*u;},function(u,v){reutrn 100*v;},function(u,v){reutrn 100*u*u+v*v;}];
+    this._parametricEquation = [function(u,v){return 100*u;},function(u,v){return 100*v;},function(u,v){return 100*(u*u+v*v);}];
 
     /**
      * center of the cube. Default is [0,0,0]
@@ -85,9 +85,9 @@ DVT.parametricSurface.prototype.__defineSetter__('stacksY', function(stacks) {
 });
 
 DVT.parametricSurface.prototype.init = function (renderer) {
-    var calculatedParametricEquation = function(u,v)
+    var calculatedParametricEquation = function(u,v, vec3)
     {
-        return new THREE.Vector3(this._parametricEquation[0](u,v),this._parametricEquation[1](u,v),this._parametricEquation[2](u,v));
+        vec3.set(this._parametricEquation[0](u,v),this._parametricEquation[1](u,v),this._parametricEquation[2](u,v));
     };
     var geometry = new THREE.ParametricGeometry(calculatedParametricEquation.bind(this), this._slices, this._stacks);
     for(var j=0;j<geometry.vertices.stacks;j++)
@@ -95,6 +95,7 @@ DVT.parametricSurface.prototype.init = function (renderer) {
         geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]))
     }
     geometry.computeFaceNormals();
+    console.log(geometry);
     //create material
     var material = new THREE.MeshPhongMaterial({color:this._color});
 
