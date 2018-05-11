@@ -34,6 +34,7 @@ goog.addDependency('../../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT
 goog.addDependency('../../../../../../js/objects/loaded.js', ['DVT.loaded'], ['DVT.object'], false);
 goog.addDependency('../../../../../../js/objects/mesh.js', ['DVT.mesh'], ['DVT.loaded', 'THREE'], false);
 goog.addDependency('../../../../../../js/objects/object.js', ['DVT.object'], ['DVT.base'], false);
+goog.addDependency('../../../../../../js/objects/parametricSurface.js', ['DVT.parametricSurface'], ['DVT.primitives', 'THREE.slice'], false);
 goog.addDependency('../../../../../../js/objects/particles.js', ['DVT.particles'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/objects/primitives.js', ['DVT.primitives'], ['DVT.loaded', 'THREE.EdgesGeometry'], false);
 goog.addDependency('../../../../../../js/objects/sphere.js', ['DVT.sphere'], ['DVT.primitives'], false);
