@@ -8,7 +8,6 @@
 goog.provide('DVT.primitives');
 
 goog.require('DVT.loaded');
-goog.require('THREE.EdgesGeometry');
 
 /**
  * Class representing user-created objects
