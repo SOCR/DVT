@@ -83,7 +83,7 @@ DVT.primitives.prototype.calcVoronoi = function()
 
     this.THREEContainer = new THREE.Mesh(geom, material);
     
-    var edges =  EdgesGeometry( geom ,15);
+    var edges = new THREE.EdgesGeometry( geom ,15);
     edges.computeBoundingSphere();
     console.log(edges);
     var line = new THREE.Line( edges, new THREE.LineBasicMaterial( { color: 0xffffff , linewidth:50} ), THREE.LinePieces );

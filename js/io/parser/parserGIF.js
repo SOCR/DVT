@@ -52,7 +52,7 @@ DVT.parserGIF.prototype.parse = function( object, data, loader) {
     gif = null;
     frames = null;
 
-    if(false)
+    if(true)
     {
         geometry = this._parseVoxels(totalPixels,dims);
     }
@@ -69,7 +69,14 @@ DVT.parserGIF.prototype.parse = function( object, data, loader) {
     geometry.computeFaceNormals();
     geometry.computeVertexNormals();
     geometry = new THREE.BufferGeometry().fromGeometry( geometry );
-    object.THREEContainer = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({color:Math.random()*0xffffff, wireframe: false, opacity: .5, transparent:true}));
+    object.THREEContainer = new THREE.Mesh(geometry, new THREE.MeshNormalMaterial({color:0xffffff, wireframe: false, transparent:true}));
+
+
+    var edges = new THREE.EdgesGeometry( geometry ,15);
+    edges.computeBoundingSphere();
+    var line = new THREE.Line( edges, new THREE.LineBasicMaterial( { color: 0x000000 , linewidth:50} ), THREE.LinePieces );
+    object.THREEContainer.add( line) ;
+
     object.THREEContainer.visible = object._meshVisible;
     object._loaded = true;
     object._locked = false;
