@@ -58,23 +58,16 @@ test = function() {
 
 
 
-    cube = new DVT.sphere();
+    var surface = new DVT.parametricSurface();
 
-    // setting the edge length can also be skipped since 20 is the default
-    cube.radius= 100;
-
-    // can also be skipped since [0,0,0] is the default center
-    cube.center = [-30, -30, -300];
-
-    // [1,1,1] (== white) is also the default so this can be skipped aswell
-    cube.color = [1, 1, 1];
+    surface._parametricEquation = [function(u,v){return 100*u-50;},function(u,v){return 100*v-50;},function(u,v){return 10*(Math.sin(u * 10 * 3.14)+Math.cos(v*10*3.14));}];
 
     //test_renderer.add(cube);
     //test_renderer.add(porsche);
-    test_renderer.add(lh);
-    test_renderer.add(lh2);
-    test_renderer.add(lh3);
-    //test_renderer.add(lh4);
+    //test_renderer.add(lh);
+    //test_renderer.add(lh2);
+    //test_renderer.add(lh3);
+    test_renderer.add(surface);
     //test_renderer.add(molecule);
     //test_renderer.add(molecule2);
 
