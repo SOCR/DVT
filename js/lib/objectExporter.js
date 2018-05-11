@@ -1,7 +1,8 @@
 /**
  * @author mrdoob / http://mrdoob.com/
  */
-
+goog.require('THREE');
+goog.provide('THREE.objectExporter')
 THREE.OBJExporter = function () {};
 
 THREE.OBJExporter.prototype = {

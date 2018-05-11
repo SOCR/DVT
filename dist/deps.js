@@ -22,6 +22,7 @@ goog.addDependency('../../../../../../js/lib/PDBUtil.js', ['THREE.PDBUtil'], [],
 goog.addDependency('../../../../../../js/lib/bootstrap.min.js', ['bootstrap'], [], false);
 goog.addDependency('../../../../../../js/lib/gifuct.js', ['gifuct'], [], false);
 goog.addDependency('../../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);
+goog.addDependency('../../../../../../js/lib/objectExporter.js', ['THREE.objectExporter'], ['THREE'], false);
 goog.addDependency('../../../../../../js/lib/progressbar.min.js', ['ProgressBar'], [], false);
 goog.addDependency('../../../../../../js/lib/slice.min.js', ['THREE.slice'], ['THREE'], false);
 goog.addDependency('../../../../../../js/lib/subdivisionModifier.js', ['THREE.SubdivisionModifier'], ['THREE'], false);
@@ -40,5 +41,5 @@ goog.addDependency('../../../../../../js/objects/primitives.js', ['DVT.primitive
 goog.addDependency('../../../../../../js/objects/sphere.js', ['DVT.sphere'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer2D.js', ['DVT.renderer2D'], ['DVT.renderer'], false);
-goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['CCapture', 'DVT.renderer', 'THREE', 'orbitControls'], false);
+goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['CCapture', 'DVT.renderer', 'THREE', 'THREE.objectExporter', 'orbitControls'], false);
 goog.addDependency('../../../../../../js/visualizaion/shader.js', ['DVT.shader'], [], false);
