@@ -176,10 +176,12 @@ function listenForKeyEvent(a)
         this._capture = true;
     }
 
-//p
+    //q
     if(a.charCode==113)
     {
-        console.log(this._camera.position)
+        console.log(this._camera.projectionMatrix);
+        console.log(this._camera.matrixWorldInverse);
+
     }
     //m
     if(a.charCode==109)
