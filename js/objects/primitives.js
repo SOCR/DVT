@@ -8,6 +8,9 @@
 goog.provide('DVT.primitives');
 
 goog.require('DVT.loaded');
+goog.require('voxelize');
+goog.require('DVT.parserGIF');
+
 
 /**
  * Class representing user-created objects
@@ -31,6 +34,7 @@ DVT.primitives = function(copyFrom) {
      * @private
      */
     this._loader = {finishRender: function () {}};
+    this._voxelResolution = 0;
 };
 
 goog.inherits(DVT.primitives, DVT.loaded);
@@ -91,5 +95,30 @@ DVT.primitives.prototype.calcVoronoi = function()
 
 DVT.primitives.prototype.voxelize = function(resolution)
 {
-    resolution = resolution|10;
+    resolution = resolution||10;
+    this._voxelResolution = resolution;
 }
+
+
+DVT.primitives.prototype._voxelize = function()
+{
+    if(this._voxelResolution>0)
+    {
+        var faceArray = this.THREEContainer.geometry.faces.map(x => [x.a,x.b,x.c]);
+        var vertexArray = this.THREEContainer.geometry.vertices.map(x => [x.x,x.y,x.z]);
+        var binArray = voxelizer(faceArray,vertexArray,this._voxelResolution);
+        faceArray = null;
+        vertexArray = null;
+        console.log(binArray);
+        var geometry = DVT.parserGIF.prototype._parseVoxels(binArray.voxels.data, binArray.voxels.shape);
+
+        geometry.computeFaceNormals();
+        geometry.computeVertexNormals();
+        geometry.scale(this._voxelResolution,this._voxelResolution,this._voxelResolution)
+        geometry.translate(binArray.origin[0],binArray.origin[1],binArray.origin[2]);
+        geometry = new THREE.BufferGeometry().fromGeometry( geometry );
+        var material = new THREE.MeshPhongMaterial({color:this._color});
+
+        this.THREEContainer = new THREE.Mesh(geometry, material);
+    }
+};
