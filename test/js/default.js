@@ -14,6 +14,7 @@
     console.log('!!');
     goog.require('DVT.fiber');
     goog.require('DVT.mesh');
+    goog.require('DVT.parametricSurface');
     goog.require('DVT.box');
     goog.require('DVT.particles');
     goog.require('DVT.sphere');

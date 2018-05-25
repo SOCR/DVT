@@ -61,14 +61,14 @@ DVT.parserOFF.prototype.parse = function( object, data, loader) {
     var _self = this;
 
     var _firstLine = readLine();
-    var _numbersLine = _firstLine === "OFF" ? readLine() : _firstLine;
+    var _numbersLine = _firstLine.trim() == "OFF" ? readLine() : _firstLine;
     var _split = _numbersLine.split(' ');
     var _nVertices = _split[0];
     var _nFaces = _split[1];
-
+    var line, coords;
     while (_nVertices--) {
-        var line = readLine();
-        var coords = line.split(' ');
+        line = readLine().trim();
+        coords = line.split(' ');
         // grab the x, y, z coordinates
         var x = parseFloat(coords[0]);
         var y = parseFloat(coords[1]);
@@ -77,8 +77,8 @@ DVT.parserOFF.prototype.parse = function( object, data, loader) {
     }
 
     while (_nFaces--) {
-        var line = readLine();
-        var coords = line.split(' ');
+        line = readLine().trim();
+        coords = line.split(" ");
         geometry.faces.push(new THREE.Face3(parseInt(coords[1], 10), parseInt(coords[2], 10), parseInt(coords[3], 10)));
 
     }

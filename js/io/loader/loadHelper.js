@@ -10,6 +10,7 @@ goog.require('bootstrap');
 goog.require('DVT.parserTRK');
 goog.require('DVT.parserFSM');
 goog.require('DVT.parserOFF');
+goog.require('DVT.parserGIF');
 goog.require('DVT.parserSTL');
 goog.require('DVT.parserPDB');
 
@@ -170,6 +171,10 @@ DVT.loadHelper.prototype._parseInit = function(data) {//console.count('parseInit
             var parser = new DVT.parserOFF();
             parser.parse(this._container, data, this);
             break;
+        case 'gif':
+            var parser = new DVT.parserGIF();
+            parser.parse(this._container, data, this);
+            break;
         case 'stl':
             var parser = new DVT.parserSTL();
             parser.parse(this._container, data, this);
@@ -272,6 +277,7 @@ DVT.loadHelper.prototype.isBinary = function () {//console.count('isBinary');
         case 'fsm':
         case 'stl':
         case 'off':
+        case 'gif':
             return true;
             break;
         case 'pdb':

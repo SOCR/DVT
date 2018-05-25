@@ -6,3 +6,5 @@ doc/**
 
 #Ignore Mac system file
 *.DS_Store
+
+\.idea/
