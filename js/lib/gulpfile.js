@@ -9,13 +9,14 @@ var gulp = require('gulp');
 // Include Our Plugins
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
-var closure = require('gulp-closure-compiler');
+//var closure = require('gulp-closure-compiler');
 var rename = require('gulp-rename');
 var depsWriter = require('gulp-closure-deps');
 var shell = require('gulp-shell');
 var yuidoc = require('gulp-yuidoc');
 var plumber = require('gulp-plumber');
 var plato = require('plato');
+var closureCompiler = require('google-closure-compiler').gulp();
 
 // Lint Task
 gulp.task('lint', function() {
@@ -44,7 +45,7 @@ gulp.task('sass', function() {
 });
 
 //closure compiler
-gulp.task('closure', function() {
+gulp.task('closureOld', function() {
     return gulp.src(['../**/*.js', '!./node_modules/**', '!./bower_components/**'])
         .pipe(plumber({
             handleError: function (err) {
@@ -63,6 +64,22 @@ gulp.task('closure', function() {
             }
         }))
         .pipe(gulp.dest('../../dist'));
+    
+    
+});
+
+gulp.task('closure', function () {
+  return gulp.src(['../**/*.js', '!./node_modules/**', '!./bower_components/jquery/**'], {base: './'})
+      .pipe(closureCompiler({
+          compilation_level: 'ADVANCED_OPTIMIZATIONS',
+          language_in: 'ECMASCRIPT6_STRICT',
+          language_out: 'ECMASCRIPT5_STRICT',
+          output_wrapper: '(function(){\n%output%\n}).call(this)',
+          js_output_file: 'DVT.js',
+          closure_entry_point: ['DVT.loader', 'DVT.renderer2D'],
+          only_closure_dependencies: true
+        }))
+      .pipe(gulp.dest('../../dist'));
 });
 
 //dependency tree generator
@@ -76,7 +93,7 @@ gulp.task('deps', function() {
         }))
         .pipe(depsWriter({
             fileName: 'deps.js',
-            prefix: '../../../..',
+            prefix: '../../../../..',
             baseDir: '../../dist'
         }))
         .pipe(gulp.dest('../../dist'));

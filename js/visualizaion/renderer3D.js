@@ -17,6 +17,8 @@ goog.provide('DVT.renderer3D');
 goog.require('DVT.renderer');
 goog.require('THREE');
 goog.require('orbitControls');
+goog.require('CCapture');
+goog.require('THREE.objectExporter')
 
 
 //TODO remove after speed optimizations
@@ -92,11 +94,38 @@ DVT.renderer3D = function() {
     this._renderer =null
 
     /**
-     * switch for speed slowdown in animations
+     * boolean variable dictating if a screenshot needs to be taken
      * @type {boolean}
      * @private
      */
-    this._animateFrame = false;
+    this._capture = false;
+
+    /**
+     * boolean variable dictating recording status.
+     * TRUE: Recording
+     * FALSE: Not recording
+     * @type {boolean}
+     * @private
+     */
+    this._record = false;
+
+    /**
+     * Recording module for making recordings
+     * @type {CCapture}
+     * @private
+     */
+    this._recorder = new CCapture({
+        verbose: false,
+        display: false,
+        framerate: 24,
+        quality: 10,
+        format: 'gif',
+        frameLimit: 0,
+        autoSaveTime: 4,
+        name: 'DVT',
+        workersPath: '../js/lib/'
+    });
+
 };
 // inherit from DVT.renderer
 goog.inherits(DVT.renderer3D, DVT.renderer);
@@ -129,17 +158,105 @@ DVT.renderer3D.prototype.__defineGetter__('config', function() {//console.count(
 
 DVT.renderer3D.prototype.animate = function () {
     window.requestAnimationFrame(this.animate.bind(this));
-    if(this._animateFrame)
-        this.render_(true,true);
-    this._animateFrame = !this._animateFrame;
-
-};
-
-DVT.renderer3D.prototype.control = function () {
-    window.requestAnimationFrame(this.control.bind(this));
+    this.render_(true,true);
+    if(this._capture)
+    {
+        saveAsImage.call(this);
+        this._capture=false;
+    }
+	this._recorder.capture(this._renderer.domElement);
     this._controller.update();
 
 };
+
+function listenForKeyEvent(a)
+{
+    //p
+    if(a.charCode==112)
+    {
+        this._capture = true;
+    }
+
+    //q
+    if(a.charCode==113)
+    {
+        this._controller.saveState();
+
+        console.log(JSON.stringify(this._controller.target0));
+        console.log(JSON.stringify(this._controller.zoom0));
+        console.log(JSON.stringify(this._controller.position0));
+    }
+    //s
+    if(a.charCode==115)
+    {
+        var exporter = new THREE.OBJExporter();
+        var s = exporter.parse(this._objects[0].THREEContainer);
+        saveFile(new Blob([s], {
+            type: 'text/plain'
+        }),'DVT_export.obj');
+
+    }
+    //m
+    if(a.charCode==109)
+    {
+        if(this._record)
+        {
+            this._recorder.stop();
+            this._recorder.save();
+        }
+        else
+        {
+            this._recorder.start();
+        }
+        this._record=!this._record;
+    }
+}
+    function saveAsImage() {
+
+        try {
+            imgData = this._renderer.domElement.toDataURL("image/jpeg");
+            saveFile(dataURIToBlob(imgData), "DVT_capture.jpg");
+
+        } catch (e) {
+            console.log(e);
+            return;
+        }
+
+    }
+
+    var saveFile = function (strData, filename) {
+        console.log(typeof strData);
+        var link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            document.body.appendChild(link); //Firefox requires the link to be in the body
+            link.download = filename;
+            link.href =  URL.createObjectURL(strData);
+            link.innerHTML = 'download';
+            link.onclick = function() {
+                // ..and to wait a frame
+                requestAnimationFrame(function() {
+                    URL.revokeObjectURL(link.href);
+                });
+                document.body.removeChild(link); //remove the link when done
+            };
+            link.click();
+        } else {
+            location.replace(uri);
+        }
+    };
+
+    function dataURIToBlob(dataURI) {
+        console.log(dataURI.split(',')[1]);
+        var binStr = atob(dataURI.split(',')[1]),
+            len = binStr.length,
+            arr = new Uint8Array(len);
+
+        for (var i = 0; i < len; i++) {
+            arr[i] = binStr.charCodeAt(i);
+        }
+
+        return (new Blob([arr]));
+    }
 
 /**
  * @inheritDoc
@@ -151,13 +268,21 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     //configure camera
     this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
-    this._camera.position.z = 500;
+
+    this._camera.position.z = 100;
+
 
     //setup controller
     this._controller = new THREE.OrbitControls(this._camera);
+    this._controller.screenSpacePanning = true;
 
-    this._controller.damping = 0.2;
-    this._controller.addEventListener( 'change', this.render_.bind(this, false, true));
+    //this._controller.saveState();
+    //this._controller.target0 = new THREE.Vector3(788.9990488776494,599.963883923109,53.465794564366036);
+    //this._controller.zoom0 = 1;
+    //this._controller.position0 = new THREE.Vector3(786.9128072186707,489.6483782909108,91.27952530930558);
+    //this._controller.reset();
+
+
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
@@ -166,8 +291,45 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     //add camera to scene
     this._scene.add(this._camera);
+    var directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+    directionalLight.position.set( 1, 1, 1 );
+    var amlight = new THREE.AmbientLight( 0x666666 );
 
-    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, alpha : true} );
+    var spotLight = new THREE.SpotLight( 0x888888,2 );
+    spotLight.position.set( 200, -200, -200 );
+
+    spotLight.castShadow = true;
+
+    spotLight.shadowMapWidth = 1024;
+    spotLight.shadowMapHeight = 1024;
+
+    spotLight.shadowCameraNear = 500;
+    spotLight.shadowCameraFar = 4000;
+    spotLight.shadowCameraFov = 30;
+    //this._scene.add( directionalLight );
+    this._scene.add( amlight );
+    this._scene.add( spotLight );
+    
+    
+    
+    var spotLight2 = new THREE.SpotLight( 0x888888,2 );
+    spotLight2.position.set( -200, 200, 200 );
+
+    spotLight2.castShadow = true;
+
+    spotLight2.shadowMapWidth = 1024;
+    spotLight2.shadowMapHeight = 1024;
+
+    spotLight2.shadowCameraNear = 500;
+    spotLight2.shadowCameraFar = 4000;
+    spotLight2.shadowCameraFov = 30;
+    this._scene.add( directionalLight );
+    //this._scene.add( amlight );
+    this._scene.add( spotLight2 );
+    
+    
+    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, antialias:true} );
+    $(document).keypress(listenForKeyEvent.bind(this));
     this._renderer.setSize(this._width, this._height);
 
 
@@ -271,7 +433,6 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     console.log(this.get(object));
     var loaded = object._loaded;
     var locked = object._locked;
-
     /*
      var id = object._id;
      var points = object._points;
@@ -923,10 +1084,10 @@ DVT.renderer3D.prototype.update_ = function(object) {//console.count('renderer3D
     // add the object to the internal tree which reflects the rendering order
     // (based on opacity)
     if (!existed) {
+        object.init(this._renderer);
         this._objects.push(object);
         this._scene.add(object.THREEContainer);
         object._loader.finishRender();
-        object.init(this._renderer);
         this.render();
 
         //TODO remove after optimization tests are complete
@@ -989,7 +1150,7 @@ function average(data){
 /**
  * @inheritDoc
  */
-DVT.renderer3D.prototype.render_ = function(picking, invoked) {//console.count('renderer3D.render_');
+DVT.renderer3D.prototype.render_ = function(picking, invoked) {
 
 
     // only proceed if there are actually objects to render
