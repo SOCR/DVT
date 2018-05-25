@@ -1,10 +1,13 @@
+//Adapted from https://github.com/mikolalysenko/voxelize
+goog.provide('voxelize');
+
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-        "use strict"
+
 
         var rasterize = require("rle-rasterize")
         var rle2array = require("rle-ndarray").rle2array
 
-        voxelize = function(cells, positions, resolution) {
+        voxelizer = function(cells, positions, resolution) {
             var lo = [Infinity, Infinity, Infinity],
                 hi = [-Infinity, -Infinity, -Infinity],
                 n  = positions.length, i, j, p
@@ -38,7 +41,6 @@
             }
         }
 
-        module.exports = voxelize
     },{"rle-ndarray":19,"rle-rasterize":20}],2:[function(require,module,exports){
         /**
          * Bit twiddling hacks for JavaScript.
