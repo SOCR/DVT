@@ -191,7 +191,9 @@ function listenForKeyEvent(a)
     {
         var exporter = new THREE.OBJExporter();
         var s = exporter.parse(this._objects[0].THREEContainer);
-        saveFile('data:text/plain;charset=utf-16,' + encodeURIComponent(s),'DVT_export.obj');
+        saveFile(new Blob([s], {
+            type: 'text/plain'
+        }),'DVT_export.obj');
 
     }
     //m
@@ -213,7 +215,7 @@ function listenForKeyEvent(a)
 
         try {
             imgData = this._renderer.domElement.toDataURL("image/jpeg");
-            saveFile(imgData, "DVT_capture.jpg");
+            saveFile(dataURIToBlob(imgData), "DVT_capture.jpg");
 
         } catch (e) {
             console.log(e);
@@ -228,13 +230,33 @@ function listenForKeyEvent(a)
         if (typeof link.download === 'string') {
             document.body.appendChild(link); //Firefox requires the link to be in the body
             link.download = filename;
-            link.href = strData;
+            link.href =  URL.createObjectURL(strData);
+            link.innerHTML = 'download';
+            link.onclick = function() {
+                // ..and to wait a frame
+                requestAnimationFrame(function() {
+                    URL.revokeObjectURL(link.href);
+                });
+                document.body.removeChild(link); //remove the link when done
+            };
             link.click();
-            document.body.removeChild(link); //remove the link when done
         } else {
             location.replace(uri);
         }
     };
+
+    function dataURIToBlob(dataURI) {
+        console.log(dataURI.split(',')[1]);
+        var binStr = atob(dataURI.split(',')[1]),
+            len = binStr.length,
+            arr = new Uint8Array(len);
+
+        for (var i = 0; i < len; i++) {
+            arr[i] = binStr.charCodeAt(i);
+        }
+
+        return (new Blob([arr]));
+    }
 
 /**
  * @inheritDoc
