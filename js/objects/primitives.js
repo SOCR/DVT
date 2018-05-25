@@ -62,8 +62,7 @@ DVT.primitives.prototype.calcVoronoi = function()
             var plane = new THREE.Plane(normal, 0);
 
             normal = new THREE.Vector3(curPoint.x, curPoint.y, curPoint.z);
-            
-            
+
             normal.add(this._voronoiSystem[j]);
             normal.divideScalar(2);
             
@@ -88,4 +87,9 @@ DVT.primitives.prototype.calcVoronoi = function()
     var line = new THREE.Line( edges, new THREE.LineBasicMaterial( { color: 0xffffff , linewidth:50} ), THREE.LinePieces );
     this.THREEContainer.add( line) ;
     
+}
+
+DVT.primitives.prototype.voxelize = function(resolution)
+{
+    resolution = resolution|10;
 }
