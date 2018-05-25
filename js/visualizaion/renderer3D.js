@@ -249,20 +249,18 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
 
     this._camera.position.z = 100;
 
-    //this._camera.matrix.elements= [0.9993223845883497,0,0.036807222941354835,0,-0.0325756238485128,0.4655274168589624,0.8844337470288557,0,-0.017134771417640852,-0.8850334593407312,0.46521196830675293,0,790.7164787335253,528.7095024320158,86.63527335967893,1]
-    //this._camera.position.set(790.7164787335253,528.7095024320158,86.63527335967893);
-    //this._camera.lookAt(new THREE.Vector3(790.8878264477016,737.5598370254231,81.98315367661141));
 
     //setup controller
     this._controller = new THREE.OrbitControls(this._camera);
     this._controller.screenSpacePanning = true;
 
-    this._controller.saveState();
-    this._controller.target0 = new THREE.Vector3(788.9990488776494,599.963883923109,53.465794564366036);
-    this._controller.zoom0 = 1;
-    this._controller.position0 = new THREE.Vector3(786.9128072186707,489.6483782909108,91.27952530930558);
-    this._controller.reset();
-    //this._controller.damping = 0.2;
+    //this._controller.saveState();
+    //this._controller.target0 = new THREE.Vector3(788.9990488776494,599.963883923109,53.465794564366036);
+    //this._controller.zoom0 = 1;
+    //this._controller.position0 = new THREE.Vector3(786.9128072186707,489.6483782909108,91.27952530930558);
+    //this._controller.reset();
+
+
     //configure canvas opacity to reflect background color of container
     this._context.clearColor(this._bgColor[0], this._bgColor[1], this._bgColor[2], 0.0);
 
