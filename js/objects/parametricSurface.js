@@ -104,4 +104,5 @@ DVT.parametricSurface.prototype.init = function (renderer) {
     {
         this.calcVoronoi();
     }
+    this._voxelize();
 }
