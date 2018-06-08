@@ -1,6 +1,7 @@
 /**
  * @author servinlp
  */
+goog.provide('THREE.GearVRController');
 
 THREE.GearVRController = function () {
 

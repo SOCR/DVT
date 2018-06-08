@@ -5,6 +5,8 @@
  * Based on @tojiro's vr-samples-utils.js
  */
 
+goog.provide('WebVR');
+
 var WEBVR = {
 
 	createButton: function ( renderer, options ) {

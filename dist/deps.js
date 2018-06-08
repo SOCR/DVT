@@ -16,8 +16,10 @@ goog.addDependency('../../../../../../js/io/parser/parserTRK.js', ['DVT.parserTR
 goog.addDependency('../../../../../../js/io/parser/parserVTK.js', ['DVT.parserVTK'], ['DVT.parser', 'THREE'], false);
 goog.addDependency('../../../../../../js/lib/CCapture.js', ['CCapture'], [], false);
 goog.addDependency('../../../../../../js/lib/FBOUtils.js', ['THREE.FBOUtils'], ['THREE'], false);
+goog.addDependency('../../../../../../js/lib/GearVRController.js', ['THREE.GearVRController'], [], false);
 goog.addDependency('../../../../../../js/lib/OrbitControls.js', ['orbitControls'], [], false);
 goog.addDependency('../../../../../../js/lib/PDBUtil.js', ['THREE.PDBUtil'], [], false);
+goog.addDependency('../../../../../../js/lib/WebVR.js', ['WebVR'], [], false);
 goog.addDependency('../../../../../../js/lib/bootstrap.min.js', ['bootstrap'], [], false);
 goog.addDependency('../../../../../../js/lib/gifuct.js', ['gifuct'], [], false);
 goog.addDependency('../../../../../../js/lib/jquery.min.js', ['jQuery'], [], false);
@@ -42,5 +44,5 @@ goog.addDependency('../../../../../../js/objects/primitives.js', ['DVT.primitive
 goog.addDependency('../../../../../../js/objects/sphere.js', ['DVT.sphere'], ['DVT.primitives'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer.js', ['DVT.renderer'], ['DVT.base', 'DVT.loader', 'goog.dom', 'goog.events'], false);
 goog.addDependency('../../../../../../js/visualizaion/renderer2D.js', ['DVT.renderer2D'], ['DVT.renderer'], false);
-goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['CCapture', 'DVT.renderer', 'THREE', 'THREE.objectExporter', 'orbitControls'], false);
+goog.addDependency('../../../../../../js/visualizaion/renderer3D.js', ['DVT.renderer3D'], ['CCapture', 'DVT.renderer', 'THREE', 'THREE.GearVRController', 'THREE.objectExporter', 'WebVR', 'orbitControls'], false);
 goog.addDependency('../../../../../../js/visualizaion/shader.js', ['DVT.shader'], [], false);
