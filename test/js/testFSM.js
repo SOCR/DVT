@@ -5,6 +5,7 @@ test = function() {
     console.log('pre-rimport renderer3D');
     // create a new test_renderer
     test_renderer = new DVT.renderer3D();
+    test_renderer._renderMode = 'VR';
     console.log('pre-init');
     test_renderer.init();
 
@@ -60,8 +61,10 @@ test = function() {
 
     var surface = new DVT.parametricSurface();
 
-    surface._parametricEquation = [function(u,v){return 100*u-50;},function(u,v){return 100*v-50;},function(u,v){return 10*(Math.sin(u * 10 * 3.14)+Math.cos(v*10*3.14));}];
-
+    surface._parametricEquation = [function(u,v,t){return 100*u-50;},function(u,v,t){return 100*v-50;},function(u,v,t){return 10*(Math.sin(u * 10 * 3.14+t)+Math.cos(v*10*3.14+t));}];
+    surface._slices=10;
+    surface._stacks=10;
+    surface.enableAnimation(true)
     //test_renderer.add(cube);
     //test_renderer.add(porsche);
     //test_renderer.add(lh);
