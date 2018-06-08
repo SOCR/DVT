@@ -5,6 +5,7 @@ test = function() {
     console.log('pre-rimport renderer3D');
     // create a new test_renderer
     test_renderer = new DVT.renderer3D();
+    test_renderer._renderMode = 'VR';
     console.log('pre-init');
     test_renderer.init();
 
