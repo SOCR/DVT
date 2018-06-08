@@ -34,7 +34,7 @@ goog.addDependency('../../../../../../js/lib/voxelize.js', ['voxelize'], [], fal
 goog.addDependency('../../../../../../js/objects/box.js', ['DVT.box'], ['DVT.primitives', 'THREE.slice'], false);
 goog.addDependency('../../../../../../js/objects/fiber.js', ['DVT.fiber'], ['DVT.loaded', 'DVT.shader', 'THREE', 'THREE.FBOUtils'], false);
 goog.addDependency('../../../../../../js/objects/loaded.js', ['DVT.loaded'], ['DVT.object'], false);
-goog.addDependency('../../../../../../js/objects/mesh.js', ['DVT.mesh'], ['DVT.loaded', 'THREE'], false);
+goog.addDependency('../../../../../../js/objects/mesh.js', ['DVT.mesh'], ['DVT.loaded', 'DVT.parserGIF', 'THREE', 'voxelize'], false);
 goog.addDependency('../../../../../../js/objects/object.js', ['DVT.object'], ['DVT.base'], false);
 goog.addDependency('../../../../../../js/objects/parametricSurface.js', ['DVT.parametricSurface'], ['DVT.primitives', 'THREE.slice'], false);
 goog.addDependency('../../../../../../js/objects/particles.js', ['DVT.particles'], ['DVT.primitives'], false);
