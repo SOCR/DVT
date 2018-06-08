@@ -62,8 +62,8 @@ test = function() {
     var surface = new DVT.parametricSurface();
 
     surface._parametricEquation = [function(u,v,t){return 100*u-50;},function(u,v,t){return 100*v-50;},function(u,v,t){return 10*(Math.sin(u * 10 * 3.14+t)+Math.cos(v*10*3.14+t));}];
-    surface._slices=10;
-    surface._stacks=10;
+    surface._slices=16;
+    surface._stacks=16;
     surface.enableAnimation(true)
     //test_renderer.add(cube);
     //test_renderer.add(porsche);
