@@ -6,6 +6,8 @@ goog.provide('DVT.mesh');
 
 goog.require('DVT.loaded');
 goog.require('THREE');
+goog.require('voxelize');
+goog.require('DVT.parserGIF');
 
 /**
  * Class representing dMRI-generated tractography data
@@ -39,6 +41,7 @@ DVT.mesh = function(copyFrom) {
     
     this._voronoiIndex = 0;
     this._voronoiContainer = null;
+    this._voxelResolution = 0;
 
 };
 goog.inherits(DVT.mesh, DVT.loaded);
@@ -65,6 +68,7 @@ DVT.mesh.prototype.init = function (renderer) {
     {
         this.calcVoronoi();
     }
+    this._voxelize();
 };
 
 DVT.mesh.prototype.calcVoronoi = function()
@@ -105,4 +109,35 @@ DVT.mesh.prototype.calcVoronoi = function()
 
     this.THREEContainer = new THREE.Mesh(geom, material);
     
+};
+
+
+DVT.mesh.prototype.voxelize = function(resolution)
+{
+    resolution = resolution||10;
+    this._voxelResolution = resolution;
 }
+
+
+DVT.mesh.prototype._voxelize = function()
+{
+    if(this._voxelResolution>0)
+    {
+        var faceArray = this.THREEContainer.geometry.faces.map(x => [x.a,x.b,x.c]);
+        var vertexArray = this.THREEContainer.geometry.vertices.map(x => [x.x,x.y,x.z]);
+        var binArray = voxelizer(faceArray,vertexArray,this._voxelResolution);
+        faceArray = null;
+        vertexArray = null;
+        console.log(binArray);
+        var geometry = DVT.parserGIF.prototype._parseVoxels(binArray.voxels.data, binArray.voxels.shape);
+
+        geometry.computeFaceNormals();
+        geometry.computeVertexNormals();
+        geometry.scale(this._voxelResolution,this._voxelResolution,this._voxelResolution)
+        geometry.translate(binArray.origin[0],binArray.origin[1],binArray.origin[2]);
+        geometry = new THREE.BufferGeometry().fromGeometry( geometry );
+        var material = new THREE.MeshPhongMaterial({color:this._color});
+
+        this.THREEContainer = new THREE.Mesh(geometry, material);
+    }
+};

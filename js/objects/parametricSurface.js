@@ -35,7 +35,7 @@ DVT.parametricSurface = function(copyFrom) {
     this._color=Math.random()*0xffffff
 
 
-    this._parametricEquation = [function(u,v){return 100*u;},function(u,v){return 100*v;},function(u,v){return 100*(u*u+v*v);}];
+    this._parametricEquation = [function(u,v,t){return 100*u;},function(u,v,t){return 100*v;},function(u,v,t){return 100*(u*u+v*v);}];
 
     /**
      * center of the cube. Default is [0,0,0]
@@ -56,6 +56,16 @@ DVT.parametricSurface = function(copyFrom) {
     this._voronoiSystem = null;
 
     this._voronoiIndex = 0;
+
+    this.t = 1;
+
+    /**
+     * Wether or not the parametric surface is animated using t. Default is false
+     * @default false
+     * @type {boolean}
+     * @private
+     */
+    this._animated = false;
 };
 
 goog.inherits(DVT.parametricSurface, DVT.primitives);
@@ -87,7 +97,7 @@ DVT.parametricSurface.prototype.__defineSetter__('stacksY', function(stacks) {
 DVT.parametricSurface.prototype.init = function (renderer) {
     var calculatedParametricEquation = function(u,v, vec3)
     {
-        vec3.set(this._parametricEquation[0](u,v),this._parametricEquation[1](u,v),this._parametricEquation[2](u,v));
+        vec3.set(this._parametricEquation[0](u,v, this.t),this._parametricEquation[1](u,v, this.t),this._parametricEquation[2](u,v, this.t));
     };
     var geometry = new THREE.ParametricGeometry(calculatedParametricEquation.bind(this), this._slices, this._stacks);
     for(var j=0;j<geometry.vertices.stacks;j++)
@@ -97,11 +107,54 @@ DVT.parametricSurface.prototype.init = function (renderer) {
     geometry.computeFaceNormals();
     console.log(geometry);
     //create material
-    var material = new THREE.MeshPhongMaterial({color:this._color});
+    var material = new THREE.MeshNormalMaterial({color:this._color});
 
     this.THREEContainer = new THREE.Mesh(geometry, material);
     if(this._voronoiSystem)
     {
         this.calcVoronoi();
     }
-}
+    this._voxelize();
+};
+
+
+DVT.parametricSurface.prototype.animate = function (renderer) {
+    if(!this._animated)
+        return;
+    this.t += 0.1;
+    var calculatedParametricEquation = function(u,v, vec3)
+    {
+        vec3.set(this._parametricEquation[0](u,v, this.t),this._parametricEquation[1](u,v, this.t),this._parametricEquation[2](u,v, this.t));
+    };
+    var geometry = new THREE.ParametricGeometry(calculatedParametricEquation.bind(this), this._slices, this._stacks);
+    for(var j=0;j<geometry.vertices.length;j++)
+    {
+        geometry.vertices[j].add(new THREE.Vector3(this.center[0],this.center[1],this.center[2]));
+        this.THREEContainer.geometry.vertices[j].x = geometry.vertices[j].x;
+        this.THREEContainer.geometry.vertices[j].y = geometry.vertices[j].y;
+        this.THREEContainer.geometry.vertices[j].z = geometry.vertices[j].z;
+    }
+
+    geometry.computeFaceNormals();
+
+    for(var j=0;j<geometry.faces.length;j++)
+    {
+        this.THREEContainer.geometry.faces[j].normal.x = geometry.faces[j].normal.x;
+        this.THREEContainer.geometry.faces[j].normal.y = geometry.faces[j].normal.y;
+        this.THREEContainer.geometry.faces[j].normal.z = geometry.faces[j].normal.z;
+        for(var k=0;k<3;k++)
+        {
+
+            this.THREEContainer.geometry.faces[j].vertexNormals[k].x = geometry.faces[j].vertexNormals[k].x;
+            this.THREEContainer.geometry.faces[j].vertexNormals[k].y = geometry.faces[j].vertexNormals[k].y;
+            this.THREEContainer.geometry.faces[j].vertexNormals[k].z = geometry.faces[j].vertexNormals[k].z;
+        }
+    }
+
+    this.THREEContainer.geometry.verticesNeedUpdate = true;
+    this.THREEContainer.geometry.normalsNeedUpdate = true;
+};
+
+DVT.parametricSurface.prototype.enableAnimation = function (status) {
+    this._animated = status;
+};

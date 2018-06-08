@@ -1,7 +1,13 @@
 $ cat .gitignore
 /js/lib/node_modules/*
-/js/lib/bower_components/*
-/js/lib/closure-library/*
+/js/lib/bower_components/bootstrap/*
+/js/lib/bower_components/closure-compiler/*
+/js/lib/bower_components/jquery/*
+/js/lib/bower_components/google-closure-library/scripts/*
+/js/lib/bower_components/google-closure-library/third-party/*
+/js/lib/bower_components/google-closure-library/closure/bin/*
+/js/lib/bower_components/google-closure-library/closure/css/*
+/js/lib/bower_components/google-closure-library/closure/goog/*/**
 doc/**
 
 #Ignore Mac system file

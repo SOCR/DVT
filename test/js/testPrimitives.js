@@ -13,7 +13,7 @@ test = function() {
 
     sphere.radius = 20;
     sphere._color = 0xaa33ff
-    sphere.voxelize(2);
+    sphere.voxelize(1);
 
     test_renderer.add(sphere);
 
