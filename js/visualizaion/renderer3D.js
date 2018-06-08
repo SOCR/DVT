@@ -126,6 +126,9 @@ DVT.renderer3D = function() {
         workersPath: '../js/lib/'
     });
 
+    this._renderMode = 'NORMAL';
+
+
 };
 // inherit from DVT.renderer
 goog.inherits(DVT.renderer3D, DVT.renderer);
@@ -165,7 +168,7 @@ DVT.renderer3D.prototype.animate = function () {
         this._capture=false;
     }
 	this._recorder.capture(this._renderer.domElement);
-    this._controller.update();
+    //this._controller.update();
 
 };
 
@@ -266,15 +269,32 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     // call the superclass' init method
     goog.base(this, 'init', "experimental-webgl");
 
+
+    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, antialias:true} );
+    $(document).keypress(listenForKeyEvent.bind(this));
+    this._renderer.setSize(this._width, this._height);
+
     //configure camera
     this._camera = new THREE.PerspectiveCamera( 45, this._width / this._height, 1, 4000 );
 
     this._camera.position.z = 100;
 
 
+    if(this._renderMode =='VR')
+    {
+        this._renderer.vr.enabled = true;
+        getVRDisplays(function(display) {
+            this._renderer.vr.setDevice(display);
+        });
+
+    }
+    else
+    {
+
+        this._controller = new THREE.OrbitControls(this._camera);
+        this._controller.screenSpacePanning = true;
+    }
     //setup controller
-    this._controller = new THREE.OrbitControls(this._camera);
-    this._controller.screenSpacePanning = true;
 
     //this._controller.saveState();
     //this._controller.target0 = new THREE.Vector3(788.9990488776494,599.963883923109,53.465794564366036);
@@ -327,10 +347,7 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
     //this._scene.add( amlight );
     this._scene.add( spotLight2 );
     
-    
-    this._renderer = new THREE.WebGLRenderer({ canvas: this._canvas, antialias:true} );
-    $(document).keypress(listenForKeyEvent.bind(this));
-    this._renderer.setSize(this._width, this._height);
+
 
 
     this.animate();
@@ -1152,7 +1169,6 @@ function average(data){
  */
 DVT.renderer3D.prototype.render_ = function(picking, invoked) {
 
-
     // only proceed if there are actually objects to render
     var _objects = this._objects;
     var _numberOfObjects = _objects.length;
@@ -1194,6 +1210,20 @@ DVT.renderer3D.prototype.render_ = function(picking, invoked) {
         this._bgColor = bgColor;
 
     });
+
+
+    function getVRDisplays ( onDisplay ) {
+
+        if ( 'getVRDisplays' in navigator ) {
+
+            navigator.getVRDisplays()
+                .then( function ( displays ) {
+                    onDisplay( displays[ 0 ] );
+                } );
+
+        }
+
+    };
 
 
 
