@@ -1,7 +1,7 @@
 $ cat .gitignore
 /js/lib/node_modules/*
 /js/lib/bower_components/*
-/js/lib/closure-library/*
+!/js/lib/closure-library/*
 doc/**
 
 #Ignore Mac system file
