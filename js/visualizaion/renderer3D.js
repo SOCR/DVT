@@ -18,7 +18,10 @@ goog.require('DVT.renderer');
 goog.require('THREE');
 goog.require('orbitControls');
 goog.require('CCapture');
-goog.require('THREE.objectExporter')
+goog.require('THREE.objectExporter');
+goog.require('WebVR');
+goog.require('THREE.GearVRController');
+
 
 
 //TODO remove after speed optimizations
@@ -168,7 +171,7 @@ DVT.renderer3D.prototype.animate = function () {
         this._capture=false;
     }
 	this._recorder.capture(this._renderer.domElement);
-    //this._controller.update();
+    this._controller.update();
 
 };
 
@@ -287,6 +290,11 @@ DVT.renderer3D.prototype.init = function() {//console.count('renderer3D.init');
             this._renderer.vr.setDevice(display);
         });
 
+
+        document.body.appendChild( WEBVR.createButton( this._renderer ) );
+
+        this._controller = new THREE.GearVRController();
+        this._controller.position.set( 0.25, 0.75, 0 );
     }
     else
     {
